@@ -13,14 +13,12 @@ class LoginVo: Mappable {
     
     var StatusCode: Int?
     var data: UserVo?
-    var Roles: [RolesVo]? = []
-    var ActivityRights: [ActivityVo]? = []
     
-    init(StatusCode:Int?,data: UserVo?,Roles: [RolesVo]?,ActivityRights: [ActivityVo]?) {
+    
+    init(StatusCode:Int?, data:UserVo?) {
         self.StatusCode = StatusCode
         self.data = data
-        self.Roles = Roles
-        self.ActivityRights = ActivityRights
+        
     }
     
     required init?(map: Map) {
@@ -28,10 +26,9 @@ class LoginVo: Mappable {
     }
     
     func mapping(map: Map) {
+        
         StatusCode <- map["StatusCode"]
         data <- map["data"]
-        Roles <- map["Roles"]
-        ActivityRights <- map["ActivityRights"]
     }
 }
 

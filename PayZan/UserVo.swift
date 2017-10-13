@@ -12,9 +12,17 @@ class UserVo: Mappable {
     
     
     var User: RespVo?
+    var Roles:[SampleVo]?
+    var ActivityRights:[GetActVo]?
+    var UserWallet:GetUserWalletVo?
     
-    init(User:RespVo?) {
+    init(User:RespVo?, Roles:[SampleVo]?, ActivityRights:[GetActVo]?,UserWallet:GetUserWalletVo?) {
+        
         self.User = User
+        self.Roles = Roles
+        self.ActivityRights = ActivityRights
+        self.UserWallet = UserWallet
+
     }
     
     required init?(map: Map) {
@@ -22,6 +30,11 @@ class UserVo: Mappable {
     }
     
     func mapping(map: Map) {
+        
         User <- map["User"]
+        Roles <- map["Roles"]
+        ActivityRights <- map["ActivityRights"]
+        UserWallet <- map["UserWallet"]
+        
     }
 }

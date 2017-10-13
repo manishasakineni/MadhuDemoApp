@@ -48,9 +48,9 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     
      var toolBar = UIToolbar()
     
-    var pickerData = ["Hitesh Modi" , "Kirit Modi" , "Ganesh Modi" , "Paresh Modi"]
+    var pickerData = ["Network1" , "Network2" , "Network3" , "Network3"]
     
-    var pickerData1 = ["madhu" , "babu" , "mani" , "naveen"]
+    var pickerData1 = ["Plan1" , "Plan2" , "Plan3" , "Plan4"]
     
     var pickerSample = Array<String>()
     

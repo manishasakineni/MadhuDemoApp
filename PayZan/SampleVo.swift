@@ -8,12 +8,13 @@
 
 import Foundation
 
-class RolesVo: Mappable {
+class SampleVo: Mappable {
     
     var UserId: String?
     var RoleId: String?
     
-    init(UserId: String?,RoleId: String?) {
+    init(UserId:String?,RoleId:String?) {
+        
         self.UserId = UserId
         self.RoleId = RoleId
     }
@@ -23,6 +24,7 @@ class RolesVo: Mappable {
     }
     
     func mapping(map: Map) {
+      
         UserId <- map["UserId"]
         RoleId <- map["RoleId"]
     }

@@ -54,7 +54,7 @@ class ServiceController: NSObject {
     }
     
     
-    func requestPOSTURL(strURL:NSString,postParams:NSDictionary,postHeaders:NSDictionary,successHandler:@escaping(_ _result:AnyObject)->Void,failureHandler:(_ _error:NSError)->Void) -> Void {
+    func requestPOSTURL(strURL:NSString,postParams:NSDictionary,postHeaders:NSDictionary,successHandler:@escaping(_ _result:Any)->Void,failureHandler:(_ _error:NSError)->Void) -> Void {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true

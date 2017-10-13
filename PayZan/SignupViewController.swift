@@ -19,8 +19,15 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
     
     @IBOutlet weak var headerView: UIView!
     
+    @IBOutlet weak var eyeBtn: UIButton!
+    
+    @IBOutlet weak var signupBtn: UIButton!
+    
     let serviceController = ServiceController()
     
+    @IBOutlet weak var facebookBtn: UIButton!
+    
+    @IBOutlet weak var googleBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +41,15 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
         
         mobileNumField.maxLength = 13
         mobileNumField.keyboardType = .phonePad
+        
+        signupBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
+        
+        signupBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+        
+        signupBtn.layer.cornerRadius = 5
+        
+        facebookBtn.layer.cornerRadius = 5
+        googleBtn.layer.cornerRadius = 5
 
         // Do any additional setup after loading the view.
     }

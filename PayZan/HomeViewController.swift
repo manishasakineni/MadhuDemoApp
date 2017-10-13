@@ -9,14 +9,14 @@
 import UIKit
 
 
-var imageArray = [UIImage(named:"mobile"),UIImage(named:"electricity"),UIImage(named:"event"),UIImage(named:"sport"),UIImage(named:"television"),UIImage(named:"internet"),UIImage(named:"water-tap"),UIImage(named:"landline")]
+var imageArray = [UIImage(named:"mobile"),UIImage(named:"electricity"),UIImage(named:"television"),UIImage(named:"landline"),UIImage(named:"television"),UIImage(named:"internet"),UIImage(named:"water-tap"),UIImage(named:"data-card")]
 
 var imageArray1 = [UIImage(named:"water-tap"),UIImage(named:"landline"),UIImage(named:"electricity"),UIImage(named:"event"),UIImage(named:"sport"),UIImage(named:"television"),UIImage(named:"mobile"),UIImage(named:"internet")]
 
 var imageArray2 = [UIImage(named:"mobile"),UIImage(named:"landline"),UIImage(named:"electricity"),UIImage(named:"event"),UIImage(named:"sport"),UIImage(named:"television"),UIImage(named:"water-tap"),UIImage(named:"internet")]
 //for label names
 
-var namesarra1 = ["Mobile","Electricity","Events","Sports","DTH","Internet","Water","Landline"]
+var namesarra1 = ["Mobile","Electricity","Cable TV","Landline","DTH","Internet","Water","data-card"]
 
 var namesarra2 = ["Water","Landline","Electricity","Events","Sports","DTH","Mobile","Internet"]
 
@@ -50,6 +50,9 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     
     @IBOutlet weak var myTransactionBtn: UIButton!
     
+    var userID:String?
+    var walletID:String?
+    
     var section1TitleArray = ["Mobile","LandLine","DTH","Electricity Bill","Payzan Wallet","Internet"]
     
      var iconsArray = [UIImage(named:"home_mobile_icon"),UIImage(named:"home_landline_icon"),UIImage(named:"home_cabletv_icon"),UIImage(named:"home_electricityr_icon"),UIImage(named:"home_mobile_icon"),UIImage(named:"home_internet_icon")]
@@ -62,6 +65,9 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        print("userID:\(userID!)")
+//        print("walletID:\(walletID!)")
         
         paySendBtn.layer.borderColor = UIColor.lightGray.cgColor
         paySendBtn.layer.borderWidth = 1.0
@@ -446,6 +452,31 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
             
             let rchargeViewController = self.storyboard?.instantiateViewController(withIdentifier: "RechargeViewController") as! RechargeViewController
             self.navigationController?.pushViewController(rchargeViewController, animated: true)
+        }
+        else if indexPath.item == 1 {
+            
+            let electricityViewController = self.storyboard?.instantiateViewController(withIdentifier: "ElectricityViewController") as! ElectricityViewController
+            self.navigationController?.pushViewController(electricityViewController, animated: true)
+        }
+        else if indexPath.item == 2 {
+            
+            let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "CableTvViewController") as! CableTvViewController
+            self.navigationController?.pushViewController(cableViewController, animated: true)
+        }
+        else if indexPath.item == 3 {
+            
+            let landViewController = self.storyboard?.instantiateViewController(withIdentifier: "LandlineViewController") as! LandlineViewController
+            self.navigationController?.pushViewController(landViewController, animated: true)
+        }
+        else if indexPath.item == 4 {
+            
+            let dthViewController = self.storyboard?.instantiateViewController(withIdentifier: "DTHViewController") as! DTHViewController
+            self.navigationController?.pushViewController(dthViewController, animated: true)
+        }
+        else if indexPath.item == 7 {
+            
+            let dthViewController = self.storyboard?.instantiateViewController(withIdentifier: "DatacardViewController") as! DatacardViewController
+            self.navigationController?.pushViewController(dthViewController, animated: true)
         }
     }
     

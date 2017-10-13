@@ -10,7 +10,9 @@ import Foundation
 
 
 //let baseUrl:String = "http://payzandev.azurewebsites.net/api/Account/"
-let baseUrl:String = "http://192.168.1.125/PayZanAPI/api/Account/"
+let baseUrl:String = "http://192.168.1.125/PayZanAPI/api/Register/"
+
+let walletUrl:String = "http://192.168.1.125/PayZanAPI/api/UserWallet/AddMoneyToUserWallet"
 
 
 let kNetworkStatusMessage = "Please check your internet connection!"

@@ -17,7 +17,7 @@ class OffersViewController: UIViewController,UITabBarControllerDelegate,UITabBar
         super.viewDidLoad()
         
     self.tabBarController?.delegate = self
-        self.title = "tab1"
+        
         // Do any additional setup after loading the view.
     }
 

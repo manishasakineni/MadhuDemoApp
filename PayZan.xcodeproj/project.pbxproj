@@ -47,8 +47,18 @@
 		35344DBD1F86824900E35C5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35344DBC1F86824900E35C5C /* GoogleService-Info.plist */; };
 		35442CE21F8DEA4D007798EC /* RechargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35442CE11F8DEA4D007798EC /* RechargeViewController.swift */; };
 		354CF19A1F9095B4004ADDAD /* UserVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1991F9095B4004ADDAD /* UserVo.swift */; };
-		354CF19C1F909751004ADDAD /* RolesVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF19B1F909751004ADDAD /* RolesVo.swift */; };
-		354CF19E1F90978B004ADDAD /* ActivityVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF19D1F90978B004ADDAD /* ActivityVo.swift */; };
+		354CF19C1F909751004ADDAD /* SampleVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF19B1F909751004ADDAD /* SampleVo.swift */; };
+		354CF19E1F90978B004ADDAD /* GetActVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF19D1F90978B004ADDAD /* GetActVo.swift */; };
+		354CF1AB1F90DAA4004ADDAD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1AA1F90DAA4004ADDAD /* BaseViewController.swift */; };
+		354CF1AD1F90E4BB004ADDAD /* ElectricityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1AC1F90E4BB004ADDAD /* ElectricityViewController.swift */; };
+		354CF1AF1F90F2B1004ADDAD /* CableTvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1AE1F90F2B1004ADDAD /* CableTvViewController.swift */; };
+		354CF1B11F90F91F004ADDAD /* DTHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1B01F90F91F004ADDAD /* DTHViewController.swift */; };
+		354CF1B31F90F93B004ADDAD /* DatacardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1B21F90F93B004ADDAD /* DatacardViewController.swift */; };
+		354CF1B51F910BDD004ADDAD /* LandlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1B41F910BDD004ADDAD /* LandlineViewController.swift */; };
+		354CF1B71F9117B1004ADDAD /* AddMoneyWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1B61F9117B1004ADDAD /* AddMoneyWalletViewController.swift */; };
+		354CF1B91F913E72004ADDAD /* GetUserWalletVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1B81F913E72004ADDAD /* GetUserWalletVo.swift */; };
+		354CF1BC1F9151AD004ADDAD /* ResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1BB1F9151AD004ADDAD /* ResultVo.swift */; };
+		354CF1BE1F9151C4004ADDAD /* WalletVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1BD1F9151C4004ADDAD /* WalletVo.swift */; };
 		3554C3191F8F457B0092EAC7 /* RechargeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3554C3181F8F457B0092EAC7 /* RechargeDetailViewController.swift */; };
 		3554C31B1F8F5C960092EAC7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3554C31A1F8F5C960092EAC7 /* ProfileViewController.swift */; };
 		3554C31D1F8F5CAE0092EAC7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3554C31C1F8F5CAE0092EAC7 /* EditProfileViewController.swift */; };
@@ -130,8 +140,18 @@
 		35344DBC1F86824900E35C5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		35442CE11F8DEA4D007798EC /* RechargeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RechargeViewController.swift; sourceTree = "<group>"; };
 		354CF1991F9095B4004ADDAD /* UserVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVo.swift; sourceTree = "<group>"; };
-		354CF19B1F909751004ADDAD /* RolesVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RolesVo.swift; sourceTree = "<group>"; };
-		354CF19D1F90978B004ADDAD /* ActivityVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityVo.swift; sourceTree = "<group>"; };
+		354CF19B1F909751004ADDAD /* SampleVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleVo.swift; sourceTree = "<group>"; };
+		354CF19D1F90978B004ADDAD /* GetActVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetActVo.swift; sourceTree = "<group>"; };
+		354CF1AA1F90DAA4004ADDAD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		354CF1AC1F90E4BB004ADDAD /* ElectricityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricityViewController.swift; sourceTree = "<group>"; };
+		354CF1AE1F90F2B1004ADDAD /* CableTvViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CableTvViewController.swift; sourceTree = "<group>"; };
+		354CF1B01F90F91F004ADDAD /* DTHViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTHViewController.swift; sourceTree = "<group>"; };
+		354CF1B21F90F93B004ADDAD /* DatacardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatacardViewController.swift; sourceTree = "<group>"; };
+		354CF1B41F910BDD004ADDAD /* LandlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandlineViewController.swift; sourceTree = "<group>"; };
+		354CF1B61F9117B1004ADDAD /* AddMoneyWalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyWalletViewController.swift; sourceTree = "<group>"; };
+		354CF1B81F913E72004ADDAD /* GetUserWalletVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserWalletVo.swift; sourceTree = "<group>"; };
+		354CF1BB1F9151AD004ADDAD /* ResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultVo.swift; sourceTree = "<group>"; };
+		354CF1BD1F9151C4004ADDAD /* WalletVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletVo.swift; sourceTree = "<group>"; };
 		3554C3181F8F457B0092EAC7 /* RechargeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RechargeDetailViewController.swift; sourceTree = "<group>"; };
 		3554C31A1F8F5C960092EAC7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3554C31C1F8F5CAE0092EAC7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +278,12 @@
 				3554C3181F8F457B0092EAC7 /* RechargeDetailViewController.swift */,
 				3554C31A1F8F5C960092EAC7 /* ProfileViewController.swift */,
 				3554C31C1F8F5CAE0092EAC7 /* EditProfileViewController.swift */,
+				354CF1AC1F90E4BB004ADDAD /* ElectricityViewController.swift */,
+				354CF1AE1F90F2B1004ADDAD /* CableTvViewController.swift */,
+				354CF1B01F90F91F004ADDAD /* DTHViewController.swift */,
+				354CF1B21F90F93B004ADDAD /* DatacardViewController.swift */,
+				354CF1B41F910BDD004ADDAD /* LandlineViewController.swift */,
+				354CF1B61F9117B1004ADDAD /* AddMoneyWalletViewController.swift */,
 				35CB9D191F8BB2B900BF1073 /* OffersViewController.swift */,
 				35344DB41F862B3C00E35C5C /* SignupViewController.swift */,
 			);
@@ -267,11 +293,13 @@
 		35344DB11F861B8400E35C5C /* MapperVo */ = {
 			isa = PBXGroup;
 			children = (
+				354CF1BA1F915185004ADDAD /* WalletUser */,
 				35344DAA1F86111100E35C5C /* RespVo.swift */,
 				35344DAC1F8611B100E35C5C /* LoginVo.swift */,
-				354CF19D1F90978B004ADDAD /* ActivityVo.swift */,
-				354CF19B1F909751004ADDAD /* RolesVo.swift */,
+				354CF19D1F90978B004ADDAD /* GetActVo.swift */,
+				354CF19B1F909751004ADDAD /* SampleVo.swift */,
 				354CF1991F9095B4004ADDAD /* UserVo.swift */,
+				354CF1B81F913E72004ADDAD /* GetUserWalletVo.swift */,
 				35344DB61F862FD400E35C5C /* SignupVo.swift */,
 			);
 			name = MapperVo;
@@ -285,6 +313,15 @@
 				35CB9D0E1F8B7B0700BF1073 /* ServiceController.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		354CF1BA1F915185004ADDAD /* WalletUser */ = {
+			isa = PBXGroup;
+			children = (
+				354CF1BB1F9151AD004ADDAD /* ResultVo.swift */,
+				354CF1BD1F9151C4004ADDAD /* WalletVo.swift */,
+			);
+			name = WalletUser;
 			sourceTree = "<group>";
 		};
 		3554C31E1F8F5D850092EAC7 /* Profile */ = {
@@ -383,6 +420,7 @@
 				35344DB01F861B4200E35C5C /* Controllers */,
 				35344DAF1F861B3700E35C5C /* Views */,
 				35E64C8F1F84DF5200E2CA65 /* AppDelegate.swift */,
+				354CF1AA1F90DAA4004ADDAD /* BaseViewController.swift */,
 				35E64C911F84DF5200E2CA65 /* ViewController.swift */,
 				35E64C931F84DF5200E2CA65 /* Main.storyboard */,
 				35E64C961F84DF5200E2CA65 /* Assets.xcassets */,
@@ -580,6 +618,7 @@
 				3569C1D21F87468C00152B80 /* LoadingOverLay.swift in Sources */,
 				35344DAB1F86111100E35C5C /* RespVo.swift in Sources */,
 				35344DA01F8610C700E35C5C /* MapError.swift in Sources */,
+				354CF1AB1F90DAA4004ADDAD /* BaseViewController.swift in Sources */,
 				350CCD191F88A54F003495B6 /* HomeCollectionViewCell.swift in Sources */,
 				3554C3191F8F457B0092EAC7 /* RechargeDetailViewController.swift in Sources */,
 				35344D9E1F8610C700E35C5C /* ISO8601DateTransform.swift in Sources */,
@@ -598,6 +637,8 @@
 				35CB9D141F8B7D1A00BF1073 /* UIView+Toast.m in Sources */,
 				3554C3351F8F5DCD0092EAC7 /* GenderTableViewCell.swift in Sources */,
 				3554C3331F8F5DCD0092EAC7 /* TableViewCell2.swift in Sources */,
+				354CF1AF1F90F2B1004ADDAD /* CableTvViewController.swift in Sources */,
+				354CF1B51F910BDD004ADDAD /* LandlineViewController.swift in Sources */,
 				3554C32F1F8F5DCD0092EAC7 /* ListTableViewCell.swift in Sources */,
 				3554C33C1F8F9FC10092EAC7 /* Colors.swift in Sources */,
 				3569C1DB1F8762B800152B80 /* Reachability.swift in Sources */,
@@ -608,8 +649,11 @@
 				35344DA61F8610C700E35C5C /* TransformOf.swift in Sources */,
 				354CF19A1F9095B4004ADDAD /* UserVo.swift in Sources */,
 				3554C3311F8F5DCD0092EAC7 /* TableViewCell1.swift in Sources */,
-				354CF19C1F909751004ADDAD /* RolesVo.swift in Sources */,
+				354CF1B71F9117B1004ADDAD /* AddMoneyWalletViewController.swift in Sources */,
+				354CF19C1F909751004ADDAD /* SampleVo.swift in Sources */,
 				35442CE21F8DEA4D007798EC /* RechargeViewController.swift in Sources */,
+				354CF1BC1F9151AD004ADDAD /* ResultVo.swift in Sources */,
+				354CF1B11F90F91F004ADDAD /* DTHViewController.swift in Sources */,
 				35CB9D181F8B7DF600BF1073 /* MBProgressHUD.m in Sources */,
 				35344DA51F8610C700E35C5C /* ToJSON.swift in Sources */,
 				35344DA11F8610C700E35C5C /* Mappable.swift in Sources */,
@@ -624,14 +668,18 @@
 				35E64C921F84DF5200E2CA65 /* ViewController.swift in Sources */,
 				350CCD1D1F88A5BE003495B6 /* IconTableViewCell.swift in Sources */,
 				35344D9F1F8610C700E35C5C /* Map.swift in Sources */,
+				354CF1BE1F9151C4004ADDAD /* WalletVo.swift in Sources */,
 				35344D991F8610C700E35C5C /* EnumTransform.swift in Sources */,
-				354CF19E1F90978B004ADDAD /* ActivityVo.swift in Sources */,
+				354CF1B31F90F93B004ADDAD /* DatacardViewController.swift in Sources */,
+				354CF19E1F90978B004ADDAD /* GetActVo.swift in Sources */,
+				354CF1B91F913E72004ADDAD /* GetUserWalletVo.swift in Sources */,
 				3569C1E61F876D6800152B80 /* MenuTableViewCell.swift in Sources */,
 				35344DAD1F8611B100E35C5C /* LoginVo.swift in Sources */,
 				35344D9D1F8610C700E35C5C /* IntegerOperators.swift in Sources */,
 				3524CE3B1F8D06B400959172 /* ImageTint.swift in Sources */,
 				3554C31D1F8F5CAE0092EAC7 /* EditProfileViewController.swift in Sources */,
 				3569C1E91F8773CA00152B80 /* SWRevealViewController.m in Sources */,
+				354CF1AD1F90E4BB004ADDAD /* ElectricityViewController.swift in Sources */,
 				35CB9D0F1F8B7B0700BF1073 /* ServiceController.swift in Sources */,
 				35E64C901F84DF5200E2CA65 /* AppDelegate.swift in Sources */,
 				35CB9D0B1F8B77EE00BF1073 /* URLStrings.swift in Sources */,

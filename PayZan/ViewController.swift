@@ -11,7 +11,7 @@ import FBSDKLoginKit
 import Google
 import GoogleSignIn
 
-class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,GIDSignInDelegate,SWRevealViewControllerDelegate {
+class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate,GIDSignInDelegate,SWRevealViewControllerDelegate {
     
     @IBOutlet weak var barBtn: UIBarButtonItem!
     
@@ -20,6 +20,14 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
     @IBOutlet weak var passwordField: UITextField!
     
     @IBOutlet weak var headerView: UIView!
+    
+    @IBOutlet weak var eyeBtnOutlet: UIButton!
+    
+    @IBOutlet weak var loginBtn: UIButton!
+    
+    @IBOutlet weak var facebookBtn: UIButton!
+    
+    @IBOutlet weak var googleBtn: UIButton!
     
     
     var dict : [String : AnyObject]!
@@ -41,9 +49,19 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
         mobileField.delegate = self
         passwordField.delegate = self
         
+        loginBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
         
-        mobileField.layer.cornerRadius = 5.0
-        passwordField.layer.cornerRadius = 5.0
+        loginBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+        
+        loginBtn.layer.cornerRadius = 5
+        
+        facebookBtn.layer.cornerRadius = 5
+        googleBtn.layer.cornerRadius = 5
+        
+        
+        
+//        mobileField.layer.cornerRadius = 5.0
+//        passwordField.layer.cornerRadius = 5.0
         
         sideMenus()
         
@@ -137,6 +155,7 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
             let mobileNumber:String = mobileField.text!
             let pword:String = passwordField.text!
             
+            
             let dictParams = ["userName":mobileNumber,"password":pword] as NSDictionary
             
             print("dic params \(dictParams)")
@@ -151,9 +170,9 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
                         
                         let respVO:LoginVo = Mapper().map(JSONObject: result)!
                         
+                        
                         print("responseString = \(respVO)")
-                        
-                        
+
                         
                         let statusCode = respVO.StatusCode
                                         
@@ -165,9 +184,19 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
                         if statusCode == 200
                         {
                             
-                            let roleId = respVO.Roles?[0].RoleId
+                            let userId = respVO.data?.UserWallet?.UserId
                             
-                            print("roleId:\(String(describing: roleId))")
+                            let walletId = respVO.data?.UserWallet?.WalletId
+                            
+                            let defaults = UserDefaults.standard
+                            
+                            // Save String value to UserDefaults
+                            // Using defaults.set(value: Any?, forKey: String)
+                            defaults.set(userId, forKey: "userIDD")
+                            
+                            defaults.set(walletId, forKey: "walletIDD")
+                            
+                            print("roleId:\(String(describing: userId))")
                             
                             let resObj:UserVo  = respVO.data!
                             
@@ -178,8 +207,11 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
 //                            let dataObj =   (result.value(forKey: "data") as! NSDictionary) as! [String : AnyObject]
 //                            print("dataObj:",dataObj)
                             
-                            
                             let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                            
+                            homeViewController.userID = userId
+                            homeViewController.walletID = walletId
+                            
                             self.navigationController?.pushViewController(homeViewController, animated: true)
 
                             
@@ -202,7 +234,7 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
                             
 //                            let alertController = UIAlertController(title: "", message: result.value(forKey:"statusMessage") as? String , preferredStyle: UIAlertControllerStyle.alert)
                             
-                            let alertController = UIAlertController(title: "", message: "Network Error" , preferredStyle: UIAlertControllerStyle.alert)
+                            let alertController = UIAlertController(title: "", message: "Services not Working" , preferredStyle: UIAlertControllerStyle.alert)
                             
                             let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
                             }
@@ -222,6 +254,10 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
     @IBAction func fbBtnAction(_ sender: Any) {
         
         
+        MBProgressHUD.showAdded(to:appDelegate.window,animated:true)
+        
+        MBProgressHUD.hide(for:appDelegate.window,animated:true)
+        
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if (error == nil){
@@ -234,8 +270,10 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
                         self.navigationController?.pushViewController(homeView, animated: true)
                         
                         self.getFBUserData()
+                        
                         //                        fbLoginManager.logOut()
                     }
+                    
                 }
             }
         }
@@ -260,19 +298,21 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
                         
                         print("name:\(String(describing: name))")
                     }
-                    
-                    
-                    
+                
                     
                 }
             })
         }
-        
+       
     }
     
     @IBAction func gmailBtnAction(_ sender: Any) {
         
+        MBProgressHUD.showAdded(to:appDelegate.window,animated:true)
+        
        GIDSignIn.sharedInstance().signIn()
+        
+        
     }
     
     
@@ -285,6 +325,7 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
         
         if UIDevice.current.userInterfaceIdiom == .phone {
             //            if UserDefaults.standard.bool(forKey: "checkLogin") {
+            
             
             
             let userId = user.userID                  // For client-side use only!
@@ -306,6 +347,7 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
             let homeView = self.storyboard?.instantiateViewController(withIdentifier:"HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(homeView, animated: true)
             
+            MBProgressHUD.hide(for:appDelegate.window,animated:true)
         }
         else if UIDevice.current.userInterfaceIdiom == .pad {
             
@@ -326,6 +368,7 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
             let homeView = self.storyboard?.instantiateViewController(withIdentifier:"HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(homeView, animated: true)
             
+            MBProgressHUD.hide(for:appDelegate.window,animated:true)
         }
         
         Thread.sleep(forTimeInterval: 1.0)
@@ -350,5 +393,25 @@ class ViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate,G
         self.navigationController?.pushViewController(signupViewController, animated: true)
         
     }
+    
+    @IBAction func eyeBtnAction(_ sender: Any) {
+        
+        if eyeBtnOutlet.tag == 0
+        {
+            passwordField.isSecureTextEntry = false
+            eyeBtnOutlet.tag = 1
+        }
+            
+        else
+            
+        {
+            passwordField.isSecureTextEntry = true
+            eyeBtnOutlet.tag = 0
+            
+            
+        }
+    }
+    
+    
 }
 

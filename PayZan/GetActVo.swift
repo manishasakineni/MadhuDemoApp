@@ -8,21 +8,22 @@
 
 import Foundation
 
-class ActivityVo: Mappable {
+class GetActVo: Mappable {
     
     var RoleId: String?
     var ActivityRightId: String?
     var CreatedByUserId: String?
     var CreatedDate: String?
-    var UpdatedByUserId: Any?
+    var UpdatedByUserId: Int?
     var UpdatedDate: String?
     
-    init(RoleId: String?,ActivityRightId: String?,CreatedByUserId: String?,CreatedDate:String?,UpdatedByUserId: Any?,UpdatedDate: String?) {
+    init(RoleId:String?,ActivityRightId:String?,CreatedByUserId:String?,CreatedDate:String?,UpdatedByUserId:Int?,UpdatedDate:String?) {
+        
         self.RoleId = RoleId
         self.ActivityRightId = ActivityRightId
         self.CreatedByUserId = CreatedByUserId
         self.CreatedDate = CreatedDate
-        self.UpdatedByUserId = UpdatedByUserId
+        self.UpdatedByUserId = UpdatedByUserId!
         self.UpdatedDate = UpdatedDate
     }
     
