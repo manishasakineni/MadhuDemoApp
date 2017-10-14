@@ -42,6 +42,9 @@ class LandlineViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         rechargeBtn.layer.cornerRadius = 5
         
         operatorField.delegate = self
+        
+        stdNumField.keyboardType = .phonePad
+        amountField.keyboardType = .numberPad
 
         // Do any additional setup after loading the view.
     }

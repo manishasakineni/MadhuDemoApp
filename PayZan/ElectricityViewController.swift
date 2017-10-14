@@ -37,6 +37,9 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
         
         payNowBtn.layer.cornerRadius = 5
         
+        serviceNumField.keyboardType = .numberPad
+        amountField.keyboardType = .numberPad
+        
         districtsFiled.delegate = self
 
         // Do any additional setup after loading the view.

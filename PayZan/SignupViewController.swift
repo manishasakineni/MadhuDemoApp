@@ -137,19 +137,13 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
                             
                             print("StatusCode:\(String(describing: statusCode))")
                             
-                            //                        print("result:\(result)")
-                            //
-                            //                        let strStatusCode = result.value(forKey: "StatusCode") as! Int
-                            //                        print("strStatusCode",strStatusCode)
                             
                             if statusCode == 200
                             {
                                 
                                 
-                                //                            let dataObj =  result.value(forKey: "StatusMessage") as! String
-                                //
-                                //                            print("dataObj:",dataObj)
-                                
+                                let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                                self.navigationController?.pushViewController(homeViewController, animated: true)
                                 
                                 let statusMsg  = respVO.StatusMessage!
                                 
@@ -162,10 +156,13 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
                                 alertController.addAction(DestructiveAction)
                                 self.present(alertController, animated: true, completion: nil)
                                 
+                                
+                                
+                                
                             }
                             else if statusCode == 401{
                                 
-                                let alertController = UIAlertController(title: "", message: "error" , preferredStyle: UIAlertControllerStyle.alert)
+                                let alertController = UIAlertController(title: "", message: "Network error" , preferredStyle: UIAlertControllerStyle.alert)
                                 
                                 let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
                                 }
@@ -241,6 +238,23 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func eyeAction(_ sender: Any) {
+        
+        if eyeBtn.tag == 0
+        {
+            paswdField.isSecureTextEntry = false
+            eyeBtn.tag = 1
+        }
+            
+        else
+            
+        {
+            paswdField.isSecureTextEntry = true
+            eyeBtn.tag = 0
+            
+            
+        }
+    }
     
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {

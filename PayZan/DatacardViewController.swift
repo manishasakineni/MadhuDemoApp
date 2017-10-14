@@ -39,6 +39,9 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         payNowBtn.layer.cornerRadius = 5
         
         operatorField.delegate = self
+        
+        datacardNumField.keyboardType = .numberPad
+        amountField.keyboardType = .numberPad
 
         // Do any additional setup after loading the view.
     }
@@ -131,5 +134,41 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     @IBAction func payNowAction(_ sender: Any) {
     }
 
+    @IBAction func prepaidAction(_ sender: Any) {
+        
+        if (postPaidCheckBox.isSelected == true)
+        {
+            postPaidCheckBox.setBackgroundImage(UIImage(named: "unselectedBox"), for: UIControlState.normal)
+            prepaidCheckBox.setBackgroundImage(UIImage(named: "selectedBox"), for: UIControlState.normal)
+            
+            postPaidCheckBox.isSelected = false
+        }
+        else
+        {
+            postPaidCheckBox.setBackgroundImage(UIImage(named: "selectedBox"), for: UIControlState.normal)
+            prepaidCheckBox.setBackgroundImage(UIImage(named: "unselectedBox"), for: UIControlState.normal)
+            
+            
+            postPaidCheckBox.isSelected = true
+        }
+    }
 
+    @IBAction func postpaidAction(_ sender: Any) {
+        
+        
+        if (postPaidCheckBox.isSelected == true)
+        {
+            postPaidCheckBox.setBackgroundImage(UIImage(named: "unselectedBox"), for: UIControlState.normal)
+            prepaidCheckBox.setBackgroundImage(UIImage(named: "selectedBox"), for: UIControlState.normal)
+            
+            postPaidCheckBox.isSelected = false
+        }
+        else
+        {
+            postPaidCheckBox.setBackgroundImage(UIImage(named: "selectedBox"), for: UIControlState.normal)
+            prepaidCheckBox.setBackgroundImage(UIImage(named: "unselectedBox"), for: UIControlState.normal)
+
+            postPaidCheckBox.isSelected = true
+        }
+    }
 }

@@ -37,6 +37,8 @@ class DTHViewController: UIViewController,UIPickerViewDelegate, UIPickerViewData
         rechargeBtn.layer.cornerRadius = 5
         
         operatorField.delegate = self
+        
+        amountField.keyboardType = .numberPad
 
         // Do any additional setup after loading the view.
     }

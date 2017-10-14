@@ -32,6 +32,9 @@ class AddMoneyWalletViewController: UIViewController {
         
         addMoneyBtn.layer.cornerRadius = 5
         
+        walletAmountField.keyboardType = .numberPad
+        
+        
         let defaults = UserDefaults.standard
         
         if let userid = defaults.string(forKey: "userIDD") {
@@ -106,6 +109,14 @@ class AddMoneyWalletViewController: UIViewController {
                         
                         let successMsg = respVO.EndUserMessage
                         
+                        let waleetBalance = respVO.Result?.Balance
+                        
+                        let defaults = UserDefaults.standard
+                        
+                        // Save String value to UserDefaults
+                        // Using defaults.set(value: Any?, forKey: String)
+                        defaults.set(waleetBalance, forKey: "walletAmount")
+                        
                         let alertController = UIAlertController(title: "Success", message: successMsg! , preferredStyle: UIAlertControllerStyle.alert)
                         
                         let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
@@ -113,6 +124,7 @@ class AddMoneyWalletViewController: UIViewController {
                         alertController.addAction(DestructiveAction)
                         self.present(alertController, animated: true, completion: nil)
                     
+                        
                         
                         
                     }

@@ -29,6 +29,9 @@ class CableTvViewController: UIViewController {
         payNowBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
         
         payNowBtn.layer.cornerRadius = 5
+        
+        accountNumField.keyboardType = .numberPad
+        amountField.keyboardType = .numberPad
 
         // Do any additional setup after loading the view.
     }

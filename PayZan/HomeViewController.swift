@@ -62,12 +62,25 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     
     var myNewView = UIView()
     
+    var walletBal:String?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        print("userID:\(userID!)")
 //        print("walletID:\(walletID!)")
+        
+        let defaults = UserDefaults.standard
+        
+        if let walletAmount = defaults.string(forKey: "walletAmount") {
+            
+            walletBal = walletAmount
+            
+            walletLabel.text = walletBal
+            
+            print("defaults savedString: \(walletAmount)")
+        }
         
         paySendBtn.layer.borderColor = UIColor.lightGray.cgColor
         paySendBtn.layer.borderWidth = 1.0
