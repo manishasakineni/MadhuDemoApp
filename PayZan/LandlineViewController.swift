@@ -35,11 +35,11 @@ class LandlineViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rechargeBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-        
-        rechargeBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-        
-        rechargeBtn.layer.cornerRadius = 5
+//        rechargeBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
+//        
+//        rechargeBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+//        
+//        rechargeBtn.layer.cornerRadius = 5
         
         operatorField.delegate = self
         
@@ -67,7 +67,8 @@ class LandlineViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
+//            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
         // Adding Button ToolBar

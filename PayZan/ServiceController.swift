@@ -102,6 +102,7 @@ class ServiceController: NSObject {
                 appDelegate.window?.makeToast(error.localizedDescription, duration:kToastDuration , position:CSToastPositionCenter)
             }
         }
+        
         let task = URLSession.shared.dataTask(with: request as URLRequest) {(data, response, error) in
             
             print(data)

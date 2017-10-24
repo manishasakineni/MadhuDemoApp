@@ -55,7 +55,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     
     var section1TitleArray = ["Mobile","LandLine","DTH","Electricity Bill","Payzan Wallet","Internet"]
     
-     var iconsArray = [UIImage(named:"home_mobile_icon"),UIImage(named:"home_landline_icon"),UIImage(named:"home_cabletv_icon"),UIImage(named:"home_electricityr_icon"),UIImage(named:"home_mobile_icon"),UIImage(named:"home_internet_icon")]
+     var iconsArray = [UIImage(named:"mobileImg"),UIImage(named:"mobileImg"),UIImage(named:"mobileImg"),UIImage(named:"mobileImg"),UIImage(named:"mobileImg"),UIImage(named:"home_internet_icon")]
     
     var scrollView: UIScrollView!
     var containerView = UIView()
@@ -103,7 +103,15 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         self.scrollView = UIScrollView()
         self.scrollView.delegate = self
-        self.scrollView.contentSize = CGSize(width: 1000, height: 180)
+        self.scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 80)
+        
+        self.myNewView = UIView(frame: CGRect(x: 10, y: 200, width: self.view.frame.size.width-20, height: 300))
+        
+//        self.myNewView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        
+        myNewView.addSubview(scrollView)
+        
+        scrollView.showsHorizontalScrollIndicator = false
         
         scrollView.isScrollEnabled = true
         
@@ -114,8 +122,8 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         self.scrollView.alwaysBounceHorizontal = true
         
         let myImages = ["addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg"]
-        let imageWidth:CGFloat = 380
-        let imageHeight:CGFloat = 180
+        let imageWidth:CGFloat = 300
+        let imageHeight:CGFloat = 300
         var xPosition:CGFloat = 0
         var scrollViewContentSize:CGFloat=0;
         
@@ -159,7 +167,34 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         self.tabBarController?.tabBar.isHidden = false
         
+        let defaults = UserDefaults.standard
+        
+        if let walletAmount = defaults.string(forKey: "walletAmount") {
+            
+            walletBal = walletAmount
+            
+            walletLabel.text = walletBal
+            
+            print("defaults savedString: \(walletAmount)")
+        }
+        
         super.viewDidAppear(true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let defaults = UserDefaults.standard
+        
+        if let walletAmount = defaults.string(forKey: "walletAmount") {
+            
+            walletBal = walletAmount
+            
+            walletLabel.text = walletBal
+            
+            print("defaults savedString: \(walletAmount)")
+        }
+
     }
     
     override func viewDidLayoutSubviews() {
@@ -252,10 +287,10 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         var height:CGFloat = CGFloat()
         
         if indexPath.row == 0 {
-            height = 380
+            height = 400
         }
         else if indexPath.row == 1{
-            height = 250
+            height = 300
         }
         else {
             
@@ -276,13 +311,9 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         profileCell.homeColeectionVW.register(UINib.init(nibName: "HomeCollectionViewCell", bundle: nil),
                                             forCellWithReuseIdentifier: "HomeCollectionViewCell")
         
+        profileCell.selectionStyle = .none
+        
         if(indexPath.row == 0){
-            
-            
-             self.myNewView = UIView(frame: CGRect(x: 10, y: 200, width: 395, height: 180))
-            
-            
-             myNewView.addSubview(scrollView)
             
             
             profileCell.contentView.addSubview(myNewView)
@@ -347,6 +378,25 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+//        if section == 0 {
+//         
+//    
+//          if collectionView.tag == 0 {
+//            
+//            return imageArray.count
+//            
+//            }
+//            
+//        }else if section == 1 {
+//            
+//            if collectionView.tag == 1{
+//                
+//                return imageArray1.count
+//            
+//            }
+//            
+//        }
+        
         if collectionView.tag == 0 {
             
             return imageArray.count
@@ -366,19 +416,24 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        if indexPath.row == 0 {
+            
+            print(" indexPath:\( indexPath.row)")
+        }
+        
         if collectionView.tag == 0 {
             
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
             
-            cell.productIMG.image =   imageArray[ indexPath.row]
+            cell.productIMG.image = imageArray[ indexPath.row]
             cell.nameLBL.text = namesarra1[indexPath.row]
             
             if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                 layout.scrollDirection = .vertical
             }
             
-            cell.contentView.layer.cornerRadius = 20
+            cell.contentView.layer.cornerRadius = 10
             cell.contentView.layer.borderWidth = 1.0
             
             cell.contentView.layer.borderColor = UIColor.clear.cgColor
@@ -388,7 +443,7 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
             cell.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
             cell.layer.shadowRadius = 5.0
             cell.layer.shadowOpacity = 1.0
-            cell.layer.cornerRadius = 15
+            cell.layer.cornerRadius = 10
             cell.layer.masksToBounds = false
             cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
 

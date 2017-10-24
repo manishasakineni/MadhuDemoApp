@@ -45,6 +45,7 @@
 		35344DB91F863B5900E35C5C /* TextFieldMaxLengths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35344DB81F863B5900E35C5C /* TextFieldMaxLengths.swift */; };
 		35344DBB1F863B6500E35C5C /* NoCopyPasteUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35344DBA1F863B6500E35C5C /* NoCopyPasteUITextField.swift */; };
 		35344DBD1F86824900E35C5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35344DBC1F86824900E35C5C /* GoogleService-Info.plist */; };
+		353EB9BC1F9F06ED00AA67E9 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */; };
 		35442CE21F8DEA4D007798EC /* RechargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35442CE11F8DEA4D007798EC /* RechargeViewController.swift */; };
 		354CF19A1F9095B4004ADDAD /* UserVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1991F9095B4004ADDAD /* UserVo.swift */; };
 		354CF19C1F909751004ADDAD /* SampleVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF19B1F909751004ADDAD /* SampleVo.swift */; };
@@ -59,6 +60,8 @@
 		354CF1B91F913E72004ADDAD /* GetUserWalletVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1B81F913E72004ADDAD /* GetUserWalletVo.swift */; };
 		354CF1BC1F9151AD004ADDAD /* ResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1BB1F9151AD004ADDAD /* ResultVo.swift */; };
 		354CF1BE1F9151C4004ADDAD /* WalletVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1BD1F9151C4004ADDAD /* WalletVo.swift */; };
+		355120F51F948E4E00C9AD9D /* OperatorVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355120F41F948E4E00C9AD9D /* OperatorVo.swift */; };
+		355120F71F948EED00C9AD9D /* ListResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355120F61F948EED00C9AD9D /* ListResultVo.swift */; };
 		3554C3191F8F457B0092EAC7 /* RechargeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3554C3181F8F457B0092EAC7 /* RechargeDetailViewController.swift */; };
 		3554C31B1F8F5C960092EAC7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3554C31A1F8F5C960092EAC7 /* ProfileViewController.swift */; };
 		3554C31D1F8F5CAE0092EAC7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3554C31C1F8F5CAE0092EAC7 /* EditProfileViewController.swift */; };
@@ -77,6 +80,8 @@
 		3554C3391F8F5DCD0092EAC7 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3554C32B1F8F5DCD0092EAC7 /* LoginTableViewCell.swift */; };
 		3554C33A1F8F5DCD0092EAC7 /* LoginTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3554C32C1F8F5DCD0092EAC7 /* LoginTableViewCell.xib */; };
 		3554C33C1F8F9FC10092EAC7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3554C33B1F8F9FC10092EAC7 /* Colors.swift */; };
+		356651891F9DC7A300330D33 /* MyTransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356651871F9DC7A300330D33 /* MyTransactionTableViewCell.swift */; };
+		3566518A1F9DC7A300330D33 /* MyTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356651881F9DC7A300330D33 /* MyTransactionTableViewCell.xib */; };
 		3569C1D21F87468C00152B80 /* LoadingOverLay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569C1D11F87468C00152B80 /* LoadingOverLay.swift */; };
 		3569C1DB1F8762B800152B80 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569C1D81F8762B800152B80 /* Reachability.swift */; };
 		3569C1DD1F87631100152B80 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3569C1DC1F87631100152B80 /* SystemConfiguration.framework */; };
@@ -138,6 +143,7 @@
 		35344DB81F863B5900E35C5C /* TextFieldMaxLengths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldMaxLengths.swift; sourceTree = "<group>"; };
 		35344DBA1F863B6500E35C5C /* NoCopyPasteUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoCopyPasteUITextField.swift; sourceTree = "<group>"; };
 		35344DBC1F86824900E35C5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		35442CE11F8DEA4D007798EC /* RechargeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RechargeViewController.swift; sourceTree = "<group>"; };
 		354CF1991F9095B4004ADDAD /* UserVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVo.swift; sourceTree = "<group>"; };
 		354CF19B1F909751004ADDAD /* SampleVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleVo.swift; sourceTree = "<group>"; };
@@ -152,6 +158,8 @@
 		354CF1B81F913E72004ADDAD /* GetUserWalletVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserWalletVo.swift; sourceTree = "<group>"; };
 		354CF1BB1F9151AD004ADDAD /* ResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultVo.swift; sourceTree = "<group>"; };
 		354CF1BD1F9151C4004ADDAD /* WalletVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletVo.swift; sourceTree = "<group>"; };
+		355120F41F948E4E00C9AD9D /* OperatorVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorVo.swift; sourceTree = "<group>"; };
+		355120F61F948EED00C9AD9D /* ListResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResultVo.swift; sourceTree = "<group>"; };
 		3554C3181F8F457B0092EAC7 /* RechargeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RechargeDetailViewController.swift; sourceTree = "<group>"; };
 		3554C31A1F8F5C960092EAC7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3554C31C1F8F5CAE0092EAC7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +178,8 @@
 		3554C32B1F8F5DCD0092EAC7 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
 		3554C32C1F8F5DCD0092EAC7 /* LoginTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginTableViewCell.xib; sourceTree = "<group>"; };
 		3554C33B1F8F9FC10092EAC7 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		356651871F9DC7A300330D33 /* MyTransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTransactionTableViewCell.swift; sourceTree = "<group>"; };
+		356651881F9DC7A300330D33 /* MyTransactionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTransactionTableViewCell.xib; sourceTree = "<group>"; };
 		3569C1D11F87468C00152B80 /* LoadingOverLay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingOverLay.swift; sourceTree = "<group>"; };
 		3569C1D81F8762B800152B80 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		3569C1DC1F87631100152B80 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -248,6 +258,7 @@
 				3569C1D51F8762A100152B80 /* Network */,
 				35344DB11F861B8400E35C5C /* MapperVo */,
 				35344DBA1F863B6500E35C5C /* NoCopyPasteUITextField.swift */,
+				353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */,
 				3554C33B1F8F9FC10092EAC7 /* Colors.swift */,
 				35344DB81F863B5900E35C5C /* TextFieldMaxLengths.swift */,
 				3569C1D11F87468C00152B80 /* LoadingOverLay.swift */,
@@ -259,6 +270,7 @@
 		35344DAF1F861B3700E35C5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				356651861F9DC75500330D33 /* MyTransaction */,
 				3554C31E1F8F5D850092EAC7 /* Profile */,
 				350CCD1B1F88A5BE003495B6 /* IconTableViewCell.swift */,
 				350CCD1C1F88A5BE003495B6 /* IconTableViewCell.xib */,
@@ -293,13 +305,9 @@
 		35344DB11F861B8400E35C5C /* MapperVo */ = {
 			isa = PBXGroup;
 			children = (
+				355120F31F948DC000C9AD9D /* Operator */,
+				355120F21F948D9000C9AD9D /* Login */,
 				354CF1BA1F915185004ADDAD /* WalletUser */,
-				35344DAA1F86111100E35C5C /* RespVo.swift */,
-				35344DAC1F8611B100E35C5C /* LoginVo.swift */,
-				354CF19D1F90978B004ADDAD /* GetActVo.swift */,
-				354CF19B1F909751004ADDAD /* SampleVo.swift */,
-				354CF1991F9095B4004ADDAD /* UserVo.swift */,
-				354CF1B81F913E72004ADDAD /* GetUserWalletVo.swift */,
 				35344DB61F862FD400E35C5C /* SignupVo.swift */,
 			);
 			name = MapperVo;
@@ -324,6 +332,28 @@
 			name = WalletUser;
 			sourceTree = "<group>";
 		};
+		355120F21F948D9000C9AD9D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				35344DAA1F86111100E35C5C /* RespVo.swift */,
+				35344DAC1F8611B100E35C5C /* LoginVo.swift */,
+				354CF19D1F90978B004ADDAD /* GetActVo.swift */,
+				354CF19B1F909751004ADDAD /* SampleVo.swift */,
+				354CF1991F9095B4004ADDAD /* UserVo.swift */,
+				354CF1B81F913E72004ADDAD /* GetUserWalletVo.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		355120F31F948DC000C9AD9D /* Operator */ = {
+			isa = PBXGroup;
+			children = (
+				355120F41F948E4E00C9AD9D /* OperatorVo.swift */,
+				355120F61F948EED00C9AD9D /* ListResultVo.swift */,
+			);
+			name = Operator;
+			sourceTree = "<group>";
+		};
 		3554C31E1F8F5D850092EAC7 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +373,15 @@
 				3554C32C1F8F5DCD0092EAC7 /* LoginTableViewCell.xib */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		356651861F9DC75500330D33 /* MyTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				356651871F9DC7A300330D33 /* MyTransactionTableViewCell.swift */,
+				356651881F9DC7A300330D33 /* MyTransactionTableViewCell.xib */,
+			);
+			name = MyTransaction;
 			sourceTree = "<group>";
 		};
 		3569C1D51F8762A100152B80 /* Network */ = {
@@ -484,6 +523,7 @@
 				TargetAttributes = {
 					35E64C8B1F84DF5200E2CA65 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = XGNG3P39B7;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -520,6 +560,7 @@
 				3554C3301F8F5DCD0092EAC7 /* ListTableViewCell.xib in Resources */,
 				3554C3321F8F5DCD0092EAC7 /* TableViewCell1.xib in Resources */,
 				35E64C971F84DF5200E2CA65 /* Assets.xcassets in Resources */,
+				3566518A1F9DC7A300330D33 /* MyTransactionTableViewCell.xib in Resources */,
 				3554C32E1F8F5DCD0092EAC7 /* ProfileTableViewCell.xib in Resources */,
 				3554C3361F8F5DCD0092EAC7 /* GenderTableViewCell.xib in Resources */,
 				3554C3381F8F5DCD0092EAC7 /* SignOutTableViewCell.xib in Resources */,
@@ -620,12 +661,15 @@
 				35344DA01F8610C700E35C5C /* MapError.swift in Sources */,
 				354CF1AB1F90DAA4004ADDAD /* BaseViewController.swift in Sources */,
 				350CCD191F88A54F003495B6 /* HomeCollectionViewCell.swift in Sources */,
+				353EB9BC1F9F06ED00AA67E9 /* ShadowView.swift in Sources */,
 				3554C3191F8F457B0092EAC7 /* RechargeDetailViewController.swift in Sources */,
 				35344D9E1F8610C700E35C5C /* ISO8601DateTransform.swift in Sources */,
 				350CCD151F88A516003495B6 /* HomeTableViewCell.swift in Sources */,
 				3554C32D1F8F5DCD0092EAC7 /* ProfileTableViewCell.swift in Sources */,
 				35344DA81F8610C700E35C5C /* TransformType.swift in Sources */,
 				35344DB91F863B5900E35C5C /* TextFieldMaxLengths.swift in Sources */,
+				355120F71F948EED00C9AD9D /* ListResultVo.swift in Sources */,
+				356651891F9DC7A300330D33 /* MyTransactionTableViewCell.swift in Sources */,
 				3554C3371F8F5DCD0092EAC7 /* SignOutTableViewCell.swift in Sources */,
 				35344DB71F862FD400E35C5C /* SignupVo.swift in Sources */,
 				35CB9D0D1F8B782D00BF1073 /* Constants.swift in Sources */,
@@ -675,6 +719,7 @@
 				354CF1B91F913E72004ADDAD /* GetUserWalletVo.swift in Sources */,
 				3569C1E61F876D6800152B80 /* MenuTableViewCell.swift in Sources */,
 				35344DAD1F8611B100E35C5C /* LoginVo.swift in Sources */,
+				355120F51F948E4E00C9AD9D /* OperatorVo.swift in Sources */,
 				35344D9D1F8610C700E35C5C /* IntegerOperators.swift in Sources */,
 				3524CE3B1F8D06B400959172 /* ImageTint.swift in Sources */,
 				3554C31D1F8F5CAE0092EAC7 /* EditProfileViewController.swift in Sources */,
@@ -732,9 +777,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Natarajan Srikanth (XGNG3P39B7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Natarajan Srikanth (XGNG3P39B7)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = XGNG3P39B7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -754,6 +801,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -783,9 +831,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Natarajan Srikanth (XGNG3P39B7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Natarajan Srikanth (XGNG3P39B7)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = XGNG3P39B7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -798,6 +848,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -810,11 +861,18 @@
 			baseConfigurationReference = 154175AEA96710F2ABA226DE /* Pods-PayZan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Natarajan Srikanth (XGNG3P39B7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = XGNG3P39B7;
 				INFOPLIST_FILE = PayZan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CalibrageMac02.PayZan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PayZan/PayZan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -826,11 +884,18 @@
 			baseConfigurationReference = 98F0405BFA6A0577351F3211 /* Pods-PayZan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Natarajan Srikanth (XGNG3P39B7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = XGNG3P39B7;
 				INFOPLIST_FILE = PayZan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CalibrageMac02.PayZan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PayZan/PayZan-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddMoneyWalletViewController: UIViewController {
+class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var walletAmountField: UITextField!
     
@@ -18,19 +18,59 @@ class AddMoneyWalletViewController: UIViewController {
     
     @IBOutlet weak var offersView: UIView!
     
+    
+    @IBOutlet var addmoneyWalletView: UIView!
+    
+    @IBOutlet var mytransactionView: UIView!
+    
+    @IBOutlet var sendMoneyWalletView: UIView!
+    
+    @IBOutlet var mySegmentControl: UISegmentedControl!
+    
+    @IBOutlet var addBtn1: UIButton!
+    
+    @IBOutlet var addBtn2: UIButton!
+    
+    @IBOutlet var addBtn3: UIButton!
+    
+    @IBOutlet weak var myTransactionTableView: UITableView!
+    
     var userId:String?
     var walletId:String?
     
     let serviceController = ServiceController()
     
+    var walletArr = ["PayZan Cash Received","Transferred to bank Account"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addMoneyBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
+        myTransactionTableView.dataSource = self
+        myTransactionTableView.delegate = self
         
-        addMoneyBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+//      let color1 = hexStringToUIColor(hex: "#5f1a58")
         
-        addMoneyBtn.layer.cornerRadius = 5
+//      addBtn1.backgroundColor = color1
+        
+//      addBtn1.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+        
+        addBtn1.layer.borderWidth = 1
+        addBtn2.layer.borderWidth = 1
+        addBtn3.layer.borderWidth = 1
+        
+        addBtn1.layer.borderColor = UIColor.init(red:255/255.0, green:200/255.0, blue:200/255.0, alpha: 1.0).cgColor
+        addBtn2.layer.borderColor = UIColor.init(red:255/255.0, green:200/255.0, blue:200/255.0, alpha: 1.0).cgColor
+        addBtn3.layer.borderColor = UIColor.init(red:255/255.0, green:200/255.0, blue:200/255.0, alpha: 1.0).cgColor
+        
+        sendMoneyWalletView.isHidden = false
+        addmoneyWalletView.isHidden = true
+        mytransactionView.isHidden = true
+        
+//        addMoneyBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
+//        
+//        addMoneyBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+//        
+//        addMoneyBtn.layer.cornerRadius = 5
         
         walletAmountField.keyboardType = .numberPad
         
@@ -58,6 +98,45 @@ class AddMoneyWalletViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return walletArr.count
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+            return 60
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        let cell = Bundle.main.loadNibNamed("MyTransactionTableViewCell", owner: self, options: nil)?.first as! MyTransactionTableViewCell
+        
+        //        cell.ImgeVw.image = #imageLiteral(resourceName: "Thumb Sign")
+        cell.titleLabel?.text = walletArr[indexPath.row]
+        
+//        cell.ImgeVw.image = imageArray1[indexPath.row]
+        
+//        cell.layer.borderWidth = 0.5
+//        cell.layer.borderColor = UIColor.lightGray.cgColor
+        
+        
+        
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
+    }
+
     
     @IBAction func addMoneyAction(_ sender: Any) {
         
@@ -117,6 +196,10 @@ class AddMoneyWalletViewController: UIViewController {
                         // Using defaults.set(value: Any?, forKey: String)
                         defaults.set(waleetBalance, forKey: "walletAmount")
                         
+                        
+                        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                        self.navigationController?.pushViewController(homeViewController, animated: true)
+                        
                         let alertController = UIAlertController(title: "Success", message: successMsg! , preferredStyle: UIAlertControllerStyle.alert)
                         
                         let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
@@ -158,6 +241,8 @@ class AddMoneyWalletViewController: UIViewController {
     }
 
     @IBAction func backAction(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
     }
    
     @IBAction func searchAction(_ sender: Any) {
@@ -165,4 +250,33 @@ class AddMoneyWalletViewController: UIViewController {
 
     @IBAction func notificationAction(_ sender: Any) {
     }
+    
+    @IBAction func mySegmentAction(_ sender: Any) {
+        
+        
+        switch mySegmentControl.selectedSegmentIndex {
+        case 0:
+            
+            sendMoneyWalletView.isHidden = false
+            addmoneyWalletView.isHidden = true
+            mytransactionView.isHidden = true
+            
+        case 1:
+            
+            sendMoneyWalletView.isHidden = true
+            addmoneyWalletView.isHidden = false
+            mytransactionView.isHidden = true
+            
+        case 2:
+            
+            sendMoneyWalletView.isHidden = true
+            addmoneyWalletView.isHidden = true
+            mytransactionView.isHidden = false
+            
+        default:
+            break;
+        }
+    }
+    
+    
 }

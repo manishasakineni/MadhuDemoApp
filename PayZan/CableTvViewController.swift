@@ -24,11 +24,11 @@ class CableTvViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-        
-        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-        
-        payNowBtn.layer.cornerRadius = 5
+//        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
+//        
+//        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+//        
+//        payNowBtn.layer.cornerRadius = 5
         
         accountNumField.keyboardType = .numberPad
         amountField.keyboardType = .numberPad

@@ -31,11 +31,11 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-        
-        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-        
-        payNowBtn.layer.cornerRadius = 5
+//        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
+//        
+//        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+//        
+//        payNowBtn.layer.cornerRadius = 5
         
         serviceNumField.keyboardType = .numberPad
         amountField.keyboardType = .numberPad
@@ -64,7 +64,8 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
+//            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
         // Adding Button ToolBar

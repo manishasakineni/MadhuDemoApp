@@ -28,20 +28,28 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     var toolBar = UIToolbar()
     
     var pickerData = ["Operator1" , "Operator2" , "Operator3" , "Operator4"]
+    
+    var operatorList = [String]()
+    
+    var pickerList = [String]()
+    
+    let serviceController = ServiceController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-        
-        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-        
-        payNowBtn.layer.cornerRadius = 5
+//        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
+//        
+//        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+//        
+//        payNowBtn.layer.cornerRadius = 5
         
         operatorField.delegate = self
         
         datacardNumField.keyboardType = .numberPad
         amountField.keyboardType = .numberPad
+        
+        getPrepaidList()
 
         // Do any additional setup after loading the view.
     }
@@ -64,7 +72,8 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
+            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
         // Adding Button ToolBar
@@ -89,10 +98,17 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
+        pickerList.removeAll()
         
         self.pickUp(operatorField)
         
+        pickerList = operatorList
+        
         operatorField = textField
+        
+        myPickerView.reloadAllComponents()
+        
+        myPickerView.selectRow(0, inComponent: 0, animated: false)
         
     }
     
@@ -103,17 +119,104 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        return pickerData.count
+        return pickerList.count
         
         
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return pickerData[row]
+        return pickerList[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        self.operatorField.text = pickerData[row]
+        self.operatorField.text = pickerList[row]
+        
+    }
+    
+    func getPrepaidList(){
+        
+        let strUrl = prepaidUrl
+        
+        let url : NSURL = NSURL(string: strUrl)!
+        
+        serviceController.requestGETURL(strURL:url, success:{(result) in
+            DispatchQueue.main.async()
+                {
+                    
+                    let respVO:OperatorVo = Mapper().map(JSONObject: result)!
+                    
+                    let isActive = respVO.IsSuccess
+                    
+                    
+                    if(isActive == true){
+                        
+                        var operatorObj = respVO.ListResult
+                        
+                        self.operatorList.removeAll()
+                        
+                        for(index,element) in (operatorObj?.enumerated())! {
+                            
+                            print("index:\(index)")
+                            self.operatorList.append(element.Name!)
+                            
+                        }
+                        
+                        
+                    }else if(isActive == false) {
+                        
+                        self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
+                        
+                    }
+                    //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+            }
+        }, failure:  {(error) in
+        })
+        
+    }
+    
+    func getPostpaidList(){
+        
+        let strUrl = postpaidUrl
+        
+        let url : NSURL = NSURL(string: strUrl)!
+        
+        serviceController.requestGETURL(strURL:url, success:{(result) in
+            DispatchQueue.main.async()
+                {
+                    
+                    let respVO:OperatorVo = Mapper().map(JSONObject: result)!
+                    
+                    
+                    
+                    let isActive = respVO.IsSuccess
+                    
+                    
+                    //                    let status = result["status"] as! String
+                    
+                    if(isActive == true){
+                        
+                        var operatorObj = respVO.ListResult
+                        
+                        self.operatorList.removeAll()
+                        
+                        for(index,element) in (operatorObj?.enumerated())! {
+                            
+                            
+                            
+                            self.operatorList.append(element.Name!)
+                            
+                        }
+                        
+                        
+                    }else if(isActive == false) {
+                        
+                        self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
+                        
+                    }
+                    //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+            }
+        }, failure:  {(error) in
+        })
         
     }
     
@@ -136,10 +239,15 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
 
     @IBAction func prepaidAction(_ sender: Any) {
         
+        
+        
         if (postPaidCheckBox.isSelected == true)
         {
             postPaidCheckBox.setBackgroundImage(UIImage(named: "unselectedBox"), for: UIControlState.normal)
             prepaidCheckBox.setBackgroundImage(UIImage(named: "selectedBox"), for: UIControlState.normal)
+            
+            getPrepaidList()
+            
             
             postPaidCheckBox.isSelected = false
         }
@@ -148,7 +256,7 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
             postPaidCheckBox.setBackgroundImage(UIImage(named: "selectedBox"), for: UIControlState.normal)
             prepaidCheckBox.setBackgroundImage(UIImage(named: "unselectedBox"), for: UIControlState.normal)
             
-            
+            getPostpaidList()
             postPaidCheckBox.isSelected = true
         }
     }
@@ -160,14 +268,14 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         {
             postPaidCheckBox.setBackgroundImage(UIImage(named: "unselectedBox"), for: UIControlState.normal)
             prepaidCheckBox.setBackgroundImage(UIImage(named: "selectedBox"), for: UIControlState.normal)
-            
+            getPrepaidList()
             postPaidCheckBox.isSelected = false
         }
         else
         {
             postPaidCheckBox.setBackgroundImage(UIImage(named: "selectedBox"), for: UIControlState.normal)
             prepaidCheckBox.setBackgroundImage(UIImage(named: "unselectedBox"), for: UIControlState.normal)
-
+            getPostpaidList()
             postPaidCheckBox.isSelected = true
         }
     }

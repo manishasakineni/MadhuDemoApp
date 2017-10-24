@@ -9,7 +9,7 @@
 import Foundation
 
 
-let loginUrl:String = baseUrl.appending("Login")
+let loginUrl:String = baseUrl.appending("Register/Login")
 
-let registerUrl:String = baseUrl.appending("Register")
+let registerUrl:String = baseUrl.appending("Register/Register")
 

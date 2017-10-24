@@ -42,11 +42,11 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
         mobileNumField.maxLength = 13
         mobileNumField.keyboardType = .phonePad
         
-        signupBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-        
-        signupBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-        
-        signupBtn.layer.cornerRadius = 5
+//        signupBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
+//        
+//        signupBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+//        
+//        signupBtn.layer.cornerRadius = 5
         
         facebookBtn.layer.cornerRadius = 5
         googleBtn.layer.cornerRadius = 5
@@ -114,12 +114,13 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
                 let mNumber:String = mobileNumField.text!
                 let pword:String = paswdField.text!
                 let email:String = emailField.text!
-                
-                
+            
                 
                 let  strUrl = registerUrl
+            
+                let null = NSNull()
                 
-                let dictParams = ["MobileNumber":mNumber,"Password":pword,"Email":email,"RoleId":nil] as NSDictionary
+                let dictParams = ["MobileNumber":mNumber,"Password":pword,"ConfirmPassword":pword,"Email":email,"RoleId":null] as NSDictionary
                 
                 print("dic params \(dictParams)")
                 //CleverTap.sharedInstance()?.onUserLogin(dictParams as! [AnyHashable : Any])

@@ -69,11 +69,11 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
         planField.tag = 2
         
         
-        rechargBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-        
-        rechargBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-        
-        rechargBtn.layer.cornerRadius = 5
+//        rechargBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
+//        
+//        rechargBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+//        
+//        rechargBtn.layer.cornerRadius = 5
         
         // Do any additional setup after loading the view.
     }

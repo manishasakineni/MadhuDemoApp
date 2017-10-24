@@ -26,19 +26,25 @@ class DTHViewController: UIViewController,UIPickerViewDelegate, UIPickerViewData
     
     var pickerData = ["Operator1" , "Operator2" , "Operator3" , "Operator4"]
     
+    let serviceController = ServiceController()
+    
+   var operatorList = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rechargeBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-        
-        rechargeBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-        
-        rechargeBtn.layer.cornerRadius = 5
+//        rechargeBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
+//        
+//        rechargeBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+//        
+//        rechargeBtn.layer.cornerRadius = 5
         
         operatorField.delegate = self
         
         amountField.keyboardType = .numberPad
+        
+        getOperatorList()
 
         // Do any additional setup after loading the view.
     }
@@ -61,7 +67,8 @@ class DTHViewController: UIViewController,UIPickerViewDelegate, UIPickerViewData
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
+//            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
         // Adding Button ToolBar
@@ -91,6 +98,7 @@ class DTHViewController: UIViewController,UIPickerViewDelegate, UIPickerViewData
         
         operatorField = textField
         
+        self.myPickerView.reloadAllComponents()
     }
     
     //MARK:- PickerView Delegate & DataSource
@@ -100,20 +108,61 @@ class DTHViewController: UIViewController,UIPickerViewDelegate, UIPickerViewData
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        return pickerData.count
+        return operatorList.count
         
         
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return pickerData[row]
+        return operatorList[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        self.operatorField.text = pickerData[row]
+        self.operatorField.text = operatorList[row]
         
     }
     
+    func getOperatorList(){
+        
+        let strUrl = operatorUrl
+        
+        let url : NSURL = NSURL(string: strUrl)!
+        
+        serviceController.requestGETURL(strURL:url, success:{(result) in
+            DispatchQueue.main.async()
+                {
+                    
+                    let respVO:OperatorVo = Mapper().map(JSONObject: result)!
+                    
+                    
+                    
+                    let isActive = respVO.IsSuccess
+                    
+                    
+//                    let status = result["status"] as! String
+                    
+                    if(isActive == true){
+                        
+                        var operatorObj = respVO.ListResult
+                        
+                        
+                        for(index,element) in (operatorObj?.enumerated())! {
+                            
+                            self.operatorList.append(element.Name!)
+                            
+                        }
+                        
+                        
+                    }else if(isActive == false) {
+                        
+                        self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
+                        
+                    }
+                    //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+            }
+        }, failure:  {(error) in
+        })
+    }
     
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -126,6 +175,7 @@ class DTHViewController: UIViewController,UIPickerViewDelegate, UIPickerViewData
     }
     
     @IBAction func rechargeAction(_ sender: Any) {
+
     }
     
 

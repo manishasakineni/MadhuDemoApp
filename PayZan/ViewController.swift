@@ -11,6 +11,8 @@ import FBSDKLoginKit
 import Google
 import GoogleSignIn
 
+//let reachability = Reachability()!
+
 class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate,GIDSignInDelegate,SWRevealViewControllerDelegate {
     
     @IBOutlet weak var barBtn: UIBarButtonItem!
@@ -49,11 +51,11 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         mobileField.delegate = self
         passwordField.delegate = self
         
-        loginBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-        
-        loginBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-        
-        loginBtn.layer.cornerRadius = 5
+//        loginBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
+//        
+//        loginBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+//        
+//        loginBtn.layer.cornerRadius = 5
         
         facebookBtn.layer.cornerRadius = 5
         googleBtn.layer.cornerRadius = 5
@@ -125,30 +127,17 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
 
     @IBAction func loginBtnAction(_ sender: Any) {
         
+//        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         
-        if (self.mobileField.text?.isEmpty)! {
-            
-            let alertController = UIAlertController(title: "Message", message: "Please Enter Your Mobile Number" , preferredStyle: UIAlertControllerStyle.alert)
-            
-            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-            }
-            alertController.addAction(DestructiveAction)
-            self.present(alertController, animated: true, completion: nil)
-            
-           }
-        else if (self.passwordField.text?.isEmpty)! {
-            
-            let alertController = UIAlertController(title: "Message", message: "Please Enter Your Password" , preferredStyle: UIAlertControllerStyle.alert)
-            
-            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-            }
-            alertController.addAction(DestructiveAction)
-            self.present(alertController, animated: true, completion: nil)
-
-            
-        }
-        else {
-            
+//        homeViewController.userID = userId
+//        homeViewController.walletID = walletId
+        
+//        self.navigationController?.pushViewController(homeViewController, animated: true)
+        
+        print("reachability.isReachable:\(reachability.isReachable)")
+        
+        
+        if(appDelegate.checkInternetConnectivity()){
             
             let  strUrl = loginUrl
             
@@ -159,7 +148,7 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
             let dictParams = ["userName":mobileNumber,"password":pword] as NSDictionary
             
             print("dic params \(dictParams)")
-
+            
             let dictHeaders = ["":"","":""] as NSDictionary
             
             serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
@@ -172,14 +161,14 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                         
                         
                         print("responseString = \(respVO)")
-
+                        
                         
                         let statusCode = respVO.StatusCode
-                                        
+                        
                         print("StatusCode:\(String(describing: statusCode))")
                         
-//                        let strStatusCode = result.value(forKey: "StatusCode") as! Int
-//                        print("strStatusCode",strStatusCode)
+                        //                        let strStatusCode = result.value(forKey: "StatusCode") as! Int
+                        //                        print("strStatusCode",strStatusCode)
                         
                         if statusCode == 200
                         {
@@ -204,8 +193,8 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                             
                             print("uName:\(String(describing: uName))")
                             
-//                            let dataObj =   (result.value(forKey: "data") as! NSDictionary) as! [String : AnyObject]
-//                            print("dataObj:",dataObj)
+                            //                            let dataObj =   (result.value(forKey: "data") as! NSDictionary) as! [String : AnyObject]
+                            //                            print("dataObj:",dataObj)
                             
                             let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                             
@@ -213,7 +202,7 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                             homeViewController.walletID = walletId
                             
                             self.navigationController?.pushViewController(homeViewController, animated: true)
-
+                            
                             
                         }
                         else if statusCode == 401{
@@ -224,17 +213,17 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                             }
                             alertController.addAction(DestructiveAction)
                             self.present(alertController, animated: true, completion: nil)
-
+                            
                             
                         }
                             
                         else
                         {
-//                            self.view.makeToast(result.value(forKey:"statusMessage") as! String, duration:kToastDuration, position:CSToastPositionCenter)
+                            //                            self.view.makeToast(result.value(forKey:"statusMessage") as! String, duration:kToastDuration, position:CSToastPositionCenter)
                             
-//                            let alertController = UIAlertController(title: "", message: result.value(forKey:"statusMessage") as? String , preferredStyle: UIAlertControllerStyle.alert)
+                            //                            let alertController = UIAlertController(title: "", message: result.value(forKey:"statusMessage") as? String , preferredStyle: UIAlertControllerStyle.alert)
                             
-                            let alertController = UIAlertController(title: "", message: "Services not Working" , preferredStyle: UIAlertControllerStyle.alert)
+                            let alertController = UIAlertController(title: "", message: "Mobile/Email or Password is incorrect" , preferredStyle: UIAlertControllerStyle.alert)
                             
                             let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
                             }
@@ -245,9 +234,43 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                 }
             }, failureHandler: {(error) in
             })
+        }
+        else if (self.mobileField.text?.isEmpty)! {
+            
+            let alertController = UIAlertController(title: "Message", message: "Please Enter Your Mobile Number or Email" , preferredStyle: UIAlertControllerStyle.alert)
+            
+            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+            }
+            alertController.addAction(DestructiveAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+        else if (self.passwordField.text?.isEmpty)! {
+            
+            let alertController = UIAlertController(title: "Message", message: "Please Enter Your Password" , preferredStyle: UIAlertControllerStyle.alert)
+            
+            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+            }
+            alertController.addAction(DestructiveAction)
+            self.present(alertController, animated: true, completion: nil)
             
             
         }
+        else{
+//             if {
+//                self.appDelegate.window?.makeToast("No internet connection..!", duration:kToastDuration, position:CSToastPositionBottom)
+////                self.movetosignUpPage()
+//            }else{
+                self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+                return
+//            }
+        }
+        
+//        if reachability.isReachable == true{
+//            
+//             appDelegate.window?.makeToast(kNetworkStatusMessage, duration: kToastDuration, position: CSToastPositionCenter)
+//        }
+        
         
     }
 
@@ -310,23 +333,41 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         
         MBProgressHUD.showAdded(to:appDelegate.window,animated:true)
         
+        
        GIDSignIn.sharedInstance().signIn()
         
         
     }
     
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+        
+        MBProgressHUD.hide(for:appDelegate.window,animated:true)
+    }
+    
+    // Present a view that prompts the user to sign in with Google
+    func sign(_ signIn: GIDSignIn!,
+              present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
     
     // Dismiss the "Sign in with Google" view
     func sign(_ signIn: GIDSignIn!,
               dismiss viewController: UIViewController!) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+   
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
+//        if error != nil{
+//            print(error ?? "google error")
+//            return
+//        }
+        if (error == nil)
+        {
+            
         if UIDevice.current.userInterfaceIdiom == .phone {
             //            if UserDefaults.standard.bool(forKey: "checkLogin") {
-            
-            
             
             let userId = user.userID                  // For client-side use only!
             let idToken = user.authentication.idToken // Safe to send to the server
@@ -347,7 +388,7 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
             let homeView = self.storyboard?.instantiateViewController(withIdentifier:"HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(homeView, animated: true)
             
-            MBProgressHUD.hide(for:appDelegate.window,animated:true)
+           // MBProgressHUD.hide(for:appDelegate.window,animated:true)
         }
         else if UIDevice.current.userInterfaceIdiom == .pad {
             
@@ -368,14 +409,17 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
             let homeView = self.storyboard?.instantiateViewController(withIdentifier:"HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(homeView, animated: true)
             
-            MBProgressHUD.hide(for:appDelegate.window,animated:true)
+           // MBProgressHUD.hide(for:appDelegate.window,animated:true)
         }
-        
+        }
+        else {
         Thread.sleep(forTimeInterval: 1.0)
         var configureError: Error?
         //    [[GGLContext sharedInstance] configureWithError:&configureError];
         assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
         GIDSignIn.sharedInstance().delegate = self as GIDSignInDelegate
+            
+        }
         
     }
     

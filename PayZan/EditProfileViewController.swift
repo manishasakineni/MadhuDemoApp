@@ -185,7 +185,7 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
             }
                 
                 
-                
+
             else if indexPath.row == 1{
                 
                 

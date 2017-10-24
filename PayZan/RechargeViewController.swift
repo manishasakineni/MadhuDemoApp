@@ -68,13 +68,13 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         networkField.tag = 1
         planField.tag = 2
         
-        let color1 = hexStringToUIColor(hex: "#5f1a58")
+//        let color1 = hexStringToUIColor(hex: "#5f1a58")
         
-        rechargeBtn.backgroundColor = color1
-        
-        rechargeBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-        
-        rechargeBtn.layer.cornerRadius = 5
+//        rechargeBtn.backgroundColor = color1
+//        
+//        rechargeBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
+//        
+//        rechargeBtn.layer.cornerRadius = 5
         
         // Do any additional setup after loading the view.
     }
