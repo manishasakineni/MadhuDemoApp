@@ -141,18 +141,9 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     @IBAction func addMoneyAction(_ sender: Any) {
         
         
-        
-//        "WalletId": "86233014-8531-4974-a2af-392dbefe9e12",
-//        "Amount": 100,
-//        "TransactionTypeId": 1,
-//        "ReasonTypeId": 1,
-//        "Id": 0,
-//        "IsActive": true,
-//        "CreatedByUserId": "c382ef7c-b7e0-4426-b032-ed24c832f2f3",
-//        "CreatedDate": "2017-10-13T18:13:30.429Z",
-//        "UpdatedByUserId": "c382ef7c-b7e0-4426-b032-ed24c832f2f3",
-//        "UpdatedDate": "2017-10-13T18:13:30.429Z"
-        
+        if(appDelegate.checkInternetConnectivity()){
+            
+      
         let walletField:String = walletAmountField.text!
         
         let  strUrl = walletUrl
@@ -237,6 +228,15 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
             }
         }, failureHandler: {(error) in
         })
+            
+        
+        }
+        else {
+            
+            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+            
+        }
         
     }
 

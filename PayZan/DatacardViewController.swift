@@ -73,7 +73,7 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
-            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+//            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
         // Adding Button ToolBar
@@ -135,7 +135,9 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     
     func getPrepaidList(){
         
-        let strUrl = prepaidUrl
+        if(appDelegate.checkInternetConnectivity()){
+        
+        let strUrl = datacardUrl
         
         let url : NSURL = NSURL(string: strUrl)!
         
@@ -150,7 +152,7 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
                     
                     if(isActive == true){
                         
-                        var operatorObj = respVO.ListResult
+                        let operatorObj = respVO.ListResult
                         
                         self.operatorList.removeAll()
                         
@@ -171,10 +173,19 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
             }
         }, failure:  {(error) in
         })
+            
+        }
+        else {
+            
+            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+        }
         
     }
     
     func getPostpaidList(){
+        
+        if(appDelegate.checkInternetConnectivity()){
         
         let strUrl = postpaidUrl
         
@@ -187,7 +198,6 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
                     let respVO:OperatorVo = Mapper().map(JSONObject: result)!
                     
                     
-                    
                     let isActive = respVO.IsSuccess
                     
                     
@@ -195,13 +205,13 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
                     
                     if(isActive == true){
                         
-                        var operatorObj = respVO.ListResult
+                        let operatorObj = respVO.ListResult
                         
                         self.operatorList.removeAll()
                         
                         for(index,element) in (operatorObj?.enumerated())! {
                             
-                            
+                            print("index:\(index)")
                             
                             self.operatorList.append(element.Name!)
                             
@@ -217,6 +227,14 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
             }
         }, failure:  {(error) in
         })
+            
+        }
+        else {
+            
+            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+            
+        }
         
     }
     

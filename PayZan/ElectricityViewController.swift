@@ -41,6 +41,9 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
         amountField.keyboardType = .numberPad
         
         districtsFiled.delegate = self
+        
+        var five = PayZanServices.AgentType
+        print(five.rawValue)
 
         // Do any additional setup after loading the view.
     }

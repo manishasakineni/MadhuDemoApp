@@ -9,9 +9,9 @@
 import UIKit
 
 
-var imageArray = [UIImage(named:"mobile"),UIImage(named:"electricity"),UIImage(named:"television"),UIImage(named:"landline"),UIImage(named:"television"),UIImage(named:"internet"),UIImage(named:"water-tap"),UIImage(named:"data-card")]
+var imageArray = [UIImage(named:"mobileImg"),UIImage(named:"electricityImg"),UIImage(named:"cabletv"),UIImage(named:"landlineImg"),UIImage(named:"dth"),UIImage(named:"broadband"),UIImage(named:"waterImg"),UIImage(named:"datacard")]
 
-var imageArray1 = [UIImage(named:"water-tap"),UIImage(named:"landline"),UIImage(named:"electricity"),UIImage(named:"event"),UIImage(named:"sport"),UIImage(named:"television"),UIImage(named:"mobile"),UIImage(named:"internet")]
+var imageArray1 = [UIImage(named:"mobileImg"),UIImage(named:"electricityImg"),UIImage(named:"cabletv"),UIImage(named:"landlineImg"),UIImage(named:"dth"),UIImage(named:"broadband"),UIImage(named:"waterImg"),UIImage(named:"datacard")]
 
 var imageArray2 = [UIImage(named:"mobile"),UIImage(named:"landline"),UIImage(named:"electricity"),UIImage(named:"event"),UIImage(named:"sport"),UIImage(named:"television"),UIImage(named:"water-tap"),UIImage(named:"internet")]
 //for label names
@@ -105,7 +105,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         self.scrollView.delegate = self
         self.scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 80)
         
-        self.myNewView = UIView(frame: CGRect(x: 10, y: 200, width: self.view.frame.size.width-20, height: 300))
+        self.myNewView = UIView(frame: CGRect(x: 10, y: 180, width: self.view.frame.size.width-20, height: 300))
         
 //        self.myNewView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
@@ -427,25 +427,25 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
             
             cell.productIMG.image = imageArray[ indexPath.row]
-            cell.nameLBL.text = namesarra1[indexPath.row]
+//            cell.nameLBL.text = namesarra1[indexPath.row]
             
             if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                 layout.scrollDirection = .vertical
             }
             
-            cell.contentView.layer.cornerRadius = 10
-            cell.contentView.layer.borderWidth = 1.0
-            
-            cell.contentView.layer.borderColor = UIColor.clear.cgColor
-            cell.contentView.layer.masksToBounds = true
-            
-            cell.layer.shadowColor = UIColor.lightGray.cgColor
-            cell.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
-            cell.layer.shadowRadius = 5.0
-            cell.layer.shadowOpacity = 1.0
-            cell.layer.cornerRadius = 10
-            cell.layer.masksToBounds = false
-            cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+//            cell.contentView.layer.cornerRadius = 10
+//            cell.contentView.layer.borderWidth = 1.0
+//            
+//            cell.contentView.layer.borderColor = UIColor.clear.cgColor
+//            cell.contentView.layer.masksToBounds = true
+//            
+//            cell.layer.shadowColor = UIColor.lightGray.cgColor
+//            cell.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+//            cell.layer.shadowRadius = 5.0
+//            cell.layer.shadowOpacity = 1.0
+//            cell.layer.cornerRadius = 10
+//            cell.layer.masksToBounds = false
+//            cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
 
          //   cell.contentView.layer.backgroundColor = UIColor.red.cgColor
 //            cell.backgroundColor = UIColor.white
@@ -461,25 +461,25 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
             
             cell.productIMG.image =   imageArray1[indexPath.row]
             
-            cell.nameLBL.text = namesarra2[indexPath.row]
+//            cell.nameLBL.text = namesarra2[indexPath.row]
             
             if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                 layout.scrollDirection = .vertical
             }
             
-            cell.contentView.layer.cornerRadius = 20
-            cell.contentView.layer.borderWidth = 1.0
-            
-            cell.contentView.layer.borderColor = UIColor.clear.cgColor
-            cell.contentView.layer.masksToBounds = true
-            
-            cell.layer.shadowColor = UIColor.lightGray.cgColor
-            cell.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-            cell.layer.shadowRadius = 5.0
-            cell.layer.shadowOpacity = 1.0
-            cell.layer.cornerRadius = 15
-            cell.layer.masksToBounds = false
-            cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+//            cell.contentView.layer.cornerRadius = 20
+//            cell.contentView.layer.borderWidth = 1.0
+//            
+//            cell.contentView.layer.borderColor = UIColor.clear.cgColor
+//            cell.contentView.layer.masksToBounds = true
+//            
+//            cell.layer.shadowColor = UIColor.lightGray.cgColor
+//            cell.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+//            cell.layer.shadowRadius = 5.0
+//            cell.layer.shadowOpacity = 1.0
+//            cell.layer.cornerRadius = 15
+//            cell.layer.masksToBounds = false
+//            cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
             
             
             return cell
@@ -491,7 +491,7 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
         
         cell.productIMG.image =   imageArray2[indexPath.row]
-        cell.nameLBL.text = namesarra3[indexPath.row]
+//        cell.nameLBL.text = namesarra3[indexPath.row]
         
         cell.contentView.layer.cornerRadius = 20
         cell.contentView.layer.borderWidth = 1.0

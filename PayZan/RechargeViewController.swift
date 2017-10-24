@@ -44,6 +44,12 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     
     @IBOutlet weak var rechargeBtn: UIButton!
     
+    var serviceController = ServiceController()
+    
+    var operatorList = [String]()
+    
+    var pickerList = [String]()
+    
     var myPickerView : UIPickerView!
     
      var toolBar = UIToolbar()
@@ -67,6 +73,9 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         
         networkField.tag = 1
         planField.tag = 2
+        
+        getPrepaidList()
+        getPostpaidList()
         
 //        let color1 = hexStringToUIColor(hex: "#5f1a58")
         
@@ -107,7 +116,8 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
+//            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
         // Adding Button ToolBar
@@ -134,15 +144,23 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
+        
         selectedTextField = textField.tag
         
         if textField == networkField{
             
-            pickerSample = pickerData
+            
+            pickerList.removeAll()
+            
+            self.pickUp(networkField)
+            
+            pickerList = operatorList
+            
+            networkField = textField
+            
+//            pickerSample = pickerData
             
             networkField.tag = 1
-            
-        self.pickUp(networkField)
             
             myPickerView.reloadAllComponents()
             myPickerView.selectRow(0, inComponent: 0, animated: false)
@@ -151,6 +169,8 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         }
         
         else if textField == planField {
+            
+            pickerSample.removeAll()
             
             pickerSample = pickerData1
             
@@ -172,7 +192,7 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
        
-        return pickerSample.count
+        return pickerList.count
         
 //        if (pickerView.tag == 1){
 //            
@@ -193,20 +213,123 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
 //
 //            return "\(pickerData1[row])"
 //        }
-       return pickerSample[row]
+       return pickerList[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         
         if (selectedTextField == 1){
             
-            self.networkField.text = pickerSample[row]
+            self.networkField.text = pickerList[row]
             
         }else if(selectedTextField == 2){
             
             self.planField.text = pickerSample[row]
         }
         
+    }
+    
+    
+    func getPrepaidList(){
+        
+        if(appDelegate.checkInternetConnectivity()){
+        
+        let strUrl = prepaidUrl
+        
+        let url : NSURL = NSURL(string: strUrl)!
+        
+        serviceController.requestGETURL(strURL:url, success:{(result) in
+            DispatchQueue.main.async()
+                {
+                    
+                    let respVO:OperatorVo = Mapper().map(JSONObject: result)!
+                    
+                    let isActive = respVO.IsSuccess
+                    
+                    
+                    if(isActive == true){
+                        
+                        let operatorObj = respVO.ListResult
+                        
+                        self.operatorList.removeAll()
+                        
+                        for(index,element) in (operatorObj?.enumerated())! {
+                            
+                            print("index:\(index)")
+                            self.operatorList.append(element.Name!)
+                            
+                        }
+                        
+                        
+                    }else if(isActive == false) {
+                        
+                        self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
+                        
+                    }
+                    //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+            }
+        }, failure:  {(error) in
+        })
+            
+        }
+        else {
+            
+            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+        }
+        
+    }
+    
+    func getPostpaidList(){
+        
+        if(appDelegate.checkInternetConnectivity()){
+        
+        let strUrl = postpaidUrl
+        
+        let url : NSURL = NSURL(string: strUrl)!
+        
+        serviceController.requestGETURL(strURL:url, success:{(result) in
+            DispatchQueue.main.async()
+                {
+                    
+                    let respVO:OperatorVo = Mapper().map(JSONObject: result)!
+                    
+                    
+                    let isActive = respVO.IsSuccess
+                    
+                    
+                    //                    let status = result["status"] as! String
+                    
+                    if(isActive == true){
+                        
+                        let operatorObj = respVO.ListResult
+                        
+                        self.operatorList.removeAll()
+                        
+                        for(index,element) in (operatorObj?.enumerated())! {
+                            
+                            print("index:\(index)")
+                            
+                            self.operatorList.append(element.Name!)
+                            
+                        }
+                        
+                        
+                    }else if(isActive == false) {
+                        
+                        self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
+                        
+                    }
+                    //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+            }
+        }, failure:  {(error) in
+        })
+        }
+        else {
+            
+            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+        }
     }
     
     
@@ -255,7 +378,7 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         {
             postpaidCheckbox.setBackgroundImage(UIImage(named: "unselectedBox"), for: UIControlState.normal)
             prepaidChecbox.setBackgroundImage(UIImage(named: "selectedBox"), for: UIControlState.normal)
-            
+            getPrepaidList()
             postpaidCheckbox.isSelected = false
         }
         else
@@ -263,7 +386,7 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
             postpaidCheckbox.setBackgroundImage(UIImage(named: "selectedBox"), for: UIControlState.normal)
             prepaidChecbox.setBackgroundImage(UIImage(named: "unselectedBox"), for: UIControlState.normal)
             
-            
+            getPostpaidList()
             postpaidCheckbox.isSelected = true
         }
         
@@ -280,7 +403,7 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         {
             postpaidCheckbox.setBackgroundImage(UIImage(named: "unselectedBox"), for: UIControlState.normal)
             prepaidChecbox.setBackgroundImage(UIImage(named: "selectedBox"), for: UIControlState.normal)
-            
+            getPrepaidList()
             postpaidCheckbox.isSelected = false
         }
         else
@@ -288,7 +411,7 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
             postpaidCheckbox.setBackgroundImage(UIImage(named: "selectedBox"), for: UIControlState.normal)
             prepaidChecbox.setBackgroundImage(UIImage(named: "unselectedBox"), for: UIControlState.normal)
 
-            
+            getPostpaidList()
             postpaidCheckbox.isSelected = true
         }
 

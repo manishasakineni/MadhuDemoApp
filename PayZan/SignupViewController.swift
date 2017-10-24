@@ -25,6 +25,8 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
     
     let serviceController = ServiceController()
     
+    var appDelegate = AppDelegate()
+    
     @IBOutlet weak var facebookBtn: UIButton!
     
     @IBOutlet weak var googleBtn: UIButton!
@@ -77,7 +79,110 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
     @IBAction func signUpAction(_ sender: Any) {
         
         
-        if (self.mobileNumField.text?.isEmpty)! {
+        if(appDelegate.checkInternetConnectivity()){
+            
+            let mNumber:String = mobileNumField.text!
+            let pword:String = paswdField.text!
+            let email:String = emailField.text!
+            
+            
+            let  strUrl = registerUrl
+            
+            let null = NSNull()
+            
+            let dictParams = ["MobileNumber":mNumber,"Password":pword,"ConfirmPassword":pword,"Email":email,"RoleId":null] as NSDictionary
+            
+            print("dic params \(dictParams)")
+            //CleverTap.sharedInstance()?.onUserLogin(dictParams as! [AnyHashable : Any])
+            let dictHeaders = ["":"","":""] as NSDictionary
+            
+            serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
+                DispatchQueue.main.async()
+                    {
+                        
+                        let respVO:SignupVo = Mapper().map(JSONObject: result)!
+                        
+                        print("responseString = \(respVO)")
+                        
+                        let statusCode = respVO.StatusCode
+                        
+                        print("StatusCode:\(String(describing: statusCode))")
+                        
+                        
+                        if statusCode == 200
+                        {
+                            
+                            
+                            let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                            self.navigationController?.pushViewController(homeViewController, animated: true)
+                            
+                            let statusMsg  = respVO.StatusMessage!
+                            
+                            print("statusMsg:\(String(describing: statusMsg))")
+                            
+                            let alertController = UIAlertController(title: "", message: statusMsg , preferredStyle: UIAlertControllerStyle.alert)
+                            
+                            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                            }
+                            alertController.addAction(DestructiveAction)
+                            self.present(alertController, animated: true, completion: nil)
+                            
+                            
+                            
+                            
+                        }
+                        else if statusCode == 401{
+                            
+                            let alertController = UIAlertController(title: "", message: "Network error" , preferredStyle: UIAlertControllerStyle.alert)
+                            
+                            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                            }
+                            alertController.addAction(DestructiveAction)
+                            self.present(alertController, animated: true, completion: nil)
+                            
+                            
+                        }
+                        else if statusCode == nil{
+                            
+                            let s1 = "Your mobile number"
+                            let s2 = mNumber
+                            let s3 = "is already taken."
+                            
+                            let errMsg = s1 + " " + s2 + " " + s3
+                            
+                            let alertController = UIAlertController(title: "", message: errMsg , preferredStyle: UIAlertControllerStyle.alert)
+                            
+                            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                            }
+                            alertController.addAction(DestructiveAction)
+                            self.present(alertController, animated: true, completion: nil)
+                            
+                            
+                        }
+                        else
+                        {
+                            //                            self.view.makeToast(result.value(forKey:"statusMessage") as! String, duration:kToastDuration, position:CSToastPositionCenter)
+                            
+                            //                            let alertController = UIAlertController(title: "", message: result.value(forKey:"statusMessage") as? String , preferredStyle: UIAlertControllerStyle.alert)
+                            
+                            let alertController = UIAlertController(title: "Success", message: "Network Error" , preferredStyle: UIAlertControllerStyle.alert)
+                            
+                            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                            }
+                            alertController.addAction(DestructiveAction)
+                            self.present(alertController, animated: true, completion: nil)
+                            
+                        }
+                }
+            }, failureHandler: {(error) in
+                
+                print("error")
+            })
+            
+            
+        }
+        
+       else if (self.mobileNumField.text?.isEmpty)! {
             
             let alertController = UIAlertController(title: "Message", message: "Please Enter Your Mobile Number" , preferredStyle: UIAlertControllerStyle.alert)
             
@@ -99,6 +204,9 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
         
         else {
             
+            self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+            
 //            if pword.isValidPassword == false {
 //                
 //                print("isValidPassword")
@@ -110,105 +218,6 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
 //            if isEmailAddressValid
 //            {
 //                print("Email address is valid")
-            
-                let mNumber:String = mobileNumField.text!
-                let pword:String = paswdField.text!
-                let email:String = emailField.text!
-            
-                
-                let  strUrl = registerUrl
-            
-                let null = NSNull()
-                
-                let dictParams = ["MobileNumber":mNumber,"Password":pword,"ConfirmPassword":pword,"Email":email,"RoleId":null] as NSDictionary
-                
-                print("dic params \(dictParams)")
-                //CleverTap.sharedInstance()?.onUserLogin(dictParams as! [AnyHashable : Any])
-                let dictHeaders = ["":"","":""] as NSDictionary
-                
-                serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
-                    DispatchQueue.main.async()
-                        {
-                            
-                            let respVO:SignupVo = Mapper().map(JSONObject: result)!
-                            
-                            print("responseString = \(respVO)")
-                            
-                            let statusCode = respVO.StatusCode
-                            
-                            print("StatusCode:\(String(describing: statusCode))")
-                            
-                            
-                            if statusCode == 200
-                            {
-                                
-                                
-                                let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                                self.navigationController?.pushViewController(homeViewController, animated: true)
-                                
-                                let statusMsg  = respVO.StatusMessage!
-                                
-                                print("statusMsg:\(String(describing: statusMsg))")
-                                
-                                let alertController = UIAlertController(title: "", message: statusMsg , preferredStyle: UIAlertControllerStyle.alert)
-                                
-                                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                                }
-                                alertController.addAction(DestructiveAction)
-                                self.present(alertController, animated: true, completion: nil)
-                                
-                                
-                                
-                                
-                            }
-                            else if statusCode == 401{
-                                
-                                let alertController = UIAlertController(title: "", message: "Network error" , preferredStyle: UIAlertControllerStyle.alert)
-                                
-                                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                                }
-                                alertController.addAction(DestructiveAction)
-                                self.present(alertController, animated: true, completion: nil)
-                                
-                                
-                            }
-                            else if statusCode == nil{
-                                
-                                let s1 = "Your mobile number"
-                                let s2 = mNumber
-                                let s3 = "is already taken."
-                                
-                                let errMsg = s1 + " " + s2 + " " + s3
-                                
-                                let alertController = UIAlertController(title: "", message: errMsg , preferredStyle: UIAlertControllerStyle.alert)
-                                
-                                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                                }
-                                alertController.addAction(DestructiveAction)
-                                self.present(alertController, animated: true, completion: nil)
-                                
-                                
-                            }
-                            else
-                            {
-                                //                            self.view.makeToast(result.value(forKey:"statusMessage") as! String, duration:kToastDuration, position:CSToastPositionCenter)
-                                
-                                //                            let alertController = UIAlertController(title: "", message: result.value(forKey:"statusMessage") as? String , preferredStyle: UIAlertControllerStyle.alert)
-                                
-                                let alertController = UIAlertController(title: "Success", message: "Network Error" , preferredStyle: UIAlertControllerStyle.alert)
-                                
-                                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                                }
-                                alertController.addAction(DestructiveAction)
-                                self.present(alertController, animated: true, completion: nil)
-                                
-                            }
-                    }
-                }, failureHandler: {(error) in
-                    
-                    print("error")
-                })
-
                 
                 
 //            } else {

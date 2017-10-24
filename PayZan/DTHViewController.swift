@@ -124,7 +124,9 @@ class DTHViewController: UIViewController,UIPickerViewDelegate, UIPickerViewData
     
     func getOperatorList(){
         
-        let strUrl = operatorUrl
+        if(appDelegate.checkInternetConnectivity()){
+        
+        let strUrl = dthUrl
         
         let url : NSURL = NSURL(string: strUrl)!
         
@@ -162,6 +164,13 @@ class DTHViewController: UIViewController,UIPickerViewDelegate, UIPickerViewData
             }
         }, failure:  {(error) in
         })
+            
+        }
+        else {
+            
+            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+        }
     }
     
     @IBAction func backAction(_ sender: Any) {

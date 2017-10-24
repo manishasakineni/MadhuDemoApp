@@ -17,17 +17,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="208" height="253.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recharge and bill payment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x14-pp-uGF">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recharge and bill payment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x14-pp-uGF">
                         <rect key="frame" x="8" y="7" width="192" height="24"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.91736811399999996" green="0.91373616459999996" blue="0.91790676120000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="backgroundColor" red="0.91093438863754272" green="0.91159981489181519" blue="0.91792327165603638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="bPC-t1-M7G"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gyS-eh-zdM">
+                    <collectionView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gyS-eh-zdM">
                         <rect key="frame" x="8" y="44" width="192" height="202"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eQG-lE-4Jk">
                             <size key="itemSize" width="120" height="110"/>
@@ -42,6 +43,15 @@
                     </collectionView>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="x14-pp-uGF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="5Tx-IR-plp"/>
+                    <constraint firstItem="gyS-eh-zdM" firstAttribute="top" secondItem="x14-pp-uGF" secondAttribute="bottom" constant="13" id="GFx-5G-Yy1"/>
+                    <constraint firstItem="x14-pp-uGF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="W0w-Kh-nZD"/>
+                    <constraint firstAttribute="trailing" secondItem="x14-pp-uGF" secondAttribute="trailing" constant="8" id="Yn7-Sz-QhF"/>
+                    <constraint firstAttribute="bottom" secondItem="gyS-eh-zdM" secondAttribute="bottom" constant="7.5" id="cPA-9e-Jpd"/>
+                    <constraint firstItem="gyS-eh-zdM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="fIX-MN-f4w"/>
+                    <constraint firstAttribute="trailing" secondItem="gyS-eh-zdM" secondAttribute="trailing" constant="8" id="rHD-3p-7Kb"/>
+                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
