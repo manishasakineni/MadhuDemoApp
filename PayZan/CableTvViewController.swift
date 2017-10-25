@@ -40,6 +40,18 @@ class CableTvViewController: UIViewController,UIPickerViewDelegate, UIPickerView
 //        
 //        payNowBtn.layer.cornerRadius = 5
         
+        operatorField.layer.borderWidth = 0.5
+        operatorField.layer.borderColor = UIColor.lightGray.cgColor
+        operatorField.layer.cornerRadius = 3
+        
+        accountNumField.layer.borderWidth = 0.5
+        accountNumField.layer.borderColor = UIColor.lightGray.cgColor
+        accountNumField.layer.cornerRadius = 3
+        
+        amountField.layer.borderWidth = 0.5
+        amountField.layer.borderColor = UIColor.lightGray.cgColor
+        amountField.layer.cornerRadius = 3
+        
         operatorField.delegate = self
                 
         getOperatorList()
@@ -146,11 +158,12 @@ class CableTvViewController: UIViewController,UIPickerViewDelegate, UIPickerView
                     
                     if(isActive == true){
                         
-                        var operatorObj = respVO.ListResult
+                        let operatorObj = respVO.ListResult
                         
                         
                         for(index,element) in (operatorObj?.enumerated())! {
                             
+                            print("index:\(index)")
                             self.operatorList.append(element.Name!)
                             
                         }

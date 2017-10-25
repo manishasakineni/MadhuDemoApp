@@ -46,6 +46,7 @@
 		35344DBB1F863B6500E35C5C /* NoCopyPasteUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35344DBA1F863B6500E35C5C /* NoCopyPasteUITextField.swift */; };
 		35344DBD1F86824900E35C5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35344DBC1F86824900E35C5C /* GoogleService-Info.plist */; };
 		353EB9BC1F9F06ED00AA67E9 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */; };
+		35403DED1FA0687F0004DD20 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35403DEC1FA0687F0004DD20 /* TabsViewController.swift */; };
 		35442CE21F8DEA4D007798EC /* RechargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35442CE11F8DEA4D007798EC /* RechargeViewController.swift */; };
 		354CF19A1F9095B4004ADDAD /* UserVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1991F9095B4004ADDAD /* UserVo.swift */; };
 		354CF19C1F909751004ADDAD /* SampleVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF19B1F909751004ADDAD /* SampleVo.swift */; };
@@ -144,6 +145,7 @@
 		35344DBA1F863B6500E35C5C /* NoCopyPasteUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoCopyPasteUITextField.swift; sourceTree = "<group>"; };
 		35344DBC1F86824900E35C5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		35403DEC1FA0687F0004DD20 /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		35442CE11F8DEA4D007798EC /* RechargeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RechargeViewController.swift; sourceTree = "<group>"; };
 		354CF1991F9095B4004ADDAD /* UserVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVo.swift; sourceTree = "<group>"; };
 		354CF19B1F909751004ADDAD /* SampleVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleVo.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				35344DB21F8628E500E35C5C /* HomeViewController.swift */,
+				35403DEC1FA0687F0004DD20 /* TabsViewController.swift */,
 				35442CE11F8DEA4D007798EC /* RechargeViewController.swift */,
 				3554C3181F8F457B0092EAC7 /* RechargeDetailViewController.swift */,
 				3554C31A1F8F5C960092EAC7 /* ProfileViewController.swift */,
@@ -627,6 +630,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PageMenu/PageMenu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -641,6 +645,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PageMenu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -725,6 +730,7 @@
 				3554C31D1F8F5CAE0092EAC7 /* EditProfileViewController.swift in Sources */,
 				3569C1E91F8773CA00152B80 /* SWRevealViewController.m in Sources */,
 				354CF1AD1F90E4BB004ADDAD /* ElectricityViewController.swift in Sources */,
+				35403DED1FA0687F0004DD20 /* TabsViewController.swift in Sources */,
 				35CB9D0F1F8B7B0700BF1073 /* ServiceController.swift in Sources */,
 				35E64C901F84DF5200E2CA65 /* AppDelegate.swift in Sources */,
 				35CB9D0B1F8B77EE00BF1073 /* URLStrings.swift in Sources */,

@@ -45,6 +45,15 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         
 //        headerView.isHidden = true
         
+        mobileField.layer.borderWidth = 0.5
+        mobileField.layer.borderColor = UIColor.lightGray.cgColor
+        mobileField.layer.cornerRadius = 3
+        mobileField.layer.masksToBounds = true
+        
+        passwordField.layer.borderWidth = 0.5
+        passwordField.layer.borderColor = UIColor.lightGray.cgColor
+        passwordField.layer.cornerRadius = 3
+        
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self as GIDSignInDelegate
         
@@ -57,8 +66,8 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
 //        
 //        loginBtn.layer.cornerRadius = 5
         
-        facebookBtn.layer.cornerRadius = 5
-        googleBtn.layer.cornerRadius = 5
+        facebookBtn.layer.cornerRadius = 3
+        googleBtn.layer.cornerRadius = 3
         
         
         

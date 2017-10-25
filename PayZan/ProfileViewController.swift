@@ -33,7 +33,9 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         self.profileTVC.delegate = self
         self.profileTVC.dataSource = self
         
-        profileTVC.separatorColor = UIColor.clear
+        self.profileTVC.separatorStyle = .none
+        
+//        profileTVC.separatorColor = UIColor.clear
         
         profileTVC.sectionIndexBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         profileTVC.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -125,16 +127,16 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
             if isUserLogin == false {
                 
-                return 100
+                return 80
                 
             }
             
-            return 120
+            return 80
         }
             
         else{
             
-            return 60
+            return 40
             
         }
     }
@@ -161,8 +163,11 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
             cell.editProfileBtn.addTarget(self, action: #selector(self.btnAction), for: .touchUpInside)
             cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            cell.layer.borderWidth = 1
+            cell.layer.borderWidth = 0.5
             cell.layer.borderColor = UIColor.lightGray.cgColor
+            
+             cell.userNameLabel.font = UIFont(name:"Helvetica Neue", size:9)
+            cell.emaiLabel.font = UIFont(name:"Helvetica Neue", size:8)
             
             return cell
         }
@@ -213,8 +218,11 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell.selectionStyle = .none
         
         cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.layer.borderWidth = 1
+        cell.layer.borderWidth = 0.5
         cell.layer.borderColor = UIColor.lightGray.cgColor
+        
+        cell.textLbl.font = UIFont(name:"Helvetica Neue", size:10)
+        cell.textLbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         
 
         
@@ -249,6 +257,11 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
     func addMoneyAction(_ sender: UIButton) {
         
         let addMoneyViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddMoneyWalletViewController") as! AddMoneyWalletViewController
+        
+        addMoneyViewController.indexValue = 1
+        addMoneyViewController.isHiddenWithdrawView = false
+        addMoneyViewController.isHiddenSendView = true
+        addMoneyViewController.isHiddenTransactionView = true
     
         self.navigationController?.pushViewController(addMoneyViewController, animated: true)
         

@@ -18,20 +18,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgH-9i-aAO">
-                        <rect key="frame" x="8" y="14" width="304" height="40"/>
+                        <rect key="frame" x="8" y="17" width="300" height="35"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="124-q5-iy8"/>
-                            <constraint firstAttribute="width" constant="304" id="wEk-pp-BtZ"/>
+                            <constraint firstAttribute="height" constant="35" id="124-q5-iy8"/>
+                            <constraint firstAttribute="width" constant="300" id="wEk-pp-BtZ"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                        <state key="normal" title="Sign Out" backgroundImage="buttonColor">
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                        <state key="normal" title="Sign out" backgroundImage="buttonColor">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="GgH-9i-aAO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="XL6-oe-G02"/>
-                    <constraint firstItem="GgH-9i-aAO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="uox-pB-Sc8"/>
+                    <constraint firstItem="GgH-9i-aAO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-2" id="XL6-oe-G02"/>
+                    <constraint firstItem="GgH-9i-aAO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="uox-pB-Sc8"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

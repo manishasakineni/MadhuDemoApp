@@ -40,6 +40,19 @@ class DTHViewController: UIViewController,UIPickerViewDelegate, UIPickerViewData
 //        
 //        rechargeBtn.layer.cornerRadius = 5
         
+        
+        subsriberIdField.layer.borderWidth = 0.5
+        subsriberIdField.layer.borderColor = UIColor.lightGray.cgColor
+        subsriberIdField.layer.cornerRadius = 3
+        
+        operatorField.layer.borderWidth = 0.5
+        operatorField.layer.borderColor = UIColor.lightGray.cgColor
+        operatorField.layer.cornerRadius = 3
+        
+        amountField.layer.borderWidth = 0.5
+        amountField.layer.borderColor = UIColor.lightGray.cgColor
+        amountField.layer.cornerRadius = 3
+        
         operatorField.delegate = self
         
         amountField.keyboardType = .numberPad

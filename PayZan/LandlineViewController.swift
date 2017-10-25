@@ -45,6 +45,22 @@ class LandlineViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
 //        
 //        rechargeBtn.layer.cornerRadius = 5
         
+        stdNumField.layer.borderWidth = 0.5
+        stdNumField.layer.borderColor = UIColor.lightGray.cgColor
+        stdNumField.layer.cornerRadius = 3
+        
+        operatorField.layer.borderWidth = 0.5
+        operatorField.layer.borderColor = UIColor.lightGray.cgColor
+        operatorField.layer.cornerRadius = 3
+        
+        amountField.layer.borderWidth = 0.5
+        amountField.layer.borderColor = UIColor.lightGray.cgColor
+        amountField.layer.cornerRadius = 3
+        
+        circleField.layer.borderWidth = 0.5
+        circleField.layer.borderColor = UIColor.lightGray.cgColor
+        circleField.layer.cornerRadius = 3
+        
         operatorField.delegate = self
         
         stdNumField.keyboardType = .phonePad

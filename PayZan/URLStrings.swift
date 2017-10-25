@@ -53,5 +53,7 @@ let landlineUrl:String = baseUrl.appending("ServiceProvider/GetServiceProvidersB
 
 let datacardUrl:String = baseUrl.appending("ServiceProvider/GetServiceProvidersByServiceType/40")
 
+let districtUrl:String = baseUrl.appending("Districts/GetAll")
+
 
 

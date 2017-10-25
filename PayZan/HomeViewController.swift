@@ -105,7 +105,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         self.scrollView.delegate = self
         self.scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 80)
         
-        self.myNewView = UIView(frame: CGRect(x: 10, y: 180, width: self.view.frame.size.width-20, height: 300))
+        self.myNewView = UIView(frame: CGRect(x: 10, y: 120, width: self.view.frame.size.width-20, height: 300))
         
 //        self.myNewView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
@@ -278,7 +278,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
         
-        return 120
+        return 100
         
     }
     
@@ -287,7 +287,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         var height:CGFloat = CGFloat()
         
         if indexPath.row == 0 {
-            height = 400
+            height = 320
         }
         else if indexPath.row == 1{
             height = 300
@@ -365,6 +365,43 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
     }
 
+    @IBAction func paySendAction(_ sender: Any) {
+        
+        let addMoneyViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddMoneyWalletViewController") as! AddMoneyWalletViewController
+        
+        addMoneyViewController.indexValue = 0
+        addMoneyViewController.isHiddenSendView = false
+        addMoneyViewController.isHiddenTransactionView = true
+        addMoneyViewController.isHiddenWithdrawView = true
+        
+        self.navigationController?.pushViewController(addMoneyViewController, animated: true)
+        
+    }
+    
+    @IBAction func addWithdrawAction(_ sender: Any) {
+        
+        let addMoneyViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddMoneyWalletViewController") as! AddMoneyWalletViewController
+        
+        addMoneyViewController.indexValue = 1
+        addMoneyViewController.isHiddenWithdrawView = false
+        addMoneyViewController.isHiddenSendView = true
+        addMoneyViewController.isHiddenTransactionView = true
+    
+        
+        self.navigationController?.pushViewController(addMoneyViewController, animated: true)
+    }
+    
+    @IBAction func myTransactionAction(_ sender: Any) {
+        
+        let addMoneyViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddMoneyWalletViewController") as! AddMoneyWalletViewController
+        
+        addMoneyViewController.indexValue = 2
+        addMoneyViewController.isHiddenTransactionView = false
+        addMoneyViewController.isHiddenWithdrawView = true
+        addMoneyViewController.isHiddenSendView = true
+        
+        self.navigationController?.pushViewController(addMoneyViewController, animated: true)
+    }
     
 }
 

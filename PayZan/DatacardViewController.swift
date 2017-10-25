@@ -44,6 +44,19 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
 //        
 //        payNowBtn.layer.cornerRadius = 5
         
+        
+        datacardNumField.layer.borderWidth = 0.5
+        datacardNumField.layer.borderColor = UIColor.lightGray.cgColor
+        datacardNumField.layer.cornerRadius = 3
+        
+        operatorField.layer.borderWidth = 0.5
+        operatorField.layer.borderColor = UIColor.lightGray.cgColor
+        operatorField.layer.cornerRadius = 3
+        
+        amountField.layer.borderWidth = 0.5
+        amountField.layer.borderColor = UIColor.lightGray.cgColor
+        amountField.layer.cornerRadius = 3
+        
         operatorField.delegate = self
         
         datacardNumField.keyboardType = .numberPad

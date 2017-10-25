@@ -69,6 +69,18 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         
         networkField.delegate = self
         
+        mobileField.layer.borderWidth = 0.5
+        mobileField.layer.borderColor = UIColor.lightGray.cgColor
+        mobileField.layer.cornerRadius = 3
+        
+        networkField.layer.borderWidth = 0.5
+        networkField.layer.borderColor = UIColor.lightGray.cgColor
+        networkField.layer.cornerRadius = 3
+        
+        planField.layer.borderWidth = 0.5
+        planField.layer.borderColor = UIColor.lightGray.cgColor
+        planField.layer.cornerRadius = 3
+        
         planField.delegate = self
         
         networkField.tag = 1

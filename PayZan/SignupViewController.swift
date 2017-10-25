@@ -35,6 +35,18 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
         super.viewDidLoad()
         
         
+        mobileNumField.layer.borderWidth = 0.5
+        mobileNumField.layer.borderColor = UIColor.lightGray.cgColor
+        mobileNumField.layer.cornerRadius = 3
+        
+        paswdField.layer.borderWidth = 0.5
+        paswdField.layer.borderColor = UIColor.lightGray.cgColor
+        paswdField.layer.cornerRadius = 3
+        
+        emailField.layer.borderWidth = 0.5
+        emailField.layer.borderColor = UIColor.lightGray.cgColor
+        emailField.layer.cornerRadius = 3
+        
         self.tabBarController?.delegate = self
         
         mobileNumField.delegate = self
@@ -50,8 +62,8 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
 //        
 //        signupBtn.layer.cornerRadius = 5
         
-        facebookBtn.layer.cornerRadius = 5
-        googleBtn.layer.cornerRadius = 5
+        facebookBtn.layer.cornerRadius = 3
+        googleBtn.layer.cornerRadius = 3
 
         // Do any additional setup after loading the view.
     }

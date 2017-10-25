@@ -13,6 +13,13 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     @IBOutlet weak var walletAmountField: UITextField!
     
     @IBOutlet weak var promoCodeField: UITextField!
+    
+    @IBOutlet weak var addWalletFiled: UITextField!
+    
+    @IBOutlet weak var walletPromoField: UITextField!
+    
+    @IBOutlet weak var circleField: UITextField!
+    
 
     @IBOutlet weak var addMoneyBtn: UIButton!
     
@@ -35,6 +42,14 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     
     @IBOutlet weak var myTransactionTableView: UITableView!
     
+    @IBOutlet weak var phoneBookBtn: UIButton!
+    
+    var indexValue:Int!
+    
+    var isHiddenSendView:Bool?
+    var isHiddenWithdrawView:Bool?
+    var isHiddenTransactionView:Bool?
+    
     var userId:String?
     var walletId:String?
     
@@ -42,11 +57,78 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     
     var walletArr = ["PayZan Cash Received","Transferred to bank Account"]
     
+    private func imageWithColor(color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0.0, y: 0.0, width:  1.0, height: 1.0)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(color.cgColor);
+        context!.fill(rect);
+        let image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return image!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        mySegmentControl.removeBorders()
+        
+        let font = UIFont.systemFont(ofSize: 10)
+        mySegmentControl.setTitleTextAttributes([NSFontAttributeName: font],
+                                                for: .normal)
+        let attr = NSDictionary(object: UIFont(name: "HelveticaNeue-Bold", size: 10.0)!, forKey: NSFontAttributeName as NSCopying)
+        UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
+        
+        mySegmentControl.backgroundColor = #colorLiteral(red: 0.9351081285, green: 0.9351081285, blue: 0.9351081285, alpha: 1)
+        mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:10.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
+        
+        mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:10.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
+        
+        mySegmentControl.setDividerImage(self.imageWithColor(color: UIColor.clear), forLeftSegmentState: UIControlState.normal, rightSegmentState: UIControlState.normal, barMetrics: UIBarMetrics.default)
+        
+        mySegmentControl.setBackgroundImage(self.imageWithColor(color: UIColor.clear), for:UIControlState.normal, barMetrics:UIBarMetrics.default)
+        
+//        mySegmentControl.setBackgroundImage(self.imageWithColor(color: UIColor.init(red: 215/255.0, green: 0.0, blue: 30/255.0, alpha:1.0)), for:UIControlState.selected, barMetrics:UIBarMetrics.default);
+        
+        for  borderview in mySegmentControl.subviews {
+            
+            let upperBorder: CALayer = CALayer()
+            upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+            upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:borderview.frame.size.width, height:1.0)
+            borderview.layer .addSublayer(upperBorder);
+            
+        }
+        
         myTransactionTableView.dataSource = self
         myTransactionTableView.delegate = self
+        
+        walletAmountField.layer.borderWidth = 0.5
+        walletAmountField.layer.borderColor = UIColor.lightGray.cgColor
+        walletAmountField.layer.cornerRadius = 3
+        
+        promoCodeField.layer.borderWidth = 0.5
+        promoCodeField.layer.borderColor = UIColor.lightGray.cgColor
+        promoCodeField.layer.cornerRadius = 3
+        
+        addWalletFiled.layer.borderWidth = 0.5
+        addWalletFiled.layer.borderColor = UIColor.lightGray.cgColor
+        addWalletFiled.layer.cornerRadius = 3
+        
+        walletPromoField.layer.borderWidth = 0.5
+        walletPromoField.layer.borderColor = UIColor.lightGray.cgColor
+        walletPromoField.layer.cornerRadius = 3
+        
+        circleField.layer.borderWidth = 0.5
+        circleField.layer.borderColor = UIColor.lightGray.cgColor
+        circleField.layer.cornerRadius = 3
+        
+
+        
+        if indexValue != nil {
+            
+        mySegmentControl.selectedSegmentIndex = indexValue
+            
+        }
         
 //      let color1 = hexStringToUIColor(hex: "#5f1a58")
         
@@ -58,13 +140,27 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         addBtn2.layer.borderWidth = 1
         addBtn3.layer.borderWidth = 1
         
-        addBtn1.layer.borderColor = UIColor.init(red:255/255.0, green:200/255.0, blue:200/255.0, alpha: 1.0).cgColor
-        addBtn2.layer.borderColor = UIColor.init(red:255/255.0, green:200/255.0, blue:200/255.0, alpha: 1.0).cgColor
-        addBtn3.layer.borderColor = UIColor.init(red:255/255.0, green:200/255.0, blue:200/255.0, alpha: 1.0).cgColor
+        addBtn1.layer.borderColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+        addBtn2.layer.borderColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+        addBtn3.layer.borderColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
         
-        sendMoneyWalletView.isHidden = false
-        addmoneyWalletView.isHidden = true
-        mytransactionView.isHidden = true
+        if isHiddenSendView != nil {
+            
+            sendMoneyWalletView.isHidden = isHiddenSendView!
+        }
+        if isHiddenWithdrawView != nil {
+            
+            addmoneyWalletView.isHidden = isHiddenWithdrawView!
+        }
+        if isHiddenTransactionView != nil {
+            
+            mytransactionView.isHidden = isHiddenTransactionView!
+        }
+        
+//        sendMoneyWalletView.isHidden = false
+//        addmoneyWalletView.isHidden = true
+//        mytransactionView.isHidden = true
+        
         
 //        addMoneyBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
 //        
@@ -251,24 +347,26 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     @IBAction func notificationAction(_ sender: Any) {
     }
     
+    @IBAction func phoneBookAction(_ sender: Any) {
+        
+    }
+    
+    
     @IBAction func mySegmentAction(_ sender: Any) {
         
         
         switch mySegmentControl.selectedSegmentIndex {
         case 0:
-            
             sendMoneyWalletView.isHidden = false
             addmoneyWalletView.isHidden = true
             mytransactionView.isHidden = true
             
         case 1:
-            
             sendMoneyWalletView.isHidden = true
             addmoneyWalletView.isHidden = false
             mytransactionView.isHidden = true
             
         case 2:
-            
             sendMoneyWalletView.isHidden = true
             addmoneyWalletView.isHidden = true
             mytransactionView.isHidden = false
@@ -279,4 +377,55 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     }
     
     
+}
+
+extension UISegmentedControl {
+    
+    func customizeAppearance(for height: Int) {
+        
+        setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:13.0)!,NSForegroundColorAttributeName:UIColor.white], for:.normal)
+        setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:13.0)!,NSForegroundColorAttributeName:UIColor.white], for:.selected)
+        setDividerImage(UIImage().colored(with: .clear, size: CGSize(width: 1, height: height)), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
+        setBackgroundImage(UIImage().colored(with: .clear, size: CGSize(width: 1, height: height)), for: .normal, barMetrics: .default)
+        setBackgroundImage(UIImage().colored(with: UIColor.init(red: 215/255.0, green: 0.0, blue: 30/255.0, alpha: 1.0), size: CGSize(width: 1, height: height)), for: .selected, barMetrics: .default);
+        
+        for  borderview in subviews {
+            let upperBorder: CALayer = CALayer()
+            upperBorder.backgroundColor = UIColor.init(red: 215/255.0, green: 0.0, blue: 30/255.0, alpha: 1.0).cgColor
+            upperBorder.frame = CGRect(x: 0, y: borderview.frame.size.height-1, width: borderview.frame.size.width, height: 1)
+            borderview.layer.addSublayer(upperBorder)
+        }
+        
+    }
+    
+    func removeBorders() {
+        setBackgroundImage(imageWithColor(color: backgroundColor!), for: .normal, barMetrics: .default)
+        setBackgroundImage(imageWithColor(color: tintColor!), for: .selected, barMetrics: .default)
+        setDividerImage(imageWithColor(color: UIColor.clear), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
+    }
+    
+    // create a 1x1 image with this color
+    private func imageWithColor(color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0.0, y: 0.0, width:  1.0, height: 1.0)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(color.cgColor);
+        context!.fill(rect);
+        let image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return image!
+    }
+}
+extension UIImage {
+    
+    func colored(with color: UIColor, size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContext(size)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(color.cgColor);
+        let rect = CGRect(origin: CGPoint(x: 0, y: 0), size: size)
+        context!.fill(rect);
+        let image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return image!
+    }
 }

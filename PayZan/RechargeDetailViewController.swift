@@ -68,6 +68,18 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
         networkField.tag = 1
         planField.tag = 2
         
+        mobileField.layer.borderWidth = 0.5
+        mobileField.layer.borderColor = UIColor.lightGray.cgColor
+        mobileField.layer.cornerRadius = 3
+        
+        networkField.layer.borderWidth = 0.5
+        networkField.layer.borderColor = UIColor.lightGray.cgColor
+        networkField.layer.cornerRadius = 3
+        
+        planField.layer.borderWidth = 0.5
+        planField.layer.borderColor = UIColor.lightGray.cgColor
+        planField.layer.cornerRadius = 3
+        
         
 //        rechargBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
 //        
