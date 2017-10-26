@@ -2171,6 +2171,9 @@
                                         <state key="normal" title="Add Money" backgroundImage="buttonColor">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addMoneyAction:" destination="olS-Sq-Nuz" eventType="touchUpInside" id="9HY-bT-t3K"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2223,7 +2226,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="addMoneyAction:" destination="olS-Sq-Nuz" eventType="touchUpInside" id="Z7q-wP-JCa"/>
+                                            <action selector="sendMoneyAction:" destination="olS-Sq-Nuz" eventType="touchUpInside" id="5S2-S7-nWh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2242,13 +2245,13 @@
                         <outlet property="addWalletFiled" destination="N4n-h0-aHf" id="F0N-Zx-0Ch"/>
                         <outlet property="addmoneyWalletView" destination="wdO-bk-sWd" id="FPX-8i-AS1"/>
                         <outlet property="circleField" destination="kCr-ao-ads" id="g8t-PB-56T"/>
+                        <outlet property="mobileNumField" destination="byp-gI-7al" id="AjS-M4-8pM"/>
                         <outlet property="mySegmentControl" destination="oY3-Bu-bcL" id="GRT-O4-aMO"/>
                         <outlet property="myTransactionTableView" destination="Rhk-SR-Gxm" id="Kvp-TF-HWQ"/>
                         <outlet property="mytransactionView" destination="ZnU-qn-YOJ" id="IgF-OD-afI"/>
                         <outlet property="phoneBookBtn" destination="Oey-k4-Kg5" id="9QR-e1-x3e"/>
-                        <outlet property="promoCodeField" destination="6Yi-nl-E7Q" id="1zA-jg-iqO"/>
+                        <outlet property="sendAmountField" destination="6Yi-nl-E7Q" id="fvk-SQ-Trs"/>
                         <outlet property="sendMoneyWalletView" destination="zCA-vy-wSO" id="psR-Xg-uL9"/>
-                        <outlet property="walletAmountField" destination="byp-gI-7al" id="i1X-F1-D3G"/>
                         <outlet property="walletPromoField" destination="AaI-XU-MYE" id="q3h-BI-QLs"/>
                     </connections>
                 </viewController>

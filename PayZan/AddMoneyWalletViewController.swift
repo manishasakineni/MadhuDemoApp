@@ -10,9 +10,11 @@ import UIKit
 
 class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    @IBOutlet weak var walletAmountField: UITextField!
+   
     
-    @IBOutlet weak var promoCodeField: UITextField!
+    @IBOutlet weak var mobileNumField: UITextField!
+    
+    @IBOutlet weak var sendAmountField: UITextField!
     
     @IBOutlet weak var addWalletFiled: UITextField!
     
@@ -43,6 +45,8 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     @IBOutlet weak var myTransactionTableView: UITableView!
     
     @IBOutlet weak var phoneBookBtn: UIButton!
+    
+    var appDelegate = AppDelegate()
     
     var indexValue:Int!
     
@@ -102,15 +106,15 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         myTransactionTableView.dataSource = self
         myTransactionTableView.delegate = self
         
-        walletAmountField.layer.borderWidth = 0.5
-        walletAmountField.layer.borderColor = UIColor.lightGray.cgColor
-        walletAmountField.layer.cornerRadius = 3
-        walletAmountField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+        mobileNumField.layer.borderWidth = 0.5
+        mobileNumField.layer.borderColor = UIColor.lightGray.cgColor
+        mobileNumField.layer.cornerRadius = 3
+        mobileNumField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
-        promoCodeField.layer.borderWidth = 0.5
-        promoCodeField.layer.borderColor = UIColor.lightGray.cgColor
-        promoCodeField.layer.cornerRadius = 3
-        promoCodeField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+        sendAmountField.layer.borderWidth = 0.5
+        sendAmountField.layer.borderColor = UIColor.lightGray.cgColor
+        sendAmountField.layer.cornerRadius = 3
+        sendAmountField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         addWalletFiled.layer.borderWidth = 0.5
         addWalletFiled.layer.borderColor = UIColor.lightGray.cgColor
@@ -173,8 +177,9 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
 //        
 //        addMoneyBtn.layer.cornerRadius = 5
         
-        walletAmountField.keyboardType = .numberPad
-        
+        mobileNumField.keyboardType = .phonePad
+        addWalletFiled.keyboardType = .numberPad
+        sendAmountField.keyboardType = .numberPad
         
         let defaults = UserDefaults.standard
         
@@ -237,15 +242,11 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         
         
     }
-
     
-    @IBAction func addMoneyAction(_ sender: Any) {
+   func postWalletMoneyService(){
+    
         
-        
-        if(appDelegate.checkInternetConnectivity()){
-            
-      
-        let walletField:String = walletAmountField.text!
+        let walletField:String = addWalletFiled.text!
         
         let  strUrl = walletUrl
         
@@ -298,7 +299,7 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
                         }
                         alertController.addAction(DestructiveAction)
                         self.present(alertController, animated: true, completion: nil)
-                    
+                        
                         
                         
                         
@@ -329,17 +330,44 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
             }
         }, failureHandler: {(error) in
         })
-            
+    
+    }
+
+    
+    @IBAction func addMoneyAction(_ sender: Any) {
         
+        if(appDelegate.checkInternetConnectivity()){
+            
+            if !(addWalletFiled.text?.isEmpty)! {
+                
+                postWalletMoneyService()
+                
+            }
+            else {
+                
+                let alertController = UIAlertController(title: "message", message:"Please enter wallet amount" , preferredStyle: UIAlertControllerStyle.alert)
+                
+                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                }
+                alertController.addAction(DestructiveAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
         }
         else {
             
-            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return
             
         }
         
+        
     }
+    
+    @IBAction func sendMoneyAction(_ sender: Any) {
+    }
+    
 
     @IBAction func backAction(_ sender: Any) {
         
