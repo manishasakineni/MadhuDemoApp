@@ -48,18 +48,22 @@ class LandlineViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         stdNumField.layer.borderWidth = 0.5
         stdNumField.layer.borderColor = UIColor.lightGray.cgColor
         stdNumField.layer.cornerRadius = 3
+        stdNumField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         operatorField.layer.borderWidth = 0.5
         operatorField.layer.borderColor = UIColor.lightGray.cgColor
         operatorField.layer.cornerRadius = 3
+        operatorField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         amountField.layer.borderWidth = 0.5
         amountField.layer.borderColor = UIColor.lightGray.cgColor
         amountField.layer.cornerRadius = 3
+        amountField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         circleField.layer.borderWidth = 0.5
         circleField.layer.borderColor = UIColor.lightGray.cgColor
         circleField.layer.cornerRadius = 3
+        circleField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         operatorField.delegate = self
         

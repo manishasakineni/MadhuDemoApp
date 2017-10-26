@@ -43,14 +43,17 @@ class CableTvViewController: UIViewController,UIPickerViewDelegate, UIPickerView
         operatorField.layer.borderWidth = 0.5
         operatorField.layer.borderColor = UIColor.lightGray.cgColor
         operatorField.layer.cornerRadius = 3
+        operatorField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         accountNumField.layer.borderWidth = 0.5
         accountNumField.layer.borderColor = UIColor.lightGray.cgColor
         accountNumField.layer.cornerRadius = 3
+        accountNumField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         amountField.layer.borderWidth = 0.5
         amountField.layer.borderColor = UIColor.lightGray.cgColor
         amountField.layer.cornerRadius = 3
+        amountField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         operatorField.delegate = self
                 

@@ -105,22 +105,27 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         walletAmountField.layer.borderWidth = 0.5
         walletAmountField.layer.borderColor = UIColor.lightGray.cgColor
         walletAmountField.layer.cornerRadius = 3
+        walletAmountField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         promoCodeField.layer.borderWidth = 0.5
         promoCodeField.layer.borderColor = UIColor.lightGray.cgColor
         promoCodeField.layer.cornerRadius = 3
+        promoCodeField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         addWalletFiled.layer.borderWidth = 0.5
         addWalletFiled.layer.borderColor = UIColor.lightGray.cgColor
         addWalletFiled.layer.cornerRadius = 3
+        addWalletFiled.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         walletPromoField.layer.borderWidth = 0.5
         walletPromoField.layer.borderColor = UIColor.lightGray.cgColor
         walletPromoField.layer.cornerRadius = 3
+        walletPromoField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         circleField.layer.borderWidth = 0.5
         circleField.layer.borderColor = UIColor.lightGray.cgColor
         circleField.layer.cornerRadius = 3
+        circleField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
 
         

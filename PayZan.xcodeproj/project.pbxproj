@@ -48,6 +48,8 @@
 		353EB9BC1F9F06ED00AA67E9 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */; };
 		35403DED1FA0687F0004DD20 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35403DEC1FA0687F0004DD20 /* TabsViewController.swift */; };
 		35442CE21F8DEA4D007798EC /* RechargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35442CE11F8DEA4D007798EC /* RechargeViewController.swift */; };
+		3545A89F1FA207A4005E4E7C /* BroadbandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545A89D1FA207A4005E4E7C /* BroadbandViewController.swift */; };
+		3545A8A01FA207A4005E4E7C /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545A89E1FA207A4005E4E7C /* WaterViewController.swift */; };
 		354CF19A1F9095B4004ADDAD /* UserVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1991F9095B4004ADDAD /* UserVo.swift */; };
 		354CF19C1F909751004ADDAD /* SampleVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF19B1F909751004ADDAD /* SampleVo.swift */; };
 		354CF19E1F90978B004ADDAD /* GetActVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF19D1F90978B004ADDAD /* GetActVo.swift */; };
@@ -147,6 +149,8 @@
 		353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		35403DEC1FA0687F0004DD20 /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		35442CE11F8DEA4D007798EC /* RechargeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RechargeViewController.swift; sourceTree = "<group>"; };
+		3545A89D1FA207A4005E4E7C /* BroadbandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadbandViewController.swift; sourceTree = "<group>"; };
+		3545A89E1FA207A4005E4E7C /* WaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
 		354CF1991F9095B4004ADDAD /* UserVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVo.swift; sourceTree = "<group>"; };
 		354CF19B1F909751004ADDAD /* SampleVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleVo.swift; sourceTree = "<group>"; };
 		354CF19D1F90978B004ADDAD /* GetActVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetActVo.swift; sourceTree = "<group>"; };
@@ -294,6 +298,8 @@
 				3554C31A1F8F5C960092EAC7 /* ProfileViewController.swift */,
 				3554C31C1F8F5CAE0092EAC7 /* EditProfileViewController.swift */,
 				354CF1AC1F90E4BB004ADDAD /* ElectricityViewController.swift */,
+				3545A89D1FA207A4005E4E7C /* BroadbandViewController.swift */,
+				3545A89E1FA207A4005E4E7C /* WaterViewController.swift */,
 				354CF1AE1F90F2B1004ADDAD /* CableTvViewController.swift */,
 				354CF1B01F90F91F004ADDAD /* DTHViewController.swift */,
 				354CF1B21F90F93B004ADDAD /* DatacardViewController.swift */,
@@ -709,6 +715,7 @@
 				35344DA91F8610C700E35C5C /* URLTransform.swift in Sources */,
 				35344DBB1F863B6500E35C5C /* NoCopyPasteUITextField.swift in Sources */,
 				3554C3391F8F5DCD0092EAC7 /* LoginTableViewCell.swift in Sources */,
+				3545A89F1FA207A4005E4E7C /* BroadbandViewController.swift in Sources */,
 				35344DA71F8610C700E35C5C /* TransformOperators.swift in Sources */,
 				35344D9B1F8610C700E35C5C /* HexColorTransform.swift in Sources */,
 				35344DB31F8628E500E35C5C /* HomeViewController.swift in Sources */,
@@ -723,6 +730,7 @@
 				354CF19E1F90978B004ADDAD /* GetActVo.swift in Sources */,
 				354CF1B91F913E72004ADDAD /* GetUserWalletVo.swift in Sources */,
 				3569C1E61F876D6800152B80 /* MenuTableViewCell.swift in Sources */,
+				3545A8A01FA207A4005E4E7C /* WaterViewController.swift in Sources */,
 				35344DAD1F8611B100E35C5C /* LoginVo.swift in Sources */,
 				355120F51F948E4E00C9AD9D /* OperatorVo.swift in Sources */,
 				35344D9D1F8610C700E35C5C /* IntegerOperators.swift in Sources */,

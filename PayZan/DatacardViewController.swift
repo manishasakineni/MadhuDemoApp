@@ -48,14 +48,17 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         datacardNumField.layer.borderWidth = 0.5
         datacardNumField.layer.borderColor = UIColor.lightGray.cgColor
         datacardNumField.layer.cornerRadius = 3
+        datacardNumField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         operatorField.layer.borderWidth = 0.5
         operatorField.layer.borderColor = UIColor.lightGray.cgColor
         operatorField.layer.cornerRadius = 3
+        operatorField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         amountField.layer.borderWidth = 0.5
         amountField.layer.borderColor = UIColor.lightGray.cgColor
         amountField.layer.cornerRadius = 3
+        amountField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         operatorField.delegate = self
         

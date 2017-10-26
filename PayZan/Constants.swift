@@ -16,6 +16,7 @@ let baseUrl:String = "http://192.168.1.125/PayZanAPI/api/"
 
 let walletUrl:String = "http://192.168.1.125/PayZanAPI/api/UserWallet/AddMoneyToUserWallet"
 
+let kIsFirstTime:String = "kIsFirstTime"
 
 let kNetworkStatusMessage = "Please check your internet connection!"
 

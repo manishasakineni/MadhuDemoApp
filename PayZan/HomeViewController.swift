@@ -9,9 +9,9 @@
 import UIKit
 
 
-var imageArray = [UIImage(named:"mobileImg"),UIImage(named:"electricityImg"),UIImage(named:"cabletv"),UIImage(named:"landlineImg"),UIImage(named:"dth"),UIImage(named:"broadband"),UIImage(named:"waterImg"),UIImage(named:"datacard")]
+var imageArray = [UIImage(named:"mobileImg"),UIImage(named:"landlineImg"),UIImage(named:"dth"),UIImage(named:"broadband"),UIImage(named:"cabletv"),UIImage(named:"electricityImg"),UIImage(named:"waterImg"),UIImage(named:"datacard")]
 
-var imageArray1 = [UIImage(named:"mobileImg"),UIImage(named:"electricityImg"),UIImage(named:"cabletv"),UIImage(named:"landlineImg"),UIImage(named:"dth"),UIImage(named:"broadband"),UIImage(named:"waterImg"),UIImage(named:"datacard")]
+var imageArray1 = [UIImage(named:"mobileImg"),UIImage(named:"landlineImg"),UIImage(named:"dth"),UIImage(named:"broadband"),UIImage(named:"cabletv"),UIImage(named:"electricityImg"),UIImage(named:"waterImg"),UIImage(named:"datacard")]
 
 var imageArray2 = [UIImage(named:"mobile"),UIImage(named:"landline"),UIImage(named:"electricity"),UIImage(named:"event"),UIImage(named:"sport"),UIImage(named:"television"),UIImage(named:"water-tap"),UIImage(named:"internet")]
 //for label names
@@ -24,7 +24,7 @@ var namesarra3 = ["Mobile","Landline","Electricity","Events","Sports","DTH","Wat
 
 //for heading names
 
-var namesarra4 = ["RECHARGE AND BILL PAYMENT","BOOK ON PAYZAN","Mera Cashback Sale"]
+var namesarra4 = ["  RECHARGE AND BILL PAYMENT","  BOOK ON PAYZAN","Mera Cashback Sale"]
 
 class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableViewDelegate,UITableViewDataSource,SWRevealViewControllerDelegate,UIScrollViewDelegate,UITabBarDelegate {
     
@@ -154,8 +154,8 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         self.tabBarController?.delegate = self
         
-        sideMenus()
-        // Do any additional setup after loading the view.
+        
+    // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -184,6 +184,8 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.tabBarController?.tabBar.isHidden = false
+        
         let defaults = UserDefaults.standard
         
         if let walletAmount = defaults.string(forKey: "walletAmount") {
@@ -205,62 +207,8 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         containerView.frame = CGRect(x: 0, y: 0, width: scrollView.contentSize.width, height: scrollView.contentSize.height)
            // CGRectMake(0, 0, scrollView.contentSize.width, scrollView.contentSize.height)
     }
-    
-//    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-//        print("Test")
-//        
-//        if(item.tag == 1) {
-//            print("item1")
-//            
-////            let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-////            self.navigationController?.pushViewController(homeViewController, animated: true)
-//            
-//            self.view.isHidden = false
-//            
-//            //your code for tab item 1
-//        }
-//        else if(item.tag == 2) {
-//            print("item2")
-//            
-//            let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "OffersViewController") as! OffersViewController
-//            self.navigationController?.pushViewController(homeViewController, animated: true)
-//            //your code for tab item 2
-//        }
-//        else if(item.tag == 3) {
-//            print("item3")
-//            
-//            let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
-//            self.navigationController?.pushViewController(homeViewController, animated: true)
-//            //your code for tab item 2
-//        }
-//        else if(item.tag == 4){
-//            
-//            let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-//            
-////            homeViewController.headerView.backgroundColor = UIColor.white
-//            
-//            self.navigationController?.pushViewController(homeViewController, animated: true)
-//            print("item4")
-//        }
-//    }
-    
-    
-    func sideMenus(){
-        
-        if revealViewController() != nil {
-            
-            self.revealViewController().delegate = self
-            
-                        menuBtnItem.target = revealViewController()
-                        menuBtnItem.action = #selector(SWRevealViewController.revealToggle(_:))
-                        //  revealViewController() .rearViewRevealWidth = 275
-                        revealViewController().rightViewRevealWidth = 275
-            
-                        view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            
-        }
-        
-    }
+
+
     
     
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -315,25 +263,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         if(indexPath.row == 0){
             
-            
             profileCell.contentView.addSubview(myNewView)
-            
-//            profileCell.backgroundColor = UIColor.white
-//            
-//            profileCell.homeColeectionVW.backgroundColor = UIColor.white
-//            
-//            profileCell.headLabel.backgroundColor = UIColor.clear
-//            profileCell.headLabel.textColor = UIColor.black
-            
-        }else{
-            
-//            profileCell.backgroundColor = UIColor.white
-//            
-//            profileCell.homeColeectionVW.backgroundColor = UIColor.white
-//            
-//            profileCell.headLabel.backgroundColor = UIColor.white
-//            profileCell.headLabel.textColor = UIColor.black
-            
             
         }
         
@@ -470,22 +400,6 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
                 layout.scrollDirection = .vertical
             }
             
-//            cell.contentView.layer.cornerRadius = 10
-//            cell.contentView.layer.borderWidth = 1.0
-//            
-//            cell.contentView.layer.borderColor = UIColor.clear.cgColor
-//            cell.contentView.layer.masksToBounds = true
-//            
-//            cell.layer.shadowColor = UIColor.lightGray.cgColor
-//            cell.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
-//            cell.layer.shadowRadius = 5.0
-//            cell.layer.shadowOpacity = 1.0
-//            cell.layer.cornerRadius = 10
-//            cell.layer.masksToBounds = false
-//            cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-
-         //   cell.contentView.layer.backgroundColor = UIColor.red.cgColor
-//            cell.backgroundColor = UIColor.white
             
             return cell
             
@@ -503,21 +417,6 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
             if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                 layout.scrollDirection = .vertical
             }
-            
-//            cell.contentView.layer.cornerRadius = 20
-//            cell.contentView.layer.borderWidth = 1.0
-//            
-//            cell.contentView.layer.borderColor = UIColor.clear.cgColor
-//            cell.contentView.layer.masksToBounds = true
-//            
-//            cell.layer.shadowColor = UIColor.lightGray.cgColor
-//            cell.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-//            cell.layer.shadowRadius = 5.0
-//            cell.layer.shadowOpacity = 1.0
-//            cell.layer.cornerRadius = 15
-//            cell.layer.masksToBounds = false
-//            cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-            
             
             return cell
             
@@ -560,23 +459,38 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
         }
         else if indexPath.item == 1 {
             
-            let electricityViewController = self.storyboard?.instantiateViewController(withIdentifier: "ElectricityViewController") as! ElectricityViewController
-            self.navigationController?.pushViewController(electricityViewController, animated: true)
+            let landViewController = self.storyboard?.instantiateViewController(withIdentifier: "LandlineViewController") as! LandlineViewController
+            self.navigationController?.pushViewController(landViewController, animated: true)
+            
+            
         }
         else if indexPath.item == 2 {
+            
+            let dthViewController = self.storyboard?.instantiateViewController(withIdentifier: "DTHViewController") as! DTHViewController
+            self.navigationController?.pushViewController(dthViewController, animated: true)
+            
+            
+        }
+        else if indexPath.item == 3 {
+            
+            let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "BroadbandViewController") as! BroadbandViewController
+            self.navigationController?.pushViewController(cableViewController, animated: true)
+        }
+        else if indexPath.item == 4 {
             
             let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "CableTvViewController") as! CableTvViewController
             self.navigationController?.pushViewController(cableViewController, animated: true)
         }
-        else if indexPath.item == 3 {
+        else if indexPath.item == 5 {
             
-            let landViewController = self.storyboard?.instantiateViewController(withIdentifier: "LandlineViewController") as! LandlineViewController
-            self.navigationController?.pushViewController(landViewController, animated: true)
+            let electricityViewController = self.storyboard?.instantiateViewController(withIdentifier: "ElectricityViewController") as! ElectricityViewController
+            self.navigationController?.pushViewController(electricityViewController, animated: true)
         }
-        else if indexPath.item == 4 {
             
-            let dthViewController = self.storyboard?.instantiateViewController(withIdentifier: "DTHViewController") as! DTHViewController
-            self.navigationController?.pushViewController(dthViewController, animated: true)
+        else if indexPath.item == 6 {
+            
+            let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "WaterViewController") as! WaterViewController
+            self.navigationController?.pushViewController(cableViewController, animated: true)
         }
         else if indexPath.item == 7 {
             

@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="208" height="253.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recharge and bill payment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x14-pp-uGF">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Recharge and bill payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x14-pp-uGF">
                         <rect key="frame" x="8" y="7" width="192" height="24"/>
                         <color key="backgroundColor" red="0.92842627879999995" green="0.93168964499999996" blue="0.94147974369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

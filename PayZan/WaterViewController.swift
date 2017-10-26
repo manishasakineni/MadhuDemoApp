@@ -1,71 +1,60 @@
 //
-//  ElectricityViewController.swift
+//  WaterViewController.swift
 //  PayZan
 //
-//  Created by CalibrageMac02 on 13/10/17.
+//  Created by Ram on 26/10/17.
 //  Copyright © 2017 CalibrageMac02. All rights reserved.
 //
 
 import UIKit
 
-class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class WaterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate {
     
-    @IBOutlet weak var districtsFiled: UITextField!
+    @IBOutlet weak var selectBoardTextField: UITextField!
+    @IBOutlet weak var consumerNumberTextField: UITextField!
+    @IBOutlet weak var amountTextField: UITextField!
     
-    @IBOutlet weak var serviceNumField: UITextField!
-
-    @IBOutlet weak var amountField: UITextField!
-    
-    @IBOutlet weak var payNowBtn: UIButton!
-    
-    @IBOutlet weak var offersView: UIView!
-    
-    @IBOutlet weak var distImg: UIImageView!
-    
-    var serviceController = ServiceController()
+    @IBOutlet weak var proceedToPayButtonOutLet: UIButton!
     
     var myPickerView : UIPickerView!
     
     var toolBar = UIToolbar()
     
-    var pickerData = ["District1" , "District2" , "District3" , "District4"]
+    
+    let serviceController = ServiceController()
     
     var operatorList = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-//        
-//        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-//        
-//        payNowBtn.layer.cornerRadius = 5
+        selectBoardTextField.layer.borderWidth = 0.5
+        selectBoardTextField.layer.borderColor = UIColor.lightGray.cgColor
+        selectBoardTextField.layer.cornerRadius = 3
+        selectBoardTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
+        consumerNumberTextField.layer.borderWidth = 0.5
+        consumerNumberTextField.layer.borderColor = UIColor.lightGray.cgColor
+        consumerNumberTextField.layer.cornerRadius = 3
         
-        districtsFiled.layer.borderWidth = 0.5
-        districtsFiled.layer.borderColor = UIColor.lightGray.cgColor
-        districtsFiled.layer.cornerRadius = 3
-        districtsFiled.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+       // consumerNumberTextField.leftViewMode = .whileEditing
         
-        serviceNumField.layer.borderWidth = 0.5
-        serviceNumField.layer.borderColor = UIColor.lightGray.cgColor
-        serviceNumField.layer.cornerRadius = 3
-        serviceNumField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+        consumerNumberTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
-        amountField.layer.borderWidth = 0.5
-        amountField.layer.borderColor = UIColor.lightGray.cgColor
-        amountField.layer.cornerRadius = 3
-        amountField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+        amountTextField.layer.borderWidth = 0.5
+        amountTextField.layer.borderColor = UIColor.lightGray.cgColor
+        amountTextField.layer.cornerRadius = 3
+        amountTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
-        serviceNumField.keyboardType = .numberPad
-        amountField.keyboardType = .numberPad
+        selectBoardTextField.delegate = self
         
-        districtsFiled.delegate = self
-        
-        let five = PayZanServices.AgentType
-        print(five.rawValue)
+        amountTextField.keyboardType = .numberPad
+        consumerNumberTextField.keyboardType = .numberPad
+
         
         getOperatorList()
+
 
         // Do any additional setup after loading the view.
     }
@@ -74,8 +63,6 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
     func pickUp(_ textField : UITextField){
         
         // UIPickerView
@@ -90,7 +77,7 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
-//            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        //            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
         // Adding Button ToolBar
@@ -102,25 +89,25 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
         textField.inputAccessoryView = toolBar
         
     }
-    
     //MARK:- Button
     func doneClick() {
-        districtsFiled.resignFirstResponder()
+        selectBoardTextField.resignFirstResponder()
     }
     func cancelClick() {
-        districtsFiled.resignFirstResponder()
+        selectBoardTextField.resignFirstResponder()
     }
     
     //MARK:- TextFiled Delegate
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-    
-            self.pickUp(districtsFiled)
         
-           districtsFiled = textField
+        self.pickUp(selectBoardTextField)
         
-        }
+        selectBoardTextField = textField
+        
+        self.myPickerView.reloadAllComponents()
+    }
     
     //MARK:- PickerView Delegate & DataSource
     
@@ -139,7 +126,7 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-            self.districtsFiled.text = operatorList[row]
+        self.selectBoardTextField.text = operatorList[row]
         
     }
     
@@ -147,7 +134,7 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
         
         if(appDelegate.checkInternetConnectivity()){
             
-            let strUrl = electricityUrl
+            let strUrl = waterUrl
             
             let url : NSURL = NSURL(string: strUrl)!
             
@@ -162,16 +149,13 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
                         let isActive = respVO.IsSuccess
                         
                         
-                        //                    let status = result["status"] as! String
-                        
                         if(isActive == true){
                             
-                            let operatorObj = respVO.ListResult
+                            var operatorObj = respVO.ListResult
                             
                             
                             for(index,element) in (operatorObj?.enumerated())! {
                                 
-                                print("index:\(index)")
                                 self.operatorList.append(element.Name!)
                                 
                             }
@@ -182,9 +166,12 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
                             self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                             
                         }
-                        //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
                 }
-            }, failure:  {(error) in
+                
+            },
+                                            
+            failure:  {(error) in
+                
             })
             
         }
@@ -192,21 +179,27 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
             
             appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return
-            
         }
     }
     
-    @IBAction func backAction(_ sender: Any) {
+    
+    
+    
+    
+
+   
+
+    @IBAction func proceedToPayButtonAction(_ sender: Any) {
+    }
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+        
         
         self.navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func searchAction(_ sender: Any) {
-    }
-    
-    @IBAction func notificationAction(_ sender: Any) {
-    }
 
-    @IBAction func payNowAction(_ sender: Any) {
     }
+    
+   
+    
+    
 }

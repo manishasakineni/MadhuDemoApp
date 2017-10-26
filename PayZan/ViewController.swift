@@ -49,10 +49,12 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         mobileField.layer.borderColor = UIColor.lightGray.cgColor
         mobileField.layer.cornerRadius = 3
         mobileField.layer.masksToBounds = true
+        mobileField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         passwordField.layer.borderWidth = 0.5
         passwordField.layer.borderColor = UIColor.lightGray.cgColor
         passwordField.layer.cornerRadius = 3
+        passwordField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self as GIDSignInDelegate
@@ -99,6 +101,7 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        self.tabBarController?.tabBar.isHidden = false
         // Show the navigation bar on other view controllers
        // self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
@@ -133,137 +136,140 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         
     }
     
+    func postLoginService(){
+        
+        let  strUrl = loginUrl
+        
+        let mobileNumber:String = mobileField.text!
+        let pword:String = passwordField.text!
+        
+        
+        let dictParams = ["userName":mobileNumber,"password":pword] as NSDictionary
+        
+        print("dic params \(dictParams)")
+        
+        let dictHeaders = ["":"","":""] as NSDictionary
+        
+        serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
+            DispatchQueue.main.async()
+                {
+                    
+                    print("result:\(result)")
+                    
+                    let respVO:LoginVo = Mapper().map(JSONObject: result)!
+                    
+                    
+                    print("responseString = \(respVO)")
+                    
+                    
+                    let statusCode = respVO.StatusCode
+                    
+                    print("StatusCode:\(String(describing: statusCode))")
+                    
+                    //                        let strStatusCode = result.value(forKey: "StatusCode") as! Int
+                    //                        print("strStatusCode",strStatusCode)
+                    
+                    if statusCode == 200
+                    {
+                        
+                        let userId = respVO.data?.UserWallet?.UserId
+                        
+                        let walletId = respVO.data?.UserWallet?.WalletId
+                        
+                        let defaults = UserDefaults.standard
+                        
+                        // Save String value to UserDefaults
+                        // Using defaults.set(value: Any?, forKey: String)
+                        defaults.set(userId, forKey: "userIDD")
+                        
+                        defaults.set(walletId, forKey: "walletIDD")
+                        
+                        print("roleId:\(String(describing: userId))")
+                        
+                        let resObj:UserVo  = respVO.data!
+                        
+                        let uName = resObj.User?.UserName
+                        
+                        print("uName:\(String(describing: uName))")
+                        
+                        //                            let dataObj =   (result.value(forKey: "data") as! NSDictionary) as! [String : AnyObject]
+                        //                            print("dataObj:",dataObj)
+                        
+                        UserDefaults.standard.setValue("true", forKey: kIsFirstTime)
+                        UserDefaults.standard.synchronize()
+                        
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.window?.rootViewController = viewController
+                        
+                        
+                        
+                    }
+                    else if statusCode == 401{
+                        
+                        let alertController = UIAlertController(title: "", message: "Mobile/Email or Password is incorrect" , preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                        }
+                        alertController.addAction(DestructiveAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        
+                        
+                    }
+                        
+                    else
+                    {
+                        //                            self.view.makeToast(result.value(forKey:"statusMessage") as! String, duration:kToastDuration, position:CSToastPositionCenter)
+                        
+                        //                            let alertController = UIAlertController(title: "", message: result.value(forKey:"statusMessage") as? String , preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let alertController = UIAlertController(title: "", message: "Mobile/Email or Password is incorrect" , preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                        }
+                        alertController.addAction(DestructiveAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        
+                    }
+            }
+        }, failureHandler: {(error) in
+        })
+    }
+    
 
     @IBAction func loginBtnAction(_ sender: Any) {
         
-//        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        
-//        homeViewController.userID = userId
-//        homeViewController.walletID = walletId
-        
-//        self.navigationController?.pushViewController(homeViewController, animated: true)
-        
-        print("reachability.isReachable:\(reachability.isReachable)")
         
         
         if(appDelegate.checkInternetConnectivity()){
             
-            let  strUrl = loginUrl
-            
-            let mobileNumber:String = mobileField.text!
-            let pword:String = passwordField.text!
-            
-            
-            let dictParams = ["userName":mobileNumber,"password":pword] as NSDictionary
-            
-            print("dic params \(dictParams)")
-            
-            let dictHeaders = ["":"","":""] as NSDictionary
-            
-            serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
-                DispatchQueue.main.async()
-                    {
-                        
-                        print("result:\(result)")
-                        
-                        let respVO:LoginVo = Mapper().map(JSONObject: result)!
-                        
-                        
-                        print("responseString = \(respVO)")
-                        
-                        
-                        let statusCode = respVO.StatusCode
-                        
-                        print("StatusCode:\(String(describing: statusCode))")
-                        
-                        //                        let strStatusCode = result.value(forKey: "StatusCode") as! Int
-                        //                        print("strStatusCode",strStatusCode)
-                        
-                        if statusCode == 200
-                        {
-                            
-                            let userId = respVO.data?.UserWallet?.UserId
-                            
-                            let walletId = respVO.data?.UserWallet?.WalletId
-                            
-                            let defaults = UserDefaults.standard
-                            
-                            // Save String value to UserDefaults
-                            // Using defaults.set(value: Any?, forKey: String)
-                            defaults.set(userId, forKey: "userIDD")
-                            
-                            defaults.set(walletId, forKey: "walletIDD")
-                            
-                            print("roleId:\(String(describing: userId))")
-                            
-                            let resObj:UserVo  = respVO.data!
-                            
-                            let uName = resObj.User?.UserName
-                            
-                            print("uName:\(String(describing: uName))")
-                            
-                            //                            let dataObj =   (result.value(forKey: "data") as! NSDictionary) as! [String : AnyObject]
-                            //                            print("dataObj:",dataObj)
-                            
-                            let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                            
-                            homeViewController.userID = userId
-                            homeViewController.walletID = walletId
-                            
-                            self.navigationController?.pushViewController(homeViewController, animated: true)
-                            
-                            
-                        }
-                        else if statusCode == 401{
-                            
-                            let alertController = UIAlertController(title: "", message: "Mobile/Email or Password is incorrect" , preferredStyle: UIAlertControllerStyle.alert)
-                            
-                            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                            }
-                            alertController.addAction(DestructiveAction)
-                            self.present(alertController, animated: true, completion: nil)
-                            
-                            
-                        }
-                            
-                        else
-                        {
-                            //                            self.view.makeToast(result.value(forKey:"statusMessage") as! String, duration:kToastDuration, position:CSToastPositionCenter)
-                            
-                            //                            let alertController = UIAlertController(title: "", message: result.value(forKey:"statusMessage") as? String , preferredStyle: UIAlertControllerStyle.alert)
-                            
-                            let alertController = UIAlertController(title: "", message: "Mobile/Email or Password is incorrect" , preferredStyle: UIAlertControllerStyle.alert)
-                            
-                            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                            }
-                            alertController.addAction(DestructiveAction)
-                            self.present(alertController, animated: true, completion: nil)
-                            
-                        }
+            if (self.mobileField.text?.isEmpty)! {
+                
+                let alertController = UIAlertController(title: "Message", message: "Please Enter Your Mobile Number or Email" , preferredStyle: UIAlertControllerStyle.alert)
+                
+                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
                 }
-            }, failureHandler: {(error) in
-            })
-        }
-        else if (self.mobileField.text?.isEmpty)! {
-            
-            let alertController = UIAlertController(title: "Message", message: "Please Enter Your Mobile Number or Email" , preferredStyle: UIAlertControllerStyle.alert)
-            
-            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                alertController.addAction(DestructiveAction)
+                self.present(alertController, animated: true, completion: nil)
+                
             }
-            alertController.addAction(DestructiveAction)
-            self.present(alertController, animated: true, completion: nil)
-            
-        }
-        else if (self.passwordField.text?.isEmpty)! {
-            
-            let alertController = UIAlertController(title: "Message", message: "Please Enter Your Password" , preferredStyle: UIAlertControllerStyle.alert)
-            
-            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+            else if (self.passwordField.text?.isEmpty)! {
+                
+                let alertController = UIAlertController(title: "Message", message: "Please Enter Your Password" , preferredStyle: UIAlertControllerStyle.alert)
+                
+                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                }
+                alertController.addAction(DestructiveAction)
+                self.present(alertController, animated: true, completion: nil)
+                
+                
+            }else {
+                
+                postLoginService()
             }
-            alertController.addAction(DestructiveAction)
-            self.present(alertController, animated: true, completion: nil)
             
-            
+           
         }
         else{
 //             if {
@@ -298,8 +304,13 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                     if(fbloginresult.grantedPermissions.contains("email"))
                     {
                         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let homeView = self.storyboard?.instantiateViewController(withIdentifier:"HomeViewController") as! HomeViewController
-                        self.navigationController?.pushViewController(homeView, animated: true)
+                        UserDefaults.standard.setValue("true", forKey: kIsFirstTime)
+                        UserDefaults.standard.synchronize()
+                        
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.window?.rootViewController = viewController
                         
                         self.getFBUserData()
                         
@@ -393,9 +404,23 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
             print("email:\(String(describing: email))")
             print("profileUrl:\(String(describing: profileUrl))")
             
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeView = self.storyboard?.instantiateViewController(withIdentifier:"HomeViewController") as! HomeViewController
-            self.navigationController?.pushViewController(homeView, animated: true)
+            UserDefaults.standard.setValue("true", forKey: kIsFirstTime)
+            UserDefaults.standard.synchronize()
+            
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = viewController
+            
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            appDelegate.window?.rootViewController = homeView
+//            
+//            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+            
+            
+//            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
             
            // MBProgressHUD.hide(for:appDelegate.window,animated:true)
         }
@@ -414,9 +439,13 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
             print("givenName:\(String(describing: givenName))")
             print("email:\(String(describing: email))")
             
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeView = self.storyboard?.instantiateViewController(withIdentifier:"HomeViewController") as! HomeViewController
-            self.navigationController?.pushViewController(homeView, animated: true)
+            UserDefaults.standard.setValue("true", forKey: kIsFirstTime)
+            UserDefaults.standard.synchronize()
+            
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = viewController
             
            // MBProgressHUD.hide(for:appDelegate.window,animated:true)
         }
@@ -441,9 +470,10 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
     
     @IBAction func signupBtnAction(_ sender: Any) {
         
-        let signupViewController = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
-        
-        self.navigationController?.pushViewController(signupViewController, animated: true)
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = viewController
         
     }
     

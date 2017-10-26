@@ -30,6 +30,9 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
     @IBOutlet weak var facebookBtn: UIButton!
     
     @IBOutlet weak var googleBtn: UIButton!
+    
+    @IBOutlet weak var confirmPasswordField: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,14 +41,22 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
         mobileNumField.layer.borderWidth = 0.5
         mobileNumField.layer.borderColor = UIColor.lightGray.cgColor
         mobileNumField.layer.cornerRadius = 3
+        mobileNumField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         paswdField.layer.borderWidth = 0.5
         paswdField.layer.borderColor = UIColor.lightGray.cgColor
         paswdField.layer.cornerRadius = 3
+        paswdField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         emailField.layer.borderWidth = 0.5
         emailField.layer.borderColor = UIColor.lightGray.cgColor
         emailField.layer.cornerRadius = 3
+        emailField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+        
+        confirmPasswordField.layer.borderWidth = 0.5
+        confirmPasswordField.layer.borderColor = UIColor.lightGray.cgColor
+        confirmPasswordField.layer.cornerRadius = 3
+        confirmPasswordField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         self.tabBarController?.delegate = self
         
@@ -85,133 +96,196 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
         return true
     }
     
+    func postSignUpService(){
+        
+        let null = NSNull()
+        
+        let mNumber:String = mobileNumField.text!
+        let pword:String = paswdField.text!
+        let email:String = emailField.text!
+        
+        print("email:\(email)")
+        
+        let  strUrl = registerUrl
+        
+        
+        
+        let dictParams = ["MobileNumber":mNumber,"Password":pword,"ConfirmPassword":pword,"Email":email,"RoleId":null] as NSDictionary
+        
+        print("dic params \(dictParams)")
+        //CleverTap.sharedInstance()?.onUserLogin(dictParams as! [AnyHashable : Any])
+        let dictHeaders = ["":"","":""] as NSDictionary
+        
+        serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
+            DispatchQueue.main.async()
+                {
+                    
+                    let respVO:SignupVo = Mapper().map(JSONObject: result)!
+                    
+                    print("responseString = \(respVO)")
+                    
+                    let statusCode = respVO.StatusCode
+                    
+                    print("StatusCode:\(String(describing: statusCode))")
+                    
+                    
+                    if statusCode == 200
+                    {
+                        
+                        
+                        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                        self.navigationController?.pushViewController(homeViewController, animated: true)
+                        
+                        let statusMsg  = respVO.StatusMessage!
+                        
+                        print("statusMsg:\(String(describing: statusMsg))")
+                        
+                        let alertController = UIAlertController(title: "", message: statusMsg , preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                        }
+                        alertController.addAction(DestructiveAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        
+                        
+                        
+                        
+                    }
+                    else if statusCode == 401{
+                        
+                        let alertController = UIAlertController(title: "", message: "Network error" , preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                        }
+                        alertController.addAction(DestructiveAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        
+                        
+                    }
+                    else if statusCode == nil{
+                        
+                        let s1 = "Your mobile number"
+                        let s2 = mNumber
+                        let s3 = "is already taken."
+                        
+                        let errMsg = s1 + " " + s2 + " " + s3
+                        
+                        let alertController = UIAlertController(title: "", message: errMsg , preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                        }
+                        alertController.addAction(DestructiveAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        
+                        
+                    }
+                    else
+                    {
+                        //                            self.view.makeToast(result.value(forKey:"statusMessage") as! String, duration:kToastDuration, position:CSToastPositionCenter)
+                        
+                        //                            let alertController = UIAlertController(title: "", message: result.value(forKey:"statusMessage") as? String , preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let alertController = UIAlertController(title: "Success", message: "Network Error" , preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                        }
+                        alertController.addAction(DestructiveAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        
+                    }
+            }
+        }, failureHandler: {(error) in
+            
+            print("error")
+        })
+        
+    }
+    
     
     // BUtoons Actions
     
     @IBAction func signUpAction(_ sender: Any) {
         
         
+        let password:String = paswdField.text!
+        let confirm:String = confirmPasswordField.text!
+        var emailStr:String = emailField.text!
+        
         if(appDelegate.checkInternetConnectivity()){
             
-            let mNumber:String = mobileNumField.text!
-            let pword:String = paswdField.text!
-            let email:String = emailField.text!
             
-            
-            let  strUrl = registerUrl
-            
-            let null = NSNull()
-            
-            let dictParams = ["MobileNumber":mNumber,"Password":pword,"ConfirmPassword":pword,"Email":email,"RoleId":null] as NSDictionary
-            
-            print("dic params \(dictParams)")
-            //CleverTap.sharedInstance()?.onUserLogin(dictParams as! [AnyHashable : Any])
-            let dictHeaders = ["":"","":""] as NSDictionary
-            
-            serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
-                DispatchQueue.main.async()
-                    {
-                        
-                        let respVO:SignupVo = Mapper().map(JSONObject: result)!
-                        
-                        print("responseString = \(respVO)")
-                        
-                        let statusCode = respVO.StatusCode
-                        
-                        print("StatusCode:\(String(describing: statusCode))")
-                        
-                        
-                        if statusCode == 200
-                        {
-                            
-                            
-                            let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                            self.navigationController?.pushViewController(homeViewController, animated: true)
-                            
-                            let statusMsg  = respVO.StatusMessage!
-                            
-                            print("statusMsg:\(String(describing: statusMsg))")
-                            
-                            let alertController = UIAlertController(title: "", message: statusMsg , preferredStyle: UIAlertControllerStyle.alert)
-                            
-                            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                            }
-                            alertController.addAction(DestructiveAction)
-                            self.present(alertController, animated: true, completion: nil)
-                            
-                            
-                            
-                            
-                        }
-                        else if statusCode == 401{
-                            
-                            let alertController = UIAlertController(title: "", message: "Network error" , preferredStyle: UIAlertControllerStyle.alert)
-                            
-                            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                            }
-                            alertController.addAction(DestructiveAction)
-                            self.present(alertController, animated: true, completion: nil)
-                            
-                            
-                        }
-                        else if statusCode == nil{
-                            
-                            let s1 = "Your mobile number"
-                            let s2 = mNumber
-                            let s3 = "is already taken."
-                            
-                            let errMsg = s1 + " " + s2 + " " + s3
-                            
-                            let alertController = UIAlertController(title: "", message: errMsg , preferredStyle: UIAlertControllerStyle.alert)
-                            
-                            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                            }
-                            alertController.addAction(DestructiveAction)
-                            self.present(alertController, animated: true, completion: nil)
-                            
-                            
-                        }
-                        else
-                        {
-                            //                            self.view.makeToast(result.value(forKey:"statusMessage") as! String, duration:kToastDuration, position:CSToastPositionCenter)
-                            
-                            //                            let alertController = UIAlertController(title: "", message: result.value(forKey:"statusMessage") as? String , preferredStyle: UIAlertControllerStyle.alert)
-                            
-                            let alertController = UIAlertController(title: "Success", message: "Network Error" , preferredStyle: UIAlertControllerStyle.alert)
-                            
-                            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                            }
-                            alertController.addAction(DestructiveAction)
-                            self.present(alertController, animated: true, completion: nil)
-                            
-                        }
-                }
-            }, failureHandler: {(error) in
+            if (self.mobileNumField.text?.isEmpty)! {
                 
-                print("error")
-            })
-            
-            
-        }
-        
-       else if (self.mobileNumField.text?.isEmpty)! {
-            
-            let alertController = UIAlertController(title: "Message", message: "Please Enter Your Mobile Number" , preferredStyle: UIAlertControllerStyle.alert)
-            
-            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                let alertController = UIAlertController(title: "Message", message: "Please Enter Your Mobile Number" , preferredStyle: UIAlertControllerStyle.alert)
+                
+                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                }
+                alertController.addAction(DestructiveAction)
+                self.present(alertController, animated: true, completion: nil)
             }
-            alertController.addAction(DestructiveAction)
-            self.present(alertController, animated: true, completion: nil)
-        }
-        else if (self.paswdField.text?.isEmpty)! {
-            
-            let alertController = UIAlertController(title: "Message", message: "Please Enter Your Password" , preferredStyle: UIAlertControllerStyle.alert)
-            
-            let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+            else if (self.paswdField.text?.isEmpty)! {
+                
+                let alertController = UIAlertController(title: "Message", message: "Please Enter Your Password" , preferredStyle: UIAlertControllerStyle.alert)
+                
+                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                }
+                alertController.addAction(DestructiveAction)
+                self.present(alertController, animated: true, completion: nil)
+                
             }
-            alertController.addAction(DestructiveAction)
-            self.present(alertController, animated: true, completion: nil)
+            else if (self.confirmPasswordField.text?.isEmpty)! {
+                
+                let alertController = UIAlertController(title: "Message", message: "Please Enter Your Confirm Password" , preferredStyle: UIAlertControllerStyle.alert)
+                
+                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                }
+                alertController.addAction(DestructiveAction)
+                self.present(alertController, animated: true, completion: nil)
+//               password.caseInsensitiveCompare(confirm) == .orderedSame 
+            }else if password.isEqualToString(find: confirm) {
+                
+                if emailStr.isEmpty {
+                    
+//                    let null = NSNull()
+                    
+//                    emailStr == null
+                  
+                    postSignUpService()
+                }
+                else if isValidEmailAddress(emailAddressString: emailStr){
+                    
+                    print("validEmail")
+                    
+                    postSignUpService()
+                    
+                }else {
+                    
+                    print("invalid")
+                    
+                    let alertController = UIAlertController(title: "Message", message: "Please enter a valid email address" , preferredStyle: UIAlertControllerStyle.alert)
+                    
+                    let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                    }
+                    alertController.addAction(DestructiveAction)
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                }
+                
+                
+               
+                
+            }
             
+            else {
+                
+                let alertController = UIAlertController(title: "Message", message: "These passwords don't match.try again" , preferredStyle: UIAlertControllerStyle.alert)
+                
+                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                }
+                alertController.addAction(DestructiveAction)
+                self.present(alertController, animated: true, completion: nil)
+            
+          }
         }
         
         else {
@@ -245,7 +319,10 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
 
     @IBAction func loginAction(_ sender: Any) {
         
-        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = viewController
         
     }
     
@@ -257,7 +334,12 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
     
     @IBAction func backAction(_ sender: Any) {
         
-        self.navigationController?.popViewController(animated: true)
+//        self.navigationController?.popViewController(animated: true)
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = viewController
     }
     
     @IBAction func eyeAction(_ sender: Any) {
@@ -319,6 +401,10 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
     }
 }
 extension String {
+    
+        func isEqualToString(find: String) -> Bool {
+            return String(format: self) == find
+        }
     
     //To check text field or String is blank or not
     var isBlank: Bool {

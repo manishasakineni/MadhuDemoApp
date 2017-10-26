@@ -35,6 +35,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,SWReveal
         
         GIDSignIn.sharedInstance().delegate = self as GIDSignInDelegate
         
+        
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = viewController
+        
+        if UserDefaults.standard.object(forKey: kIsFirstTime) as? String == "true" {
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = viewController
+        }else{
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = viewController
+        }
+        
         return true
     }
     
