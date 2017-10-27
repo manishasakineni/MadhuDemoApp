@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControllerDelegate,UITabBarDelegate {
+class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarControllerDelegate,UITabBarDelegate {
     
     
     @IBOutlet weak var mobileNumField: UITextField!
@@ -25,7 +25,7 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
     
     let serviceController = ServiceController()
     
-    var appDelegate = AppDelegate()
+//    var appDelegate = AppDelegate()
     
     @IBOutlet weak var facebookBtn: UIButton!
     
@@ -109,7 +109,6 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
         let  strUrl = registerUrl
         
         
-        
         let dictParams = ["MobileNumber":mNumber,"Password":pword,"ConfirmPassword":pword,"Email":email,"RoleId":null] as NSDictionary
         
         print("dic params \(dictParams)")
@@ -146,8 +145,6 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
                         }
                         alertController.addAction(DestructiveAction)
                         self.present(alertController, animated: true, completion: nil)
-                        
-                        
                         
                         
                     }
@@ -200,120 +197,103 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UITabBarControl
         })
         
     }
-    
+    func validateAllFields() -> Bool
+    {
+        mobileNumField.text=mobileNumField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
+        paswdField.text=paswdField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
+        emailField.text=emailField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
+        
+        //        txtPersonalEmail.text=txtPersonalEmail.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        confirmPasswordField.text=confirmPasswordField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
+        
+        let mnumb:NSString = mobileNumField.text! as NSString
+        let pasword:NSString = paswdField.text! as NSString
+        let emailId:NSString = emailField.text! as NSString
+        let confirmPassword:NSString = confirmPasswordField.text! as NSString
+        
+        
+        //Check whether textField are left empty or not
+        var errorMessage:NSString?
+        
+        if (mnumb.length<=0) {
+            errorMessage=GlobalSupportingClass.blankPhoneNumberErrorMessage() as String as String as NSString?
+        }
+        else if (mnumb.length<=9) {
+            errorMessage=GlobalSupportingClass.invalidPhoneNumberErrorMessage() as String as String as NSString?
+        }
+//        else if(!GlobalSupportingClass.phoneValidate(value: mnumb as String)) {
+//            errorMessage=GlobalSupportingClass.phoneValidateMessage() as String as String as NSString?
+//        }
+        else if (emailId.length<=0) {
+            errorMessage=GlobalSupportingClass.blankEmailIDErrorMessage() as String as String as NSString?
+        }
+        else if (emailId.length<=3) {
+            errorMessage=GlobalSupportingClass.miniCharEmailIDErrorMessage() as String as String as NSString?
+        }
+        else if(!GlobalSupportingClass.isValidEmail(emailId as NSString))
+        {
+            errorMessage=GlobalSupportingClass.invalidEmaildIDFormatErrorMessage() as String as String as NSString?
+        }
+            
+        else if (pasword.length<=0) {
+            errorMessage=GlobalSupportingClass.blankPasswordErrorMessage() as String as String as NSString?
+        }
+        else if(!GlobalSupportingClass.capitalOnly(password: pasword as String)) {
+            
+            errorMessage=GlobalSupportingClass.capitalLetterMessage() as String as String as NSString?
+        }
+        else if(!GlobalSupportingClass.numberOnly(password: pasword as String)) {
+            
+            errorMessage=GlobalSupportingClass.numberMessage() as String as String as NSString?
+        }
+        else if(!GlobalSupportingClass.specialCharOnly(password: pasword as String)) {
+            
+            errorMessage=GlobalSupportingClass.specialCharacterMessage() as String as String as NSString?
+        }
+            
+        else if(confirmPassword.length<=0){
+            errorMessage=GlobalSupportingClass.blankConfirmPasswordErrorMessage() as String as String as NSString?
+        }
+       
+        else if(pasword.length<5||confirmPassword.length<5)
+        {
+            errorMessage = GlobalSupportingClass.invalidDigitsInPasswordErrorMessage() as String as String as NSString?
+        }
+        else if(!pasword.isEqual(to: confirmPassword as String)){
+            errorMessage=GlobalSupportingClass.passwordMissMatchErrorMessage() as String as String as NSString?
+        }
+       
+        
+        
+        if let errorMsg = errorMessage{
+            
+            self.showAlertViewWithTitle("Alert", message: errorMsg as String, buttonTitle: "Retry")
+            return false;
+        }
+        return true
+    }
+
     
     // BUtoons Actions
     
     @IBAction func signUpAction(_ sender: Any) {
         
         
-        let password:String = paswdField.text!
-        let confirm:String = confirmPasswordField.text!
-        var emailStr:String = emailField.text!
-        
-        if(appDelegate.checkInternetConnectivity()){
-            
-            
-            if (self.mobileNumField.text?.isEmpty)! {
+        if self.validateAllFields()
+        {
+            if(appDelegate.checkInternetConnectivity()){
                 
-                let alertController = UIAlertController(title: "Message", message: "Please Enter Your Mobile Number" , preferredStyle: UIAlertControllerStyle.alert)
-                
-                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                }
-                alertController.addAction(DestructiveAction)
-                self.present(alertController, animated: true, completion: nil)
+                postSignUpService()
             }
-            else if (self.paswdField.text?.isEmpty)! {
-                
-                let alertController = UIAlertController(title: "Message", message: "Please Enter Your Password" , preferredStyle: UIAlertControllerStyle.alert)
-                
-                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                }
-                alertController.addAction(DestructiveAction)
-                self.present(alertController, animated: true, completion: nil)
-                
-            }
-            else if (self.confirmPasswordField.text?.isEmpty)! {
-                
-                let alertController = UIAlertController(title: "Message", message: "Please Enter Your Confirm Password" , preferredStyle: UIAlertControllerStyle.alert)
-                
-                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                }
-                alertController.addAction(DestructiveAction)
-                self.present(alertController, animated: true, completion: nil)
-//               password.caseInsensitiveCompare(confirm) == .orderedSame 
-            }else if password.isEqualToString(find: confirm) {
-                
-                if emailStr.isEmpty {
-                    
-//                    let null = NSNull()
-                    
-//                    emailStr == null
-                  
-                    postSignUpService()
-                }
-                else if isValidEmailAddress(emailAddressString: emailStr){
-                    
-                    print("validEmail")
-                    
-                    postSignUpService()
-                    
-                }else {
-                    
-                    print("invalid")
-                    
-                    let alertController = UIAlertController(title: "Message", message: "Please enter a valid email address" , preferredStyle: UIAlertControllerStyle.alert)
-                    
-                    let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                    }
-                    alertController.addAction(DestructiveAction)
-                    self.present(alertController, animated: true, completion: nil)
-                    
-                }
-                
-                
-               
-                
-            }
-            
             else {
                 
-                let alertController = UIAlertController(title: "Message", message: "These passwords don't match.try again" , preferredStyle: UIAlertControllerStyle.alert)
+                self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+                return
                 
-                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                }
-                alertController.addAction(DestructiveAction)
-                self.present(alertController, animated: true, completion: nil)
+            }
             
-          }
         }
         
-        else {
-            
-            self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
-            return
-            
-//            if pword.isValidPassword == false {
-//                
-//                print("isValidPassword")
-//            }
-//            let email1:String = emailField.text!
-//            
-//            let isEmailAddressValid = isValidEmailAddress(emailAddressString: email1)
-            
-//            if isEmailAddressValid
-//            {
-//                print("Email address is valid")
-                
-                
-//            } else {
-//                print("Email address is not valid")
-//                
-//                displayAlertMessage(messageToDisplay: "Email address is not valid")
-//            }
-        
-            
-        }
         
     }
 

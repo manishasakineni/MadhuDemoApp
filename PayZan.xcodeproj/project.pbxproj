@@ -46,6 +46,8 @@
 		35344DBB1F863B6500E35C5C /* NoCopyPasteUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35344DBA1F863B6500E35C5C /* NoCopyPasteUITextField.swift */; };
 		35344DBD1F86824900E35C5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35344DBC1F86824900E35C5C /* GoogleService-Info.plist */; };
 		353EB9BC1F9F06ED00AA67E9 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */; };
+		353FE3721FA31AAE00152876 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353FE3711FA31AAE00152876 /* Services.swift */; };
+		353FE3741FA345F900152876 /* GlobalSupportingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353FE3731FA345F900152876 /* GlobalSupportingClass.swift */; };
 		35403DED1FA0687F0004DD20 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35403DEC1FA0687F0004DD20 /* TabsViewController.swift */; };
 		35442CE21F8DEA4D007798EC /* RechargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35442CE11F8DEA4D007798EC /* RechargeViewController.swift */; };
 		3545A89F1FA207A4005E4E7C /* BroadbandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545A89D1FA207A4005E4E7C /* BroadbandViewController.swift */; };
@@ -147,6 +149,8 @@
 		35344DBA1F863B6500E35C5C /* NoCopyPasteUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoCopyPasteUITextField.swift; sourceTree = "<group>"; };
 		35344DBC1F86824900E35C5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		353FE3711FA31AAE00152876 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		353FE3731FA345F900152876 /* GlobalSupportingClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalSupportingClass.swift; sourceTree = "<group>"; };
 		35403DEC1FA0687F0004DD20 /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		35442CE11F8DEA4D007798EC /* RechargeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RechargeViewController.swift; sourceTree = "<group>"; };
 		3545A89D1FA207A4005E4E7C /* BroadbandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadbandViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 				3569C1D51F8762A100152B80 /* Network */,
 				35344DB11F861B8400E35C5C /* MapperVo */,
 				35344DBA1F863B6500E35C5C /* NoCopyPasteUITextField.swift */,
+				353FE3731FA345F900152876 /* GlobalSupportingClass.swift */,
 				353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */,
 				3554C33B1F8F9FC10092EAC7 /* Colors.swift */,
 				35344DB81F863B5900E35C5C /* TextFieldMaxLengths.swift */,
@@ -326,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				35CB9D0A1F8B77EE00BF1073 /* URLStrings.swift */,
+				353FE3711FA31AAE00152876 /* Services.swift */,
 				35CB9D0C1F8B782D00BF1073 /* Constants.swift */,
 				35CB9D0E1F8B7B0700BF1073 /* ServiceController.swift */,
 			);
@@ -710,10 +716,12 @@
 				354CF1BC1F9151AD004ADDAD /* ResultVo.swift in Sources */,
 				354CF1B11F90F91F004ADDAD /* DTHViewController.swift in Sources */,
 				35CB9D181F8B7DF600BF1073 /* MBProgressHUD.m in Sources */,
+				353FE3721FA31AAE00152876 /* Services.swift in Sources */,
 				35344DA51F8610C700E35C5C /* ToJSON.swift in Sources */,
 				35344DA11F8610C700E35C5C /* Mappable.swift in Sources */,
 				35344DA91F8610C700E35C5C /* URLTransform.swift in Sources */,
 				35344DBB1F863B6500E35C5C /* NoCopyPasteUITextField.swift in Sources */,
+				353FE3741FA345F900152876 /* GlobalSupportingClass.swift in Sources */,
 				3554C3391F8F5DCD0092EAC7 /* LoginTableViewCell.swift in Sources */,
 				3545A89F1FA207A4005E4E7C /* BroadbandViewController.swift in Sources */,
 				35344DA71F8610C700E35C5C /* TransformOperators.swift in Sources */,

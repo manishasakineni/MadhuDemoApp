@@ -24,7 +24,7 @@ var namesarra3 = ["Mobile","Landline","Electricity","Events","Sports","DTH","Wat
 
 //for heading names
 
-var namesarra4 = ["  RECHARGE AND BILL PAYMENT","  BOOK ON PAYZAN","Mera Cashback Sale"]
+var namesarra4 = ["  RECHARGE AND BILL PAYMENT","  BOOK ON PAYZAN","  Mera Cashback Sale"]
 
 class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableViewDelegate,UITableViewDataSource,SWRevealViewControllerDelegate,UIScrollViewDelegate,UITabBarDelegate {
     
@@ -103,15 +103,16 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         self.scrollView = UIScrollView()
         self.scrollView.delegate = self
-        self.scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 80)
+        self.scrollView.contentSize = CGSize(width: 100, height: 100)
         
-        self.myNewView = UIView(frame: CGRect(x: 10, y: 120, width: self.view.frame.size.width-20, height: 300))
+        self.myNewView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 80))
         
-//        self.myNewView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        self.myNewView.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        self.scrollView.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         
         myNewView.addSubview(scrollView)
         
-        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = true
         
         scrollView.isScrollEnabled = true
         
@@ -122,8 +123,8 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         self.scrollView.alwaysBounceHorizontal = true
         
         let myImages = ["addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg"]
-        let imageWidth:CGFloat = 300
-        let imageHeight:CGFloat = 300
+        let imageWidth:CGFloat = 250
+        let imageHeight:CGFloat = 80
         var xPosition:CGFloat = 0
         var scrollViewContentSize:CGFloat=0;
         
@@ -132,13 +133,13 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             let myImage:UIImage = UIImage(named: myImages[index])!
             let myImageView:UIImageView = UIImageView()
             myImageView.image = myImage
-            myImageView.contentMode = UIViewContentMode.scaleAspectFit
+            myImageView.contentMode = UIViewContentMode.scaleAspectFill
             myImageView.frame.size.width = imageWidth
             myImageView.frame.size.height = imageHeight
 //            myImageView.center = self.view.center
             myImageView.frame.origin.x = xPosition
             scrollView.addSubview(myImageView)
-            let spacer:CGFloat = 10
+            let spacer:CGFloat = 50
             xPosition+=imageHeight + spacer
             scrollViewContentSize+=imageHeight + spacer
             scrollView.contentSize = CGSize(width: scrollViewContentSize, height:imageHeight)
@@ -151,6 +152,8 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         let nibName  = UINib(nibName: "HomeTableViewCell" , bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "HomeTableViewCell")
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "HomeCell")
         
         self.tabBarController?.delegate = self
         
@@ -204,7 +207,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
 //        scrollView.delegate = self
         scrollView.frame = myNewView.bounds
-        containerView.frame = CGRect(x: 0, y: 0, width: scrollView.contentSize.width, height: scrollView.contentSize.height)
+        containerView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
            // CGRectMake(0, 0, scrollView.contentSize.width, scrollView.contentSize.height)
     }
 
@@ -220,7 +223,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        return 2
+        return 3
     }
     
     
@@ -235,14 +238,14 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         var height:CGFloat = CGFloat()
         
         if indexPath.row == 0 {
-            height = 320
+            height = 220
         }
         else if indexPath.row == 1{
-            height = 300
+            height = 80
         }
         else {
             
-            height = 200
+            height = 300
             
         }
         
@@ -253,20 +256,13 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         
-        
+        if(indexPath.row != 1){
         let profileCell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
         
         profileCell.homeColeectionVW.register(UINib.init(nibName: "HomeCollectionViewCell", bundle: nil),
                                             forCellWithReuseIdentifier: "HomeCollectionViewCell")
         
         profileCell.selectionStyle = .none
-        
-        if(indexPath.row == 0){
-            
-            profileCell.contentView.addSubview(myNewView)
-            
-        }
-        
         
         
         profileCell.headLabel.text = namesarra4[indexPath.row]
@@ -283,6 +279,18 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         
         return profileCell
+        }else{
+            
+            let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as UITableViewCell!
+            cell.selectionStyle = .none
+           
+           
+            self.myNewView.backgroundColor = UIColor.blue
+            
+            cell.contentView.addSubview(myNewView)
+            
+             return cell
+        }
         
         
         
@@ -406,7 +414,7 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
             
         }
             
-        else if collectionView.tag == 1 {
+        else if collectionView.tag == 2 {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
             
@@ -500,19 +508,28 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     //for label heigt
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize{
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGSize{
+//        
+////        if collectionView.tag == 0 {
+////            
+////            return CGSize(width: 90, height: 200)
+////        }
+//        
+//        return CGSize(width: 85, height: 85)
+//        
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-//        if collectionView.tag == 0 {
-//            
-//            return CGSize(width: 90, height: 200)
-//        }
         
-        return CGSize(width: 85, height: 85)
+        let cellsPerRow = 4
         
+        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let marginsAndInsets = flowLayout.sectionInset.left + flowLayout.sectionInset.right + flowLayout.minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
+        let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
+        return CGSize(width: itemWidth, height: itemWidth)
     }
-    
-    
 }
 
