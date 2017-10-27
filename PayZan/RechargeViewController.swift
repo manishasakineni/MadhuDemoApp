@@ -89,8 +89,6 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         networkField.tag = 1
         planField.tag = 2
         
-        getPrepaidList()
-        getPostpaidList()
         
 //        let color1 = hexStringToUIColor(hex: "#5f1a58")
         
@@ -160,10 +158,13 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         
+
         selectedTextField = textField.tag
         
         if textField == networkField{
             
+            getPrepaidList()
+            getPostpaidList()
             
             pickerList.removeAll()
             

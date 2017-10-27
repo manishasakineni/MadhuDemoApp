@@ -10,11 +10,11 @@ import Foundation
 
 
 //let baseUrl:String = "http://payzandev.azurewebsites.net/api/Account/"
-let baseUrl:String = "http://192.168.1.125/PayZanAPI/api/"
+let baseUrl:String = "http://192.168.1.147/PayZanAPI/api/"
 
 //let baseUrl:String = "http://payzandev.azurewebsites.net/api/Register/"
 
-let walletUrl:String = "http://192.168.1.125/PayZanAPI/api/UserWallet/AddMoneyToUserWallet"
+let walletUrl:String = "http://192.168.1.147/PayZanAPI/api/UserWallet/AddMoneyToUserWallet"
 
 let kIsFirstTime:String = "kIsFirstTime"
 
