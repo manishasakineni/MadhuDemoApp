@@ -74,10 +74,13 @@ class ServiceController: NSObject {
         request.addValue("application/json",forHTTPHeaderField:"Content-Type")
         request.addValue("application/json",forHTTPHeaderField:"Accept")
         
-//        if postHeaders[kCustomer_id] != nil  {
+        if postHeaders["Authorization"] != nil  {
 //            request.addValue(postHeaders[kCustomer_id] as! String, forHTTPHeaderField: kCustomer_id)
-//            request.addValue(postHeaders[kToken] as! String, forHTTPHeaderField: kToken)
-//        }
+//            request.addValue(postHeaders[tokenType + " " + accessToken] as! String, forHTTPHeaderField: "Authorization")
+            
+            request.setValue(tokenType + " " + accessToken,forHTTPHeaderField: "Authorization")
+            
+        }
         
         do {
             let data = try! JSONSerialization.data(withJSONObject:postParams, options:.prettyPrinted)

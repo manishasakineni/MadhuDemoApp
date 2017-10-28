@@ -18,6 +18,10 @@ let walletUrl:String = "http://192.168.1.147/PayZanAPI/api/UserWallet/AddMoneyTo
 
 let kIsFirstTime:String = "kIsFirstTime"
 
+let accessToken:String = "accessToken"
+
+let tokenType:String = "tokenType"
+
 let kNetworkStatusMessage = "Please check your internet connection!"
 
 let kToastDuration  = 5.0

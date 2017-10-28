@@ -255,8 +255,12 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         
         print("dic params \(dictParams)")
         
-        let dictHeaders = ["":"","":""] as NSDictionary
-        
+//        let dictHeaders = ["":"","":""] as NSDictionary
+    
+    let dictHeaders = ["Authorization":UserDefaults.standard.value(forKey: accessToken) as! String,"Authorization":UserDefaults.standard.value(forKey: accessToken) as! String] as NSDictionary
+    
+      print("dictHeader:\(dictHeaders)")
+    
         serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
             DispatchQueue.main.async()
                 {

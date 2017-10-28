@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SampleVo: Mappable {
+class RolesVo: Mappable {
     
     var UserId: String?
     var RoleId: String?

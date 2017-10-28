@@ -150,50 +150,55 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         
         let dictHeaders = ["":"","":""] as NSDictionary
         
+//        let dictHeaders = [accessToken:UserDefaults.standard.value(forKey: accessToken)as! String,"":""] as NSDictionary
+        
         serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
             DispatchQueue.main.async()
                 {
                     
                     print("result:\(result)")
                     
-                    let respVO:LoginVo = Mapper().map(JSONObject: result)!
+                    let respVO:LoginResultVo = Mapper().map(JSONObject: result)!
                     
                     
                     print("responseString = \(respVO)")
                     
                     
-                    let statusCode = respVO.StatusCode
+                    let isSuccess = respVO.IsSuccess
                     
-                    print("StatusCode:\(String(describing: statusCode))")
+                    print("StatusCode:\(String(describing: isSuccess))")
                     
-                    //                        let strStatusCode = result.value(forKey: "StatusCode") as! Int
-                    //                        print("strStatusCode",strStatusCode)
                     
-                    if statusCode == 200
+                    if isSuccess == true
                     {
                         
-                        let userId = respVO.data?.UserWallet?.UserId
+                        let userId = respVO.Result?.Roles?[0].UserId
                         
-                        let walletId = respVO.data?.UserWallet?.WalletId
+                        let walletId = respVO.Result?.UserWallet?.WalletId
+                        
+                        let accessTokenn = respVO.Result?.AccessToken
+                        let tokenTypee = respVO.Result?.TokenType
                         
                         let defaults = UserDefaults.standard
                         
                         // Save String value to UserDefaults
-                        // Using defaults.set(value: Any?, forKey: String)
+
                         defaults.set(userId, forKey: "userIDD")
                         
                         defaults.set(walletId, forKey: "walletIDD")
                         
+                        defaults.set(accessTokenn, forKey: accessToken)
+                        defaults.set(tokenTypee, forKey: tokenType)
+                        
+                        UserDefaults.standard.synchronize()
+                        
                         print("roleId:\(String(describing: userId))")
                         
-                        let resObj:UserVo  = respVO.data!
+                        let uName  = respVO.Result?.User?.UserName
                         
-                        let uName = resObj.User?.UserName
                         
                         print("uName:\(String(describing: uName))")
                         
-                        //                            let dataObj =   (result.value(forKey: "data") as! NSDictionary) as! [String : AnyObject]
-                        //                            print("dataObj:",dataObj)
                         
                         UserDefaults.standard.setValue("true", forKey: kIsFirstTime)
                         UserDefaults.standard.synchronize()
@@ -206,30 +211,22 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                         
                         
                     }
-                    else if statusCode == 401{
+                    else if isSuccess == false {
                         
-                        let alertController = UIAlertController(title: "", message: "Mobile/Email or Password is incorrect" , preferredStyle: UIAlertControllerStyle.alert)
+//                        let inValidMsg = GlobalSupportingClass.invalidLoginMessage()
                         
-                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                        }
-                        alertController.addAction(DestructiveAction)
-                        self.present(alertController, animated: true, completion: nil)
+                        let invalidmsg = respVO.EndUserMessage
                         
+                        self.showAlertViewWithTitle("Alert", message: invalidmsg!, buttonTitle: "Retry")
                         
                     }
                         
                     else
                     {
-                        //                            self.view.makeToast(result.value(forKey:"statusMessage") as! String, duration:kToastDuration, position:CSToastPositionCenter)
                         
-                        //                            let alertController = UIAlertController(title: "", message: result.value(forKey:"statusMessage") as? String , preferredStyle: UIAlertControllerStyle.alert)
+                        let inValidMsg = GlobalSupportingClass.invalidLoginMessage()
                         
-                        let alertController = UIAlertController(title: "", message: "Mobile/Email or Password is incorrect" , preferredStyle: UIAlertControllerStyle.alert)
-                        
-                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                        }
-                        alertController.addAction(DestructiveAction)
-                        self.present(alertController, animated: true, completion: nil)
+                        self.showAlertViewWithTitle("Alert", message: inValidMsg as String, buttonTitle: "Retry")
                         
                     }
             }
@@ -237,55 +234,54 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         })
     }
     
+    
+    func validateAllFields() -> Bool
+    {
+        mobileField.text=mobileField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
+        passwordField.text=passwordField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
+        
+        let mnumb:NSString = mobileField.text! as NSString
+        let pasword:NSString = passwordField.text! as NSString
+        
+        
+        //Check whether textField are left empty or not
+        var errorMessage:NSString?
+        
+        if (mnumb.length<=0) {
+            errorMessage=GlobalSupportingClass.blankPhoneNumberErrorMessage() as String as String as NSString?
+        }
+        else if (mnumb.length<=9) {
+            errorMessage=GlobalSupportingClass.invalidPhoneNumberErrorMessage() as String as String as NSString?
+        }
+           
+        else if (pasword.length<=0) {
+            errorMessage=GlobalSupportingClass.blankPasswordErrorMessage() as String as String as NSString?
+        }
+        
+        if let errorMsg = errorMessage{
+            
+            self.showAlertViewWithTitle("Alert", message: errorMsg as String, buttonTitle: "Retry")
+            return false;
+        }
+        return true
+    }
+    
 
     @IBAction func loginBtnAction(_ sender: Any) {
         
-        
+        if self.validateAllFields(){
         
         if(appDelegate.checkInternetConnectivity()){
             
-            if (self.mobileField.text?.isEmpty)! {
-                
-                let alertController = UIAlertController(title: "Message", message: "Please Enter Your Mobile Number or Email" , preferredStyle: UIAlertControllerStyle.alert)
-                
-                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                }
-                alertController.addAction(DestructiveAction)
-                self.present(alertController, animated: true, completion: nil)
-                
-            }
-            else if (self.passwordField.text?.isEmpty)! {
-                
-                let alertController = UIAlertController(title: "Message", message: "Please Enter Your Password" , preferredStyle: UIAlertControllerStyle.alert)
-                
-                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                }
-                alertController.addAction(DestructiveAction)
-                self.present(alertController, animated: true, completion: nil)
-                
-                
-            }else {
-                
                 postLoginService()
-            }
-            
            
         }
         else{
-//             if {
-//                self.appDelegate.window?.makeToast("No internet connection..!", duration:kToastDuration, position:CSToastPositionBottom)
-////                self.movetosignUpPage()
-//            }else{
                 self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
                 return
-//            }
         }
         
-//        if reachability.isReachable == true{
-//            
-//             appDelegate.window?.makeToast(kNetworkStatusMessage, duration: kToastDuration, position: CSToastPositionCenter)
-//        }
-        
+        }
         
     }
 
@@ -303,7 +299,6 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                 if fbloginresult.grantedPermissions != nil {
                     if(fbloginresult.grantedPermissions.contains("email"))
                     {
-                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         UserDefaults.standard.setValue("true", forKey: kIsFirstTime)
                         UserDefaults.standard.synchronize()
                         
@@ -412,17 +407,6 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.window?.rootViewController = viewController
             
-//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//            appDelegate.window?.rootViewController = homeView
-//            
-//            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
-            
-            
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            
-           // MBProgressHUD.hide(for:appDelegate.window,animated:true)
         }
         else if UIDevice.current.userInterfaceIdiom == .pad {
             
@@ -447,7 +431,6 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.window?.rootViewController = viewController
             
-           // MBProgressHUD.hide(for:appDelegate.window,animated:true)
         }
         }
         else {
@@ -463,7 +446,6 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
     
     @IBAction func backAction(_ sender: Any) {
         
-//        headerView.isHidden = false
         
         self.navigationController?.popViewController(animated: true)
     }
@@ -484,10 +466,8 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
             passwordField.isSecureTextEntry = false
             eyeBtnOutlet.tag = 1
         }
+        else{
             
-        else
-            
-        {
             passwordField.isSecureTextEntry = true
             eyeBtnOutlet.tag = 0
             

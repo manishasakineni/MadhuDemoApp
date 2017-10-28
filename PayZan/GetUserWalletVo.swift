@@ -15,22 +15,22 @@ class GetUserWalletVo: Mappable {
     var Balance: Int?
     var Id: Int?
     var IsActive: Bool?
-    var CreatedByUserId: String?
-    var CreatedDate: String?
-    var UpdatedByUserId: String?
-    var UpdatedDate: String?
+    var CreatedBy: String?
+    var ModifiedBy: Any?
+    var Created: String?
+    var Modified: String?
     
-    init(UserId:String?,WalletId:String?,Balance:Int?,Id:Int?,IsActive:Bool?,CreatedByUserId:String?,CreatedDate:String?,UpdatedByUserId:String?,UpdatedDate:String?) {
+    init(UserId:String?,WalletId:String?,Balance:Int?,Id:Int?,IsActive:Bool?,CreatedBy:String?,ModifiedBy:Any?,Created:String?,Modified:String?) {
         
         self.UserId = UserId
         self.WalletId = WalletId
         self.Balance = Balance
         self.Id = Id
         self.IsActive = IsActive!
-        self.CreatedByUserId = CreatedByUserId
-        self.CreatedDate = CreatedDate
-        self.UpdatedByUserId = UpdatedByUserId
-        self.UpdatedDate = UpdatedDate
+        self.CreatedBy = CreatedBy
+        self.ModifiedBy = ModifiedBy
+        self.Created = Created
+        self.Modified = Modified
     }
     
     required init?(map: Map) {
@@ -44,10 +44,10 @@ class GetUserWalletVo: Mappable {
         Balance <- map["Balance"]
         Id <- map["Id"]
         IsActive <- map["IsActive"]
-        CreatedByUserId <- map["CreatedByUserId"]
-        CreatedDate <- map["CreatedDate"]
-        UpdatedByUserId <- map["UpdatedByUserId"]
-        UpdatedDate <- map["UpdatedDate"]
+        CreatedBy <- map["CreatedBy"]
+        ModifiedBy <- map["ModifiedBy"]
+        Created <- map["Created"]
+        Modified <- map["Modified"]
 }
     
 }

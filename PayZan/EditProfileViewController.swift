@@ -53,6 +53,8 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
         self.editTableView.delegate = self
         self.editTableView.dataSource = self
         
+        self.editTableView.separatorStyle = .none
+        
         labelText = text
         
         // Uncomment the following line to preserve selection between presentations
@@ -89,8 +91,8 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
         else {
             
             let headerLabel = UILabel(frame: CGRect(x: 15, y: 20, width:
-                tableView.bounds.size.width, height: 30))
-            headerLabel.font = UIFont(name: "Verdana", size: 15)
+                tableView.bounds.size.width, height: 25))
+            headerLabel.font = UIFont(name: "Verdana", size: 13)
             headerLabel.textColor = UIColor.gray
             headerLabel.text = self.tableView(self.editTableView, titleForHeaderInSection: section)
             headerLabel.sizeToFit()
@@ -158,12 +160,13 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
             
             let cell = Bundle.main.loadNibNamed("TableViewCell1", owner: self, options: nil)?.first as! TableViewCell1
             
-            cell.profileImag.layer.cornerRadius = cell.profileImag.frame.size.height/2;
+            cell.profileImag.layer.cornerRadius = cell.profileImag.frame.size.height/6;
             cell.profileImag.layer.borderColor = UIColor.gray.cgColor
-            cell.profileImag.layer.borderWidth = 1.5
+            cell.profileImag.layer.borderWidth = 1
             cell.profileImag.clipsToBounds = true
             cell.profileImag.image = image
-            
+            cell.firstNameTF.placeholder = "First Name"
+            cell.lastNameTF.placeholder = "Last Name"
             cell.editButton.addTarget(self, action: #selector(self.editBtnClicked), for: .touchDown)
             
             return cell
@@ -178,8 +181,13 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
             if indexPath.row == 0{
                 
                 cell.detailsLbl?.text = "Display Name"
+                cell.detailsTF.placeholder = "Display Name"
+                cell.detailsTF.layer.borderWidth = 0.5
+                cell.detailsTF.layer.borderColor = UIColor.lightGray.cgColor
+                cell.detailsTF.layer.cornerRadius = 3
+                cell.detailsTF.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
                  delegate?.textChanged(text: cell.detailsLbl?.text)
-                cell.ImgVW?.image = UIImage(named: "Profile")
+//                cell.ImgVW?.image = UIImage(named: "Profile")
                 
                 
             }
@@ -190,7 +198,12 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
                 
                 
                 cell.detailsLbl?.text = "Email"
-                cell.ImgVW?.image = UIImage(named: "Mail")
+                cell.detailsTF.placeholder = "Email"
+                cell.detailsTF.layer.borderWidth = 0.5
+                cell.detailsTF.layer.borderColor = UIColor.lightGray.cgColor
+                cell.detailsTF.layer.cornerRadius = 3
+                cell.detailsTF.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+//                cell.ImgVW?.image = UIImage(named: "Mail")
                 
                 
             }
@@ -199,7 +212,12 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
                 
                 
                 cell.detailsLbl?.text = "Contact No"
-                cell.ImgVW?.image = UIImage(named: "Mobile")
+                cell.detailsTF.placeholder = "Contact No"
+                cell.detailsTF.layer.borderWidth = 0.5
+                cell.detailsTF.layer.borderColor = UIColor.lightGray.cgColor
+                cell.detailsTF.layer.cornerRadius = 3
+                cell.detailsTF.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+//                cell.ImgVW?.image = UIImage(named: "Mobile")
                 
                 
             }
@@ -208,7 +226,12 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
                 
                 
                 cell.detailsLbl?.text = "Date Of Birth"
-                cell.ImgVW?.image = UIImage(named: "DOB")
+                cell.detailsTF.placeholder = "Date Of Birth"
+                cell.detailsTF.layer.borderWidth = 0.5
+                cell.detailsTF.layer.borderColor = UIColor.lightGray.cgColor
+                cell.detailsTF.layer.cornerRadius = 3
+                cell.detailsTF.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+//                cell.ImgVW?.image = UIImage(named: "DOB")
                 
                 datePicker.datePickerMode = .date
                 let toolBar = UIToolbar()

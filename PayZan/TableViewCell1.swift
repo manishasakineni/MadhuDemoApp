@@ -31,20 +31,28 @@ class TableViewCell1: UITableViewCell,UITextFieldDelegate  {
        // FNLbl.isHidden = true
       firstNameTF.delegate = self
       lastNameTF.delegate = self
+        firstNameTF.layer.borderWidth = 0.5
+        firstNameTF.layer.borderColor = UIColor.lightGray.cgColor
+        firstNameTF.layer.cornerRadius = 3
+        firstNameTF.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+        lastNameTF.layer.borderWidth = 0.5
+        lastNameTF.layer.borderColor = UIColor.lightGray.cgColor
+        lastNameTF.layer.cornerRadius = 3
+        lastNameTF.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         hideLabels()
         
-        if let X = UserDefaults.standard.object(forKey: "firstName") as? String
-        {
-        
-        firstNameTF.text = X
-        }
-        
-        if let Y = UserDefaults.standard.object(forKey: "lastName") as? String
-        {
-            
-            lastNameTF.text = Y
-        }
+//        if let X = UserDefaults.standard.object(forKey: "firstName") as? String
+//        {
+//        
+//        firstNameTF.text = X
+//        }
+//        
+//        if let Y = UserDefaults.standard.object(forKey: "lastName") as? String
+//        {
+//            
+//            lastNameTF.text = Y
+//        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -58,23 +66,23 @@ class TableViewCell1: UITableViewCell,UITextFieldDelegate  {
     
         if (firstNameTF.text != nil)  {
             
-            FNLbl.isHidden = false
+            FNLbl.isHidden = true
         }
         
         else{
         
-        FNLbl.isHidden = true
+        FNLbl.isHidden = false
         
         }
         
         if (lastNameTF.text != nil)  {
             
-            LNLbl.isHidden = false
+            LNLbl.isHidden = true
         }
             
         else{
             
-            LNLbl.isHidden = true
+            LNLbl.isHidden = false
             
         }
 
@@ -89,14 +97,14 @@ class TableViewCell1: UITableViewCell,UITextFieldDelegate  {
     
         if (firstNameTF.text != nil)  {
             
-            FNLbl.isHidden = true
+            FNLbl.isHidden = false
             
             
         }
             
         else{
             
-            FNLbl.isHidden = false
+            FNLbl.isHidden = true
             
             
         }
@@ -108,13 +116,13 @@ class TableViewCell1: UITableViewCell,UITextFieldDelegate  {
         
         if (lastNameTF.text != nil)  {
             
-            LNLbl.isHidden = true
+            LNLbl.isHidden = false
             
         }
             
         else{
             
-            LNLbl.isHidden = false
+            LNLbl.isHidden = true
             
             
         }
@@ -126,23 +134,23 @@ class TableViewCell1: UITableViewCell,UITextFieldDelegate  {
     
             if (firstNameTF.text != nil)  {
                 
-                FNLbl.isHidden = false
+                FNLbl.isHidden = true
             }
                 
             else{
                 
-                FNLbl.isHidden = true
+                FNLbl.isHidden = false
                 
             }
             
             if (lastNameTF.text != nil)  {
                 
-                LNLbl.isHidden = false
+                LNLbl.isHidden = true
             }
                 
             else{
                 
-                LNLbl.isHidden = true
+                LNLbl.isHidden = false
                 
             }
     

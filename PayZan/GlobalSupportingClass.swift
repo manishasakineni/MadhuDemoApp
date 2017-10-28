@@ -13,6 +13,12 @@ class GlobalSupportingClass {
     static let dateFormatStandard:String = "yyyy-MM-dd HH:mm:ss"
     static let dateFormatInputField:String = "MM/dd/yyyy hh:mm a"
     
+    
+    
+    var autTokenn = UserDefaults.standard.string(forKey: "accessToken")
+    var authTokenType = UserDefaults.standard.string(forKey: "tokenType")
+    
+    
     // MARK: - Error Messages
     
     class func invalidEmaildIDFormatErrorMessage() -> NSString {
@@ -81,6 +87,10 @@ class GlobalSupportingClass {
     }
     class func phoneValidateMessage() -> NSString {
         return "Mobilenumber should start with ('7'-'9')"
+    }
+    class func invalidLoginMessage() -> NSString {
+        
+        return "Invalid Username or Password"
     }
     
     // MARK: - Phone Number Valdation
@@ -238,6 +248,58 @@ class GlobalSupportingClass {
         
         return resultString
     }
+    
+//    class func saveAccessToken(_ accessToken: String) {
+//        
+//        if let accessTokenData = accessToken.data(using: String.Encoding.utf8) {
+//            
+//            let encryptedAccessToken = RNCryptor.encrypt(data: accessTokenData, withPassword: autTokenn)
+//            UserDefaults.standard.setValue(encryptedAccessToken, forKey: autTokenn)
+//            UserDefaults.standard.synchronize()
+//        }
+//    }
+//    
+//    class func getAccessToken() -> String {
+//        
+//        if let accessTokenData = UserDefaults.standard.value(forKey: autTokenn) as? Data {
+//            
+//            do {
+//                
+//                let decryptedAccessToken = try RNCryptor.decrypt(data: accessTokenData, withPassword: autTokenn)
+//                
+//                if let accessToken = String.init(data: decryptedAccessToken, encoding: String.Encoding.utf8) {
+//                    
+//                    return accessToken
+//                }
+//                
+//            } catch {
+//                
+//                fatalError("Error fetching password items - \(error)")
+//            }
+//        }
+//        
+//        return ""
+//    }
+//    
+//    class func saveTokenType(_ tokenType: String) {
+//        
+//        UserDefaults.standard.setValue(tokenType, forKey: autTokenn)
+//        UserDefaults.standard.synchronize()
+//    }
+//    
+//    class func getTokenType() -> String {
+//        
+//        let tokenType = UserDefaults.standard.value(forKey: autTokenn) as? String
+//        
+//        if tokenType == nil {
+//            
+//            return ""
+//            
+//        } else {
+//            
+//            return tokenType!
+//        }
+//    }
     
 //    //MARK: - Alert
 //    
