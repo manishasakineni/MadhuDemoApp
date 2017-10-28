@@ -11,30 +11,32 @@ import Foundation
 class UserVo: Mappable {
     
     
-    var User: RespVo?
-    var Roles:[SampleVo]?
-    var ActivityRights:[GetActVo]?
-    var UserWallet:GetUserWalletVo?
     
-    init(User:RespVo?, Roles:[SampleVo]?, ActivityRights:[GetActVo]?,UserWallet:GetUserWalletVo?) {
-        
-        self.User = User
-        self.Roles = Roles
-        self.ActivityRights = ActivityRights
-        self.UserWallet = UserWallet
-
-    }
+        var Id: String?
+        var Email: String?
+        var UserName: String?
+        var PhoneNumber: String?
     
-    required init?(map: Map) {
-        
-    }
     
-    func mapping(map: Map) {
-        
-        User <- map["User"]
-        Roles <- map["Roles"]
-        ActivityRights <- map["ActivityRights"]
-        UserWallet <- map["UserWallet"]
-        
-    }
+        init(Id:String?, Email:String?, UserName:String?, PhoneNumber:String?) {
+    
+            self.Id = Id
+            self.Email = Email
+            self.UserName = UserName
+            self.PhoneNumber = PhoneNumber
+        }
+    
+        required init?(map: Map) {
+    
+        }
+    
+        func mapping(map: Map) {
+    
+            Id <- map["Id"]
+            Email <- map["Email"]
+            UserName <- map["UserName"]
+            PhoneNumber <- map["PhoneNumber"]
+    
+        }
+    
 }

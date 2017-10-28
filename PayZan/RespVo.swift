@@ -11,32 +11,43 @@ import Foundation
 
 class RespVo: Mappable {
     
-    var Id: String?
-    var Email: String?
-    var UserName: String?
-    var PhoneNumber: String?
+    
+    var User:UserVo?
+    var Roles:[RolesVo]?
+    var ActivityRights:Any?
+    var UserWallet:GetUserWalletVo?
+    var AccessToken:String?
+    var ExpiresIn:String?
+    var TokenType:String?
     
     
-    init(Id:String?, Email:String?, UserName:String?, PhoneNumber:String?) {
-       
-        self.Id = Id
-        self.Email = Email
-        self.UserName = UserName
-        self.PhoneNumber = PhoneNumber
+    init(User:UserVo?, Roles:[RolesVo]?, ActivityRights:Any?, UserWallet:GetUserWalletVo?, AccessToken:String?, ExpiresIn:String?, TokenType:String?) {
+    
+            self.User = User
+            self.Roles = Roles
+            self.ActivityRights = ActivityRights
+            self.UserWallet = UserWallet
+            self.AccessToken = AccessToken
+            self.ExpiresIn = ExpiresIn
+            self.TokenType = TokenType
     }
     
     required init?(map: Map) {
-        
+    
     }
     
     func mapping(map: Map) {
-        
-        Id <- map["Id"]
-        Email <- map["Email"]
-        UserName <- map["UserName"]
-        PhoneNumber <- map["PhoneNumber"]
-
-    }
+    
+      User <- map["User"]
+      Roles <- map["Roles"]
+      ActivityRights <- map["ActivityRights"]
+      UserWallet <- map["UserWallet"]
+      AccessToken <- map["AccessToken"]
+      ExpiresIn <- map["ExpiresIn"]
+      TokenType <- map["TokenType"]
+    
+        }
+    
     
     
     
