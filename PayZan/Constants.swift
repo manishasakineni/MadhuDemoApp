@@ -14,13 +14,16 @@ let baseUrl:String = "http://192.168.1.147/PayZanAPI/api/"
 
 //let baseUrl:String = "http://payzandev.azurewebsites.net/api/Register/"
 
-let walletUrl:String = "http://192.168.1.147/PayZanAPI/api/UserWallet/AddMoneyToUserWallet"
 
 let kIsFirstTime:String = "kIsFirstTime"
 
 let accessToken:String = "accessToken"
 
 let tokenType:String = "tokenType"
+
+let walletIDD:String = "walletIDD"
+
+let userIDD:String = "userIDD"
 
 let kNetworkStatusMessage = "Please check your internet connection!"
 

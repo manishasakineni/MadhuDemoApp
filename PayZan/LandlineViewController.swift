@@ -187,11 +187,8 @@ class LandlineViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
                     let respVO:OperatorVo = Mapper().map(JSONObject: result)!
                     
                     
-                    
                     let isActive = respVO.IsSuccess
                     
-                    
-                    //                    let status = result["status"] as! String
                     
                     if(isActive == true){
                         

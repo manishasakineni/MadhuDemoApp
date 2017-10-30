@@ -91,8 +91,8 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
         else {
             
             let headerLabel = UILabel(frame: CGRect(x: 15, y: 20, width:
-                tableView.bounds.size.width, height: 25))
-            headerLabel.font = UIFont(name: "Verdana", size: 13)
+                tableView.bounds.size.width, height: 20))
+            headerLabel.font = UIFont(name: "Verdana", size: 11)
             headerLabel.textColor = UIColor.gray
             headerLabel.text = self.tableView(self.editTableView, titleForHeaderInSection: section)
             headerLabel.sizeToFit()
@@ -109,12 +109,15 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
         
         if indexPath.section == 0 {
             
-            return 150
+            return 100
         }
             
         else{
-            
-            return 70
+            if indexPath.row == 4{
+                
+                return 80
+            }
+            return 50
             
         }
     }

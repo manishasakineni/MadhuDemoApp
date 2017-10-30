@@ -176,6 +176,9 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                         
                         let walletId = respVO.Result?.UserWallet?.WalletId
                         
+                        print("userId:\(String(describing: userId))")
+                        print("walletId:\(String(describing: walletId))")
+                        
                         let accessTokenn = respVO.Result?.AccessToken
                         let tokenTypee = respVO.Result?.TokenType
                         
@@ -183,16 +186,15 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                         
                         // Save String value to UserDefaults
 
-                        defaults.set(userId, forKey: "userIDD")
+                        defaults.set(userId, forKey: userIDD)
                         
-                        defaults.set(walletId, forKey: "walletIDD")
+                        defaults.set(walletId, forKey: walletIDD)
                         
                         defaults.set(accessTokenn, forKey: accessToken)
                         defaults.set(tokenTypee, forKey: tokenType)
                         
                         UserDefaults.standard.synchronize()
                         
-                        print("roleId:\(String(describing: userId))")
                         
                         let uName  = respVO.Result?.User?.UserName
                         

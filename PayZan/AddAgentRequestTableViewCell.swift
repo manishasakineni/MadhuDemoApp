@@ -1,62 +1,57 @@
 //
-//  TableViewCell2.swift
-//  PageView_Naveen
+//  AddAgentRequestTableViewCell.swift
+//  PayZan
 //
-//  Created by Nani Mac on 21/09/17.
-//  Copyright © 2017 Naveen. All rights reserved.
+//  Created by CalibrageMac02 on 30/10/17.
+//  Copyright © 2017 CalibrageMac02. All rights reserved.
 //
 
 import UIKit
 
-class TableViewCell2: UITableViewCell,UITextFieldDelegate {
+class AddAgentRequestTableViewCell: UITableViewCell,UITextFieldDelegate {
     
+    @IBOutlet weak var titleLabel: UILabel!
     
-    
-    @IBOutlet weak var detailsLbl: UILabel!
-    
-    @IBOutlet weak var detailsTF: UITextField!
-    
-    @IBOutlet weak var ImgVW: UIImageView!
-    
+    @IBOutlet weak var agentRequestField: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        agentRequestField.delegate = self
         // Initialization code
-        
-        detailsTF.delegate = self
-        
-        ImgVW.isHidden = true
-        
-        hideLabels()
     }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
+        agentRequestField.delegate = self
+
         // Configure the view for the selected state
+        
+        hideLabels()
     }
-    
     
     func hideLabels(){
         
-        if (detailsTF.text != nil)  {
+        if (agentRequestField.text != nil)  {
             
-            detailsLbl.isHidden = true
+            titleLabel.isHidden = true
         }
             
         else{
             
-            detailsLbl.isHidden = false
+            titleLabel.isHidden = false
             
         }
         
-        if (detailsTF.text != nil)  {
+        if (agentRequestField.text != nil)  {
             
-            detailsLbl.isHidden = true
+            titleLabel.isHidden = true
         }
             
         else{
             
-            detailsLbl.isHidden = false
+            titleLabel.isHidden = false
             
         }
         
@@ -66,37 +61,37 @@ class TableViewCell2: UITableViewCell,UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-        if  textField == detailsTF {
+        if  textField == agentRequestField {
             
             
-            if (detailsTF.text != nil)  {
+            if (agentRequestField.text != nil)  {
                 
-                detailsLbl.isHidden = false
+                titleLabel.isHidden = false
                 
                 
             }
                 
             else{
                 
-                detailsLbl.isHidden = true
+                titleLabel.isHidden = true
                 
                 
             }
             
         }
         
-        if textField == detailsTF {
+        if textField == agentRequestField {
             
             
-            if (detailsTF.text != nil)  {
+            if (agentRequestField.text != nil)  {
                 
-                detailsLbl.isHidden = false
+                titleLabel.isHidden = false
                 
             }
                 
             else{
                 
-                detailsLbl.isHidden = true
+                titleLabel.isHidden = true
                 
                 
             }
@@ -106,14 +101,14 @@ class TableViewCell2: UITableViewCell,UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        if (detailsTF.text != nil)  {
+        if (agentRequestField.text != nil)  {
             
-            detailsLbl.isHidden = true
+            titleLabel.isHidden = true
         }
             
         else{
             
-            detailsLbl.isHidden = false
+            titleLabel.isHidden = false
             
         }
         
@@ -123,16 +118,15 @@ class TableViewCell2: UITableViewCell,UITextFieldDelegate {
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         
-        if detailsTF.text == nil {
+        if agentRequestField.text == nil {
             
-            self.detailsLbl.isHidden = true
-            self.detailsLbl.isHidden = false
+            self.titleLabel.isHidden = true
+            self.titleLabel.isHidden = false
         }
         
-       
+        
         
         return true;
     }
-   
     
 }

@@ -50,6 +50,8 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     
     var indexValue:Int!
     
+    var myTranResultList:[MyTranListResultVo] = []
+    
     var isHiddenSendView:Bool?
     var isHiddenWithdrawView:Bool?
     var isHiddenTransactionView:Bool?
@@ -74,6 +76,8 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
 //        mySegmentControl.removeBorders()
         
@@ -183,19 +187,21 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         
         let defaults = UserDefaults.standard
         
-        if let userid = defaults.string(forKey: "userIDD") {
+        if let userid = defaults.string(forKey: userIDD) {
             
             userId = userid
             
             print("defaults savedString: \(userid)")
         }
-        if let walletid = defaults.string(forKey: "walletIDD") {
+        if let walletid = defaults.string(forKey: walletIDD) {
             
             walletId = walletid
             
             print("defaults savedString: \(walletid)")
             
         }
+        
+        myTransactionGetService()
 
         // Do any additional setup after loading the view.
     }
@@ -208,7 +214,7 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return walletArr.count
+        return myTranResultList.count
         
     }
     
@@ -224,7 +230,17 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         let cell = Bundle.main.loadNibNamed("MyTransactionTableViewCell", owner: self, options: nil)?.first as! MyTransactionTableViewCell
         
         //        cell.ImgeVw.image = #imageLiteral(resourceName: "Thumb Sign")
-        cell.titleLabel?.text = walletArr[indexPath.row]
+        
+        let listResult:MyTranListResultVo = myTranResultList[indexPath.row]
+        
+        cell.titleLabel?.text = listResult.TransactionType
+        
+        let amount = String(describing: listResult.Amount!)
+        
+        cell.addMoneyLabel.text = amount
+        
+        cell.dateLabel.text = listResult.Created
+        cell.fromLabel.text = listResult.Modified
         
 //        cell.ImgeVw.image = imageArray1[indexPath.row]
         
@@ -243,6 +259,60 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         
     }
     
+    func myTransactionGetService(){
+        
+        if(appDelegate.checkInternetConnectivity()){
+            
+            print("walletId:\(String(describing: walletId))")
+            
+            let strUrl = myTransactionsUrl + "/" + walletId!
+            
+            print("strUrl: \(strUrl)")
+            
+            let url : NSURL = NSURL(string: strUrl)!
+            
+            serviceController.requestGETURL(strURL:url, success:{(result) in
+                DispatchQueue.main.async()
+                    {
+                        
+                        let respVO:MyTransactionsVo = Mapper().map(JSONObject: result)!
+                        
+                        
+                        let isActive = respVO.IsSuccess
+                        
+                        
+                        if(isActive == true){
+                            
+                            let listResultVo = respVO.ListResult
+                            
+                            self.myTranResultList = listResultVo!
+                            
+                            
+                            DispatchQueue.main.async(execute: { () -> Void in
+                                
+                                self.myTransactionTableView.reloadData()
+                            })
+                            
+                            
+                        }else if(isActive == false) {
+                            
+                            self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
+                            
+                        }
+                        //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+                }
+            }, failure:  {(error) in
+            })
+            
+        }
+        else {
+            
+            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+        }
+        
+    }
+    
    func postWalletMoneyService(){
     
         
@@ -255,9 +325,9 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         
         print("dic params \(dictParams)")
         
-//        let dictHeaders = ["":"","":""] as NSDictionary
+        let dictHeaders = ["":"","":""] as NSDictionary
     
-    let dictHeaders = ["Authorization":UserDefaults.standard.value(forKey: accessToken) as! String,"Authorization":UserDefaults.standard.value(forKey: accessToken) as! String] as NSDictionary
+//    let dictHeaders = ["Authorization":UserDefaults.standard.value(forKey: accessToken) as! String,"Authorization":UserDefaults.standard.value(forKey: accessToken) as! String] as NSDictionary
     
       print("dictHeader:\(dictHeaders)")
     
@@ -369,7 +439,159 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         
     }
     
+    func sendMoneyToWalletService(){
+        
+//        {
+//            "userWalletHistory": {
+//                "WalletId": "636449fc-bb1a-449f-a275-06fa98db0e14",
+//                "Amount": 100,
+//                "TransactionTypeId": "9",
+//                "ReasonTypeId": "10",
+//                "Id": 0,
+//                "IsActive": true,
+//                "CreatedBy": "024b9d06-e64d-4336-b055-855948a809f3",
+//                "ModifiedBy": "024b9d06-e64d-4336-b055-855948a809f3",
+//                "Created": "2017-10-30T04:37:57.006Z",
+//                "Modified": "2017-10-30T04:37:57.006Z"
+//            },
+//            "recieverUserName": "9885706781"
+//        }
+        
+        
+        let walletField:String = sendAmountField.text!
+        
+        let phone:String = mobileNumField.text!
+        
+        let  strUrl = sendWalletUrl
+        
+//        let null = NSNull()
+        
+        let dictParams = ["userWalletHistory": [
+            "WalletId": walletId!,
+            "Amount": walletField,
+            "TransactionTypeId": "9",
+            "ReasonTypeId": "10",
+            "Id": 0,
+            "IsActive": true,
+            "CreatedBy": userId!,
+            "ModifiedBy": userId!,
+            "Created": "2017-10-30T04:37:57.006Z",
+            "Modified": "2017-10-30T04:37:57.006Z"
+            ],"recieverUserName": phone] as NSDictionary
+        
+        print("dic params \(dictParams)")
+        
+        let dictHeaders = ["":"","":""] as NSDictionary
+        
+        //    let dictHeaders = ["Authorization":UserDefaults.standard.value(forKey: accessToken) as! String,"Authorization":UserDefaults.standard.value(forKey: accessToken) as! String] as NSDictionary
+        
+        print("dictHeader:\(dictHeaders)")
+        
+        serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
+            DispatchQueue.main.async()
+                {
+                    
+                    print("result:\(result)")
+                    
+                    let respVO:SendWalletVo = Mapper().map(JSONObject: result)!
+                    
+                    
+                    print("responseString = \(respVO)")
+                    
+                    
+                    let statusCode = respVO.IsSuccess
+                    
+                    print("StatusCode:\(String(describing: statusCode))")
+                    
+                    //                        let strStatusCode = result.value(forKey: "StatusCode") as! Int
+                    //                        print("strStatusCode",strStatusCode)
+                    
+                    if statusCode == true
+                    {
+                        
+                        let successMsg = respVO.EndUserMessage
+                        
+                        let waleetBalance = respVO.Result?.Balance
+                        
+                        let defaults = UserDefaults.standard
+                        
+                        // Save String value to UserDefaults
+                        // Using defaults.set(value: Any?, forKey: String)
+                        defaults.set(waleetBalance, forKey: "walletAmount")
+                        
+                        
+                        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                        self.navigationController?.pushViewController(homeViewController, animated: true)
+                        
+                        let alertController = UIAlertController(title: "Success", message: successMsg! , preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                        }
+                        alertController.addAction(DestructiveAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        
+                        
+                        
+                        
+                    }
+                    else if statusCode == false{
+                        
+                        let alertController = UIAlertController(title: "Message", message: "Not Add Money to Wallet" , preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                        }
+                        alertController.addAction(DestructiveAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        
+                        
+                    }
+                        
+                    else
+                    {
+                        
+                        let alertController = UIAlertController(title: "", message: "Services not Working" , preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                        }
+                        alertController.addAction(DestructiveAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        
+                    }
+            }
+        }, failureHandler: {(error) in
+        })
+        
+    }
+    
     @IBAction func sendMoneyAction(_ sender: Any) {
+        
+        
+        
+        if(appDelegate.checkInternetConnectivity()){
+            
+            if !(sendAmountField.text?.isEmpty)! {
+                
+                sendMoneyToWalletService()
+                
+            }
+            else {
+                
+                let alertController = UIAlertController(title: "message", message:"Please enter wallet amount" , preferredStyle: UIAlertControllerStyle.alert)
+                
+                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+                }
+                alertController.addAction(DestructiveAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
+        }
+        else {
+            
+            self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+            
+        }
     }
     
 

@@ -66,6 +66,15 @@
 		354CF1B91F913E72004ADDAD /* GetUserWalletVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1B81F913E72004ADDAD /* GetUserWalletVo.swift */; };
 		354CF1BC1F9151AD004ADDAD /* ResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1BB1F9151AD004ADDAD /* ResultVo.swift */; };
 		354CF1BE1F9151C4004ADDAD /* WalletVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1BD1F9151C4004ADDAD /* WalletVo.swift */; };
+		354E4D461FA6EB7C008D108A /* SendWalletVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4D451FA6EB7C008D108A /* SendWalletVo.swift */; };
+		354E4D481FA6EBB0008D108A /* SendWalletHistoryVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4D471FA6EBB0008D108A /* SendWalletHistoryVo.swift */; };
+		354E4D4C1FA71203008D108A /* AddAgentRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4D4A1FA71203008D108A /* AddAgentRequestTableViewCell.swift */; };
+		354E4D4D1FA71203008D108A /* AddAgentRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354E4D4B1FA71203008D108A /* AddAgentRequestTableViewCell.xib */; };
+		354E4D4F1FA71272008D108A /* RequestForAgentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4D4E1FA71272008D108A /* RequestForAgentViewController.swift */; };
+		354E4D541FA7243B008D108A /* AddAgentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4D521FA7243B008D108A /* AddAgentTableViewCell.swift */; };
+		354E4D551FA7243B008D108A /* AddAgentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354E4D531FA7243B008D108A /* AddAgentTableViewCell.xib */; };
+		354E4D581FA75FC8008D108A /* MyTransactionsVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4D571FA75FC8008D108A /* MyTransactionsVo.swift */; };
+		354E4D5A1FA7601B008D108A /* MyTranListResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E4D591FA7601B008D108A /* MyTranListResultVo.swift */; };
 		355120F51F948E4E00C9AD9D /* OperatorVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355120F41F948E4E00C9AD9D /* OperatorVo.swift */; };
 		355120F71F948EED00C9AD9D /* ListResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355120F61F948EED00C9AD9D /* ListResultVo.swift */; };
 		3554C3191F8F457B0092EAC7 /* RechargeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3554C3181F8F457B0092EAC7 /* RechargeDetailViewController.swift */; };
@@ -170,6 +179,15 @@
 		354CF1B81F913E72004ADDAD /* GetUserWalletVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserWalletVo.swift; sourceTree = "<group>"; };
 		354CF1BB1F9151AD004ADDAD /* ResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultVo.swift; sourceTree = "<group>"; };
 		354CF1BD1F9151C4004ADDAD /* WalletVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletVo.swift; sourceTree = "<group>"; };
+		354E4D451FA6EB7C008D108A /* SendWalletVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendWalletVo.swift; sourceTree = "<group>"; };
+		354E4D471FA6EBB0008D108A /* SendWalletHistoryVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendWalletHistoryVo.swift; sourceTree = "<group>"; };
+		354E4D4A1FA71203008D108A /* AddAgentRequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAgentRequestTableViewCell.swift; sourceTree = "<group>"; };
+		354E4D4B1FA71203008D108A /* AddAgentRequestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAgentRequestTableViewCell.xib; sourceTree = "<group>"; };
+		354E4D4E1FA71272008D108A /* RequestForAgentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestForAgentViewController.swift; sourceTree = "<group>"; };
+		354E4D521FA7243B008D108A /* AddAgentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAgentTableViewCell.swift; sourceTree = "<group>"; };
+		354E4D531FA7243B008D108A /* AddAgentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAgentTableViewCell.xib; sourceTree = "<group>"; };
+		354E4D571FA75FC8008D108A /* MyTransactionsVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTransactionsVo.swift; sourceTree = "<group>"; };
+		354E4D591FA7601B008D108A /* MyTranListResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTranListResultVo.swift; sourceTree = "<group>"; };
 		355120F41F948E4E00C9AD9D /* OperatorVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorVo.swift; sourceTree = "<group>"; };
 		355120F61F948EED00C9AD9D /* ListResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResultVo.swift; sourceTree = "<group>"; };
 		3554C3181F8F457B0092EAC7 /* RechargeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RechargeDetailViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +301,7 @@
 		35344DAF1F861B3700E35C5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				354E4D491FA71108008D108A /* RequestAgent */,
 				356651861F9DC75500330D33 /* MyTransaction */,
 				3554C31E1F8F5D850092EAC7 /* Profile */,
 				350CCD1B1F88A5BE003495B6 /* IconTableViewCell.swift */,
@@ -312,6 +331,7 @@
 				354CF1B21F90F93B004ADDAD /* DatacardViewController.swift */,
 				354CF1B41F910BDD004ADDAD /* LandlineViewController.swift */,
 				354CF1B61F9117B1004ADDAD /* AddMoneyWalletViewController.swift */,
+				354E4D4E1FA71272008D108A /* RequestForAgentViewController.swift */,
 				35CB9D191F8BB2B900BF1073 /* OffersViewController.swift */,
 				35344DB41F862B3C00E35C5C /* SignupViewController.swift */,
 			);
@@ -321,8 +341,10 @@
 		35344DB11F861B8400E35C5C /* MapperVo */ = {
 			isa = PBXGroup;
 			children = (
+				354E4D561FA75F9F008D108A /* MyTransaction */,
 				355120F31F948DC000C9AD9D /* Operator */,
 				355120F21F948D9000C9AD9D /* Login */,
+				354E4D441FA6EAEE008D108A /* SendWallet */,
 				354CF1BA1F915185004ADDAD /* WalletUser */,
 				35344DB61F862FD400E35C5C /* SignupVo.swift */,
 			);
@@ -347,6 +369,35 @@
 				354CF1BD1F9151C4004ADDAD /* WalletVo.swift */,
 			);
 			name = WalletUser;
+			sourceTree = "<group>";
+		};
+		354E4D441FA6EAEE008D108A /* SendWallet */ = {
+			isa = PBXGroup;
+			children = (
+				354E4D451FA6EB7C008D108A /* SendWalletVo.swift */,
+				354E4D471FA6EBB0008D108A /* SendWalletHistoryVo.swift */,
+			);
+			name = SendWallet;
+			sourceTree = "<group>";
+		};
+		354E4D491FA71108008D108A /* RequestAgent */ = {
+			isa = PBXGroup;
+			children = (
+				354E4D4A1FA71203008D108A /* AddAgentRequestTableViewCell.swift */,
+				354E4D4B1FA71203008D108A /* AddAgentRequestTableViewCell.xib */,
+				354E4D521FA7243B008D108A /* AddAgentTableViewCell.swift */,
+				354E4D531FA7243B008D108A /* AddAgentTableViewCell.xib */,
+			);
+			name = RequestAgent;
+			sourceTree = "<group>";
+		};
+		354E4D561FA75F9F008D108A /* MyTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				354E4D571FA75FC8008D108A /* MyTransactionsVo.swift */,
+				354E4D591FA7601B008D108A /* MyTranListResultVo.swift */,
+			);
+			name = MyTransaction;
 			sourceTree = "<group>";
 		};
 		355120F21F948D9000C9AD9D /* Login */ = {
@@ -576,10 +627,12 @@
 				3554C33A1F8F5DCD0092EAC7 /* LoginTableViewCell.xib in Resources */,
 				35344DBD1F86824900E35C5C /* GoogleService-Info.plist in Resources */,
 				3554C3301F8F5DCD0092EAC7 /* ListTableViewCell.xib in Resources */,
+				354E4D551FA7243B008D108A /* AddAgentTableViewCell.xib in Resources */,
 				3554C3321F8F5DCD0092EAC7 /* TableViewCell1.xib in Resources */,
 				35E64C971F84DF5200E2CA65 /* Assets.xcassets in Resources */,
 				3566518A1F9DC7A300330D33 /* MyTransactionTableViewCell.xib in Resources */,
 				3554C32E1F8F5DCD0092EAC7 /* ProfileTableViewCell.xib in Resources */,
+				354E4D4D1FA71203008D108A /* AddAgentRequestTableViewCell.xib in Resources */,
 				3554C3361F8F5DCD0092EAC7 /* GenderTableViewCell.xib in Resources */,
 				3554C3381F8F5DCD0092EAC7 /* SignOutTableViewCell.xib in Resources */,
 				350CCD161F88A516003495B6 /* HomeTableViewCell.xib in Resources */,
@@ -680,7 +733,9 @@
 				3569C1D21F87468C00152B80 /* LoadingOverLay.swift in Sources */,
 				35344DAB1F86111100E35C5C /* RespVo.swift in Sources */,
 				35344DA01F8610C700E35C5C /* MapError.swift in Sources */,
+				354E4D4C1FA71203008D108A /* AddAgentRequestTableViewCell.swift in Sources */,
 				354CF1AB1F90DAA4004ADDAD /* BaseViewController.swift in Sources */,
+				354E4D461FA6EB7C008D108A /* SendWalletVo.swift in Sources */,
 				350CCD191F88A54F003495B6 /* HomeCollectionViewCell.swift in Sources */,
 				353EB9BC1F9F06ED00AA67E9 /* ShadowView.swift in Sources */,
 				3554C3191F8F457B0092EAC7 /* RechargeDetailViewController.swift in Sources */,
@@ -703,11 +758,14 @@
 				3554C3351F8F5DCD0092EAC7 /* GenderTableViewCell.swift in Sources */,
 				3554C3331F8F5DCD0092EAC7 /* TableViewCell2.swift in Sources */,
 				354CF1AF1F90F2B1004ADDAD /* CableTvViewController.swift in Sources */,
+				354E4D481FA6EBB0008D108A /* SendWalletHistoryVo.swift in Sources */,
 				354CF1B51F910BDD004ADDAD /* LandlineViewController.swift in Sources */,
 				3554C32F1F8F5DCD0092EAC7 /* ListTableViewCell.swift in Sources */,
 				3554C33C1F8F9FC10092EAC7 /* Colors.swift in Sources */,
+				354E4D541FA7243B008D108A /* AddAgentTableViewCell.swift in Sources */,
 				3569C1DB1F8762B800152B80 /* Reachability.swift in Sources */,
 				35344D981F8610C700E35C5C /* EnumOperators.swift in Sources */,
+				354E4D5A1FA7601B008D108A /* MyTranListResultVo.swift in Sources */,
 				35344D931F8610C700E35C5C /* CustomDateFormatTransform.swift in Sources */,
 				3554C31B1F8F5C960092EAC7 /* ProfileViewController.swift in Sources */,
 				35344D961F8610C700E35C5C /* DateTransform.swift in Sources */,
@@ -735,6 +793,7 @@
 				3569C1E41F876D3F00152B80 /* menuViewController.swift in Sources */,
 				35E64C921F84DF5200E2CA65 /* ViewController.swift in Sources */,
 				350CCD1D1F88A5BE003495B6 /* IconTableViewCell.swift in Sources */,
+				354E4D4F1FA71272008D108A /* RequestForAgentViewController.swift in Sources */,
 				35344D9F1F8610C700E35C5C /* Map.swift in Sources */,
 				354CF1BE1F9151C4004ADDAD /* WalletVo.swift in Sources */,
 				35344D991F8610C700E35C5C /* EnumTransform.swift in Sources */,
@@ -746,6 +805,7 @@
 				35344DAD1F8611B100E35C5C /* LoginVo.swift in Sources */,
 				355120F51F948E4E00C9AD9D /* OperatorVo.swift in Sources */,
 				35344D9D1F8610C700E35C5C /* IntegerOperators.swift in Sources */,
+				354E4D581FA75FC8008D108A /* MyTransactionsVo.swift in Sources */,
 				3524CE3B1F8D06B400959172 /* ImageTint.swift in Sources */,
 				3554C31D1F8F5CAE0092EAC7 /* EditProfileViewController.swift in Sources */,
 				3569C1E91F8773CA00152B80 /* SWRevealViewController.m in Sources */,

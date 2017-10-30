@@ -55,5 +55,9 @@ let datacardUrl:String = baseUrl.appending("ServiceProvider/GetServiceProvidersB
 
 let districtUrl:String = baseUrl.appending("Districts/GetAll")
 
+let walletUrl:String = baseUrl.appending("UserWallet/AddMoneyToUserWallet")
 
+let sendWalletUrl:String = baseUrl.appending("UserWallet/SendMoneyToUserWallet")
+
+let myTransactionsUrl:String = baseUrl.appending("UserWallet/GetPassbookDetails")
 

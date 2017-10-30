@@ -65,6 +65,9 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getPrepaidList()
+        getPostpaidList()
+        
         self.tabBarController?.tabBar.isHidden = true
         
         networkField.delegate = self
@@ -163,9 +166,6 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         
         if textField == networkField{
             
-            getPrepaidList()
-            getPostpaidList()
-            
             pickerList.removeAll()
             
             self.pickUp(networkField)
@@ -208,28 +208,28 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
        
-        return pickerList.count
+//        return pickerList.count
         
-//        if (pickerView.tag == 1){
-//            
-//            return pickerData.count
-//            
-//        }else{
-//            
-//            return pickerData1.count
-//        }
+        if (selectedTextField == 1){
+            
+            return pickerList.count
+            
+        }else{
+            
+            return pickerSample.count
+        }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-//        if (pickerView.tag == 1){
-//            
-//            return "\(pickerData[row])"
-//            
-//        }else{
-//
-//            return "\(pickerData1[row])"
-//        }
-       return pickerList[row]
+        if (selectedTextField == 1){
+            
+            return "\(pickerList[row])"
+            
+        }else{
+
+            return "\(pickerSample[row])"
+        }
+//       return pickerList[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         

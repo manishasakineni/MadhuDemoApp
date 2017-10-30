@@ -155,6 +155,9 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         let nibName  = UINib(nibName: "HomeTableViewCell" , bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "HomeTableViewCell")
         
+        let nibName1  = UINib(nibName: "AddAgentTableViewCell" , bundle: nil)
+        tableView.register(nibName1, forCellReuseIdentifier: "AddAgentTableViewCell")
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "HomeCell")
         
         self.tabBarController?.delegate = self
@@ -247,7 +250,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         }
         else {
             
-            height = 300
+            height = 60
             
         }
         
@@ -258,7 +261,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         
-        if(indexPath.row != 1){
+        if(indexPath.row == 0){
         let profileCell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
         
         profileCell.homeColeectionVW.register(UINib.init(nibName: "HomeCollectionViewCell", bundle: nil),
@@ -281,7 +284,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         
         return profileCell
-        }else{
+        }else if(indexPath.row == 1){
             
             let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as UITableViewCell!
             cell.selectionStyle = .none
@@ -292,8 +295,25 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             
              return cell
         }
+        else {
+            
+            let agentCell = tableView.dequeueReusableCell(withIdentifier: "AddAgentTableViewCell", for: indexPath) as! AddAgentTableViewCell
+            
+            agentCell.addAgentBtn.addTarget(self, action: #selector(self.addAgentAction), for: .touchUpInside)
+
+            
+            return agentCell
+        }
         
         
+        
+    }
+    
+    func addAgentAction(_ sender: UIButton) {
+        
+        let addMoneyViewController = self.storyboard?.instantiateViewController(withIdentifier: "RequestForAgentViewController") as! RequestForAgentViewController
+        
+        self.navigationController?.pushViewController(addMoneyViewController, animated: true)
         
     }
     
