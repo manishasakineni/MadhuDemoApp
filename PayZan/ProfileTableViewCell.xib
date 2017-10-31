@@ -21,7 +21,7 @@
                         <rect key="frame" x="8" y="1" width="304" height="83"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="hre-hU-rrS">
-                                <rect key="frame" x="3" y="16" width="50" height="50"/>
+                                <rect key="frame" x="3" y="13" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7Co-wf-CZU"/>
                                     <constraint firstAttribute="width" constant="50" id="EYj-lJ-XY4"/>
@@ -50,16 +50,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Mail ID @gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXW-Ih-GBB">
-                                <rect key="frame" x="69" y="30.5" width="166" height="11"/>
+                                <rect key="frame" x="69" y="32" width="166" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="166" id="aGj-Vh-Ro0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2s-3m-ELV">
-                                <rect key="frame" x="69" y="11" width="165" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <rect key="frame" x="69" y="11" width="165" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.1970877576110745" green="0.8430559961928934" blue="0.37728778167173516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -81,7 +81,7 @@
                                     <constraint firstAttribute="width" constant="80" id="BTu-4J-iOi"/>
                                     <constraint firstAttribute="height" constant="15" id="GRl-lz-7TF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="+ Add Money">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -97,7 +97,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="pXW-Ih-GBB" secondAttribute="trailing" constant="69" id="36L-xe-mki"/>
-                            <constraint firstItem="hre-hU-rrS" firstAttribute="top" secondItem="ZOs-HI-mzc" secondAttribute="top" constant="16" id="EWN-fp-fIh"/>
+                            <constraint firstItem="hre-hU-rrS" firstAttribute="top" secondItem="ZOs-HI-mzc" secondAttribute="top" constant="13" id="EWN-fp-fIh"/>
                             <constraint firstItem="VVH-Uq-xnn" firstAttribute="top" secondItem="ZOs-HI-mzc" secondAttribute="top" constant="27" id="FY8-PT-RCR"/>
                             <constraint firstAttribute="bottom" secondItem="PmN-vh-Dex" secondAttribute="bottom" constant="-129" id="G5e-Un-6z0"/>
                             <constraint firstAttribute="trailing" secondItem="VVH-Uq-xnn" secondAttribute="trailing" constant="3" id="GqM-fz-5Mc"/>

@@ -71,7 +71,16 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
 //        print("userID:\(userID!)")
 //        print("walletID:\(walletID!)")
         
+        
         let defaults = UserDefaults.standard
+        
+        
+        if let walletBal = defaults.string(forKey: walletAmountt) {
+            
+            walletLabel.text = walletBal
+            
+            print("defaults savedString: \(String(describing: walletLabel.text))")
+        }
         
         if let walletAmount = defaults.string(forKey: "walletAmount") {
             
@@ -284,6 +293,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         
         return profileCell
+            
         }else if(indexPath.row == 1){
             
             let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as UITableViewCell!

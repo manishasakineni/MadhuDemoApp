@@ -25,6 +25,12 @@ let walletIDD:String = "walletIDD"
 
 let userIDD:String = "userIDD"
 
+let walletAmountt = "walletAmountt"
+
+let uNamee = "uNamee"
+
+let emailIdd = "emailIdd"
+
 let kNetworkStatusMessage = "Please check your internet connection!"
 
 let kToastDuration  = 5.0

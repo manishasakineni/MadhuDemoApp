@@ -14,7 +14,7 @@ protocol ViewControllerBDelegate: class {
     
 }
 
-class EditProfileViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate {
+class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate {
 
     @IBOutlet weak var editTableView: UITableView!
     
@@ -28,6 +28,9 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
     let TVC1 = TableViewCell1()
     let TVC2 = TableViewCell2()
     let GVC  = GenderTableViewCell()
+    
+    var userNamee:String!
+    var userEmail:String!
     
     var checked = false
     var male = true
@@ -56,6 +59,30 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
         self.editTableView.separatorStyle = .none
         
         labelText = text
+        
+        let defaults = UserDefaults.standard
+        
+        if let userName = defaults.string(forKey: uNamee) {
+            
+            userNamee = userName
+            
+            print("userName: \(String(describing: userNamee))")
+        }
+        else {
+            
+            userNamee = "User Name"
+        }
+        
+        if let email = defaults.string(forKey:emailIdd ) {
+            
+            userEmail = email
+            
+            print("userName: \(String(describing: userEmail))")
+        }
+        else {
+            
+            userEmail = "abc@gmail.com"
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -163,11 +190,13 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
             
             let cell = Bundle.main.loadNibNamed("TableViewCell1", owner: self, options: nil)?.first as! TableViewCell1
             
-            cell.profileImag.layer.cornerRadius = cell.profileImag.frame.size.height/6;
+            cell.selectionStyle = .none
+            cell.profileImag.layer.cornerRadius = cell.profileImag.frame.size.height/2;
             cell.profileImag.layer.borderColor = UIColor.gray.cgColor
             cell.profileImag.layer.borderWidth = 1
             cell.profileImag.clipsToBounds = true
             cell.profileImag.image = image
+            cell.firstNameTF.text = userNamee
             cell.firstNameTF.placeholder = "First Name"
             cell.lastNameTF.placeholder = "Last Name"
             cell.editButton.addTarget(self, action: #selector(self.editBtnClicked), for: .touchDown)
@@ -180,9 +209,11 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
         {
             let cell = Bundle.main.loadNibNamed("TableViewCell2", owner: self, options: nil)?.first as! TableViewCell2
             
+            cell.selectionStyle = .none
             
             if indexPath.row == 0{
                 
+                cell.detailsTF.text = userNamee
                 cell.detailsLbl?.text = "Display Name"
                 cell.detailsTF.placeholder = "Display Name"
                 cell.detailsTF.layer.borderWidth = 0.5
@@ -199,7 +230,7 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
 
             else if indexPath.row == 1{
                 
-                
+                cell.detailsTF.text = userEmail
                 cell.detailsLbl?.text = "Email"
                 cell.detailsTF.placeholder = "Email"
                 cell.detailsTF.layer.borderWidth = 0.5
@@ -213,7 +244,7 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
                 
             else if indexPath.row == 2{
                 
-                
+                cell.detailsTF.text = userNamee
                 cell.detailsLbl?.text = "Contact No"
                 cell.detailsTF.placeholder = "Contact No"
                 cell.detailsTF.layer.borderWidth = 0.5
@@ -457,7 +488,8 @@ class EditProfileViewController: UIViewController,UITableViewDelegate,UITableVie
         delegate?.textChanged(text: labelText)
     }
     
-    @IBAction func notificationAction(_ sender: Any) {
+    @IBAction func doneAction(_ sender: Any) {
     }
+   
 
 }

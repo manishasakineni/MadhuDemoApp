@@ -182,9 +182,23 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                         let accessTokenn = respVO.Result?.AccessToken
                         let tokenTypee = respVO.Result?.TokenType
                         
+                        let walletAmount = respVO.Result?.UserWallet?.Balance
+                        
+                        let uName  = respVO.Result?.User?.UserName
+                        
+                        let emailId = respVO.Result?.User?.Email
+                        
+                        print("uName:\(String(describing: uName))")
+                        
                         let defaults = UserDefaults.standard
                         
                         // Save String value to UserDefaults
+                        
+                        defaults.set(uName, forKey: uNamee)
+                        
+                        defaults.set(emailId, forKey: emailIdd)
+                        
+                        defaults.set(walletAmount, forKey: walletAmountt)
 
                         defaults.set(userId, forKey: userIDD)
                         
@@ -194,12 +208,6 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                         defaults.set(tokenTypee, forKey: tokenType)
                         
                         UserDefaults.standard.synchronize()
-                        
-                        
-                        let uName  = respVO.Result?.User?.UserName
-                        
-                        
-                        print("uName:\(String(describing: uName))")
                         
                         
                         UserDefaults.standard.setValue("true", forKey: kIsFirstTime)

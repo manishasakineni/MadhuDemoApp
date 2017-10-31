@@ -13,7 +13,7 @@ class GlobalSupportingClass {
     static let dateFormatStandard:String = "yyyy-MM-dd HH:mm:ss"
     static let dateFormatInputField:String = "MM/dd/yyyy hh:mm a"
     
-    
+    //2017-10-30T04:37:57.006Z
     
     var autTokenn = UserDefaults.standard.string(forKey: "accessToken")
     var authTokenType = UserDefaults.standard.string(forKey: "tokenType")

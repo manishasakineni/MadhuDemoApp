@@ -14,6 +14,11 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     var firstName  = String()
     var lastName  = String()
+    
+    var userNamee:String!
+    var userEmail:String!
+    var walletBal:String!
+    
     var isUserLogin = true
     
     var labelText1:String?
@@ -29,6 +34,46 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         firstName = "Naveen"
         lastName  = "Chatla"
         
+        let defaults = UserDefaults.standard
+        
+        
+        if let walletamount = defaults.string(forKey: walletAmountt) {
+            
+            walletBal = walletamount
+            
+            print("defaults savedString: \(String(describing: walletBal))")
+        }
+        
+        if let walletAmount = defaults.string(forKey: "walletAmount") {
+            
+            walletBal = walletAmount
+            
+            
+            print("defaults savedString: \(walletAmount)")
+        }
+        
+        
+        if let userName = defaults.string(forKey: uNamee) {
+            
+            userNamee = userName
+            
+            print("userName: \(String(describing: userNamee))")
+        }
+        else {
+            
+            userNamee = "User Name"
+        }
+        
+        if let email = defaults.string(forKey:emailIdd ) {
+            
+            userEmail = email
+            
+            print("userName: \(String(describing: userEmail))")
+        }
+        else {
+            
+            userEmail = "abc@gmail.com"
+        }
         
         self.profileTVC.delegate = self
         self.profileTVC.dataSource = self
@@ -60,7 +105,28 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
 //        self.tabBarController?.tabBar.isHidden = true
         
         
+        
         super.viewDidAppear(true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        self.tabBarController?.tabBar.isHidden = false
+        
+        
+        let defaults = UserDefaults.standard
+        
+        if let walletAmount = defaults.string(forKey: "walletAmount") {
+            
+            walletBal = walletAmount
+                        
+            print("defaults savedString: \(walletAmount)")
+            
+            profileTVC.reloadData()
+        }
+        
+        
     }
     
     func textChanged(text: String?) {
@@ -160,14 +226,19 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
             cell.addMoneyBtn.addTarget(self, action: #selector(self.addMoneyAction), for: .touchUpInside)
 
-            
             cell.editProfileBtn.addTarget(self, action: #selector(self.btnAction), for: .touchUpInside)
+            
+            cell.editBtn.addTarget(self, action: #selector(self.editAction), for: .touchUpInside)
+            
             cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             cell.layer.borderWidth = 0.5
             cell.layer.borderColor = UIColor.lightGray.cgColor
             
-             cell.userNameLabel.font = UIFont(name:"Helvetica Neue", size:9)
-            cell.emaiLabel.font = UIFont(name:"Helvetica Neue", size:8)
+             cell.userNameLabel.font = UIFont(name:"Helvetica Neue", size:11)
+            cell.userNameLabel.text = userNamee
+            cell.emaiLabel.font = UIFont(name:"Helvetica Neue", size:10)
+            cell.emaiLabel.text = userEmail
+            cell.addWalletLabel.text = walletBal
             
             return cell
         }
@@ -252,6 +323,14 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
     }
     
+    func editAction(_ sender: UIButton){
+        
+        let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
+        
+       
+        
+        self.navigationController?.pushViewController(editViewController, animated: true)
+    }
     
     
     func addMoneyAction(_ sender: UIButton) {
@@ -275,27 +354,25 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
 //        
 //        self.navigationController!.pushViewController(ETVC, animated: true)
         
-        let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
         
-        UserDefaults.standard.set(firstName, forKey: "firstName")
-        UserDefaults.standard.set(lastName, forKey: "lastName")
-        
-        self.navigationController?.pushViewController(editViewController, animated: true)
     }
     
     
     func signOutClicked(_sender: UIButton){
         
         
-        isUserLogin = false
-        self.profileTVC .reloadData()
-        let button1 = UIBarButtonItem(image: UIImage(named: "Menu"), style: .plain, target: self, action: #selector(self.action))
+//        isUserLogin = false
+//        self.profileTVC .reloadData()
+//        let button1 = UIBarButtonItem(image: UIImage(named: "Menu"), style: .plain, target: self, action: #selector(self.action))
+//        
+//        self.navigationItem.leftBarButtonItem  = button1
+//        
+//        self.navigationItem.title = "AAAAA"
         
-        self.navigationItem.leftBarButtonItem  = button1
-        
-        self.navigationItem.title = "AAAAA"
-        
-        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = viewController
         
     }
     

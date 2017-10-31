@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ContactsUI
 
-class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate,CNContactPickerDelegate {
     
    
     
@@ -46,7 +47,7 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     
     @IBOutlet weak var phoneBookBtn: UIButton!
     
-    var appDelegate = AppDelegate()
+//    var appDelegate = AppDelegate()
     
     var indexValue:Int!
     
@@ -87,10 +88,10 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         let attr = NSDictionary(object: UIFont(name: "HelveticaNeue-Bold", size: 10.0)!, forKey: NSFontAttributeName as NSCopying)
         UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
         
-        mySegmentControl.backgroundColor = #colorLiteral(red: 0.9351081285, green: 0.9351081285, blue: 0.9351081285, alpha: 1)
-        mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:10.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
+        mySegmentControl.backgroundColor = #colorLiteral(red: 0.9787510536, green: 0.9787510536, blue: 0.9787510536, alpha: 1)
+        mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
         
-        mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:10.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
+        mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
         
         mySegmentControl.setDividerImage(self.imageWithColor(color: UIColor.clear), forLeftSegmentState: UIControlState.normal, rightSegmentState: UIControlState.normal, barMetrics: UIBarMetrics.default)
         
@@ -142,12 +143,6 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         mySegmentControl.selectedSegmentIndex = indexValue
             
         }
-        
-//      let color1 = hexStringToUIColor(hex: "#5f1a58")
-        
-//      addBtn1.backgroundColor = color1
-        
-//      addBtn1.backgroundColor = hexStringToUIColor(hex: "#8d2029")
         
         addBtn1.layer.borderWidth = 1
         addBtn2.layer.borderWidth = 1
@@ -239,7 +234,37 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         
         cell.addMoneyLabel.text = amount
         
-        cell.dateLabel.text = listResult.Created
+        let dateStr = listResult.Created
+        
+        print("dateStr:\(String(describing: dateStr))")
+        
+        let currentStr:String = String(dateStr!.characters.prefix(10))
+        
+        print("currentStr:\(String(describing: currentStr))")
+        
+        
+//        2017-10-30T04:37:57.006+00:00
+        
+        // "4:44 PM on June 23, 2016\n"
+//        0001-01-01T00:00:00+00:00
+        let formatter = DateFormatter()
+        formatter.dateFormat = currentStr
+//        formatter.dateFormat = "h:mm a 'on' \(currentStr)"
+        formatter.amSymbol = "AM"
+        formatter.pmSymbol = "PM"
+        
+        let myString = formatter.string(from: Date())
+        // convert your string to date
+        let yourDate = formatter.date(from: myString)
+        //then again set the date format whhich type of output you need
+//        formatter.dateFormat = "h:mm:ss a 'on' MMM dd,yyyy"
+        formatter.dateFormat = "MMM dd,yyyy"
+        // again convert your date to string
+        let myStringafd = formatter.string(from: yourDate!)
+        
+        print(myStringafd)
+        
+        cell.dateLabel.text = myStringafd
         cell.fromLabel.text = listResult.Modified
         
 //        cell.ImgeVw.image = imageArray1[indexPath.row]
@@ -261,7 +286,7 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     
     func myTransactionGetService(){
         
-        if(appDelegate.checkInternetConnectivity()){
+        if(self.appDelegate.checkInternetConnectivity()){
             
             print("walletId:\(String(describing: walletId))")
             
@@ -307,7 +332,7 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         }
         else {
             
-            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return
         }
         
@@ -319,9 +344,12 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         let walletField:String = addWalletFiled.text!
         
         let  strUrl = walletUrl
-        
-        
-        let dictParams = ["WalletId":walletId!,"Amount":walletField,"TransactionTypeId":1,"ReasonTypeId":1,"Id":0,"IsActive":true,"CreatedByUserId":userId!,"CreatedDate":"2017-10-13T18:13:30.429Z","UpdatedByUserId":userId!,"UpdatedDate":"2017-10-13T18:13:30.429Z"] as NSDictionary
+    
+    let currentDate = GlobalSupportingClass.getCurrentDate()
+    
+    print("currentDate\(currentDate)")
+    
+        let dictParams = ["WalletId":walletId!,"Amount":walletField,"TransactionTypeId":1,"ReasonTypeId":1,"Id":0,"IsActive":true,"CreatedByUserId":userId!,"CreatedDate":currentDate,"UpdatedByUserId":userId!,"UpdatedDate":currentDate] as NSDictionary
         
         print("dic params \(dictParams)")
         
@@ -347,8 +375,6 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
                     
                     print("StatusCode:\(String(describing: statusCode))")
                     
-                    //                        let strStatusCode = result.value(forKey: "StatusCode") as! Int
-                    //                        print("strStatusCode",strStatusCode)
                     
                     if statusCode == true
                     {
@@ -359,33 +385,20 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
                         
                         let defaults = UserDefaults.standard
                         
-                        // Save String value to UserDefaults
-                        // Using defaults.set(value: Any?, forKey: String)
                         defaults.set(waleetBalance, forKey: "walletAmount")
                         
                         
                         let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                         self.navigationController?.pushViewController(homeViewController, animated: true)
                         
-                        let alertController = UIAlertController(title: "Success", message: successMsg! , preferredStyle: UIAlertControllerStyle.alert)
-                        
-                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                        }
-                        alertController.addAction(DestructiveAction)
-                        self.present(alertController, animated: true, completion: nil)
-                        
-                        
-                        
+                        self.showAlertViewWithTitle("Success", message: successMsg!, buttonTitle: "Ok")
+
                         
                     }
                     else if statusCode == false{
                         
-                        let alertController = UIAlertController(title: "Message", message: "Not Add Money to Wallet" , preferredStyle: UIAlertControllerStyle.alert)
                         
-                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                        }
-                        alertController.addAction(DestructiveAction)
-                        self.present(alertController, animated: true, completion: nil)
+                        self.showAlertViewWithTitle("Alert", message: "Not Add Money to Wallet", buttonTitle: "Ok")
                         
                         
                     }
@@ -393,12 +406,7 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
                     else
                     {
                         
-                        let alertController = UIAlertController(title: "", message: "Services not Working" , preferredStyle: UIAlertControllerStyle.alert)
-                        
-                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                        }
-                        alertController.addAction(DestructiveAction)
-                        self.present(alertController, animated: true, completion: nil)
+                        self.showAlertViewWithTitle("Alert", message: "Not Add Money to Wallet", buttonTitle: "Ok")
                         
                     }
             }
@@ -419,13 +427,8 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
             }
             else {
                 
-                let alertController = UIAlertController(title: "message", message:"Please enter wallet amount" , preferredStyle: UIAlertControllerStyle.alert)
-                
-                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                }
-                alertController.addAction(DestructiveAction)
-                
-                self.present(alertController, animated: true, completion: nil)
+                self.showAlertViewWithTitle("Alert", message: "Please enter wallet amount", buttonTitle: "Ok")
+            
             }
             
         }
@@ -441,22 +444,6 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     
     func sendMoneyToWalletService(){
         
-//        {
-//            "userWalletHistory": {
-//                "WalletId": "636449fc-bb1a-449f-a275-06fa98db0e14",
-//                "Amount": 100,
-//                "TransactionTypeId": "9",
-//                "ReasonTypeId": "10",
-//                "Id": 0,
-//                "IsActive": true,
-//                "CreatedBy": "024b9d06-e64d-4336-b055-855948a809f3",
-//                "ModifiedBy": "024b9d06-e64d-4336-b055-855948a809f3",
-//                "Created": "2017-10-30T04:37:57.006Z",
-//                "Modified": "2017-10-30T04:37:57.006Z"
-//            },
-//            "recieverUserName": "9885706781"
-//        }
-        
         
         let walletField:String = sendAmountField.text!
         
@@ -465,6 +452,10 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
         let  strUrl = sendWalletUrl
         
 //        let null = NSNull()
+        
+        let currentDate = GlobalSupportingClass.getCurrentDate()
+        
+        print("currentDate\(currentDate)")
         
         let dictParams = ["userWalletHistory": [
             "WalletId": walletId!,
@@ -475,8 +466,8 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
             "IsActive": true,
             "CreatedBy": userId!,
             "ModifiedBy": userId!,
-            "Created": "2017-10-30T04:37:57.006Z",
-            "Modified": "2017-10-30T04:37:57.006Z"
+            "Created": currentDate,
+            "Modified": currentDate
             ],"recieverUserName": phone] as NSDictionary
         
         print("dic params \(dictParams)")
@@ -523,25 +514,15 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
                         let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                         self.navigationController?.pushViewController(homeViewController, animated: true)
                         
-                        let alertController = UIAlertController(title: "Success", message: successMsg! , preferredStyle: UIAlertControllerStyle.alert)
-                        
-                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                        }
-                        alertController.addAction(DestructiveAction)
-                        self.present(alertController, animated: true, completion: nil)
-                        
-                        
+                         self.showAlertViewWithTitle("Success", message: successMsg!, buttonTitle: "Ok")
                         
                         
                     }
                     else if statusCode == false{
                         
-                        let alertController = UIAlertController(title: "Message", message: "Not Add Money to Wallet" , preferredStyle: UIAlertControllerStyle.alert)
                         
-                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                        }
-                        alertController.addAction(DestructiveAction)
-                        self.present(alertController, animated: true, completion: nil)
+                        self.showAlertViewWithTitle("Success", message: "Not Add Money to Wallet", buttonTitle: "Ok")
+
                         
                         
                     }
@@ -549,12 +530,7 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
                     else
                     {
                         
-                        let alertController = UIAlertController(title: "", message: "Services not Working" , preferredStyle: UIAlertControllerStyle.alert)
-                        
-                        let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                        }
-                        alertController.addAction(DestructiveAction)
-                        self.present(alertController, animated: true, completion: nil)
+                         self.showAlertViewWithTitle("Success", message: "Not Add Money to Wallet", buttonTitle: "Ok")
                         
                     }
             }
@@ -576,13 +552,8 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
             }
             else {
                 
-                let alertController = UIAlertController(title: "message", message:"Please enter wallet amount" , preferredStyle: UIAlertControllerStyle.alert)
+                 self.showAlertViewWithTitle("Alert", message: "Please enter wallet amount", buttonTitle: "Ok")
                 
-                let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                }
-                alertController.addAction(DestructiveAction)
-                
-                self.present(alertController, animated: true, completion: nil)
             }
             
         }
@@ -608,7 +579,36 @@ class AddMoneyWalletViewController: UIViewController,UITableViewDataSource,UITab
     
     @IBAction func phoneBookAction(_ sender: Any) {
         
+        let cnPicker = CNContactPickerViewController()
+        cnPicker.delegate = self
+        self.present(cnPicker, animated: true, completion: nil)
+        
     }
+    
+    //MARK:- CNContactPickerDelegate Method
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
+        contacts.forEach { contact in
+            for number in contact.phoneNumbers {
+                let phoneNumber = number.value
+                print("number is = \(phoneNumber)")
+                
+                mobileNumField.text = phoneNumber.stringValue
+                
+                
+            }
+            
+            let cnContacts = [CNContact]()
+            
+            for contact in cnContacts {
+                let fullName = CNContactFormatter.string(from: contact, style: .fullName) ?? "No Name"
+                print("\(fullName): \(contact.phoneNumbers.description)")
+            }
+        }
+    }
+    //    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+    //        print("Cancel Contact Picker")
+    //    }
     
     
     @IBAction func mySegmentAction(_ sender: Any) {
