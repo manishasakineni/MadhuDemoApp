@@ -311,7 +311,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
     func myTransactionGetService(){
         
-        if(self.appDelegate.checkInternetConnectivity()){
+        if(appDelegate.checkInternetConnectivity()){
             
             print("walletId:\(String(describing: walletId))")
             
@@ -357,7 +357,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         }
         else {
             
-            self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return
         }
         
@@ -459,7 +459,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         }
         else {
             
-            self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+        appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return
             
         }

@@ -287,7 +287,7 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
            
         }
         else{
-                self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+                appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
                 return
         }
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CableTvViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     
     @IBOutlet weak var operatorField: UITextField!
@@ -184,7 +184,7 @@ class CableTvViewController: UIViewController,UIPickerViewDelegate, UIPickerView
             
         }
         else {
-            
+             self.operatorField.isUserInteractionEnabled = false
             appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return
 

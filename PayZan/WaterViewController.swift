@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WaterViewController: UIViewController,UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate {
+class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate {
     
     @IBOutlet weak var selectBoardTextField: UITextField!
     @IBOutlet weak var consumerNumberTextField: UITextField!
@@ -176,7 +176,7 @@ class WaterViewController: UIViewController,UITextFieldDelegate,UIPickerViewData
             
         }
         else {
-            
+             self.selectBoardTextField.isUserInteractionEnabled = false
             appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return
         }

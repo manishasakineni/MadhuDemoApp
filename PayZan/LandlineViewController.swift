@@ -9,7 +9,7 @@
 import UIKit
 import ContactsUI
 
-class LandlineViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate,CNContactPickerDelegate {
+class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate,CNContactPickerDelegate {
     
     
     @IBOutlet weak var operatorField: UITextField!
@@ -145,7 +145,11 @@ class LandlineViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+        if operatorList.count > row {
+        
         self.operatorField.text = operatorList[row]
+            
+        }
         
     }
     
@@ -192,6 +196,8 @@ class LandlineViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
                     
                     if(isActive == true){
                         
+                        self.operatorField.isUserInteractionEnabled = true
+                        
                         let operatorObj = respVO.ListResult
                         
                         
@@ -205,6 +211,7 @@ class LandlineViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
                         
                         
                     }else if(isActive == false) {
+                    
                         
                         self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                         
@@ -216,6 +223,8 @@ class LandlineViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
             
         }
         else {
+            
+            self.operatorField.isUserInteractionEnabled = false
             
             appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return

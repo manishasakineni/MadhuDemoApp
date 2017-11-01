@@ -14,7 +14,7 @@ protocol RequeatAgentDelegate: class {
     
 }
 
-class RequestForAgentViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class RequestForAgentViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     
     
 let headerTitle = "PERSONAL INFORMATION"

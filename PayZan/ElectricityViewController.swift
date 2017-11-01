@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var districtsFiled: UITextField!
     
@@ -83,7 +83,16 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
-        textField.inputView = self.myPickerView
+        if operatorList.isEmpty {
+            
+            self.myPickerView.isHidden = true
+            
+            districtsFiled.placeholder = "No districts"
+            
+        }else {
+            
+            textField.inputView = self.myPickerView
+        }
         
         // ToolBar
         let toolBar = UIToolbar()
@@ -190,6 +199,7 @@ class ElectricityViewController: UIViewController,UIPickerViewDelegate, UIPicker
         }
         else {
             
+            self.districtsFiled.isUserInteractionEnabled = false
             appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return
             

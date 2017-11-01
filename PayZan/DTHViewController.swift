@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DTHViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var subsriberIdField: UITextField!
     
@@ -183,7 +183,7 @@ class DTHViewController: UIViewController,UIPickerViewDelegate, UIPickerViewData
             
         }
         else {
-            
+             self.operatorField.isUserInteractionEnabled = false
             appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return
         }

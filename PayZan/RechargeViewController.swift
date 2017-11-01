@@ -9,7 +9,7 @@
 import UIKit
 import ContactsUI
 
-class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, CNContactPickerDelegate {
+class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, CNContactPickerDelegate {
 
     @IBOutlet weak var mainView: UIView!
     
@@ -65,8 +65,7 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getPrepaidList()
-        getPostpaidList()
+       
         
         self.tabBarController?.tabBar.isHidden = true
         
@@ -92,7 +91,8 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         networkField.tag = 1
         planField.tag = 2
         
-        
+        getPrepaidList()
+        getPostpaidList()
 //        let color1 = hexStringToUIColor(hex: "#5f1a58")
         
 //        rechargeBtn.backgroundColor = color1
@@ -289,7 +289,7 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
             
         }
         else {
-            
+            self.networkField.isUserInteractionEnabled = false
             appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return
         }
@@ -342,7 +342,7 @@ class RechargeViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         })
         }
         else {
-            
+             self.networkField.isUserInteractionEnabled = false
             appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return
         }

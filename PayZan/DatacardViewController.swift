@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     
     @IBOutlet weak var prepaidCheckBox: UIButton!
@@ -192,7 +192,7 @@ class DatacardViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
             
         }
         else {
-            
+             self.operatorField.isUserInteractionEnabled = false
             appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return
         }

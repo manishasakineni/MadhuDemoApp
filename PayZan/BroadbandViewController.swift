@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BroadbandViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource{
+class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource{
     
     
     @IBOutlet weak var selectOperatorTextField: UITextField!
@@ -178,7 +178,7 @@ class BroadbandViewController: UIViewController,UITextFieldDelegate,UIPickerView
             
         }
         else {
-            
+             self.selectOperatorTextField.isUserInteractionEnabled = false
             appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
             return
         }
