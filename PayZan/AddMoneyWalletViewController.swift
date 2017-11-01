@@ -11,6 +11,7 @@ import ContactsUI
 
 class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate,CNContactPickerDelegate {
     
+    @IBOutlet weak var walletBalLabel: UILabel!
    
     
     @IBOutlet weak var mobileNumField: UITextField!
@@ -196,6 +197,14 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
         }
         
+        if let walletAmount = defaults.string(forKey: "walletAmount") {
+            
+            
+            walletBalLabel.text = walletAmount
+            
+            print("defaults savedString: \(walletAmount)")
+        }
+        
         myTransactionGetService()
 
         // Do any additional setup after loading the view.
@@ -204,6 +213,22 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        self.tabBarController?.tabBar.isHidden = false
+        
+        let defaults = UserDefaults.standard
+        
+        if let walletAmount = defaults.string(forKey: "walletAmount") {
+            
+            
+            walletBalLabel.text = walletAmount
+            
+            print("defaults savedString: \(walletAmount)")
+        }
+        
     }
     
     
