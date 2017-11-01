@@ -95,6 +95,8 @@
 		3554C3391F8F5DCD0092EAC7 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3554C32B1F8F5DCD0092EAC7 /* LoginTableViewCell.swift */; };
 		3554C33A1F8F5DCD0092EAC7 /* LoginTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3554C32C1F8F5DCD0092EAC7 /* LoginTableViewCell.xib */; };
 		3554C33C1F8F9FC10092EAC7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3554C33B1F8F9FC10092EAC7 /* Colors.swift */; };
+		3562EEFE1FA98C1200547C93 /* SubmitAgentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3562EEFC1FA98C1200547C93 /* SubmitAgentTableViewCell.swift */; };
+		3562EEFF1FA98C1200547C93 /* SubmitAgentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3562EEFD1FA98C1200547C93 /* SubmitAgentTableViewCell.xib */; };
 		356651891F9DC7A300330D33 /* MyTransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356651871F9DC7A300330D33 /* MyTransactionTableViewCell.swift */; };
 		3566518A1F9DC7A300330D33 /* MyTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356651881F9DC7A300330D33 /* MyTransactionTableViewCell.xib */; };
 		3569C1D21F87468C00152B80 /* LoadingOverLay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569C1D11F87468C00152B80 /* LoadingOverLay.swift */; };
@@ -208,6 +210,8 @@
 		3554C32B1F8F5DCD0092EAC7 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
 		3554C32C1F8F5DCD0092EAC7 /* LoginTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginTableViewCell.xib; sourceTree = "<group>"; };
 		3554C33B1F8F9FC10092EAC7 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3562EEFC1FA98C1200547C93 /* SubmitAgentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitAgentTableViewCell.swift; sourceTree = "<group>"; };
+		3562EEFD1FA98C1200547C93 /* SubmitAgentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmitAgentTableViewCell.xib; sourceTree = "<group>"; };
 		356651871F9DC7A300330D33 /* MyTransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTransactionTableViewCell.swift; sourceTree = "<group>"; };
 		356651881F9DC7A300330D33 /* MyTransactionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTransactionTableViewCell.xib; sourceTree = "<group>"; };
 		3569C1D11F87468C00152B80 /* LoadingOverLay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingOverLay.swift; sourceTree = "<group>"; };
@@ -387,6 +391,8 @@
 				354E4D4B1FA71203008D108A /* AddAgentRequestTableViewCell.xib */,
 				354E4D521FA7243B008D108A /* AddAgentTableViewCell.swift */,
 				354E4D531FA7243B008D108A /* AddAgentTableViewCell.xib */,
+				3562EEFC1FA98C1200547C93 /* SubmitAgentTableViewCell.swift */,
+				3562EEFD1FA98C1200547C93 /* SubmitAgentTableViewCell.xib */,
 			);
 			name = RequestAgent;
 			sourceTree = "<group>";
@@ -634,6 +640,7 @@
 				3554C32E1F8F5DCD0092EAC7 /* ProfileTableViewCell.xib in Resources */,
 				354E4D4D1FA71203008D108A /* AddAgentRequestTableViewCell.xib in Resources */,
 				3554C3361F8F5DCD0092EAC7 /* GenderTableViewCell.xib in Resources */,
+				3562EEFF1FA98C1200547C93 /* SubmitAgentTableViewCell.xib in Resources */,
 				3554C3381F8F5DCD0092EAC7 /* SignOutTableViewCell.xib in Resources */,
 				350CCD161F88A516003495B6 /* HomeTableViewCell.xib in Resources */,
 				3554C3341F8F5DCD0092EAC7 /* TableViewCell2.xib in Resources */,
@@ -732,6 +739,7 @@
 				35344DA41F8610C700E35C5C /* Operators.swift in Sources */,
 				3569C1D21F87468C00152B80 /* LoadingOverLay.swift in Sources */,
 				35344DAB1F86111100E35C5C /* RespVo.swift in Sources */,
+				3562EEFE1FA98C1200547C93 /* SubmitAgentTableViewCell.swift in Sources */,
 				35344DA01F8610C700E35C5C /* MapError.swift in Sources */,
 				354E4D4C1FA71203008D108A /* AddAgentRequestTableViewCell.swift in Sources */,
 				354CF1AB1F90DAA4004ADDAD /* BaseViewController.swift in Sources */,

@@ -34,8 +34,8 @@ let headerTitle = "PERSONAL INFORMATION"
         let nibName  = UINib(nibName: "AddAgentRequestTableViewCell" , bundle: nil)
         requestForAgentTableView.register(nibName, forCellReuseIdentifier: "AddAgentRequestTableViewCell")
         
-        let nibName1  = UINib(nibName: "AddAgentTableViewCell" , bundle: nil)
-        requestForAgentTableView.register(nibName1, forCellReuseIdentifier: "AddAgentTableViewCell")
+        let nibName1  = UINib(nibName: "SubmitAgentTableViewCell" , bundle: nil)
+        requestForAgentTableView.register(nibName1, forCellReuseIdentifier: "SubmitAgentTableViewCell")
         
         requestForAgentTableView.dataSource = self
         requestForAgentTableView.delegate = self
@@ -199,11 +199,10 @@ let headerTitle = "PERSONAL INFORMATION"
         }
         else{
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AddAgentTableViewCell", for: indexPath) as! AddAgentTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitAgentTableViewCell", for: indexPath) as! SubmitAgentTableViewCell
             
-            cell.addAgentBtn.titleLabel?.text = "Submit"
             
-            cell.addAgentBtn.addTarget(self, action: #selector(self.addAgentAction), for: .touchUpInside)
+            cell.submitBtn.addTarget(self, action: #selector(self.submitAgentAction), for: .touchUpInside)
             
             return cell
         }
@@ -211,7 +210,7 @@ let headerTitle = "PERSONAL INFORMATION"
         
     }
     
-    func addAgentAction(_ sender: UIButton) {
+    func submitAgentAction(_ sender: UIButton) {
         
     print("sender:\(sender.tag)")
         

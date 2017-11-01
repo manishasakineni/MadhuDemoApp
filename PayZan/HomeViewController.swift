@@ -309,6 +309,9 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             
             let agentCell = tableView.dequeueReusableCell(withIdentifier: "AddAgentTableViewCell", for: indexPath) as! AddAgentTableViewCell
             
+            agentCell.layer.borderWidth = 0.5
+            agentCell.layer.borderColor = UIColor.lightGray.cgColor
+            
             agentCell.addAgentBtn.addTarget(self, action: #selector(self.addAgentAction), for: .touchUpInside)
 
             

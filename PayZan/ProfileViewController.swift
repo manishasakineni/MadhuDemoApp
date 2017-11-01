@@ -31,9 +31,6 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        firstName = "Naveen"
-        lastName  = "Chatla"
-        
         let defaults = UserDefaults.standard
         
         
@@ -89,7 +86,14 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
        // profileTVC.layer.borderColor = UIColor.gray.cgColor
         
         
+        let nibName  = UINib(nibName: "ListTableViewCell" , bundle: nil)
+        profileTVC.register(nibName, forCellReuseIdentifier: "ListTableViewCell")
         
+        let nibName1  = UINib(nibName: "SignOutTableViewCell" , bundle: nil)
+        profileTVC.register(nibName1, forCellReuseIdentifier: "SignOutTableViewCell")
+        
+        let nibName2  = UINib(nibName: "ProfileTableViewCell" , bundle: nil)
+        profileTVC.register(nibName2, forCellReuseIdentifier: "ProfileTableViewCell")
         
         
     }
@@ -150,34 +154,37 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
     func numberOfSections(in tableView: UITableView) -> Int {
         
         
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
         if(section==0){
             return 1.0
         }
+        else if(section==1) {
             
+            return 1.0
+        }
         else{
+            
             return 1.0
         }
     }
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
             
-            
             return 1
-            
         }
-            
-        else{
+        else if section == 1 {
             
             return listArr.count
+        }
+        else{
             
+            return 1
         }
         
         
@@ -199,10 +206,14 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
             return 80
         }
+        else if indexPath.section == 1 {
+            
+            return 40
+        }
             
         else{
             
-            return 40
+            return 60
             
         }
     }
@@ -214,7 +225,8 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
             if isUserLogin == false {
                 
-                let cell = Bundle.main.loadNibNamed("LoginTableViewCell", owner: self, options: nil)?.first as! LoginTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SignOutTableViewCell", for: indexPath) as! SignOutTableViewCell
+                
                 cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 
                 
@@ -222,7 +234,7 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 
             }
             
-            let cell = Bundle.main.loadNibNamed("ProfileTableViewCell", owner: self, options: nil)?.first as! ProfileTableViewCell
+             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
             
             cell.addMoneyBtn.addTarget(self, action: #selector(self.addMoneyAction), for: .touchUpInside)
 
@@ -242,63 +254,64 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
             return cell
         }
+        else if indexPath.section == 1 {
         
+         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
         
-        if isUserLogin == true {
-            
-            
-            if indexPath.row == 6 {
-                
-                
-                let cell = Bundle.main.loadNibNamed("SignOutTableViewCell", owner: self, options: nil)?.first as! SignOutTableViewCell
-                
-//                cell.backgroundColor = #colorLiteral(red: 0.8835461612, green: 0.8835461612, blue: 0.8835461612, alpha: 1)
-                
-                cell.signOutBtn.addTarget(self, action: #selector(self.signOutClicked), for: .touchUpInside)
-                cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//                cell.contentView.layer.cornerRadius = 20
-//                cell.contentView.layer.borderWidth = 1.0
-//                
-//                cell.contentView.layer.borderColor = UIColor.clear.cgColor
-//                cell.contentView.layer.masksToBounds = true
-//                
-//                cell.layer.shadowColor = UIColor.lightGray.cgColor
-//                cell.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
-//                cell.layer.shadowRadius = 5.0
-//                cell.layer.shadowOpacity = 1.0
-//                cell.layer.cornerRadius = 15
-//                cell.layer.masksToBounds = false
-//                cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-                
-//                cell.contentView.layer.backgroundColor = UIColor.red.cgColor
-                
-                
-                
-                return cell
-            }
-        }
-        
-        
-        
-        
-        let cell = Bundle.main.loadNibNamed("ListTableViewCell", owner: self, options: nil)?.first as! ListTableViewCell
-        
-//        cell.ImgeVw.image = #imageLiteral(resourceName: "Thumb Sign")
+        cell.selectionStyle = .none
+        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.textLbl?.text = listArr[indexPath.row]
         cell.ImgeVw.image = imageArray1[indexPath.row]
-        cell.selectionStyle = .none
-        
-        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.layer.backgroundColor = UIColor.white.cgColor
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = UIColor.lightGray.cgColor
         
         cell.textLbl.font = UIFont(name:"Helvetica Neue", size:10)
         cell.textLbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         
-
-        
         return cell
     }
+        else {
+        
+//            if isUserLogin == true {
+        
+                
+//                if indexPath.row == 7 {
+                
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "SignOutTableViewCell", for: indexPath) as! SignOutTableViewCell
+                    
+                    //                let cell = Bundle.main.loadNibNamed("SignOutTableViewCell", owner: self, options: nil)?.first as! SignOutTableViewCell
+                    
+                    //                cell.backgroundColor = #colorLiteral(red: 0.8835461612, green: 0.8835461612, blue: 0.8835461612, alpha: 1)
+                    
+                    cell.signOutBtn.addTarget(self, action: #selector(self.signOutClicked), for: .touchUpInside)
+                    cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                    //                cell.contentView.layer.cornerRadius = 20
+                    //                cell.contentView.layer.borderWidth = 1.0
+                    //
+                    //                cell.contentView.layer.borderColor = UIColor.clear.cgColor
+                    //                cell.contentView.layer.masksToBounds = true
+                    //
+                    //                cell.layer.shadowColor = UIColor.lightGray.cgColor
+                    //                cell.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+                    //                cell.layer.shadowRadius = 5.0
+                    //                cell.layer.shadowOpacity = 1.0
+                    //                cell.layer.cornerRadius = 15
+                    //                cell.layer.masksToBounds = false
+                    //                cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+                    
+                    //                cell.contentView.layer.backgroundColor = UIColor.red.cgColor
+                    
+                    
+                    
+                    return cell
+                }
+//            }
+        
+//        }
+    
+        
+        }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -306,18 +319,18 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         if indexPath.section == 0 {
             
-            let cell = ProfileTableViewCell()
+//            let cell = ProfileTableViewCell()
             
-            cell.selectionStyle = .none
+//            cell.selectionStyle = .none
             
         }
             
         else if indexPath.section == 1{
             
-            let cell = ListTableViewCell()
+//            let cell = ListTableViewCell()
             
             
-            cell.selectionStyle = .none
+//            cell.selectionStyle = .none
             
         }
         
@@ -347,12 +360,6 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     func btnAction(_ sender: UIButton) {
-        
-//        let ETVC: EditProfileViewController = storyboard!.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
-//        
-//        
-//        
-//        self.navigationController!.pushViewController(ETVC, animated: true)
         
         
     }
