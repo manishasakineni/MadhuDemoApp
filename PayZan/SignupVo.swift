@@ -10,12 +10,14 @@ import Foundation
 
 class SignupVo: Mappable {
     
-    var StatusCode: Int?
-    var StatusMessage: String?
+    var Result: SignUpResultVo?
+    var IsSuccess: Bool?
+    var AffectedRecords: Int?
     
-    init(StatusCode:Int?,StatusMessage:String?) {
-        self.StatusCode = StatusCode
-        self.StatusMessage = StatusMessage
+    init(Result:SignUpResultVo?,IsSuccess:Bool?,AffectedRecords:Int?) {
+        self.Result = Result
+        self.IsSuccess = IsSuccess
+        self.AffectedRecords = AffectedRecords
     }
     
     required init?(map: Map) {
@@ -23,7 +25,8 @@ class SignupVo: Mappable {
     }
     
     func mapping(map: Map) {
-        StatusCode <- map["StatusCode"]
-        StatusMessage <- map["StatusMessage"]
+        Result <- map["Result"]
+        IsSuccess <- map["IsSuccess"]
+        AffectedRecords <- map["AffectedRecords"]
     }
 }

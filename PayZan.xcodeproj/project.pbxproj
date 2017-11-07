@@ -46,6 +46,7 @@
 		35344DBB1F863B6500E35C5C /* NoCopyPasteUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35344DBA1F863B6500E35C5C /* NoCopyPasteUITextField.swift */; };
 		35344DBD1F86824900E35C5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35344DBC1F86824900E35C5C /* GoogleService-Info.plist */; };
 		35374F291FA4616D009C98DE /* LoginResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35374F281FA4616D009C98DE /* LoginResultVo.swift */; };
+		3539E4521FB1972A005ACC7C /* SignUpResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3539E4511FB1972A005ACC7C /* SignUpResultVo.swift */; };
 		353EB9BC1F9F06ED00AA67E9 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */; };
 		353FE3721FA31AAE00152876 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353FE3711FA31AAE00152876 /* Services.swift */; };
 		353FE3741FA345F900152876 /* GlobalSupportingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353FE3731FA345F900152876 /* GlobalSupportingClass.swift */; };
@@ -161,6 +162,7 @@
 		35344DBA1F863B6500E35C5C /* NoCopyPasteUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoCopyPasteUITextField.swift; sourceTree = "<group>"; };
 		35344DBC1F86824900E35C5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		35374F281FA4616D009C98DE /* LoginResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResultVo.swift; sourceTree = "<group>"; };
+		3539E4511FB1972A005ACC7C /* SignUpResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpResultVo.swift; sourceTree = "<group>"; };
 		353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		353FE3711FA31AAE00152876 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		353FE3731FA345F900152876 /* GlobalSupportingClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalSupportingClass.swift; sourceTree = "<group>"; };
@@ -345,14 +347,23 @@
 		35344DB11F861B8400E35C5C /* MapperVo */ = {
 			isa = PBXGroup;
 			children = (
+				3539E4501FB196E5005ACC7C /* SignUp */,
 				354E4D561FA75F9F008D108A /* MyTransaction */,
 				355120F31F948DC000C9AD9D /* Operator */,
 				355120F21F948D9000C9AD9D /* Login */,
 				354E4D441FA6EAEE008D108A /* SendWallet */,
 				354CF1BA1F915185004ADDAD /* WalletUser */,
-				35344DB61F862FD400E35C5C /* SignupVo.swift */,
 			);
 			name = MapperVo;
+			sourceTree = "<group>";
+		};
+		3539E4501FB196E5005ACC7C /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				35344DB61F862FD400E35C5C /* SignupVo.swift */,
+				3539E4511FB1972A005ACC7C /* SignUpResultVo.swift */,
+			);
+			name = SignUp;
 			sourceTree = "<group>";
 		};
 		354CF1981F908274004ADDAD /* Services */ = {
@@ -768,6 +779,7 @@
 				354CF1AF1F90F2B1004ADDAD /* CableTvViewController.swift in Sources */,
 				354E4D481FA6EBB0008D108A /* SendWalletHistoryVo.swift in Sources */,
 				354CF1B51F910BDD004ADDAD /* LandlineViewController.swift in Sources */,
+				3539E4521FB1972A005ACC7C /* SignUpResultVo.swift in Sources */,
 				3554C32F1F8F5DCD0092EAC7 /* ListTableViewCell.swift in Sources */,
 				3554C33C1F8F9FC10092EAC7 /* Colors.swift in Sources */,
 				354E4D541FA7243B008D108A /* AddAgentTableViewCell.swift in Sources */,

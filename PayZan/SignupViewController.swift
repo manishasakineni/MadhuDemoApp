@@ -123,23 +123,25 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
                     
                     print("responseString = \(respVO)")
                     
-                    let statusCode = respVO.StatusCode
+                    let statusCode = respVO.IsSuccess
                     
                     print("StatusCode:\(String(describing: statusCode))")
                     
                     
-                    if statusCode == 200
+                    if statusCode == true
                     {
                         
                         
-                        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                        self.navigationController?.pushViewController(homeViewController, animated: true)
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.window?.rootViewController = viewController
                         
-                        let statusMsg  = respVO.StatusMessage!
+//                        let statusMsg  = respVO.StatusMessage!
                         
-                        print("statusMsg:\(String(describing: statusMsg))")
+//                        print("statusMsg:\(String(describing: statusMsg))")
                         
-                        let alertController = UIAlertController(title: "", message: statusMsg , preferredStyle: UIAlertControllerStyle.alert)
+                        let alertController = UIAlertController(title: "Alert", message: "User registered successfully" , preferredStyle: UIAlertControllerStyle.alert)
                         
                         let DestructiveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
                         }
@@ -148,7 +150,7 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
                         
                         
                     }
-                    else if statusCode == 401{
+                    else if statusCode == false{
                         
                         let alertController = UIAlertController(title: "", message: "Network error" , preferredStyle: UIAlertControllerStyle.alert)
                         

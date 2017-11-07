@@ -241,6 +241,8 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                     }
             }
         }, failureHandler: {(error) in
+            
+            
         })
     }
     

@@ -79,7 +79,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        if let text = addBtn1.titleLabel?.text {
+            print(text)
+        }
         
 //        mySegmentControl.removeBorders()
         
@@ -416,14 +418,15 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                         let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                         self.navigationController?.pushViewController(homeViewController, animated: true)
                         
-                        self.showAlertViewWithTitle("Success", message: successMsg!, buttonTitle: "Ok")
+                        self.showAlertViewWithTitle("Alert", message: successMsg!, buttonTitle: "Ok")
 
                         
                     }
                     else if statusCode == false{
                         
+                        let failMsg = respVO.EndUserMessage
                         
-                        self.showAlertViewWithTitle("Alert", message: "Not Add Money to Wallet", buttonTitle: "Ok")
+                        self.showAlertViewWithTitle("Failed", message: failMsg!, buttonTitle: "Ok")
                         
                         
                     }
@@ -431,7 +434,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                     else
                     {
                         
-                        self.showAlertViewWithTitle("Alert", message: "Not Add Money to Wallet", buttonTitle: "Ok")
+                        let failMsg = respVO.EndUserMessage
+                        
+                        self.showAlertViewWithTitle("Failed", message: failMsg!, buttonTitle: "Ok")
                         
                     }
             }
@@ -545,8 +550,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                     }
                     else if statusCode == false{
                         
+                        let failMsg = respVO.EndUserMessage
                         
-                        self.showAlertViewWithTitle("Success", message: "Not Add Money to Wallet", buttonTitle: "Ok")
+                        self.showAlertViewWithTitle("Failed", message: failMsg!, buttonTitle: "Ok")
 
                         
                         
@@ -555,7 +561,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                     else
                     {
                         
-                         self.showAlertViewWithTitle("Success", message: "Not Add Money to Wallet", buttonTitle: "Ok")
+                        let failMsg = respVO.EndUserMessage
+                        
+                        self.showAlertViewWithTitle("Failed", message: failMsg!, buttonTitle: "Ok")
                         
                     }
             }
