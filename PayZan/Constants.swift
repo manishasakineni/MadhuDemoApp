@@ -35,6 +35,6 @@ let emailIdd = "emailIdd"
 
 let kNetworkStatusMessage = "Please check your internet connection!"
 
-let kToastDuration  = 3.5
+let kToastDuration  = 3.0
 
 let kRequestTimedOutMessage = "The request timed out."

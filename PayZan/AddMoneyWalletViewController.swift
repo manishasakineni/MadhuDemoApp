@@ -418,7 +418,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                         let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                         self.navigationController?.pushViewController(homeViewController, animated: true)
                         
-                        self.showAlertViewWithTitle("Alert", message: successMsg!, buttonTitle: "Ok")
+                        self.appDelegate.window?.makeToast(successMsg!, duration:kToastDuration, position:CSToastPositionCenter)
 
                         
                     }
@@ -546,6 +546,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                         
                          self.showAlertViewWithTitle("Success", message: successMsg!, buttonTitle: "Ok")
                         
+                        self.appDelegate.window?.makeToast(successMsg!, duration:kToastDuration, position:CSToastPositionCenter)
+
+                        
                         
                     }
                     else if statusCode == false{
@@ -608,6 +611,45 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     }
 
     @IBAction func notificationAction(_ sender: Any) {
+    }
+    
+    @IBAction func hundredBtnAction(_ sender: Any) {
+        
+        if let text = addBtn1.titleLabel?.text {
+            print(text)
+            
+            let btnTitle = String(text.characters.dropLast())
+            
+            let btntitle1 = String(btnTitle.characters.dropLast())
+            
+            addWalletFiled.text = btntitle1
+        }
+    }
+    
+    @IBAction func fiveHunredBtnAction(_ sender: Any) {
+        
+        if let text = addBtn2.titleLabel?.text {
+            print(text)
+            
+            let btnTitle = String(text.characters.dropLast())
+            
+            let btntitle1 = String(btnTitle.characters.dropLast())
+            
+            addWalletFiled.text = btntitle1
+        }
+    }
+    
+    @IBAction func thousandBtnAction(_ sender: Any) {
+        
+        if let text = addBtn3.titleLabel?.text {
+            print(text)
+            
+            let btnTitle = String(text.characters.dropLast())
+            
+            let btntitle1 = String(btnTitle.characters.dropLast())
+            
+            addWalletFiled.text = btntitle1
+        }
     }
     
     @IBAction func phoneBookAction(_ sender: Any) {
