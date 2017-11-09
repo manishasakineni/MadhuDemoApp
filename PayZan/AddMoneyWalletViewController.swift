@@ -207,6 +207,13 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             print("defaults savedString: \(walletAmount)")
         }
         
+        if let walletBal = defaults.string(forKey: walletAmountt) {
+            
+            walletBalLabel.text = walletBal
+            
+            print("defaults savedString: \(String(describing: walletBalLabel.text))")
+        }
+        
         myTransactionGetService()
 
         // Do any additional setup after loading the view.
@@ -229,6 +236,13 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             walletBalLabel.text = walletAmount
             
             print("defaults savedString: \(walletAmount)")
+        }
+        
+        if let walletBal = defaults.string(forKey: walletAmountt) {
+            
+            walletBalLabel.text = walletBal
+            
+            print("defaults savedString: \(String(describing: walletBalLabel.text))")
         }
         
     }
@@ -544,7 +558,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                         let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                         self.navigationController?.pushViewController(homeViewController, animated: true)
                         
-                         self.showAlertViewWithTitle("Success", message: successMsg!, buttonTitle: "Ok")
+//                         self.showAlertViewWithTitle("Success", message: successMsg!, buttonTitle: "Ok")
                         
                         self.appDelegate.window?.makeToast(successMsg!, duration:kToastDuration, position:CSToastPositionCenter)
 

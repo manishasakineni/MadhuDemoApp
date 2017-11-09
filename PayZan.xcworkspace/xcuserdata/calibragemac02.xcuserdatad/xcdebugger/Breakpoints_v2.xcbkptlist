@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/AddMoneyWalletViewController.swift"
-            timestampString = "531758077.794146"
+            timestampString = "531905348.109703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "407"
-            endingLineNumber = "407"
+            startingLineNumber = "421"
+            endingLineNumber = "421"
             landmarkName = "postWalletMoneyService()"
             landmarkType = "7">
          </BreakpointContent>

@@ -9,19 +9,19 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>CalibrageMac02.PayZan</string>
+	<string>com.PayZan.PayZanCustomer</string>
 	<key>PROJECT_ID</key>
 	<string>firebase-payzan</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_GCM_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:348716905513:ios:10d55a2c6dc31951</string>
 </dict>

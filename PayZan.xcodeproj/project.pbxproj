@@ -54,6 +54,15 @@
 		35442CE21F8DEA4D007798EC /* RechargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35442CE11F8DEA4D007798EC /* RechargeViewController.swift */; };
 		3545A89F1FA207A4005E4E7C /* BroadbandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545A89D1FA207A4005E4E7C /* BroadbandViewController.swift */; };
 		3545A8A01FA207A4005E4E7C /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545A89E1FA207A4005E4E7C /* WaterViewController.swift */; };
+		35485D841FB46DE900CDB076 /* PayzAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35485D7B1FB46DE900CDB076 /* PayzAppViewController.swift */; };
+		35485D851FB46DE900CDB076 /* SavedCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35485D7C1FB46DE900CDB076 /* SavedCardsTableViewCell.swift */; };
+		35485D861FB46DE900CDB076 /* SavedCardsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35485D7D1FB46DE900CDB076 /* SavedCardsTableViewCell.xib */; };
+		35485D871FB46DE900CDB076 /* CreditCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35485D7E1FB46DE900CDB076 /* CreditCardTableViewCell.swift */; };
+		35485D881FB46DE900CDB076 /* CreditCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35485D7F1FB46DE900CDB076 /* CreditCardTableViewCell.xib */; };
+		35485D891FB46DE900CDB076 /* DebitCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35485D801FB46DE900CDB076 /* DebitCardTableViewCell.swift */; };
+		35485D8A1FB46DE900CDB076 /* DebitCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35485D811FB46DE900CDB076 /* DebitCardTableViewCell.xib */; };
+		35485D8B1FB46DE900CDB076 /* NetBankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35485D821FB46DE900CDB076 /* NetBankingTableViewCell.swift */; };
+		35485D8C1FB46DE900CDB076 /* NetBankingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35485D831FB46DE900CDB076 /* NetBankingTableViewCell.xib */; };
 		354CF19A1F9095B4004ADDAD /* UserVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF1991F9095B4004ADDAD /* UserVo.swift */; };
 		354CF19C1F909751004ADDAD /* RolesVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF19B1F909751004ADDAD /* RolesVo.swift */; };
 		354CF19E1F90978B004ADDAD /* GetActVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354CF19D1F90978B004ADDAD /* GetActVo.swift */; };
@@ -170,6 +179,15 @@
 		35442CE11F8DEA4D007798EC /* RechargeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RechargeViewController.swift; sourceTree = "<group>"; };
 		3545A89D1FA207A4005E4E7C /* BroadbandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadbandViewController.swift; sourceTree = "<group>"; };
 		3545A89E1FA207A4005E4E7C /* WaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
+		35485D7B1FB46DE900CDB076 /* PayzAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayzAppViewController.swift; sourceTree = "<group>"; };
+		35485D7C1FB46DE900CDB076 /* SavedCardsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCardsTableViewCell.swift; sourceTree = "<group>"; };
+		35485D7D1FB46DE900CDB076 /* SavedCardsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavedCardsTableViewCell.xib; sourceTree = "<group>"; };
+		35485D7E1FB46DE900CDB076 /* CreditCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardTableViewCell.swift; sourceTree = "<group>"; };
+		35485D7F1FB46DE900CDB076 /* CreditCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardTableViewCell.xib; sourceTree = "<group>"; };
+		35485D801FB46DE900CDB076 /* DebitCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebitCardTableViewCell.swift; sourceTree = "<group>"; };
+		35485D811FB46DE900CDB076 /* DebitCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DebitCardTableViewCell.xib; sourceTree = "<group>"; };
+		35485D821FB46DE900CDB076 /* NetBankingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetBankingTableViewCell.swift; sourceTree = "<group>"; };
+		35485D831FB46DE900CDB076 /* NetBankingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetBankingTableViewCell.xib; sourceTree = "<group>"; };
 		354CF1991F9095B4004ADDAD /* UserVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVo.swift; sourceTree = "<group>"; };
 		354CF19B1F909751004ADDAD /* RolesVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RolesVo.swift; sourceTree = "<group>"; };
 		354CF19D1F90978B004ADDAD /* GetActVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetActVo.swift; sourceTree = "<group>"; };
@@ -307,6 +325,7 @@
 		35344DAF1F861B3700E35C5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				35485D7A1FB46D5E00CDB076 /* Banks */,
 				354E4D491FA71108008D108A /* RequestAgent */,
 				356651861F9DC75500330D33 /* MyTransaction */,
 				3554C31E1F8F5D850092EAC7 /* Profile */,
@@ -323,6 +342,7 @@
 		35344DB01F861B4200E35C5C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				35485D7B1FB46DE900CDB076 /* PayzAppViewController.swift */,
 				35344DB21F8628E500E35C5C /* HomeViewController.swift */,
 				35403DEC1FA0687F0004DD20 /* TabsViewController.swift */,
 				35442CE11F8DEA4D007798EC /* RechargeViewController.swift */,
@@ -364,6 +384,21 @@
 				3539E4511FB1972A005ACC7C /* SignUpResultVo.swift */,
 			);
 			name = SignUp;
+			sourceTree = "<group>";
+		};
+		35485D7A1FB46D5E00CDB076 /* Banks */ = {
+			isa = PBXGroup;
+			children = (
+				35485D7C1FB46DE900CDB076 /* SavedCardsTableViewCell.swift */,
+				35485D7D1FB46DE900CDB076 /* SavedCardsTableViewCell.xib */,
+				35485D7E1FB46DE900CDB076 /* CreditCardTableViewCell.swift */,
+				35485D7F1FB46DE900CDB076 /* CreditCardTableViewCell.xib */,
+				35485D801FB46DE900CDB076 /* DebitCardTableViewCell.swift */,
+				35485D811FB46DE900CDB076 /* DebitCardTableViewCell.xib */,
+				35485D821FB46DE900CDB076 /* NetBankingTableViewCell.swift */,
+				35485D831FB46DE900CDB076 /* NetBankingTableViewCell.xib */,
+			);
+			name = Banks;
 			sourceTree = "<group>";
 		};
 		354CF1981F908274004ADDAD /* Services */ = {
@@ -609,7 +644,7 @@
 				TargetAttributes = {
 					35E64C8B1F84DF5200E2CA65 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = XGNG3P39B7;
+						DevelopmentTeam = 6KY3CH8YG8;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
 					};
@@ -638,6 +673,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35485D8A1FB46DE900CDB076 /* DebitCardTableViewCell.xib in Resources */,
 				350CCD1E1F88A5BE003495B6 /* IconTableViewCell.xib in Resources */,
 				35E64C9A1F84DF5200E2CA65 /* LaunchScreen.storyboard in Resources */,
 				350CCD1A1F88A54F003495B6 /* HomeCollectionViewCell.xib in Resources */,
@@ -646,9 +682,12 @@
 				3554C3301F8F5DCD0092EAC7 /* ListTableViewCell.xib in Resources */,
 				354E4D551FA7243B008D108A /* AddAgentTableViewCell.xib in Resources */,
 				3554C3321F8F5DCD0092EAC7 /* TableViewCell1.xib in Resources */,
+				35485D881FB46DE900CDB076 /* CreditCardTableViewCell.xib in Resources */,
 				35E64C971F84DF5200E2CA65 /* Assets.xcassets in Resources */,
 				3566518A1F9DC7A300330D33 /* MyTransactionTableViewCell.xib in Resources */,
+				35485D8C1FB46DE900CDB076 /* NetBankingTableViewCell.xib in Resources */,
 				3554C32E1F8F5DCD0092EAC7 /* ProfileTableViewCell.xib in Resources */,
+				35485D861FB46DE900CDB076 /* SavedCardsTableViewCell.xib in Resources */,
 				354E4D4D1FA71203008D108A /* AddAgentRequestTableViewCell.xib in Resources */,
 				3554C3361F8F5DCD0092EAC7 /* GenderTableViewCell.xib in Resources */,
 				3562EEFF1FA98C1200547C93 /* SubmitAgentTableViewCell.xib in Resources */,
@@ -746,6 +785,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35344D9C1F8610C700E35C5C /* ImmutableMappable.swift in Sources */,
+				35485D891FB46DE900CDB076 /* DebitCardTableViewCell.swift in Sources */,
 				35374F291FA4616D009C98DE /* LoginResultVo.swift in Sources */,
 				35344DA41F8610C700E35C5C /* Operators.swift in Sources */,
 				3569C1D21F87468C00152B80 /* LoadingOverLay.swift in Sources */,
@@ -767,6 +807,7 @@
 				356651891F9DC7A300330D33 /* MyTransactionTableViewCell.swift in Sources */,
 				3554C3371F8F5DCD0092EAC7 /* SignOutTableViewCell.swift in Sources */,
 				35344DB71F862FD400E35C5C /* SignupVo.swift in Sources */,
+				35485D841FB46DE900CDB076 /* PayzAppViewController.swift in Sources */,
 				35CB9D0D1F8B782D00BF1073 /* Constants.swift in Sources */,
 				35344D941F8610C700E35C5C /* DataTransform.swift in Sources */,
 				35344DA21F8610C700E35C5C /* Mapper.swift in Sources */,
@@ -786,8 +827,10 @@
 				3569C1DB1F8762B800152B80 /* Reachability.swift in Sources */,
 				35344D981F8610C700E35C5C /* EnumOperators.swift in Sources */,
 				354E4D5A1FA7601B008D108A /* MyTranListResultVo.swift in Sources */,
+				35485D871FB46DE900CDB076 /* CreditCardTableViewCell.swift in Sources */,
 				35344D931F8610C700E35C5C /* CustomDateFormatTransform.swift in Sources */,
 				3554C31B1F8F5C960092EAC7 /* ProfileViewController.swift in Sources */,
+				35485D851FB46DE900CDB076 /* SavedCardsTableViewCell.swift in Sources */,
 				35344D961F8610C700E35C5C /* DateTransform.swift in Sources */,
 				35344DA61F8610C700E35C5C /* TransformOf.swift in Sources */,
 				354CF19A1F9095B4004ADDAD /* UserVo.swift in Sources */,
@@ -833,6 +876,7 @@
 				35403DED1FA0687F0004DD20 /* TabsViewController.swift in Sources */,
 				35CB9D0F1F8B7B0700BF1073 /* ServiceController.swift in Sources */,
 				35E64C901F84DF5200E2CA65 /* AppDelegate.swift in Sources */,
+				35485D8B1FB46DE900CDB076 /* NetBankingTableViewCell.swift in Sources */,
 				35CB9D0B1F8B77EE00BF1073 /* URLStrings.swift in Sources */,
 				35344DB51F862B3C00E35C5C /* SignupViewController.swift in Sources */,
 				35344D951F8610C700E35C5C /* DateFormatterTransform.swift in Sources */,
@@ -883,11 +927,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Natarajan Srikanth (XGNG3P39B7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Natarajan Srikanth (XGNG3P39B7)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nagender Kodali (S5M9P6PHFH)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = XGNG3P39B7;
+				DEVELOPMENT_TEAM = 6KY3CH8YG8;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -907,7 +951,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "b141886c-3c1e-4296-a07f-3f5a69f1511b";
+				PROVISIONING_PROFILE = "1f3b747b-95fb-4a80-a2a4-c8ab5c48e1ec";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -937,11 +981,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Natarajan Srikanth (XGNG3P39B7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Natarajan Srikanth (XGNG3P39B7)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nagender Kodali (S5M9P6PHFH)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = XGNG3P39B7;
+				DEVELOPMENT_TEAM = 6KY3CH8YG8;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -954,7 +998,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "b141886c-3c1e-4296-a07f-3f5a69f1511b";
+				PROVISIONING_PROFILE = "1f3b747b-95fb-4a80-a2a4-c8ab5c48e1ec";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -969,16 +1013,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Natarajan Srikanth (XGNG3P39B7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = XGNG3P39B7;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
+				DEVELOPMENT_TEAM = 6KY3CH8YG8;
 				INFOPLIST_FILE = PayZan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CalibrageMac02.PayZan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayZan.PayZanCustomer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b141886c-3c1e-4296-a07f-3f5a69f1511b";
-				PROVISIONING_PROFILE_SPECIFIER = CalibrageMac02.PayZan;
+				PROVISIONING_PROFILE = "1f3b747b-95fb-4a80-a2a4-c8ab5c48e1ec";
+				PROVISIONING_PROFILE_SPECIFIER = PayZanCustomerDistribution;
 				SWIFT_OBJC_BRIDGING_HEADER = "PayZan/PayZan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -992,16 +1036,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Natarajan Srikanth (XGNG3P39B7)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = XGNG3P39B7;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
+				DEVELOPMENT_TEAM = 6KY3CH8YG8;
 				INFOPLIST_FILE = PayZan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CalibrageMac02.PayZan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayZan.PayZanCustomer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b141886c-3c1e-4296-a07f-3f5a69f1511b";
-				PROVISIONING_PROFILE_SPECIFIER = CalibrageMac02.PayZan;
+				PROVISIONING_PROFILE = "1f3b747b-95fb-4a80-a2a4-c8ab5c48e1ec";
+				PROVISIONING_PROFILE_SPECIFIER = PayZanCustomerDistribution;
 				SWIFT_OBJC_BRIDGING_HEADER = "PayZan/PayZan-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

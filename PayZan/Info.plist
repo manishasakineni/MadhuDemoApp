@@ -22,7 +22,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>CalibrageMac02.PayZan</string>
+			<string>com.PayZan.PayZanCustomer</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.348716905513-u56bsmvhd8ouldci875n40f7tdo8i6qe</string>
@@ -34,7 +34,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb368141853639787</string>
-				<string>CalibrageMac02.PayZan</string>
+				<string>com.PayZan.PayZanCustomer</string>
 				<string>li5064565</string>
 			</array>
 		</dict>

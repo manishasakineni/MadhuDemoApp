@@ -224,7 +224,9 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
     
     @IBAction func rechargeAction(_ sender: Any) {
         
-        
+        let rechargeViewController = self.storyboard?.instantiateViewController(withIdentifier: "PayzAppViewController") as! PayzAppViewController
+        self.navigationController?.pushViewController(rechargeViewController, animated: true)
+
     }
     
     @IBAction func indexChage(_ sender: Any) {
