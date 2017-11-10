@@ -1,3 +1,4 @@
+
 //
 //  AddMoneyWalletViewController.swift
 //  PayZan
@@ -48,9 +49,26 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
     @IBOutlet weak var phoneBookBtn: UIButton!
     
+    @IBOutlet weak var allBtn: UIButton!
+    
+    @IBOutlet weak var paidBtn: UIButton!
+    
+    @IBOutlet weak var receivedBtn: UIButton!
+    
+    @IBOutlet weak var addedBtn: UIButton!
+    
+    
 //    var appDelegate = AppDelegate()
     
     var indexValue:Int!
+    
+    var hunredTitle:Int = 0
+    var fivehundredTitle:Int = 0
+    var thousnadTitle:Int = 0
+    
+    var hunredCounter:Int = 100
+    var fivehundredCounter:Int = 500
+    var thousnadTCounter:Int = 1000
     
     var myTranResultList:[MyTranListResultVo] = []
     
@@ -79,22 +97,15 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let text = addBtn1.titleLabel?.text {
-            print(text)
-        }
-        
 //        mySegmentControl.removeBorders()
         
-        let font = UIFont.systemFont(ofSize: 10)
-        mySegmentControl.setTitleTextAttributes([NSFontAttributeName: font],
-                                                for: .normal)
-        let attr = NSDictionary(object: UIFont(name: "HelveticaNeue-Bold", size: 10.0)!, forKey: NSFontAttributeName as NSCopying)
-        UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
+//        let font = UIFont.systemFont(ofSize: 10)
+//        mySegmentControl.setTitleTextAttributes([NSFontAttributeName: font],
+//                                                for: .normal)
+//        let attr = NSDictionary(object: UIFont(name: "HelveticaNeue-Bold", size: 10.0)!, forKey: NSFontAttributeName as NSCopying)
+//        UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
         
-        mySegmentControl.backgroundColor = #colorLiteral(red: 0.9787510536, green: 0.9787510536, blue: 0.9787510536, alpha: 1)
-        mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
-        
-        mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
+        iPhoneScreenSizes()
         
         mySegmentControl.setDividerImage(self.imageWithColor(color: UIColor.clear), forLeftSegmentState: UIControlState.normal, rightSegmentState: UIControlState.normal, barMetrics: UIBarMetrics.default)
         
@@ -214,7 +225,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             print("defaults savedString: \(String(describing: walletBalLabel.text))")
         }
         
-        myTransactionGetService()
+//        myTransactionGetService()
+        
+        borderColors()
 
         // Do any additional setup after loading the view.
     }
@@ -244,6 +257,85 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             print("defaults savedString: \(String(describing: walletBalLabel.text))")
         }
+        
+    }
+    
+    func borderColors(){
+        
+        allBtn.layer.borderWidth = 0.5
+        
+        allBtn.layer.borderColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0).cgColor
+        
+        allBtn.layer.cornerRadius = 10
+        
+        
+        paidBtn.layer.borderWidth = 0.5
+        paidBtn.layer.borderColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0).cgColor
+        paidBtn.layer.cornerRadius = 10
+        
+        
+        
+        receivedBtn.layer.borderWidth = 0.5
+        receivedBtn.layer.borderColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0).cgColor
+        receivedBtn.layer.cornerRadius = 10
+        
+        
+        addedBtn.layer.borderWidth = 0.5
+        addedBtn.layer.borderColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0).cgColor
+        addedBtn.layer.cornerRadius = 10
+        
+    }
+    
+    
+    func iPhoneScreenSizes(){
+        let bounds = UIScreen.main.bounds
+        let height = bounds.size.height
+        
+        switch height {
+        case 480.0:
+            print("iPhone 3,4")
+            
+            mySegmentControl.backgroundColor = #colorLiteral(red: 0.9787510536, green: 0.9787510536, blue: 0.9787510536, alpha: 1)
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:9.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
+            
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:9.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
+        case 568.0:
+            print("iPhone 5")
+            
+            mySegmentControl.backgroundColor = #colorLiteral(red: 0.9787510536, green: 0.9787510536, blue: 0.9787510536, alpha: 1)
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:9.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
+            
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:9.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
+            
+            
+        case 667.0:
+            print("iPhone 6")
+            
+            mySegmentControl.backgroundColor = #colorLiteral(red: 0.9787510536, green: 0.9787510536, blue: 0.9787510536, alpha: 1)
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
+            
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
+            
+        case 736.0:
+            print("iPhone 6+")
+            
+            mySegmentControl.backgroundColor = #colorLiteral(red: 0.9787510536, green: 0.9787510536, blue: 0.9787510536, alpha: 1)
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
+            
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
+            
+        case 1024.0:
+            print("iPadAir")
+        default:
+            print("not an iPhone")
+            
+            mySegmentControl.backgroundColor = #colorLiteral(red: 0.9787510536, green: 0.9787510536, blue: 0.9787510536, alpha: 1)
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
+            
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
+            
+        }
+        
         
     }
     
@@ -429,6 +521,14 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                         defaults.set(waleetBalance, forKey: "walletAmount")
                         
                         
+                        if let walletAmount = defaults.string(forKey: "walletAmount") {
+                            
+                            
+                            self.walletBalLabel.text = walletAmount
+                            
+                            print("defaults savedString: \(walletAmount)")
+                        }
+                        
                         let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                         self.navigationController?.pushViewController(homeViewController, animated: true)
                         
@@ -554,6 +654,14 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                         // Using defaults.set(value: Any?, forKey: String)
                         defaults.set(waleetBalance, forKey: "walletAmount")
                         
+                        if let walletAmount = defaults.string(forKey: "walletAmount") {
+                            
+                            
+                            self.walletBalLabel.text = walletAmount
+                            
+                            print("defaults savedString: \(walletAmount)")
+                        }
+                        
                         
                         let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                         self.navigationController?.pushViewController(homeViewController, animated: true)
@@ -629,14 +737,18 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
     @IBAction func hundredBtnAction(_ sender: Any) {
         
+        hunredCounter += 1
+        
         if let text = addBtn1.titleLabel?.text {
             print(text)
             
             let btnTitle = String(text.characters.dropLast())
             
-            let btntitle1 = String(btnTitle.characters.dropLast())
+            hunredTitle = Int(String(btnTitle.characters.dropLast()))!
             
-            addWalletFiled.text = btntitle1
+            hunredCounter = Int(String(btnTitle.characters.dropLast()))!
+            
+            addWalletFiled.text = "\(((Int(fivehundredTitle) + hunredCounter) + (Int(thousnadTitle))))"
         }
     }
     
@@ -647,9 +759,12 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             let btnTitle = String(text.characters.dropLast())
             
-            let btntitle1 = String(btnTitle.characters.dropLast())
+            fivehundredTitle = Int(String(btnTitle.characters.dropLast()))!
             
-            addWalletFiled.text = btntitle1
+            
+            
+            addWalletFiled.text = "\(((Int(fivehundredTitle) + Int(hunredTitle)) + (Int(thousnadTitle))))"
+            
         }
     }
     
@@ -660,9 +775,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             let btnTitle = String(text.characters.dropLast())
             
-            let btntitle1 = String(btnTitle.characters.dropLast())
+           thousnadTitle = Int(String(btnTitle.characters.dropLast()))!
             
-            addWalletFiled.text = btntitle1
+            addWalletFiled.text = "\(((Int(fivehundredTitle) + Int(hunredTitle)) + (Int(thousnadTitle))))"
         }
     }
     
@@ -722,6 +837,71 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         default:
             break;
         }
+    }
+    
+    @IBAction func allBtnAction(_ sender: Any) {
+        
+        allBtn.backgroundColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0)
+        
+        paidBtn.backgroundColor = UIColor.white
+        receivedBtn.backgroundColor = UIColor.white
+        addedBtn.backgroundColor = UIColor.white
+        
+        
+        allBtn.setTitleColor(UIColor.white, for: .normal)
+        
+        paidBtn.setTitleColor(UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0), for: .normal)
+        receivedBtn.setTitleColor(UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0), for: .normal)
+        addedBtn.setTitleColor(UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0), for: .normal)
+        
+
+        
+    }
+    
+    @IBAction func paidBtnAction(_ sender: Any) {
+        
+        paidBtn.backgroundColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0)
+        
+        allBtn.backgroundColor = UIColor.white
+        receivedBtn.backgroundColor = UIColor.white
+        addedBtn.backgroundColor = UIColor.white
+        
+        paidBtn.setTitleColor(UIColor.white, for: .normal)
+        
+        allBtn.setTitleColor(UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0), for: .normal)
+        receivedBtn.setTitleColor(UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0), for: .normal)
+        addedBtn.setTitleColor(UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0), for: .normal)
+    }
+    
+    @IBAction func receivedAction(_ sender: Any) {
+        
+        
+        receivedBtn.backgroundColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0)
+        
+        paidBtn.backgroundColor = UIColor.white
+        addedBtn.backgroundColor = UIColor.white
+        allBtn.backgroundColor = UIColor.white
+        
+        receivedBtn.setTitleColor(UIColor.white, for: .normal)
+        
+        paidBtn.setTitleColor(UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0), for: .normal)
+        allBtn.setTitleColor(UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0), for: .normal)
+        addedBtn.setTitleColor(UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0), for: .normal)
+    }
+    
+    @IBAction func addedBtnAction(_ sender: Any) {
+        
+        addedBtn.backgroundColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0)
+        
+        paidBtn.backgroundColor = UIColor.white
+        receivedBtn.backgroundColor = UIColor.white
+        allBtn.backgroundColor = UIColor.white
+        
+        addedBtn.setTitleColor(UIColor.white, for: .normal)
+        
+        paidBtn.setTitleColor(UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0), for: .normal)
+        receivedBtn.setTitleColor(UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0), for: .normal)
+        allBtn.setTitleColor(UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0), for: .normal)
     }
     
     
