@@ -77,7 +77,18 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
-        textField.inputView = self.myPickerView
+        if operatorList.isEmpty {
+            
+            self.myPickerView.isHidden = true
+            
+            operatorField.text = "No Operators"
+            operatorField.textColor = UIColor.red
+            operatorField.isUserInteractionEnabled = false
+            
+        }else {
+            operatorField.isUserInteractionEnabled = true
+            textField.inputView = self.myPickerView
+        }
         
         // ToolBar
         let toolBar = UIToolbar()

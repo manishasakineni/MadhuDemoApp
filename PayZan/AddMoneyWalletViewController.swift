@@ -60,6 +60,10 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
 //    var appDelegate = AppDelegate()
     
+    private var hCountInt = 0
+    private var fCountInt = 0
+    private var tCountInt = 0
+    
     var indexValue:Int!
     
     var hunredTitle:Int = 0
@@ -96,6 +100,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        addWalletFiled.text = "\(countInt)"
         
 //        mySegmentControl.removeBorders()
         
@@ -190,6 +196,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
 //        
 //        addMoneyBtn.layer.cornerRadius = 5
         
+        
+        
         mobileNumField.keyboardType = .phonePad
         addWalletFiled.keyboardType = .numberPad
         sendAmountField.keyboardType = .numberPad
@@ -210,6 +218,13 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
         }
         
+        if let walletBal = defaults.string(forKey: walletAmountt) {
+            
+            walletBalLabel.text = walletBal
+            
+            print("defaults savedString: \(String(describing: walletBalLabel.text))")
+        }
+        
         if let walletAmount = defaults.string(forKey: "walletAmount") {
             
             
@@ -218,16 +233,10 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             print("defaults savedString: \(walletAmount)")
         }
         
-        if let walletBal = defaults.string(forKey: walletAmountt) {
-            
-            walletBalLabel.text = walletBal
-            
-            print("defaults savedString: \(String(describing: walletBalLabel.text))")
-        }
-        
-//        myTransactionGetService()
         
         borderColors()
+        
+        myTransactionGetService()
 
         // Do any additional setup after loading the view.
     }
@@ -243,6 +252,13 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
         let defaults = UserDefaults.standard
         
+        if let walletBal = defaults.string(forKey: walletAmountt) {
+            
+            walletBalLabel.text = walletBal
+            
+            print("defaults savedString: \(String(describing: walletBalLabel.text))")
+        }
+        
         if let walletAmount = defaults.string(forKey: "walletAmount") {
             
             
@@ -251,12 +267,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             print("defaults savedString: \(walletAmount)")
         }
         
-        if let walletBal = defaults.string(forKey: walletAmountt) {
-            
-            walletBalLabel.text = walletBal
-            
-            print("defaults savedString: \(String(describing: walletBalLabel.text))")
-        }
+        
         
     }
     
@@ -521,14 +532,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                         defaults.set(waleetBalance, forKey: "walletAmount")
                         
                         
-                        if let walletAmount = defaults.string(forKey: "walletAmount") {
-                            
-                            
-                            self.walletBalLabel.text = walletAmount
-                            
-                            print("defaults savedString: \(walletAmount)")
-                        }
-                        
                         let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                         self.navigationController?.pushViewController(homeViewController, animated: true)
                         
@@ -654,13 +657,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                         // Using defaults.set(value: Any?, forKey: String)
                         defaults.set(waleetBalance, forKey: "walletAmount")
                         
-                        if let walletAmount = defaults.string(forKey: "walletAmount") {
-                            
-                            
-                            self.walletBalLabel.text = walletAmount
-                            
-                            print("defaults savedString: \(walletAmount)")
-                        }
                         
                         
                         let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
@@ -699,20 +695,11 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
     @IBAction func sendMoneyAction(_ sender: Any) {
         
-        
+        if validateSendMoneyFields(){
         
         if(appDelegate.checkInternetConnectivity()){
             
-            if !(sendAmountField.text?.isEmpty)! {
-                
-                sendMoneyToWalletService()
-                
-            }
-            else {
-                
-                 self.showAlertViewWithTitle("Alert", message: "Please enter wallet amount", buttonTitle: "Ok")
-                
-            }
+            sendMoneyToWalletService()
             
         }
         else {
@@ -721,6 +708,40 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             return
             
         }
+            
+        }
+    }
+    
+    
+    func validateSendMoneyFields() -> Bool
+    {
+        mobileNumField.text=mobileNumField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
+        sendAmountField.text=sendAmountField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
+        
+        let mnumb:NSString = mobileNumField.text! as NSString
+        let sendAmount:NSString = sendAmountField.text! as NSString
+        
+        
+        //Check whether textField are left empty or not
+        var errorMessage:NSString?
+        
+        if (mnumb.length<=0) {
+            errorMessage=GlobalSupportingClass.blankPhoneNumberErrorMessage() as String as String as NSString?
+        }
+        else if (mnumb.length<=9) {
+            errorMessage=GlobalSupportingClass.invalidPhoneNumberErrorMessage() as String as String as NSString?
+        }
+            
+        else if (sendAmount.length<=0) {
+            errorMessage=GlobalSupportingClass.blankSendAmountErrorMessage() as String as String as NSString?
+        }
+        
+        if let errorMsg = errorMessage{
+            
+            self.showAlertViewWithTitle("Alert", message: errorMsg as String, buttonTitle: "Retry")
+            return false;
+        }
+        return true
     }
     
 
@@ -737,48 +758,56 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
     @IBAction func hundredBtnAction(_ sender: Any) {
         
-        hunredCounter += 1
+//        hunredCounter += 1
+        hCountInt += 100
+        addWalletFiled.text = "\(((Int(hCountInt) + fCountInt) + (Int(tCountInt))))"
         
-        if let text = addBtn1.titleLabel?.text {
-            print(text)
-            
-            let btnTitle = String(text.characters.dropLast())
-            
-            hunredTitle = Int(String(btnTitle.characters.dropLast()))!
-            
-            hunredCounter = Int(String(btnTitle.characters.dropLast()))!
-            
-            addWalletFiled.text = "\(((Int(fivehundredTitle) + hunredCounter) + (Int(thousnadTitle))))"
-        }
+//        if let text = addBtn1.titleLabel?.text {
+//            print(text)
+//            
+//            let btnTitle = String(text.characters.dropLast())
+//            
+//            hunredTitle = Int(String(btnTitle.characters.dropLast()))!
+//            
+//            hunredCounter = Int(String(btnTitle.characters.dropLast()))!
+//            
+//            addWalletFiled.text = "\(((Int(fivehundredTitle) + hunredCounter) + (Int(thousnadTitle))))"
+//        }
     }
     
     @IBAction func fiveHunredBtnAction(_ sender: Any) {
         
-        if let text = addBtn2.titleLabel?.text {
-            print(text)
-            
-            let btnTitle = String(text.characters.dropLast())
-            
-            fivehundredTitle = Int(String(btnTitle.characters.dropLast()))!
-            
-            
-            
-            addWalletFiled.text = "\(((Int(fivehundredTitle) + Int(hunredTitle)) + (Int(thousnadTitle))))"
-            
-        }
+        fCountInt += 500
+        addWalletFiled.text = "\(((Int(hCountInt) + fCountInt) + (Int(tCountInt))))"
+        
+//        if let text = addBtn2.titleLabel?.text {
+//            print(text)
+//            
+//            let btnTitle = String(text.characters.dropLast())
+//            
+//            fivehundredTitle = Int(String(btnTitle.characters.dropLast()))!
+//            
+//            
+//            
+//            addWalletFiled.text = "\(((Int(fivehundredTitle) + Int(hunredTitle)) + (Int(thousnadTitle))))"
+//            
+//        }
     }
     
     @IBAction func thousandBtnAction(_ sender: Any) {
         
-        if let text = addBtn3.titleLabel?.text {
-            print(text)
-            
-            let btnTitle = String(text.characters.dropLast())
-            
-           thousnadTitle = Int(String(btnTitle.characters.dropLast()))!
-            
-            addWalletFiled.text = "\(((Int(fivehundredTitle) + Int(hunredTitle)) + (Int(thousnadTitle))))"
-        }
+        tCountInt += 1000
+        addWalletFiled.text = "\(((Int(hCountInt) + fCountInt) + (Int(tCountInt))))"
+        
+//        if let text = addBtn3.titleLabel?.text {
+//            print(text)
+//            
+//            let btnTitle = String(text.characters.dropLast())
+//            
+//           thousnadTitle = Int(String(btnTitle.characters.dropLast()))!
+//            
+//            addWalletFiled.text = "\(((Int(fivehundredTitle) + Int(hunredTitle)) + (Int(thousnadTitle))))"
+//        }
     }
     
     @IBAction func phoneBookAction(_ sender: Any) {

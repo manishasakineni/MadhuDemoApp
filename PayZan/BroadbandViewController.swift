@@ -70,7 +70,18 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
-        textField.inputView = self.myPickerView
+        if operatorList.isEmpty {
+            
+            self.myPickerView.isHidden = true
+            
+            selectOperatorTextField.text = "No Operators"
+            selectOperatorTextField.textColor = UIColor.red
+            selectOperatorTextField.isUserInteractionEnabled = false
+            
+        }else {
+            
+            textField.inputView = self.myPickerView
+        }
         
         // ToolBar
         let toolBar = UIToolbar()

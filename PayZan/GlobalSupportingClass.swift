@@ -30,6 +30,10 @@ class GlobalSupportingClass {
     class func blankPasswordErrorMessage() -> NSString {
         return "Please provide password"
     }
+    class func blankSendAmountErrorMessage() -> NSString {
+        return "Please enter wallet amount"
+    }
+    
     class func invalidDigitsInPasswordErrorMessage() -> NSString {
         return "Password should be of minimum 5 character"
     }

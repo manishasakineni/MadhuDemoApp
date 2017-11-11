@@ -30,6 +30,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     let GVC  = GenderTableViewCell()
     
     var userNamee:String!
+    var userIdd:String!
     var userEmail:String!
     
     var checked = false
@@ -50,6 +51,10 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     var text: String? = nil
     var labelText:String?
     
+//    var editProfileArray = [String]()
+    
+    var editProfileArray:ProfileResultVo?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,7 +65,16 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
         labelText = text
         
+        
+        
         let defaults = UserDefaults.standard
+        
+        if let useriddd = defaults.string(forKey: userIDD) {
+            
+            userIdd = useriddd
+            
+            print("userName: \(String(describing: userIdd))")
+        }
         
         if let userName = defaults.string(forKey: uNamee) {
             
@@ -83,6 +97,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             
             userEmail = "abc@gmail.com"
         }
+        
+        getEditProfileList()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -196,7 +212,11 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             cell.profileImag.layer.borderWidth = 1
             cell.profileImag.clipsToBounds = true
             cell.profileImag.image = image
-            cell.firstNameTF.text = userNamee
+            
+//            let editArray:ProfileResultVo = editProfileArray[indexPath.row]!
+            
+            cell.firstNameTF.text = editProfileArray?.UserName
+            cell.lastNameTF.text = editProfileArray?.FirstName
             cell.firstNameTF.placeholder = "First Name"
             cell.lastNameTF.placeholder = "Last Name"
             cell.editButton.addTarget(self, action: #selector(self.editBtnClicked), for: .touchDown)
@@ -213,7 +233,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             
             if indexPath.row == 0{
                 
-                cell.detailsTF.text = userNamee
+                cell.detailsTF.text = editProfileArray?.UserName
                 cell.detailsLbl?.text = "Display Name"
                 cell.detailsTF.placeholder = "Display Name"
                 cell.detailsTF.layer.borderWidth = 0.5
@@ -230,7 +250,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
 
             else if indexPath.row == 1{
                 
-                cell.detailsTF.text = userEmail
+                cell.detailsTF.text = editProfileArray?.Email
                 cell.detailsLbl?.text = "Email"
                 cell.detailsTF.placeholder = "Email"
                 cell.detailsTF.layer.borderWidth = 0.5
@@ -244,7 +264,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                 
             else if indexPath.row == 2{
                 
-                cell.detailsTF.text = userNamee
+                cell.detailsTF.text = editProfileArray?.UserName
                 cell.detailsLbl?.text = "Contact No"
                 cell.detailsTF.placeholder = "Contact No"
                 cell.detailsTF.layer.borderWidth = 0.5
@@ -259,7 +279,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             else if indexPath.row == 3{
                 
                 
-                cell.detailsLbl?.text = "Date Of Birth"
+                cell.detailsLbl?.text = editProfileArray?.DOB
                 cell.detailsTF.placeholder = "Date Of Birth"
                 cell.detailsTF.layer.borderWidth = 0.5
                 cell.detailsTF.layer.borderColor = UIColor.lightGray.cgColor
@@ -486,6 +506,58 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     @IBAction func searchAction(_ sender: Any) {
         
         delegate?.textChanged(text: labelText)
+    }
+    
+    func getEditProfileList(){
+        
+        if(appDelegate.checkInternetConnectivity()){
+            
+            let strUrl = getProfileUrl + "" + userIdd
+            
+            let url : NSURL = NSURL(string: strUrl)!
+            
+            serviceController.requestGETURL(strURL:url, success:{(result) in
+                DispatchQueue.main.async()
+                    {
+                        
+                        let respVO:GetProfileVo = Mapper().map(JSONObject: result)!
+                        
+                        let isSuccess = respVO.IsSuccess
+                        
+                        //                    let status = result["status"] as! String
+                        
+                        if(isSuccess == true){
+                            
+                            let editProfileObj = respVO.Result
+                            
+                            if editProfileObj != nil {
+                                
+                                var objjj = editProfileObj!
+                                
+                                self.editProfileArray = objjj
+                                
+                                
+                            }
+                            
+                            self.editTableView.reloadData()
+                            
+                        }else if(isSuccess == false) {
+                            
+                            self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
+                            
+                        }
+                        //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+                }
+            }, failure:  {(error) in
+            })
+            
+        }
+        else {
+            
+            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+            
+        }
     }
     
     @IBAction func doneAction(_ sender: Any) {

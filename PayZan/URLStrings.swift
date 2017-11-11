@@ -61,3 +61,7 @@ let sendWalletUrl:String = baseUrl.appending("UserWallet/SendMoneyToUserWallet")
 
 let myTransactionsUrl:String = baseUrl.appending("UserWallet/GetPassbookDetails")
 
+let getProfileUrl:String = baseUrl.appending("UserInfo/GetUserPersonalInfo/")
+
+let profileUpdateUrl:String = baseUrl.appending("UserInfo/UpdateUserPersonalInfo")
+

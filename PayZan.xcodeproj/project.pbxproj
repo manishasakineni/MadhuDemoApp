@@ -13,6 +13,8 @@
 		350CCD1A1F88A54F003495B6 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350CCD181F88A54F003495B6 /* HomeCollectionViewCell.xib */; };
 		350CCD1D1F88A5BE003495B6 /* IconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350CCD1B1F88A5BE003495B6 /* IconTableViewCell.swift */; };
 		350CCD1E1F88A5BE003495B6 /* IconTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350CCD1C1F88A5BE003495B6 /* IconTableViewCell.xib */; };
+		350D9B7D1FB715B3001332FC /* GetProfileVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D9B7C1FB715B3001332FC /* GetProfileVo.swift */; };
+		350D9B7F1FB7165D001332FC /* ProfileResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D9B7E1FB7165D001332FC /* ProfileResultVo.swift */; };
 		3524CE3B1F8D06B400959172 /* ImageTint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3524CE3A1F8D06B400959172 /* ImageTint.swift */; };
 		35344D931F8610C700E35C5C /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35344D7B1F8610C700E35C5C /* CustomDateFormatTransform.swift */; };
 		35344D941F8610C700E35C5C /* DataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35344D7C1F8610C700E35C5C /* DataTransform.swift */; };
@@ -137,6 +139,8 @@
 		350CCD181F88A54F003495B6 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		350CCD1B1F88A5BE003495B6 /* IconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconTableViewCell.swift; sourceTree = "<group>"; };
 		350CCD1C1F88A5BE003495B6 /* IconTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IconTableViewCell.xib; sourceTree = "<group>"; };
+		350D9B7C1FB715B3001332FC /* GetProfileVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProfileVo.swift; sourceTree = "<group>"; };
+		350D9B7E1FB7165D001332FC /* ProfileResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileResultVo.swift; sourceTree = "<group>"; };
 		3524CE3A1F8D06B400959172 /* ImageTint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTint.swift; sourceTree = "<group>"; };
 		35344D7B1F8610C700E35C5C /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatTransform.swift; sourceTree = "<group>"; };
 		35344D7C1F8610C700E35C5C /* DataTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTransform.swift; sourceTree = "<group>"; };
@@ -274,6 +278,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		350D9B7B1FB71584001332FC /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				350D9B7C1FB715B3001332FC /* GetProfileVo.swift */,
+				350D9B7E1FB7165D001332FC /* ProfileResultVo.swift */,
+			);
+			name = EditProfile;
+			sourceTree = "<group>";
+		};
 		35344D7A1F860FC100E35C5C /* ObjectMapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +380,7 @@
 		35344DB11F861B8400E35C5C /* MapperVo */ = {
 			isa = PBXGroup;
 			children = (
+				350D9B7B1FB71584001332FC /* EditProfile */,
 				3539E4501FB196E5005ACC7C /* SignUp */,
 				354E4D561FA75F9F008D108A /* MyTransaction */,
 				355120F31F948DC000C9AD9D /* Operator */,
@@ -827,6 +841,7 @@
 				3569C1DB1F8762B800152B80 /* Reachability.swift in Sources */,
 				35344D981F8610C700E35C5C /* EnumOperators.swift in Sources */,
 				354E4D5A1FA7601B008D108A /* MyTranListResultVo.swift in Sources */,
+				350D9B7D1FB715B3001332FC /* GetProfileVo.swift in Sources */,
 				35485D871FB46DE900CDB076 /* CreditCardTableViewCell.swift in Sources */,
 				35344D931F8610C700E35C5C /* CustomDateFormatTransform.swift in Sources */,
 				3554C31B1F8F5C960092EAC7 /* ProfileViewController.swift in Sources */,
@@ -868,6 +883,7 @@
 				35344DAD1F8611B100E35C5C /* LoginVo.swift in Sources */,
 				355120F51F948E4E00C9AD9D /* OperatorVo.swift in Sources */,
 				35344D9D1F8610C700E35C5C /* IntegerOperators.swift in Sources */,
+				350D9B7F1FB7165D001332FC /* ProfileResultVo.swift in Sources */,
 				354E4D581FA75FC8008D108A /* MyTransactionsVo.swift in Sources */,
 				3524CE3B1F8D06B400959172 /* ImageTint.swift in Sources */,
 				3554C31D1F8F5CAE0092EAC7 /* EditProfileViewController.swift in Sources */,

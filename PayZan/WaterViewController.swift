@@ -70,7 +70,18 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
-        textField.inputView = self.myPickerView
+        if operatorList.isEmpty {
+            
+            self.myPickerView.isHidden = true
+            
+            selectBoardTextField.text = "No Operators"
+            selectBoardTextField.textColor = UIColor.red
+            selectBoardTextField.isUserInteractionEnabled = false
+            
+        }else {
+            
+            textField.inputView = self.myPickerView
+        }
         
         // ToolBar
         let toolBar = UIToolbar()
