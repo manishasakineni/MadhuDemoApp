@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/ServiceController.swift"
-            timestampString = "531379530.851053"
+            timestampString = "532242211.453756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "requestPOSTURL(strURL:postParams:postHeaders:successHandler:failureHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,12 +26,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/ServiceController.swift"
-            timestampString = "531379538.81106"
+            timestampString = "532242214.797734"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "requestPOSTURL(strURL:postParams:postHeaders:successHandler:failureHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayZan/DTHViewController.swift"
+            timestampString = "532244268.380668"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "pickUp(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

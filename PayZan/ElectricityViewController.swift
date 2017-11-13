@@ -87,7 +87,7 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
             
             self.myPickerView.isHidden = true
             
-            districtsFiled.text = "No districts"
+            districtsFiled.text = "No Boards"
             districtsFiled.textColor = UIColor.red
             districtsFiled.isUserInteractionEnabled = false
             

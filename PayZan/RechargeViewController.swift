@@ -76,6 +76,8 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         mobileField.layer.cornerRadius = 3
         mobileField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
+        mobileField.keyboardType = .phonePad
+        
         networkField.layer.borderWidth = 0.5
         networkField.layer.borderColor = UIColor.lightGray.cgColor
         networkField.layer.cornerRadius = 3
@@ -126,7 +128,19 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
-        textField.inputView = self.myPickerView
+//        textField.inputView = self.myPickerView
+        if operatorList.isEmpty {
+            
+            self.myPickerView.isHidden = true
+            
+            networkField.text = "No Operators"
+            networkField.textColor = UIColor.red
+            networkField.isUserInteractionEnabled = false
+            
+        }else {
+            
+            textField.inputView = self.myPickerView
+        }
         
         // ToolBar
         let toolBar = UIToolbar()

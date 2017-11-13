@@ -83,10 +83,10 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
             
             operatorField.text = "No Operators"
             operatorField.textColor = UIColor.red
-            operatorField.isUserInteractionEnabled = false
+//            operatorField.isUserInteractionEnabled = false
             
         }else {
-            operatorField.isUserInteractionEnabled = true
+//            operatorField.isUserInteractionEnabled = true
             textField.inputView = self.myPickerView
         }
         
