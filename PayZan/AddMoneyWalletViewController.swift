@@ -58,6 +58,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     @IBOutlet weak var addedBtn: UIButton!
     
     
+    let strUrl1 = "29,30,31,32,33,34,35,36,37"
+    
+    
 //    var appDelegate = AppDelegate()
     
     private var hCountInt = 0
@@ -236,7 +239,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
         borderColors()
         
-        myTransactionGetService()
+        myTransactionGetService(string: strUrl1)
 
         // Do any additional setup after loading the view.
     }
@@ -428,7 +431,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
     }
     
-    func myTransactionGetService(){
+    func myTransactionGetService(string:String!){
         
         if(appDelegate.checkInternetConnectivity()){
             
@@ -436,9 +439,11 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             let strUrl = myTransactionsUrl + "/" + walletId!
             
-            print("strUrl: \(strUrl)")
+            let strUrl1 = strUrl + "/" + string
             
-            let url : NSURL = NSURL(string: strUrl)!
+            print("strUrl: \(strUrl1)")
+            
+            let url : NSURL = NSURL(string: strUrl1)!
             
             serviceController.requestGETURL(strURL:url, success:{(result) in
                 DispatchQueue.main.async()
@@ -870,6 +875,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
     @IBAction func allBtnAction(_ sender: Any) {
         
+        myTransactionGetService(string: strUrl1)
+        
         allBtn.backgroundColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0)
         
         paidBtn.backgroundColor = UIColor.white
@@ -889,6 +896,10 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
     @IBAction func paidBtnAction(_ sender: Any) {
         
+        let paidId = "33"
+        
+        myTransactionGetService(string: paidId)
+        
         paidBtn.backgroundColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0)
         
         allBtn.backgroundColor = UIColor.white
@@ -904,6 +915,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
     @IBAction func receivedAction(_ sender: Any) {
         
+        let receivedId = "37"
+        
+        myTransactionGetService(string: receivedId)
         
         receivedBtn.backgroundColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0)
         
@@ -919,6 +933,10 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     }
     
     @IBAction func addedBtnAction(_ sender: Any) {
+        
+        let addedId = "32"
+        
+        myTransactionGetService(string: addedId)
         
         addedBtn.backgroundColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0)
         
