@@ -41,17 +41,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,SWReveal
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //        appDelegate.window?.rootViewController = viewController
         
-        if UserDefaults.standard.object(forKey: kIsFirstTime) as? String == "true" {
-            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.window?.rootViewController = viewController
-        }else{
-            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.window?.rootViewController = viewController
-        }
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = viewController
+        
+//        if UserDefaults.standard.object(forKey: kIsFirstTime) as? String == "true" {
+//           
+//        }else{
+//            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            appDelegate.window?.rootViewController = viewController
+//        }
         
         return true
     }
@@ -60,7 +63,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,SWReveal
         
         FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         
-        GIDSignIn.sharedInstance().handle(url,sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        if #available(iOS 9.0, *) {
+            GIDSignIn.sharedInstance().handle(url,sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        } else {
+            // Fallback on earlier versions
+        }
         
         return true
     }

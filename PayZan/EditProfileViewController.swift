@@ -512,6 +512,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
         if(appDelegate.checkInternetConnectivity()){
             
+            if userIdd != nil {
+            
             let strUrl = getProfileUrl + "" + userIdd
             
             let url : NSURL = NSURL(string: strUrl)!
@@ -550,7 +552,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                 }
             }, failure:  {(error) in
             })
-            
+            }
         }
         else {
             

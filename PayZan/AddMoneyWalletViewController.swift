@@ -435,7 +435,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
         if(appDelegate.checkInternetConnectivity()){
             
-            print("walletId:\(String(describing: walletId))")
+            if walletId != nil {
             
             let strUrl = myTransactionsUrl + "/" + walletId!
             
@@ -479,6 +479,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             })
             
         }
+                
+        }
         else {
             
             appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
@@ -489,6 +491,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
    func postWalletMoneyService(){
     
+    
+    if walletId != nil && userId != nil {
         
         let walletField:String = addWalletFiled.text!
         
@@ -564,6 +568,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             }
         }, failureHandler: {(error) in
         })
+    }
+    
     
     }
 
@@ -574,7 +580,35 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             if !(addWalletFiled.text?.isEmpty)! {
                 
+                if walletId != nil && userId != nil {
+                
                 postWalletMoneyService()
+                    
+                }
+                else {
+                    
+                    let alertController = UIAlertController(title: "Alert", message: "Please Login to your PayZan account", preferredStyle: UIAlertControllerStyle.alert)
+                    
+                    
+                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
+                        print("Cancel")
+                        
+                        
+                    }
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+                        print("OK")
+                        
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.window?.rootViewController = viewController
+                    }
+                    alertController.addAction(cancelAction)
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                }
                 
             }
             else {
@@ -596,6 +630,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
     func sendMoneyToWalletService(){
         
+        
+        if walletId != nil && userId != nil {
         
         let walletField:String = sendAmountField.text!
         
@@ -695,6 +731,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             }
         }, failureHandler: {(error) in
         })
+        }
+        
         
     }
     
@@ -704,7 +742,36 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
         if(appDelegate.checkInternetConnectivity()){
             
-            sendMoneyToWalletService()
+            if walletId != nil && userId != nil {
+                
+                sendMoneyToWalletService()
+                
+            }
+            else {
+                
+                let alertController = UIAlertController(title: "Alert", message: "Please Login to your PayZan account", preferredStyle: UIAlertControllerStyle.alert)
+                
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
+                    print("Cancel")
+                    
+                    
+                }
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+                    print("OK")
+                    
+                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = viewController
+                }
+                alertController.addAction(cancelAction)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                
+            }
+            
             
         }
         else {
@@ -817,14 +884,20 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
     @IBAction func phoneBookAction(_ sender: Any) {
         
-        let cnPicker = CNContactPickerViewController()
-        cnPicker.delegate = self
-        self.present(cnPicker, animated: true, completion: nil)
+        if #available(iOS 9.0, *) {
+            let cnPicker = CNContactPickerViewController()
+            cnPicker.delegate = self
+            self.present(cnPicker, animated: true, completion: nil)
+        } else {
+            // Fallback on earlier versions
+        }
+        
         
     }
     
     //MARK:- CNContactPickerDelegate Method
     
+    @available(iOS 9.0, *)
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
         contacts.forEach { contact in
             for number in contact.phoneNumbers {

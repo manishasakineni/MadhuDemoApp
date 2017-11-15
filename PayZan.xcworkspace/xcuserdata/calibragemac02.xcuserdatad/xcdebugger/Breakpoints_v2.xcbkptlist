@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PayZan/DTHViewController.swift"
-            timestampString = "532244268.380668"
+            filePath = "PayZan/AddMoneyWalletViewController.swift"
+            timestampString = "532429566.034606"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "pickUp(_:)"
+            startingLineNumber = "888"
+            endingLineNumber = "888"
+            landmarkName = "phoneBookAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

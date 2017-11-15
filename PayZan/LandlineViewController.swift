@@ -36,6 +36,9 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     
     var operatorList = [String]()
     
+    var userId:String?
+    var walletId:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,6 +72,23 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         stdNumField.keyboardType = .phonePad
         amountField.keyboardType = .numberPad
+        
+        
+        let defaults = UserDefaults.standard
+        
+        if let userid = defaults.string(forKey: userIDD) {
+            
+            userId = userid
+            
+            print("defaults savedString: \(userid)")
+        }
+        if let walletid = defaults.string(forKey: walletIDD) {
+            
+            walletId = walletid
+            
+            print("defaults savedString: \(walletid)")
+            
+        }
         
         getOperatorList()
 
@@ -166,6 +186,7 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     
     //MARK:- CNContactPickerDelegate Method
     
+    @available(iOS 9.0, *)
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
         contacts.forEach { contact in
             for number in contact.phoneNumbers {
@@ -245,12 +266,65 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     
     @IBAction func addressBookAction(_ sender: Any) {
         
-        let cnPicker = CNContactPickerViewController()
-        cnPicker.delegate = self
-        self.present(cnPicker, animated: true, completion: nil)
+        if #available(iOS 9.0, *) {
+            let cnPicker = CNContactPickerViewController()
+            
+            cnPicker.delegate = self
+            self.present(cnPicker, animated: true, completion: nil)
+            
+        } else {
+            
+            
+            // Fallback on earlier versions
+        }
+        
     }
 
     @IBAction func rechargeAction(_ sender: Any) {
+        
+        
+        
+        if(appDelegate.checkInternetConnectivity()){
+            
+            if walletId != nil && userId != nil {
+                
+//                sendMoneyToWalletService()
+                
+            }
+            else {
+                
+                let alertController = UIAlertController(title: "Alert", message: "Please Login to your PayZan account", preferredStyle: UIAlertControllerStyle.alert)
+                
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
+                    print("Cancel")
+                    
+                    
+                }
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+                    print("OK")
+                    
+                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = viewController
+                }
+                alertController.addAction(cancelAction)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                
+            }
+            
+            
+        }
+        else {
+            
+            self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+            
+        }
+        
     }
    
     @IBAction func backAction(_ sender: Any) {

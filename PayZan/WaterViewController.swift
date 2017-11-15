@@ -79,7 +79,7 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
             selectBoardTextField.isUserInteractionEnabled = false
             
         }else {
-            
+            selectBoardTextField.isUserInteractionEnabled = true
             textField.inputView = self.myPickerView
         }
         

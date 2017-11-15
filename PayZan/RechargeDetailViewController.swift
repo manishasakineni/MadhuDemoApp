@@ -327,6 +327,7 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
     
     //MARK:- CNContactPickerDelegate Method
     
+    @available(iOS 9.0, *)
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
         contacts.forEach { contact in
             for number in contact.phoneNumbers {
@@ -338,12 +339,17 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
                 
             }
             
-            let cnContacts = [CNContact]()
-            
-            for contact in cnContacts {
-                let fullName = CNContactFormatter.string(from: contact, style: .fullName) ?? "No Name"
-                print("\(fullName): \(contact.phoneNumbers.description)")
+            if #available(iOS 9.0, *) {
+                let cnContacts = [CNContact]()
+                for contact in cnContacts {
+                    let fullName = CNContactFormatter.string(from: contact, style: .fullName) ?? "No Name"
+                    print("\(fullName): \(contact.phoneNumbers.description)")
+                }
+            } else {
+                // Fallback on earlier versions
             }
+            
+            
         }
     }
     //    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
@@ -353,9 +359,14 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
     @IBAction func phoneBookAction(_ sender: Any) {
         
         
-        let cnPicker = CNContactPickerViewController()
-        cnPicker.delegate = self
-        self.present(cnPicker, animated: true, completion: nil)
+        if #available(iOS 9.0, *) {
+            let cnPicker = CNContactPickerViewController()
+            cnPicker.delegate = self
+            self.present(cnPicker, animated: true, completion: nil)
+        } else {
+            // Fallback on earlier versions
+        }
+        
         
     }
     

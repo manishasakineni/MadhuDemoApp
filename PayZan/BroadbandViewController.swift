@@ -79,7 +79,7 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
             selectOperatorTextField.isUserInteractionEnabled = false
             
         }else {
-            
+            selectOperatorTextField.isUserInteractionEnabled = true
             textField.inputView = self.myPickerView
         }
         

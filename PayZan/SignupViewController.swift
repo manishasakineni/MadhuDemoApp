@@ -131,9 +131,9 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
                     if statusCode == true
                     {
                         
-                        
                         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+                        
+                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.window?.rootViewController = viewController
                         

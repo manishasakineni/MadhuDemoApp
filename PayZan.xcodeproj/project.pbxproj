@@ -1033,7 +1033,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nagender Kodali (S5M9P6PHFH)";
 				DEVELOPMENT_TEAM = 6KY3CH8YG8;
 				INFOPLIST_FILE = PayZan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PayZan.PayZanCustomer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1056,7 +1056,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nagender Kodali (S5M9P6PHFH)";
 				DEVELOPMENT_TEAM = 6KY3CH8YG8;
 				INFOPLIST_FILE = PayZan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PayZan.PayZanCustomer;
 				PRODUCT_NAME = "$(TARGET_NAME)";

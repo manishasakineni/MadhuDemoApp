@@ -15,9 +15,9 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     var firstName  = String()
     var lastName  = String()
     
-    var userNamee:String!
-    var userEmail:String!
-    var walletBal:String!
+    var userNamee:String?
+    var userEmail:String?
+    var walletBal:String?
     
     var isUserLogin = true
     
@@ -277,8 +277,18 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
                 
 //                if indexPath.row == 7 {
+            
                 
                     let cell = tableView.dequeueReusableCell(withIdentifier: "SignOutTableViewCell", for: indexPath) as! SignOutTableViewCell
+            
+            
+            if userNamee == "User Name" {
+                
+                cell.signOutBtn.isHidden = true
+            }
+            else {
+                
+            cell.signOutBtn.isHidden = false
                     
                     //                let cell = Bundle.main.loadNibNamed("SignOutTableViewCell", owner: self, options: nil)?.first as! SignOutTableViewCell
                     
@@ -303,9 +313,10 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                     //                cell.contentView.layer.backgroundColor = UIColor.red.cgColor
                     
                     
-                    
+                   }
                     return cell
-                }
+                
+        }
 //            }
         
 //        }
