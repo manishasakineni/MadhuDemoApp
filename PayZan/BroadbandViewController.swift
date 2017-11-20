@@ -163,10 +163,10 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
                         
                         if(isActive == true){
                             
-                            var operatorObj = respVO.ListResult
+                            let operatorObj = respVO.ListResult
                             
                             
-                            for(index,element) in (operatorObj?.enumerated())! {
+                            for(_,element) in (operatorObj?.enumerated())! {
                                 
                                 self.operatorList.append(element.Name!)
                                 print("fsdfdsfdsfdsf", self.operatorList)

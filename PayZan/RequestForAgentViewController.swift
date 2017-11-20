@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import TextFieldEffects
 
 protocol RequeatAgentDelegate: class {
     
@@ -14,7 +15,7 @@ protocol RequeatAgentDelegate: class {
     
 }
 
-class RequestForAgentViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+class RequestForAgentViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate, UIPickerViewDataSource,UITextFieldDelegate {
     
     
 let headerTitle = "PERSONAL INFORMATION"
@@ -23,10 +24,47 @@ let headerTitle = "PERSONAL INFORMATION"
     
     weak var reqdelegate: RequeatAgentDelegate?
     
+    var myPickerView = UIPickerView()
+    
+    var toolBar = UIToolbar()
+    var activeTextField = UITextField()
+    var pickerData : Array<String> = Array()
     
     var placeholdersAry  = ["Select District","Select Mandal","Select Village","First Name","Middle Name","Last Name","Mobile No","Email","Address1","Address2"]
+    
+    var firstName    : String = ""
+    var middileName  : String = ""
+    var lastName     : String = ""
+    var mobileNo   : String = ""
+    var emailID       : String = ""
+    var address1  : String = ""
+    var address2     : String = ""
+    var landmark       : String = ""
+    var comments : String = ""
+    
+    var provinceListArr = Array<String>()
+//    var provinceIDArray = Array<Int>()
+    var provinceIDArray:[AgentReqResultVo]?
+    var districtIDArray:[AgentDistrictResultVo]?
+    var mandalIDArray:[AgentMandalResultVo]?
+    var villageIDArray:[AgentVillageResultVo]?
 
+    var districtsAry = Array<String>()
+    var mandalsAry = Array<String>()
+    var villagesAry = Array<String>()
+    
+   
 
+    var selectedProvinceStr = ""
+    var selectedDistrictStr = ""
+    var selectedMandalStr   = ""
+    var selectedVillageStr  = ""
+    
+    var provinceID     : Int    = 0
+    var districtID     : Int    = 0
+    var mandalID       : Int    = 0
+    var villageID       : Int    = 0
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -39,6 +77,8 @@ let headerTitle = "PERSONAL INFORMATION"
         
         requestForAgentTableView.dataSource = self
         requestForAgentTableView.delegate = self
+        
+        getProvinceList()
 
         // Do any additional setup after loading the view.
     }
@@ -47,6 +87,432 @@ let headerTitle = "PERSONAL INFORMATION"
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        
+        activeTextField = textField
+        
+        if let newRegCell : AddAgentRequestTableViewCell = textField.superview?.superview as? AddAgentRequestTableViewCell {
+        
+        if textField == newRegCell.agentRequestField {
+            
+            
+            if (newRegCell.agentRequestField.text != nil)  {
+                
+                newRegCell.titleLabel.isHidden = false
+                
+            }
+                
+            else{
+                
+                newRegCell.titleLabel.isHidden = true
+                
+                
+            }
+        }
+        }
+        if textField.tag == 0{
+            
+            textField.clearButtonMode = .never
+            textField.keyboardType = .default
+            
+        }
+            
+        else if textField.tag == 1 {
+            
+            textField.inputView = nil
+            textField.keyboardType = .default
+        }
+            
+        else if textField.tag == 2{
+            
+            textField.clearButtonMode = .never
+            textField.keyboardType = .default
+            
+        }
+            
+        else if textField.tag == 3{
+            
+            textField.inputView = nil
+            textField.keyboardType = .phonePad
+            
+        }
+            
+        else if textField.tag == 4{
+            textField.inputView = nil
+            textField.keyboardType = .emailAddress
+            
+        }
+        else if textField.tag == 5{
+            
+            textField.clearButtonMode = .never
+            textField.inputView = myPickerView
+            pickerData = provinceListArr
+            self.pickUp(activeTextField)
+            myPickerView.reloadAllComponents()
+            myPickerView.selectRow(0, inComponent: 0, animated: false)
+            
+        }
+            
+            
+        else if textField.tag == 6{
+            
+            textField.clearButtonMode = .never
+            textField.inputView = myPickerView
+            pickerData = districtsAry
+            self.pickUp(activeTextField)
+            myPickerView.reloadAllComponents()
+            myPickerView.selectRow(0, inComponent: 0, animated: false)
+        }
+            
+        else if textField.tag == 7{
+            textField.clearButtonMode = .never
+            textField.inputView = myPickerView
+            pickerData = mandalsAry
+            self.pickUp(activeTextField)
+            myPickerView.reloadAllComponents()
+            myPickerView.selectRow(0, inComponent: 0, animated: false)
+            
+        }
+            
+        else if textField.tag == 8{
+           
+            textField.clearButtonMode = .never
+            textField.inputView = myPickerView
+            pickerData = villagesAry
+            self.pickUp(activeTextField)
+            myPickerView.reloadAllComponents()
+            myPickerView.selectRow(0, inComponent: 0, animated: false)
+            
+        }
+        else if textField.tag == 9{
+            textField.inputView = nil
+            textField.keyboardType = .default
+            
+        }
+            
+        else if textField.tag == 10 {
+            
+            textField.clearButtonMode = .never
+           
+            
+        }
+            
+        else if textField.tag == 11 {
+            
+            textField.clearButtonMode = .never
+            
+            
+        }
+            
+        else if textField.tag == 12 {
+            
+            textField.clearButtonMode = .never
+      
+            
+        }
+            
+
+        
+        // myPickerView.endEditing(true)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        /// 1. replacementString is NOT empty means we are entering text or pasting text: perform the logic
+        /// 2. replacementString is empty means we are deleting text: return true
+        
+        if textField.tag == 1{
+            if string.characters.count > 0 {
+                let allowedCharacters = CharacterSet.letters
+                
+                let unwantedStr = string.trimmingCharacters(in: allowedCharacters)
+                return unwantedStr.characters.count == 0
+            }
+            
+            return true
+        }
+        
+        if textField.tag == 5{
+            if string.characters.count > 0 {
+                let allowedCharacters = CharacterSet.decimalDigits
+                
+                let unwantedStr = string.trimmingCharacters(in: allowedCharacters)
+                return unwantedStr.characters.count == 0
+            }
+            
+            return true
+        }
+        return true
+    }
+    
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        if let newRegCell : AddAgentRequestTableViewCell = textField.superview?.superview as? AddAgentRequestTableViewCell {
+            
+            
+            if newRegCell.agentRequestField.text == nil {
+                
+                newRegCell.titleLabel.isHidden = true
+                newRegCell.titleLabel.isHidden = false
+                
+                
+            }
+        }
+        return true
+    }
+    
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        
+        
+        
+        if let newRegCell : AddAgentRequestTableViewCell = textField.superview?.superview as? AddAgentRequestTableViewCell {
+            
+
+            if (newRegCell.agentRequestField.text != nil)  {
+                
+                newRegCell.titleLabel.isHidden = true
+            }
+                
+            else{
+                
+                newRegCell.titleLabel.isHidden = false
+                
+            }
+            
+            if textField.tag == 0{
+                
+           firstName =  textField.text!
+                
+                
+            }
+            else if textField.tag == 1{
+                
+                middileName = textField.text!
+                
+            }
+                
+            else if textField.tag == 2 {
+                
+            lastName = textField.text!
+                
+            }
+                
+            else if textField.tag == 3{
+                
+              mobileNo = textField.text!
+                
+            }
+            else if textField.tag == 4{
+
+                emailID = textField.text!
+                
+                
+            }
+                
+            else if textField.tag == 5 {
+                
+               activeTextField.text = selectedProvinceStr
+                
+            }
+                
+            else if textField.tag == 6 {
+                
+                activeTextField.text = selectedDistrictStr
+                
+            }
+                
+                
+            else if textField.tag == 7 {
+                
+                 activeTextField.text = selectedMandalStr
+                
+            }
+                
+                
+            else if textField.tag == 8 {
+                
+                activeTextField.text = selectedVillageStr
+                
+            }
+                
+            else if textField.tag == 9 {
+                
+                address1 = textField.text!
+                
+            }
+                
+            else if textField.tag == 10 {
+                
+                 address2 = textField.text!
+
+            }
+                
+            else if textField.tag == 11 {
+                landmark = textField.text!
+       
+            }
+                
+            else if textField.tag == 12 {
+                
+          comments = textField.text!
+                
+            }
+
+      
+            myPickerView.endEditing(true)
+            
+        }
+        
+        // textField.endEditing(true)
+    }
+
+    
+    func pickUp(_ textField : UITextField){
+        
+        // UIPickerView
+        self.myPickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
+        self.myPickerView.delegate = self
+        self.myPickerView.dataSource = self
+        self.myPickerView.backgroundColor = UIColor.white
+//        if districtsAry.isEmpty {
+        
+//            self.myPickerView.isHidden = true
+        
+//            operatorField.text = "No Operators"
+//            operatorField.textColor = UIColor.red
+//            operatorField.isUserInteractionEnabled = false
+            
+//        }else {
+//            operatorField.isUserInteractionEnabled = true
+            textField.inputView = self.myPickerView
+//        }
+        
+        // ToolBar
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
+        //            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        // Adding Button ToolBar
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(RechargeViewController.doneClick))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(RechargeViewController.cancelClick))
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        if textField.inputView == myPickerView{
+            textField.inputAccessoryView = toolBar
+        }
+        
+    }
+    
+    //MARK:- Button
+    func doneClick() {
+        activeTextField.resignFirstResponder()
+        
+//        requestForAgentTableView.reloadData()
+    }
+    func cancelClick() {
+        activeTextField.resignFirstResponder()
+//        requestForAgentTableView.reloadData()
+    }
+    
+    //MARK:- TextFiled Delegate
+    
+
+    
+    //MARK:- PickerView Delegate & DataSource
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return pickerData.count
+        
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+      //  self.activeTextField.text = pickerData[row]
+        
+        if activeTextField.tag == 5{
+            
+            if pickerData.count > row {
+                
+                selectedProvinceStr = pickerData[row]
+                activeTextField.text = selectedProvinceStr
+                if(row < (provinceIDArray?.count)!){
+                    if let value = provinceIDArray?[row].Id{
+                        provinceID = value
+                    }
+                }
+                
+                districtsAry.removeAll()
+                getDistrictList()
+            }
+        }
+        else if activeTextField.tag == 6{
+            
+            if pickerData.count > row {
+                
+                selectedDistrictStr = pickerData[row]
+                activeTextField.text = selectedDistrictStr
+                if(row < (districtIDArray?.count)!){
+                    if let value = districtIDArray?[row].Id{
+                        districtID = value
+                    }
+                }
+                
+                mandalsAry.removeAll()
+                getMandalList()
+            }
+        }
+        
+        else if activeTextField.tag == 7{
+            
+            if pickerData.count > row {
+                
+                selectedMandalStr = pickerData[row]
+                activeTextField.text = selectedMandalStr
+                if(row < (mandalIDArray?.count)!){
+                    if let value = mandalIDArray?[row].Id{
+                        mandalID = value
+                    }
+                }
+                
+                villagesAry.removeAll()
+                getVillageList()
+            }
+        }
+        else if activeTextField.tag == 8{
+            
+            if pickerData.count > row {
+                
+                selectedVillageStr = pickerData[row]
+                activeTextField.text = selectedVillageStr
+                if(row < (villageIDArray?.count)!){
+                    if let value = villageIDArray?[row].Id{
+                        villageID = value
+                    }
+                }
+                
+            }
+        }
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if(section==0){
@@ -111,7 +577,7 @@ let headerTitle = "PERSONAL INFORMATION"
         
         if section == 0 {
             
-            return 10
+            return 13
         }
             
         else if section == 1 {
@@ -131,69 +597,114 @@ let headerTitle = "PERSONAL INFORMATION"
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddAgentRequestTableViewCell") as! AddAgentRequestTableViewCell
         
         cell.selectionStyle = .none
+             cell.agentRequestField.delegate = self
+            
+            cell.agentRequestField.tag = indexPath.row
         
         if indexPath.row == 0{
             
-            cell.titleLabel?.text = "Select District"
-            cell.agentRequestField.placeholder = "Select District"
+            cell.titleLabel?.text = "First Name"
+//            "Select District"
+            cell.agentRequestField.placeholder = "First Name"
+            
+            cell.agentRequestField.text = firstName
             
 //            reqdelegate?.textChanged(text: cell.titleLabel?.text)
             
         }
          else if indexPath.row == 1{
             
-            cell.titleLabel?.text = "Select Mandal"
-            cell.agentRequestField.placeholder = "Select Mandal"
+            cell.titleLabel?.text = "Middle Name"
+            cell.agentRequestField.placeholder = "Middle Name"
+            cell.agentRequestField.text = middileName
             
         }
         else if indexPath.row == 2{
             
-            cell.titleLabel?.text = "Select Village"
-            cell.agentRequestField.placeholder = "Select Village"
+            cell.titleLabel?.text = "Last Name"
+            cell.agentRequestField.placeholder = "Last Name"
+            cell.agentRequestField.text = lastName
             
         }
         else if indexPath.row == 3{
             
-            cell.titleLabel?.text = "First Name"
-            cell.agentRequestField.placeholder = "First Name"
+            cell.titleLabel?.text = "Mobile No"
+            cell.agentRequestField.placeholder = "Mobile No"
+            cell.agentRequestField.text = mobileNo
             
         }
         else if indexPath.row == 4{
             
-            cell.titleLabel?.text = "Middle Name"
-            cell.agentRequestField.placeholder = "Middle Name"
+            cell.titleLabel?.text = "Email"
+            cell.agentRequestField.placeholder = "Email"
+            cell.agentRequestField.text = emailID
             
         }
         else if indexPath.row == 5{
             
-            cell.titleLabel?.text = "Last Name"
-            cell.agentRequestField.placeholder = "Last Name"
+            cell.titleLabel?.text = "Select Province"
+            cell.agentRequestField.placeholder = "Select Province"
+            
+            cell.agentRequestField.text = selectedProvinceStr
             
         }
         else if indexPath.row == 6{
             
-            cell.titleLabel?.text = "Mobile No"
-            cell.agentRequestField.placeholder = "Mobile No"
+            cell.titleLabel?.text = "Select District"
+            cell.agentRequestField.placeholder = "Select District"
+            
+            cell.agentRequestField.text = selectedDistrictStr
             
         }
         else if indexPath.row == 7{
             
-            cell.titleLabel?.text = "Email"
-            cell.agentRequestField.placeholder = "Email"
+            cell.titleLabel?.text = "Select Mandal"
+            cell.agentRequestField.placeholder = "Select Mandal"
+            
+            cell.agentRequestField.text = selectedMandalStr
             
         }
         else if indexPath.row == 8{
             
-            cell.titleLabel?.text = "Address1"
-            cell.agentRequestField.placeholder = "Address1"
+            cell.titleLabel?.text = "Select Village"
+            cell.agentRequestField.placeholder = "Select Village"
+            
+            cell.agentRequestField.text = selectedVillageStr
             
         }
         else if indexPath.row == 9{
             
+            cell.titleLabel?.text = "Address1"
+            cell.agentRequestField.placeholder = "Address1"
+            
+            cell.agentRequestField.text = address1
+            
+        }
+        else if indexPath.row == 10{
+            
             cell.titleLabel?.text = "Address2"
             cell.agentRequestField.placeholder = "Address2"
             
+            cell.agentRequestField.text = address2
+            
+            }
+        else if indexPath.row == 11{
+            
+            cell.titleLabel?.text = "Landmark"
+            cell.agentRequestField.placeholder = "Landmark"
+            
+            cell.agentRequestField.text = landmark
+            
+            }
+        else if indexPath.row == 12{
+            
+            cell.titleLabel?.text = "Enter your comments"
+            cell.agentRequestField.placeholder = "Enter your comments"
+            
+            cell.agentRequestField.text = comments
+            
         }
+            
             return cell
             
         }
@@ -214,7 +725,369 @@ let headerTitle = "PERSONAL INFORMATION"
         
     print("sender:\(sender.tag)")
         
+        
+//        var validateSuccess = true
+//        requestForAgentTableView.endEditing(true)
+//        var errorMessage : NSString?
+        
+//        for row in 0 ..< requestForAgentTableView.numberOfRows(inSection: 0)
+//        {
+//            
+//            let indexPath : IndexPath = IndexPath(row: row, section: 0)
+//            
+//            requestForAgentTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: false)
+        
+            
+//            if let newRegTableViewCell : AddAgentRequestTableViewCell = requestForAgentTableView.cellForRow(at: indexPath) as? AddAgentRequestTableViewCell {
+            
+//                if (newRegTableViewCell.agentRequestField.text == ""){
+//                    
+//                     self.appDelegate.window?.makeToast("Please enter all fields", duration:kToastDuration, position:CSToastPositionCenter)
+//                    validateSuccess = false
+//                    return
+//                    
+//                }
+                
+                if(appDelegate.checkInternetConnectivity()){
+                    
+                    
+//                     if(validateSuccess == true){
+                    
+                    addAgentReqInfoService()
+                        
+//                    }
+                    
+                }
+                    
+                else {
+                    
+                    self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+                    return
+                    
+                }
+                
+//            }
+//        }
+        
+        
+       
+        
+       
+        
     }
+    
+    func getProvinceList(){
+        
+        if(appDelegate.checkInternetConnectivity()){
+            
+            let strUrl = PROVINCE_API
+            
+            let url : NSURL = NSURL(string: strUrl)!
+            
+            serviceController.requestGETURL(strURL:url, success:{(result) in
+                DispatchQueue.main.async()
+                    {
+                        
+                        let respVO:AgentReqVo = Mapper().map(JSONObject: result)!
+                        
+                        
+                        let isActive = respVO.IsSuccess
+                        
+                        
+                        if(isActive == true){
+                            
+                            let provinceObj = respVO.ListResult
+                            
+                            
+                            
+                            for(index,element) in (provinceObj?.enumerated())! {
+                                
+                                print("index:\(index)")
+                                
+                                self.provinceListArr.append(element.Name!)
+//                                self.provinceIDArray.append(element.Id!)
+                                
+                            }
+                            
+                            self.provinceIDArray = provinceObj
+
+                            
+                        }else if(isActive == false) {
+                            
+                            self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
+                            
+                        }
+                        //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+                }
+            }, failure:  {(error) in
+            })
+            
+        }
+        else {
+            
+            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+            
+        }
+    }
+    
+    func getDistrictList(){
+        
+        if(appDelegate.checkInternetConnectivity()){
+            
+            let strUrl = DISTRICTS_API + String(provinceID)
+            
+            let url : NSURL = NSURL(string: strUrl)!
+            
+            serviceController.requestGETURL(strURL:url, success:{(result) in
+                DispatchQueue.main.async()
+                    {
+                        
+                        let respVO:AgentDistrictVo = Mapper().map(JSONObject: result)!
+                        
+                        
+                        let isActive = respVO.IsSuccess
+                        
+                        
+                        //                    let status = result["status"] as! String
+                        
+                        if(isActive == true){
+                            
+                            let districtObj = respVO.ListResult
+                            
+                            
+                            
+                            for(index,element) in (districtObj?.enumerated())! {
+                                
+                                print("index:\(index)")
+                                
+                                self.districtsAry.append(element.Name!)
+                                //                                self.provinceIDArray.append(element.Id!)
+                                
+                            }
+                            
+                            self.districtIDArray = districtObj
+                            
+                            
+                        }else if(isActive == false) {
+                            
+                            self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
+                            
+                        }
+                        //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+                }
+            }, failure:  {(error) in
+            })
+            
+        }
+        else {
+            
+            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+            
+        }
+    }
+    
+    func getMandalList(){
+        
+        if(appDelegate.checkInternetConnectivity()){
+            
+            let strUrl = MANDALS_API + String(districtID)
+            
+            let url : NSURL = NSURL(string: strUrl)!
+            
+            serviceController.requestGETURL(strURL:url, success:{(result) in
+                DispatchQueue.main.async()
+                    {
+                        
+                        let respVO:AgentMandalVo = Mapper().map(JSONObject: result)!
+                        
+                        
+                        let isActive = respVO.IsSuccess
+                        
+                        
+                        //                    let status = result["status"] as! String
+                        
+                        if(isActive == true){
+                            
+                            let mandalObj = respVO.ListResult
+                            
+                            
+                            
+                            for(index,element) in (mandalObj?.enumerated())! {
+                                
+                                print("index:\(index)")
+                                
+                                self.mandalsAry.append(element.Name!)
+                                //                                self.provinceIDArray.append(element.Id!)
+                                
+                            }
+                            
+                            self.mandalIDArray = mandalObj
+                            
+                            
+                        }else if(isActive == false) {
+                            
+                            self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
+                            
+                        }
+                        //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+                }
+            }, failure:  {(error) in
+            })
+            
+        }
+        else {
+            
+            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+            
+        }
+    }
+    
+    
+    func getVillageList(){
+        
+        if(appDelegate.checkInternetConnectivity()){
+            
+            let strUrl = VILLAGES_API + String(mandalID)
+            
+            let url : NSURL = NSURL(string: strUrl)!
+            
+            serviceController.requestGETURL(strURL:url, success:{(result) in
+                DispatchQueue.main.async()
+                    {
+                        
+                        let respVO:AgentVillageVo = Mapper().map(JSONObject: result)!
+                        
+                        
+                        let isActive = respVO.IsSuccess
+                        
+                        
+                        //                    let status = result["status"] as! String
+                        
+                        if(isActive == true){
+                            
+                            let villageObj = respVO.ListResult
+                            
+                            for(index,element) in (villageObj?.enumerated())! {
+                                
+                                print("index:\(index)")
+                                
+                                self.villagesAry.append(element.Name!)
+                                //                                self.provinceIDArray.append(element.Id!)
+                                
+                            }
+                            
+                            self.villageIDArray = villageObj
+                            
+                            
+                        }else if(isActive == false) {
+                            
+                            self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
+                            
+                        }
+                        //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+                }
+            }, failure:  {(error) in
+            })
+            
+        }
+        else {
+            
+            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+            
+        }
+    }
+    
+    func addAgentReqInfoService(){
+        
+        
+            let  strUrl = ADDAGENT_API
+            
+            //        let null = NSNull()
+            
+            let currentDate = GlobalSupportingClass.getCurrentDate()
+            
+            print("currentDate\(currentDate)")
+            
+            let dictParams = [
+                "Id": 0,
+                "AgentRequestCategoryId": 38,
+                "TitleTypeId": 19,
+                "FirstName": firstName,
+                "MiddleName": middileName,
+                "LastName": lastName,
+                "MobileNumber": mobileNo,
+                "Email": emailID,
+                "AddressLine1": address1,
+                "AddressLine2": address2,
+                "Landmark": landmark,
+                "VillageId": villageID,
+                "Comments": comments,
+                "Created": currentDate
+                ] as NSDictionary
+            
+            print("dic params \(dictParams)")
+            
+            let dictHeaders = ["":"","":""] as NSDictionary
+            
+            //    let dictHeaders = ["Authorization":UserDefaults.standard.value(forKey: accessToken) as! String,"Authorization":UserDefaults.standard.value(forKey: accessToken) as! String] as NSDictionary
+            
+            print("dictHeader:\(dictHeaders)")
+            
+            serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
+                DispatchQueue.main.async()
+                    {
+                        
+                        print("result:\(result)")
+                        
+                        let respVO:AddAgentReqVo = Mapper().map(JSONObject: result)!
+                        
+                        
+                        print("responseString = \(respVO)")
+                        
+                        
+                        let statusCode = respVO.IsSuccess
+                        
+                        print("StatusCode:\(String(describing: statusCode))")
+                        
+                        
+                        
+                        if statusCode == true
+                        {
+                            
+                            let successMsg = respVO.EndUserMessage
+                            
+                            
+                            let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                            self.navigationController?.pushViewController(homeViewController, animated: true)
+                            
+                            
+                            self.appDelegate.window?.makeToast(successMsg!, duration:kToastDuration, position:CSToastPositionCenter)
+                            
+                            return
+                            
+                        }
+                        else {
+                            
+                            let failMsg = respVO.EndUserMessage
+                            
+                            self.showAlertViewWithTitle("Failed", message: failMsg!, buttonTitle: "Ok")
+                            
+                            return
+                            
+                        }
+                            
+                       
+                }
+            }, failureHandler: {(error) in
+            })
+        
+        
+    }
+    
     
     @IBAction func backAction(_ sender: Any) {
         

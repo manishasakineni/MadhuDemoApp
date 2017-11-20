@@ -109,6 +109,16 @@
 		3554C33C1F8F9FC10092EAC7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3554C33B1F8F9FC10092EAC7 /* Colors.swift */; };
 		3562EEFE1FA98C1200547C93 /* SubmitAgentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3562EEFC1FA98C1200547C93 /* SubmitAgentTableViewCell.swift */; };
 		3562EEFF1FA98C1200547C93 /* SubmitAgentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3562EEFD1FA98C1200547C93 /* SubmitAgentTableViewCell.xib */; };
+		3564908F1FBF478A00078951 /* AgentReqVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3564908E1FBF478A00078951 /* AgentReqVo.swift */; };
+		356490911FBF47E200078951 /* AgentReqResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356490901FBF47E200078951 /* AgentReqResultVo.swift */; };
+		356490931FBF60EF00078951 /* AgentDistrictVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356490921FBF60EF00078951 /* AgentDistrictVo.swift */; };
+		356490951FBF614300078951 /* AgentDistrictResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356490941FBF614300078951 /* AgentDistrictResultVo.swift */; };
+		356490971FBF697F00078951 /* AgentMandalVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356490961FBF697F00078951 /* AgentMandalVo.swift */; };
+		356490991FBF69B300078951 /* AgentMandalResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356490981FBF69B300078951 /* AgentMandalResultVo.swift */; };
+		3564909B1FBF6B9900078951 /* AgentVillageVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3564909A1FBF6B9900078951 /* AgentVillageVo.swift */; };
+		3564909D1FBF6BC900078951 /* AgentVillageResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3564909C1FBF6BC900078951 /* AgentVillageResultVo.swift */; };
+		3564909F1FBF79ED00078951 /* AddAgentReqVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3564909E1FBF79ED00078951 /* AddAgentReqVo.swift */; };
+		356490A11FBF7A2600078951 /* AddAgentResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356490A01FBF7A2600078951 /* AddAgentResultVo.swift */; };
 		356651891F9DC7A300330D33 /* MyTransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356651871F9DC7A300330D33 /* MyTransactionTableViewCell.swift */; };
 		3566518A1F9DC7A300330D33 /* MyTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356651881F9DC7A300330D33 /* MyTransactionTableViewCell.xib */; };
 		3569C1D21F87468C00152B80 /* LoadingOverLay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569C1D11F87468C00152B80 /* LoadingOverLay.swift */; };
@@ -236,6 +246,16 @@
 		3554C33B1F8F9FC10092EAC7 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3562EEFC1FA98C1200547C93 /* SubmitAgentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitAgentTableViewCell.swift; sourceTree = "<group>"; };
 		3562EEFD1FA98C1200547C93 /* SubmitAgentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmitAgentTableViewCell.xib; sourceTree = "<group>"; };
+		3564908E1FBF478A00078951 /* AgentReqVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentReqVo.swift; sourceTree = "<group>"; };
+		356490901FBF47E200078951 /* AgentReqResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentReqResultVo.swift; sourceTree = "<group>"; };
+		356490921FBF60EF00078951 /* AgentDistrictVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentDistrictVo.swift; sourceTree = "<group>"; };
+		356490941FBF614300078951 /* AgentDistrictResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentDistrictResultVo.swift; sourceTree = "<group>"; };
+		356490961FBF697F00078951 /* AgentMandalVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentMandalVo.swift; sourceTree = "<group>"; };
+		356490981FBF69B300078951 /* AgentMandalResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentMandalResultVo.swift; sourceTree = "<group>"; };
+		3564909A1FBF6B9900078951 /* AgentVillageVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentVillageVo.swift; sourceTree = "<group>"; };
+		3564909C1FBF6BC900078951 /* AgentVillageResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentVillageResultVo.swift; sourceTree = "<group>"; };
+		3564909E1FBF79ED00078951 /* AddAgentReqVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAgentReqVo.swift; sourceTree = "<group>"; };
+		356490A01FBF7A2600078951 /* AddAgentResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAgentResultVo.swift; sourceTree = "<group>"; };
 		356651871F9DC7A300330D33 /* MyTransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTransactionTableViewCell.swift; sourceTree = "<group>"; };
 		356651881F9DC7A300330D33 /* MyTransactionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTransactionTableViewCell.xib; sourceTree = "<group>"; };
 		3569C1D11F87468C00152B80 /* LoadingOverLay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingOverLay.swift; sourceTree = "<group>"; };
@@ -380,6 +400,7 @@
 		35344DB11F861B8400E35C5C /* MapperVo */ = {
 			isa = PBXGroup;
 			children = (
+				3564908D1FBF475B00078951 /* AgentRequestInfo */,
 				350D9B7B1FB71584001332FC /* EditProfile */,
 				3539E4501FB196E5005ACC7C /* SignUp */,
 				354E4D561FA75F9F008D108A /* MyTransaction */,
@@ -508,6 +529,23 @@
 				3554C32C1F8F5DCD0092EAC7 /* LoginTableViewCell.xib */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		3564908D1FBF475B00078951 /* AgentRequestInfo */ = {
+			isa = PBXGroup;
+			children = (
+				3564908E1FBF478A00078951 /* AgentReqVo.swift */,
+				356490901FBF47E200078951 /* AgentReqResultVo.swift */,
+				356490921FBF60EF00078951 /* AgentDistrictVo.swift */,
+				356490941FBF614300078951 /* AgentDistrictResultVo.swift */,
+				356490961FBF697F00078951 /* AgentMandalVo.swift */,
+				356490981FBF69B300078951 /* AgentMandalResultVo.swift */,
+				3564909A1FBF6B9900078951 /* AgentVillageVo.swift */,
+				3564909C1FBF6BC900078951 /* AgentVillageResultVo.swift */,
+				3564909E1FBF79ED00078951 /* AddAgentReqVo.swift */,
+				356490A01FBF7A2600078951 /* AddAgentResultVo.swift */,
+			);
+			name = AgentRequestInfo;
 			sourceTree = "<group>";
 		};
 		356651861F9DC75500330D33 /* MyTransaction */ = {
@@ -807,9 +845,11 @@
 				3562EEFE1FA98C1200547C93 /* SubmitAgentTableViewCell.swift in Sources */,
 				35344DA01F8610C700E35C5C /* MapError.swift in Sources */,
 				354E4D4C1FA71203008D108A /* AddAgentRequestTableViewCell.swift in Sources */,
+				356490A11FBF7A2600078951 /* AddAgentResultVo.swift in Sources */,
 				354CF1AB1F90DAA4004ADDAD /* BaseViewController.swift in Sources */,
 				354E4D461FA6EB7C008D108A /* SendWalletVo.swift in Sources */,
 				350CCD191F88A54F003495B6 /* HomeCollectionViewCell.swift in Sources */,
+				3564909D1FBF6BC900078951 /* AgentVillageResultVo.swift in Sources */,
 				353EB9BC1F9F06ED00AA67E9 /* ShadowView.swift in Sources */,
 				3554C3191F8F457B0092EAC7 /* RechargeDetailViewController.swift in Sources */,
 				35344D9E1F8610C700E35C5C /* ISO8601DateTransform.swift in Sources */,
@@ -820,17 +860,23 @@
 				355120F71F948EED00C9AD9D /* ListResultVo.swift in Sources */,
 				356651891F9DC7A300330D33 /* MyTransactionTableViewCell.swift in Sources */,
 				3554C3371F8F5DCD0092EAC7 /* SignOutTableViewCell.swift in Sources */,
+				3564908F1FBF478A00078951 /* AgentReqVo.swift in Sources */,
 				35344DB71F862FD400E35C5C /* SignupVo.swift in Sources */,
 				35485D841FB46DE900CDB076 /* PayzAppViewController.swift in Sources */,
+				356490951FBF614300078951 /* AgentDistrictResultVo.swift in Sources */,
 				35CB9D0D1F8B782D00BF1073 /* Constants.swift in Sources */,
+				3564909B1FBF6B9900078951 /* AgentVillageVo.swift in Sources */,
 				35344D941F8610C700E35C5C /* DataTransform.swift in Sources */,
 				35344DA21F8610C700E35C5C /* Mapper.swift in Sources */,
 				35344DA31F8610C700E35C5C /* NSDecimalNumberTransform.swift in Sources */,
+				356490931FBF60EF00078951 /* AgentDistrictVo.swift in Sources */,
 				35CB9D1A1F8BB2B900BF1073 /* OffersViewController.swift in Sources */,
 				35344D971F8610C700E35C5C /* DictionaryTransform.swift in Sources */,
 				35CB9D141F8B7D1A00BF1073 /* UIView+Toast.m in Sources */,
 				3554C3351F8F5DCD0092EAC7 /* GenderTableViewCell.swift in Sources */,
 				3554C3331F8F5DCD0092EAC7 /* TableViewCell2.swift in Sources */,
+				3564909F1FBF79ED00078951 /* AddAgentReqVo.swift in Sources */,
+				356490991FBF69B300078951 /* AgentMandalResultVo.swift in Sources */,
 				354CF1AF1F90F2B1004ADDAD /* CableTvViewController.swift in Sources */,
 				354E4D481FA6EBB0008D108A /* SendWalletHistoryVo.swift in Sources */,
 				354CF1B51F910BDD004ADDAD /* LandlineViewController.swift in Sources */,
@@ -853,6 +899,7 @@
 				354CF1B71F9117B1004ADDAD /* AddMoneyWalletViewController.swift in Sources */,
 				354CF19C1F909751004ADDAD /* RolesVo.swift in Sources */,
 				35442CE21F8DEA4D007798EC /* RechargeViewController.swift in Sources */,
+				356490911FBF47E200078951 /* AgentReqResultVo.swift in Sources */,
 				354CF1BC1F9151AD004ADDAD /* ResultVo.swift in Sources */,
 				354CF1B11F90F91F004ADDAD /* DTHViewController.swift in Sources */,
 				35CB9D181F8B7DF600BF1073 /* MBProgressHUD.m in Sources */,
@@ -868,6 +915,7 @@
 				35344D9B1F8610C700E35C5C /* HexColorTransform.swift in Sources */,
 				35344DB31F8628E500E35C5C /* HomeViewController.swift in Sources */,
 				35344D9A1F8610C700E35C5C /* FromJSON.swift in Sources */,
+				356490971FBF697F00078951 /* AgentMandalVo.swift in Sources */,
 				3569C1E41F876D3F00152B80 /* menuViewController.swift in Sources */,
 				35E64C921F84DF5200E2CA65 /* ViewController.swift in Sources */,
 				350CCD1D1F88A5BE003495B6 /* IconTableViewCell.swift in Sources */,

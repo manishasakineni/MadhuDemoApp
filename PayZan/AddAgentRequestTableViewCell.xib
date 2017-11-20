@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,7 +50,7 @@
                 <outlet property="agentRequestField" destination="tF8-3A-kBW" id="gKk-DD-mfv"/>
                 <outlet property="titleLabel" destination="abf-4F-PbE" id="URU-tH-pxz"/>
             </connections>
-            <point key="canvasLocation" x="25" y="63"/>
+            <point key="canvasLocation" x="-88" y="60"/>
         </tableViewCell>
     </objects>
 </document>

@@ -65,3 +65,12 @@ let getProfileUrl:String = baseUrl.appending("UserInfo/GetUserPersonalInfo/")
 
 let profileUpdateUrl:String = baseUrl.appending("UserInfo/UpdateUserPersonalInfo")
 
+
+let PROVINCE_API            =  baseUrl + "Province/GetProvinces/null"
+let DISTRICTS_API           =  baseUrl + "Province/GetDistrictsByProvinceId/"
+let MANDALS_API             =  baseUrl + "Mandals/GetMandalByDistrict/"
+let VILLAGES_API            =  baseUrl + "Villages/GetVillageByMandal/"
+
+let ADDAGENT_API            =  baseUrl + "AgentRequestInfo/AddAgentRequestInfo"
+
+

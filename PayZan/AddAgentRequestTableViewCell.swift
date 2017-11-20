@@ -24,8 +24,7 @@ class AddAgentRequestTableViewCell: UITableViewCell,UITextFieldDelegate {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        agentRequestField.delegate = self
-
+      
         // Configure the view for the selected state
         
         hideLabels()
@@ -59,74 +58,74 @@ class AddAgentRequestTableViewCell: UITableViewCell,UITextFieldDelegate {
     }
     
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        if  textField == agentRequestField {
-            
-            
-            if (agentRequestField.text != nil)  {
-                
-                titleLabel.isHidden = false
-                
-                
-            }
-                
-            else{
-                
-                titleLabel.isHidden = true
-                
-                
-            }
-            
-        }
-        
-        if textField == agentRequestField {
-            
-            
-            if (agentRequestField.text != nil)  {
-                
-                titleLabel.isHidden = false
-                
-            }
-                
-            else{
-                
-                titleLabel.isHidden = true
-                
-                
-            }
-        }
-        
-    }
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        
+//        if  textField == agentRequestField {
+//            
+//            
+//            if (agentRequestField.text != nil)  {
+//                
+//                titleLabel.isHidden = false
+//                
+//                
+//            }
+//                
+//            else{
+//                
+//                titleLabel.isHidden = true
+//                
+//                
+//            }
+//            
+//        }
+//        
+//        if textField == agentRequestField {
+//            
+//            
+//            if (agentRequestField.text != nil)  {
+//                
+//                titleLabel.isHidden = false
+//                
+//            }
+//                
+//            else{
+//                
+//                titleLabel.isHidden = true
+//                
+//                
+//            }
+//        }
+//        
+//    }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        if (agentRequestField.text != nil)  {
-            
-            titleLabel.isHidden = true
-        }
-            
-        else{
-            
-            titleLabel.isHidden = false
-            
-        }
-        
-        
-    }
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        
+//        if (agentRequestField.text != nil)  {
+//            
+//            titleLabel.isHidden = true
+//        }
+//            
+//        else{
+//            
+//            titleLabel.isHidden = false
+//            
+//        }
+//        
+//        
+//    }
     
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        
-        if agentRequestField.text == nil {
-            
-            self.titleLabel.isHidden = true
-            self.titleLabel.isHidden = false
-        }
-        
-        
-        
-        return true;
-    }
+//    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+//        
+//        if agentRequestField.text == nil {
+//            
+//            self.titleLabel.isHidden = true
+//            self.titleLabel.isHidden = false
+//        }
+//        
+//        
+//        
+//        return true;
+//    }
     
 }
