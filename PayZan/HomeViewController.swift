@@ -252,7 +252,16 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         var height:CGFloat = CGFloat()
         
         if indexPath.row == 0 {
+            
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+                
+                height = 420
+            }
+            else {
+                
             height = 220
+                
+            }
         }
         else if indexPath.row == 1{
             height = 80

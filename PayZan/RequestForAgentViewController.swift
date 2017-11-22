@@ -726,54 +726,131 @@ let headerTitle = "PERSONAL INFORMATION"
     print("sender:\(sender.tag)")
         
         
-//        var validateSuccess = true
-//        requestForAgentTableView.endEditing(true)
-//        var errorMessage : NSString?
-        
-//        for row in 0 ..< requestForAgentTableView.numberOfRows(inSection: 0)
-//        {
-//            
-//            let indexPath : IndexPath = IndexPath(row: row, section: 0)
-//            
-//            requestForAgentTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: false)
-        
-            
-//            if let newRegTableViewCell : AddAgentRequestTableViewCell = requestForAgentTableView.cellForRow(at: indexPath) as? AddAgentRequestTableViewCell {
-            
-//                if (newRegTableViewCell.agentRequestField.text == ""){
-//                    
-//                     self.appDelegate.window?.makeToast("Please enter all fields", duration:kToastDuration, position:CSToastPositionCenter)
-//                    validateSuccess = false
-//                    return
-//                    
-//                }
-                
+        if self.validateAllFields()
+        {
                 if(appDelegate.checkInternetConnectivity()){
-                    
-                    
-//                     if(validateSuccess == true){
                     
                     addAgentReqInfoService()
                         
-//                    }
                     
                 }
-                    
                 else {
                     
                     self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
                     return
                     
-                }
-                
-//            }
-//        }
+        }
+        }
+     
+    }
+    
+    
+    func validateAllFields() -> Bool
+    {
+        
+        //Check whether textField are left empty or not
+        var errorMessage:NSString?
+        
+        let fName:NSString = firstName as NSString
+        let lName:NSString = lastName as NSString
+        let mobile:NSString = mobileNo as NSString
+        let email:NSString = emailID as NSString
+        let province:NSString = selectedProvinceStr as NSString
+        let district:NSString = selectedDistrictStr as NSString
+        let mandal:NSString = selectedMandalStr as NSString
+        let village:NSString = selectedVillageStr as NSString
+        let address11:NSString = address1 as NSString
+        let address22:NSString = address2 as NSString
+        let landmarkk:NSString = landmark as NSString
+        let commentss:NSString = comments as NSString
         
         
-       
+        if (fName.length <= 0){
+            
+            errorMessage=GlobalSupportingClass.blankFnameErrorMessage() as String as String as NSString?
+            
+        }
+        else if (lName.length <= 0){
+            
+           errorMessage=GlobalSupportingClass.blankLnameErrorMessage() as String as String as NSString?
+            
+        }
+            
+        else if (mobile.length <= 0){
+            
+           errorMessage=GlobalSupportingClass.blankPhoneNumberErrorMessage() as String as String as NSString?
+            
+        }
+        else if (mobile.length <= 9) {
+            
+            
+            errorMessage=GlobalSupportingClass.invalidPhoneNumberErrorMessage() as String as String as NSString?
+        }
+            
+            
+        else if (email.length <= 0){
+            
+
+            errorMessage=GlobalSupportingClass.blankEmailIDErrorMessage() as String as String as NSString?
+        }
+            
+        else if(!GlobalSupportingClass.isValidEmail(email as NSString)){
+            
+            errorMessage=GlobalSupportingClass.invalidEmaildIDFormatErrorMessage() as String as String as NSString?
+            
+            
+        }
+        else if (email.length<=3) {
+            errorMessage=GlobalSupportingClass.miniCharEmailIDErrorMessage() as String as String as NSString?
+        }
+        else if (province.length <= 0){
+            
+            errorMessage=GlobalSupportingClass.blankProvinceErrorMessage() as String as String as NSString?
+            
+        }
+        else if (district.length <= 0){
+            
+           errorMessage=GlobalSupportingClass.blankDistrictErrorMessage() as String as String as NSString?
+            
+        }
+        else if (mandal.length <= 0){
+            
+           errorMessage=GlobalSupportingClass.blankMandalErrorMessage() as String as String as NSString?
+            
+        }
+        else if (village.length <= 0){
+            
+            errorMessage=GlobalSupportingClass.blankVillageErrorMessage() as String as String as NSString?
+            
+        }
+            
+        else if (address11.length <= 0){
+            
+            errorMessage=GlobalSupportingClass.blankAddress1ErrorMessage() as String as String as NSString?
+            
+        }
+        else if (address22.length <= 0){
+            
+            errorMessage=GlobalSupportingClass.blankAddress2ErrorMessage() as String as String as NSString?
+            
+        }
+        else if (landmarkk.length <= 0){
+            
+            errorMessage=GlobalSupportingClass.blankLandmarkErrorMessage() as String as String as NSString?
+            
+        }
+        else if (commentss.length <= 0){
+            
+            errorMessage=GlobalSupportingClass.blankCommentsErrorMessage() as String as String as NSString?
+            
+        }
         
-       
-        
+        if let errorMsg = errorMessage{
+            
+            self.showAlertViewWithTitle("Alert", message: errorMsg as String, buttonTitle: "Retry")
+            return false;
+        }
+        return true
     }
     
     func getProvinceList(){

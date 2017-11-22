@@ -21,6 +21,33 @@ class GlobalSupportingClass {
     
     // MARK: - Error Messages
     
+    
+    class func blankProvinceErrorMessage() -> NSString {
+        return "Please provide your province"
+    }
+    class func blankDistrictErrorMessage() -> NSString {
+        return "Please provide your district"
+    }
+    class func blankMandalErrorMessage() -> NSString {
+        return "Please provide your mandal"
+    }
+    class func blankVillageErrorMessage() -> NSString {
+        return "Please provide your village"
+    }
+    class func blankAddress1ErrorMessage() -> NSString {
+        return "Please provide your address1"
+    }
+    class func blankAddress2ErrorMessage() -> NSString {
+        return "Please provide your address2"
+    }
+    
+    class func blankLandmarkErrorMessage() -> NSString {
+        return "Please provide your landmark"
+    }
+    class func blankCommentsErrorMessage() -> NSString {
+        return "Please provide your comments"
+    }
+    
     class func invalidEmaildIDFormatErrorMessage() -> NSString {
         return "Please provide valid email id"
     }
