@@ -42,17 +42,6 @@ class TableViewCell1: UITableViewCell,UITextFieldDelegate  {
         
         hideLabels()
         
-//        if let X = UserDefaults.standard.object(forKey: "firstName") as? String
-//        {
-//        
-//        firstNameTF.text = X
-//        }
-//        
-//        if let Y = UserDefaults.standard.object(forKey: "lastName") as? String
-//        {
-//            
-//            lastNameTF.text = Y
-//        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
