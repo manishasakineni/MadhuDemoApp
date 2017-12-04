@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="17A365" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -100,11 +101,10 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vr2-Ca-XcI">
-                        <rect key="frame" x="110" y="236" width="100" height="27"/>
+                        <rect key="frame" x="29" y="236" width="262" height="27"/>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="EgL-CX-1Pp"/>
-                            <constraint firstAttribute="height" constant="27" id="mVG-73-zO3"/>
+                            <constraint firstAttribute="height" constant="27" id="Vvj-pJ-A41"/>
                         </constraints>
                         <state key="normal" title="Pay Now">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,19 +113,19 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="hjK-19-T55" secondAttribute="trailing" constant="13" id="2tm-L5-Ybd"/>
-                    <constraint firstAttribute="bottom" secondItem="vr2-Ca-XcI" secondAttribute="bottom" constant="72" id="2yN-0Q-I1E"/>
                     <constraint firstItem="Y9u-Bj-uMY" firstAttribute="centerX" secondItem="13P-31-Pco" secondAttribute="centerX" id="7ko-gp-cfS"/>
-                    <constraint firstItem="vr2-Ca-XcI" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="9Ot-0z-8jD"/>
+                    <constraint firstItem="vr2-Ca-XcI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="29" id="ACh-rJ-x7x"/>
                     <constraint firstItem="ic6-xZ-Vrc" firstAttribute="centerY" secondItem="ooo-5f-Wrf" secondAttribute="centerY" id="E8c-it-M9A"/>
-                    <constraint firstItem="vr2-Ca-XcI" firstAttribute="top" secondItem="mcZ-Gc-xbN" secondAttribute="bottom" constant="69" id="Qa1-YX-iXy"/>
                     <constraint firstItem="b6J-Jr-hPH" firstAttribute="centerX" secondItem="ic6-xZ-Vrc" secondAttribute="centerX" id="VaE-S2-zCP"/>
                     <constraint firstItem="2CX-S7-wOH" firstAttribute="top" secondItem="mcZ-Gc-xbN" secondAttribute="bottom" constant="23" id="YoT-tv-Ekg"/>
                     <constraint firstItem="ic6-xZ-Vrc" firstAttribute="leading" secondItem="ooo-5f-Wrf" secondAttribute="trailing" constant="31" id="dj7-DH-jXg"/>
                     <constraint firstItem="b6J-Jr-hPH" firstAttribute="centerY" secondItem="mcZ-Gc-xbN" secondAttribute="centerY" id="fGB-Ub-YSw"/>
                     <constraint firstAttribute="bottom" secondItem="hjK-19-T55" secondAttribute="bottom" constant="14" id="gvd-Tn-T5q"/>
                     <constraint firstItem="Y9u-Bj-uMY" firstAttribute="centerY" secondItem="mcZ-Gc-xbN" secondAttribute="centerY" id="mni-mj-Nil"/>
+                    <constraint firstAttribute="trailing" secondItem="vr2-Ca-XcI" secondAttribute="trailing" constant="29" id="nza-Fm-mpN"/>
                     <constraint firstItem="ooo-5f-Wrf" firstAttribute="leading" secondItem="13P-31-Pco" secondAttribute="trailing" constant="24" id="ouP-d7-dmd"/>
                     <constraint firstItem="hjK-19-T55" firstAttribute="top" secondItem="ooo-5f-Wrf" secondAttribute="bottom" constant="-91" id="qIl-gY-s7n"/>
+                    <constraint firstItem="vr2-Ca-XcI" firstAttribute="top" secondItem="2CX-S7-wOH" secondAttribute="bottom" constant="26" id="qfw-Lq-d1g"/>
                     <constraint firstItem="ooo-5f-Wrf" firstAttribute="centerX" secondItem="hjK-19-T55" secondAttribute="centerX" id="qqV-2P-Uc7"/>
                     <constraint firstItem="mcZ-Gc-xbN" firstAttribute="centerX" secondItem="ooo-5f-Wrf" secondAttribute="centerX" id="t9G-5E-Uwd"/>
                     <constraint firstItem="13P-31-Pco" firstAttribute="centerY" secondItem="ooo-5f-Wrf" secondAttribute="centerY" id="u0U-mS-ih9"/>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="17A365" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,7 +101,7 @@
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2D-48-4kb">
-                        <rect key="frame" x="37" y="240" width="260" height="30"/>
+                        <rect key="frame" x="30" y="240" width="260" height="30"/>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="Pay Now">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,7 +161,7 @@
                     <constraint firstItem="Bjm-1t-D6B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="NMj-3y-LXz"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ZVV-pG-Tpv" secondAttribute="trailing" constant="15" id="NPP-gr-MPB"/>
                     <constraint firstItem="N1b-Aa-aBZ" firstAttribute="top" secondItem="dO1-WQ-scj" secondAttribute="bottom" constant="4" id="OLr-aw-tBy"/>
-                    <constraint firstItem="Y2D-48-4kb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="29" id="PyS-yz-uZ5"/>
+                    <constraint firstItem="Y2D-48-4kb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="22" id="PyS-yz-uZ5"/>
                     <constraint firstItem="Bjm-1t-D6B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="RoY-NU-kPl"/>
                     <constraint firstItem="Bjm-1t-D6B" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Sux-gQ-Kcx"/>
                     <constraint firstItem="672-s9-hVb" firstAttribute="leading" secondItem="xEN-n5-xgU" secondAttribute="leading" id="UKt-VZ-E3z"/>
@@ -180,7 +181,7 @@
                     <constraint firstItem="Pkc-BV-UNK" firstAttribute="leading" secondItem="gej-gS-zvU" secondAttribute="trailing" constant="7" id="wGz-5B-WCc"/>
                     <constraint firstItem="Pkc-BV-UNK" firstAttribute="top" secondItem="xEN-n5-xgU" secondAttribute="bottom" constant="20" id="whk-Zg-zS5"/>
                     <constraint firstItem="3jr-NO-Kzv" firstAttribute="top" secondItem="Y2D-48-4kb" secondAttribute="bottom" constant="7" id="x2W-d8-8PP"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Y2D-48-4kb" secondAttribute="trailing" constant="15" id="xdI-VP-bDa"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Y2D-48-4kb" secondAttribute="trailing" constant="22" id="xdI-VP-bDa"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

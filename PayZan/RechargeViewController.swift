@@ -374,11 +374,11 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         switch segmentControl.selectedSegmentIndex {
         case 0:
-            postPaidView.isHidden = true
+          //  postPaidView.isHidden = true
             prepaidView.isHidden = false
         case 1:
-            postPaidView.isHidden = false
-            prepaidView.isHidden = true
+           // postPaidView.isHidden = false
+            prepaidView.isHidden = false
         default:
             break;
         }

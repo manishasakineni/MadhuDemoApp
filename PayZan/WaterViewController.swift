@@ -20,6 +20,8 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
     
     var toolBar = UIToolbar()
     
+    var userId:String?
+    var walletId:String?
     
     let serviceController = ServiceController()
     
@@ -201,6 +203,53 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
    
 
     @IBAction func proceedToPayButtonAction(_ sender: Any) {
+        
+        
+        if(appDelegate.checkInternetConnectivity()){
+            
+            if walletId != nil && userId != nil {
+                
+                //                sendMoneyToWalletService()
+                
+            }
+            else {
+                
+                let alertController = UIAlertController(title: "Alert", message: "Please Login to your PayZan account", preferredStyle: UIAlertControllerStyle.alert)
+                
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
+                    print("Cancel")
+                    
+                    
+                }
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+                    print("OK")
+                    
+                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = viewController
+                }
+                alertController.addAction(cancelAction)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                
+            }
+            
+            
+        }
+        else {
+            
+            self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            return
+            
+        }
+        
+    
+    
+
+        
     }
     
     @IBAction func backButtonAction(_ sender: Any) {
