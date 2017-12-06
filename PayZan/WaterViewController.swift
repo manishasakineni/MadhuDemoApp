@@ -31,7 +31,7 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = true
         
              
         selectBoardTextField.layer.borderWidth = 0.5

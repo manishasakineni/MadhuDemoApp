@@ -8,6 +8,11 @@
 
 import UIKit
 
+import FBSDKLoginKit
+import Google
+import GoogleSignIn
+
+
 class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarControllerDelegate,UITabBarDelegate {
     
     
@@ -34,6 +39,11 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
     @IBOutlet weak var confirmPasswordField: UITextField!
     
 
+      var dict : [String : AnyObject]!
+    
+   // let SErviceController = ServiceController()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -309,9 +319,170 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
     }
     
     @IBAction func facebookAction(_ sender: Any) {
+        
+        MBProgressHUD.showAdded(to:appDelegate.window,animated:true)
+        
+        MBProgressHUD.hide(for:appDelegate.window,animated:true)
+        
+        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if (error == nil){
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                if fbloginresult.grantedPermissions != nil {
+                    if(fbloginresult.grantedPermissions.contains("email"))
+                    {
+                        UserDefaults.standard.setValue("true", forKey: kIsFirstTime)
+                        UserDefaults.standard.synchronize()
+                        
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.window?.rootViewController = viewController
+                        
+                        self.getFBUserData()
+                        
+                        //                        fbLoginManager.logOut()
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+    
+    func getFBUserData(){
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                
+                if (error == nil){
+                    self.dict = result as! [String : AnyObject]
+                    print(result!)
+                    
+                    print(self.dict)
+                    
+                    let json = result as! [String : Any]
+                    
+                    if json["first_name"] != nil {
+                        
+                        let name = json["first_name"]
+                        
+                        print("name:\(String(describing: name))")
+                    }
+                    
+                    
+                }
+            })
+        }
+        
+
+        
+        
+        
+        
     }
     
     @IBAction func googleAction(_ sender: Any) {
+        
+//        MBProgressHUD.showAdded(to:appDelegate.window,animated:true)
+//        
+//        
+//        GIDSignIn.sharedInstance().signIn()
+//        
+//        
+//    }
+//    
+//    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+//        
+//        MBProgressHUD.hide(for:appDelegate.window,animated:true)
+//    }
+//    
+//    // Present a view that prompts the user to sign in with Google
+//    func sign(_ signIn: GIDSignIn!,
+//              present viewController: UIViewController!) {
+//        self.present(viewController, animated: true, completion: nil)
+//    }
+//    
+//    // Dismiss the "Sign in with Google" view
+//    func sign(_ signIn: GIDSignIn!,
+//              dismiss viewController: UIViewController!) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
+//    
+//    
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        
+//        //        if error != nil{
+//        //            print(error ?? "google error")
+//        //            return
+//        //        }
+//        if (error == nil)
+//        {
+//            
+//            if UIDevice.current.userInterfaceIdiom == .phone {
+//                //            if UserDefaults.standard.bool(forKey: "checkLogin") {
+//                
+//                let userId = user.userID                  // For client-side use only!
+//                let idToken = user.authentication.idToken // Safe to send to the server
+//                let fullName = user.profile.name
+//                let givenName = user.profile.givenName
+//                let familyName = user.profile.familyName
+//                let email = user.profile.email
+//                let profileUrl = user.profile.imageURL(withDimension: 200)
+//                //            let mobile = user.profile.
+//                
+//                
+//                print("fullName:\(String(describing: fullName))")
+//                print("givenName:\(String(describing: givenName))")
+//                print("email:\(String(describing: email))")
+//                print("profileUrl:\(String(describing: profileUrl))")
+//                
+//                UserDefaults.standard.setValue("true", forKey: kIsFirstTime)
+//                UserDefaults.standard.synchronize()
+//                
+//                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                appDelegate.window?.rootViewController = viewController
+//                
+//            }
+//            else if UIDevice.current.userInterfaceIdiom == .pad {
+//                
+//                let userId = user.userID                  // For client-side use only!
+//                let idToken = user.authentication.idToken // Safe to send to the server
+//                let fullName = user.profile.name
+//                let givenName = user.profile.givenName
+//                let familyName = user.profile.familyName
+//                let email = user.profile.email
+//                //            let mobile = user.profile.
+//                
+//                
+//                print("fullName:\(String(describing: fullName))")
+//                print("givenName:\(String(describing: givenName))")
+//                print("email:\(String(describing: email))")
+//                
+//                UserDefaults.standard.setValue("true", forKey: kIsFirstTime)
+//                UserDefaults.standard.synchronize()
+//                
+//                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                appDelegate.window?.rootViewController = viewController
+//                
+//            }
+//        }
+//        else {
+//            Thread.sleep(forTimeInterval: 1.0)
+//            var configureError: Error?
+//            //    [[GGLContext sharedInstance] configureWithError:&configureError];
+//            assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
+//            GIDSignIn.sharedInstance().delegate = self as GIDSignInDelegate
+//            
+//        }
+//        
+//  
+//        
+//        
+        
     }
     
     @IBAction func backAction(_ sender: Any) {
