@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="17A365" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="AddCardsTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="297" id="KGk-i7-Jjw" customClass="AddCardsTableViewCell" customModule="NewScreens" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="297"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="296.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4166 xxxx xxxx 0000 | Bank  Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzT-ld-gnc">
+                        <rect key="frame" x="60.5" y="9" width="157.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="tTe-uZ-x4x"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wis-ff-x73">
+                        <rect key="frame" x="250" y="9" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="tGk-mq-m6f"/>
+                            <constraint firstAttribute="height" constant="20" id="wno-0n-wxp"/>
+                        </constraints>
+                        <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="Button" image="payment_del_icon"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HC7-cn-DAX">
+                        <rect key="frame" x="292" y="9" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="r95-sT-ng5"/>
+                            <constraint firstAttribute="height" constant="20" id="ris-n5-jdb"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="edit_24"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGj-qM-lfL">
+                        <rect key="frame" x="8" y="9" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="20n-Vq-0po"/>
+                            <constraint firstAttribute="height" constant="20" id="TrY-jF-SFy"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="payment_lock_icon"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-6F-y0f">
+                        <rect key="frame" x="53" y="170" width="221" height="30"/>
+                        <color key="backgroundColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="ZH0-m6-fGN"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your details are secured via 128 encryption by xxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MK-PM-lCA">
+                        <rect key="frame" x="83" y="208" width="183.5" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="CRS-Ni-6BX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="8"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDz-eb-bgN">
+                        <rect key="frame" x="53" y="207" width="29" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="29" id="iDQ-6A-j4X"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="payment_lock_icon"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmv-YD-lWN">
+                        <rect key="frame" x="2" y="33" width="316" height="2"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="jeR-pR-edd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4166 xxxx xxxx 0000 | Bank  Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVz-8g-aML">
+                        <rect key="frame" x="60.5" y="43" width="157.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="lLZ-cW-zA8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9Z-xl-bcD">
+                        <rect key="frame" x="248" y="43.5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="FMj-I6-zeE"/>
+                            <constraint firstAttribute="width" constant="20" id="gee-U9-BcK"/>
+                        </constraints>
+                        <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="Button" image="payment_del_icon"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Boq-lz-NSI">
+                        <rect key="frame" x="292" y="43.5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="AZi-x3-WOO"/>
+                            <constraint firstAttribute="height" constant="20" id="LEq-NT-fzc"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="edit_24"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1W-GH-Fue">
+                        <rect key="frame" x="8.5" y="43" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="TWH-uK-kkJ"/>
+                            <constraint firstAttribute="height" constant="20" id="oLP-k4-48u"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="payment_lock_icon"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iru-Fz-KgK">
+                        <rect key="frame" x="2" y="72" width="316" height="2"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="6ks-ed-gMA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4166 xxxx xxxx 0000 | Bank  Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTZ-ku-C4i">
+                        <rect key="frame" x="58.5" y="82" width="157.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="h38-sm-S3f"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vu6-ST-3Rk">
+                        <rect key="frame" x="248" y="82.5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Qsh-Bo-Npm"/>
+                            <constraint firstAttribute="width" constant="20" id="hsz-AT-lyu"/>
+                        </constraints>
+                        <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="Button" image="payment_del_icon"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcZ-ru-WjB">
+                        <rect key="frame" x="292" y="83" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="jxn-Da-Vj2"/>
+                            <constraint firstAttribute="width" constant="20" id="z9N-Ky-OWy"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="edit_24"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUf-r7-tKa">
+                        <rect key="frame" x="8.5" y="82" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="qHO-Bc-fie"/>
+                            <constraint firstAttribute="width" constant="20" id="u8z-5G-z9V"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="payment_lock_icon"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fr-A1-IbM">
+                        <rect key="frame" x="2" y="111" width="316" height="2"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="RiE-Pv-zqn"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4166 xxxx xxxx 0000 | Bank  Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSD-jL-VBr">
+                        <rect key="frame" x="60.5" y="121" width="157.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="NEd-FO-Wbk"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8z-av-rRd">
+                        <rect key="frame" x="248" y="121.5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="WGF-2C-iQ0"/>
+                            <constraint firstAttribute="width" constant="20" id="yrk-J2-4oa"/>
+                        </constraints>
+                        <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="Button" image="payment_del_icon"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-1k-pAN">
+                        <rect key="frame" x="291" y="122" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="7fW-JF-0hB"/>
+                            <constraint firstAttribute="height" constant="20" id="bPQ-1C-WSd"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="edit_24"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpr-gT-kXv">
+                        <rect key="frame" x="8" y="120" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="d6P-pG-Uvg"/>
+                            <constraint firstAttribute="height" constant="20" id="u1R-EL-JoA"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="payment_lock_icon"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PTZ-ku-C4i" firstAttribute="centerY" secondItem="PUf-r7-tKa" secondAttribute="centerY" id="0fF-Qg-lsG"/>
+                    <constraint firstItem="fmv-YD-lWN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="4Ud-Rk-W74"/>
+                    <constraint firstItem="Fho-6F-y0f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="53" id="4pn-mt-ctr"/>
+                    <constraint firstItem="HC7-cn-DAX" firstAttribute="centerY" secondItem="wis-ff-x73" secondAttribute="centerY" id="5Sd-Oa-jZg"/>
+                    <constraint firstItem="Boq-lz-NSI" firstAttribute="centerY" secondItem="M9Z-xl-bcD" secondAttribute="centerY" id="7S7-RK-WZk"/>
+                    <constraint firstItem="Fho-6F-y0f" firstAttribute="top" secondItem="wSD-jL-VBr" secondAttribute="bottom" constant="28" id="9nx-hu-xDN"/>
+                    <constraint firstItem="M9Z-xl-bcD" firstAttribute="leading" secondItem="LVz-8g-aML" secondAttribute="trailing" constant="30" id="BFy-My-lqu"/>
+                    <constraint firstItem="PTZ-ku-C4i" firstAttribute="centerY" secondItem="vu6-ST-3Rk" secondAttribute="centerY" id="BL0-l7-EmL"/>
+                    <constraint firstItem="zcZ-ru-WjB" firstAttribute="centerY" secondItem="vu6-ST-3Rk" secondAttribute="centerY" id="GC8-R3-LdW"/>
+                    <constraint firstItem="PTZ-ku-C4i" firstAttribute="leading" secondItem="PUf-r7-tKa" secondAttribute="trailing" constant="30" id="GQh-Lx-0Lp"/>
+                    <constraint firstItem="wSD-jL-VBr" firstAttribute="centerY" secondItem="Y8z-av-rRd" secondAttribute="centerY" id="HRy-Q9-5Qu"/>
+                    <constraint firstItem="GzT-ld-gnc" firstAttribute="centerY" secondItem="wis-ff-x73" secondAttribute="centerY" constant="0.5" id="HXz-qA-U1G"/>
+                    <constraint firstAttribute="trailing" secondItem="0fr-A1-IbM" secondAttribute="trailing" constant="2" id="Hdj-5D-SFO"/>
+                    <constraint firstItem="wSD-jL-VBr" firstAttribute="centerY" secondItem="Dpr-gT-kXv" secondAttribute="centerY" constant="1.5" id="Jj1-hU-c46"/>
+                    <constraint firstItem="LVz-8g-aML" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-20.75" id="K7M-gG-awl"/>
+                    <constraint firstItem="GzT-ld-gnc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="LR8-2F-uOx"/>
+                    <constraint firstItem="LVz-8g-aML" firstAttribute="top" secondItem="fmv-YD-lWN" secondAttribute="bottom" constant="8" id="LrW-Py-Gi1"/>
+                    <constraint firstItem="GzT-ld-gnc" firstAttribute="leading" secondItem="WGj-qM-lfL" secondAttribute="trailing" constant="32.5" id="M5B-tg-G5a"/>
+                    <constraint firstItem="vu6-ST-3Rk" firstAttribute="leading" secondItem="PTZ-ku-C4i" secondAttribute="trailing" constant="32" id="QLu-Ca-UsN"/>
+                    <constraint firstItem="QDz-eb-bgN" firstAttribute="leading" secondItem="Fho-6F-y0f" secondAttribute="leading" id="RcB-aa-mr4"/>
+                    <constraint firstAttribute="trailing" secondItem="Fho-6F-y0f" secondAttribute="trailing" constant="46" id="Tnh-0g-sAc"/>
+                    <constraint firstItem="QDz-eb-bgN" firstAttribute="top" secondItem="Fho-6F-y0f" secondAttribute="bottom" constant="7" id="UkX-LD-aKe"/>
+                    <constraint firstItem="Boq-lz-NSI" firstAttribute="leading" secondItem="M9Z-xl-bcD" secondAttribute="trailing" constant="24" id="W5y-T5-3Te"/>
+                    <constraint firstItem="wSD-jL-VBr" firstAttribute="leading" secondItem="Dpr-gT-kXv" secondAttribute="trailing" constant="32.5" id="YyE-Vq-9QX"/>
+                    <constraint firstItem="wSD-jL-VBr" firstAttribute="top" secondItem="0fr-A1-IbM" secondAttribute="bottom" constant="8" id="Zv6-eC-hQj"/>
+                    <constraint firstItem="3MK-PM-lCA" firstAttribute="top" secondItem="Fho-6F-y0f" secondAttribute="bottom" constant="8" id="aM8-II-eGg"/>
+                    <constraint firstItem="zcZ-ru-WjB" firstAttribute="leading" secondItem="vu6-ST-3Rk" secondAttribute="trailing" constant="24" id="aOv-i2-KZp"/>
+                    <constraint firstItem="LVz-8g-aML" firstAttribute="leading" secondItem="w1W-GH-Fue" secondAttribute="trailing" constant="32" id="ceZ-J3-8mk"/>
+                    <constraint firstItem="0fr-A1-IbM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="dG7-6v-JlR"/>
+                    <constraint firstItem="PTZ-ku-C4i" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-22.75" id="dep-kp-sNT"/>
+                    <constraint firstItem="PTZ-ku-C4i" firstAttribute="top" secondItem="iru-Fz-KgK" secondAttribute="bottom" constant="8" id="dq7-AI-WYA"/>
+                    <constraint firstItem="M3Z-1k-pAN" firstAttribute="centerY" secondItem="Y8z-av-rRd" secondAttribute="centerY" id="gCm-9o-g8c"/>
+                    <constraint firstItem="QDz-eb-bgN" firstAttribute="centerY" secondItem="3MK-PM-lCA" secondAttribute="centerY" id="hRN-ma-Wnn"/>
+                    <constraint firstItem="0fr-A1-IbM" firstAttribute="top" secondItem="zcZ-ru-WjB" secondAttribute="bottom" constant="8" id="hYa-e8-WgV"/>
+                    <constraint firstItem="M3Z-1k-pAN" firstAttribute="leading" secondItem="Y8z-av-rRd" secondAttribute="trailing" constant="23" id="htJ-o0-Zz6"/>
+                    <constraint firstItem="Y8z-av-rRd" firstAttribute="leading" secondItem="wSD-jL-VBr" secondAttribute="trailing" constant="30" id="imS-d8-DQN"/>
+                    <constraint firstItem="iru-Fz-KgK" firstAttribute="top" secondItem="LVz-8g-aML" secondAttribute="bottom" constant="8" id="j9S-HR-cUq"/>
+                    <constraint firstItem="iru-Fz-KgK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="kVl-da-KZy"/>
+                    <constraint firstItem="LVz-8g-aML" firstAttribute="centerY" secondItem="M9Z-xl-bcD" secondAttribute="centerY" id="qIu-4x-mad"/>
+                    <constraint firstItem="wis-ff-x73" firstAttribute="leading" secondItem="GzT-ld-gnc" secondAttribute="trailing" constant="32" id="tW7-kV-xi8"/>
+                    <constraint firstItem="GzT-ld-gnc" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-20.75" id="v1V-V4-NwJ"/>
+                    <constraint firstItem="GzT-ld-gnc" firstAttribute="centerY" secondItem="WGj-qM-lfL" secondAttribute="centerY" constant="0.5" id="vaA-ar-pcW"/>
+                    <constraint firstItem="3MK-PM-lCA" firstAttribute="leading" secondItem="QDz-eb-bgN" secondAttribute="trailing" constant="1" id="vfT-jn-Qiw"/>
+                    <constraint firstAttribute="trailing" secondItem="iru-Fz-KgK" secondAttribute="trailing" constant="2" id="xXo-yg-2MA"/>
+                    <constraint firstItem="fmv-YD-lWN" firstAttribute="top" secondItem="GzT-ld-gnc" secondAttribute="bottom" constant="3" id="yYK-8z-A01"/>
+                    <constraint firstItem="LVz-8g-aML" firstAttribute="centerY" secondItem="w1W-GH-Fue" secondAttribute="centerY" id="yfC-sC-C3D"/>
+                    <constraint firstItem="HC7-cn-DAX" firstAttribute="leading" secondItem="wis-ff-x73" secondAttribute="trailing" constant="22" id="zIx-oD-E41"/>
+                    <constraint firstAttribute="trailing" secondItem="fmv-YD-lWN" secondAttribute="trailing" constant="2" id="zRw-rb-PWf"/>
+                    <constraint firstItem="wSD-jL-VBr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-20.75" id="zVA-7F-dwY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="7" y="181.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="edit_24" width="24" height="24"/>
+        <image name="payment_del_icon" width="13" height="15"/>
+        <image name="payment_lock_icon" width="14" height="19"/>
+    </resources>
+</document>

@@ -31,6 +31,9 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.isNavigationBarHidden = false
+        
+             
         selectBoardTextField.layer.borderWidth = 0.5
         selectBoardTextField.layer.borderColor = UIColor.lightGray.cgColor
         selectBoardTextField.layer.cornerRadius = 3
@@ -53,7 +56,6 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         
         amountTextField.keyboardType = .numberPad
         consumerNumberTextField.keyboardType = .numberPad
-
         
         getOperatorList()
 

@@ -317,9 +317,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                     return cell
                 
         }
-//            }
-        
-//        }
     
         
         }
@@ -328,22 +325,55 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        if indexPath.section == 0 {
             
-//            let cell = ProfileTableViewCell()
+            // handle tap events
+            print("You selected cell #\(indexPath.item)!")
             
-//            cell.selectionStyle = .none
+            if indexPath.row == 0 {
+                
+                let rchargeViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddCardsViewController") as! AddCardsViewController
+                self.navigationController?.pushViewController(rchargeViewController, animated: true)
+            }
+            else if indexPath.row == 1 {
+                
+                let landViewController = self.storyboard?.instantiateViewController(withIdentifier: "OrderHistoryViewController") as! OrderHistoryViewController
+                self.navigationController?.pushViewController(landViewController, animated: true)
+                
+                
+            }
+            else if indexPath.row == 2 {
+                
+                let dthViewController = self.storyboard?.instantiateViewController(withIdentifier: "changePasswordViewController") as! changePasswordViewController
+                self.navigationController?.pushViewController(dthViewController, animated: true)
+                
+                
+            }
+            else if indexPath.row == 3 {
+                
+                let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
+                self.navigationController?.pushViewController(cableViewController, animated: true)
+            }
+            else if indexPath.row == 4 {
+                
+                let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "SavedCardsViewController") as! SavedCardsViewController
+                self.navigationController?.pushViewController(cableViewController, animated: true)
+            }
+                
+            else if indexPath.row == 5 {
+                
+                let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "TermsOfServiceViewController") as! TermsOfServiceViewController
+                self.navigationController?.pushViewController(cableViewController, animated: true)
+            }
             
+            else if indexPath.row == 6 {
+                
+                let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditBankProfileViewController") as! EditBankProfileViewController
+                self.navigationController?.pushViewController(cableViewController, animated: true)
         }
+        
+    
             
-        else if indexPath.section == 1{
-            
-//            let cell = ListTableViewCell()
-            
-            
-//            cell.selectionStyle = .none
-            
-        }
+        
         
     }
     
@@ -379,13 +409,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     func signOutClicked(_sender: UIButton){
         
         
-//        isUserLogin = false
-//        self.profileTVC .reloadData()
-//        let button1 = UIBarButtonItem(image: UIImage(named: "Menu"), style: .plain, target: self, action: #selector(self.action))
-//        
-//        self.navigationItem.leftBarButtonItem  = button1
-//        
-//        self.navigationItem.title = "AAAAA"
+
         
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController

@@ -63,12 +63,7 @@ class PayzAppViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         selectedButtonString = "savedCards"
 
-//        savedCardButtonOutLet.backgroundColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0)
-//        savedCardsLabel.textColor =  UIColor.white
-//        savedCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_savedcaddetails_white"), for: UIControlState.normal)
-//        creditCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_creitcard_active"), for: UIControlState.normal)
-//        debitCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_creitcard_active"), for: UIControlState.normal)
-//        netBankingButtonOutLet.setBackgroundImage(UIImage(named: "payment_bank_active"), for: UIControlState.normal)
+
 
         borderColors()
         

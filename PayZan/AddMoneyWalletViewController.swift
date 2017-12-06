@@ -12,6 +12,7 @@ import ContactsUI
 
 class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate,CNContactPickerDelegate {
     
+    @IBOutlet weak var backbuttonOutLet: UIButton!
     @IBOutlet weak var walletBalLabel: UILabel!
    
     
@@ -104,15 +105,10 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        addWalletFiled.text = "\(countInt)"
+        self.backbuttonOutLet.isHidden = false
         
-//        mySegmentControl.removeBorders()
+
         
-//        let font = UIFont.systemFont(ofSize: 10)
-//        mySegmentControl.setTitleTextAttributes([NSFontAttributeName: font],
-//                                                for: .normal)
-//        let attr = NSDictionary(object: UIFont(name: "HelveticaNeue-Bold", size: 10.0)!, forKey: NSFontAttributeName as NSCopying)
-//        UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
         
         iPhoneScreenSizes()
         

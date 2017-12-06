@@ -42,10 +42,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,SWReveal
 //        appDelegate.window?.rootViewController = viewController
         
         
+        
+        
+        
+        
+        
+        
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = viewController
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
 //        if UserDefaults.standard.object(forKey: kIsFirstTime) as? String == "true" {
 //           

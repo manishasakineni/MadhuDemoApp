@@ -138,6 +138,25 @@
 		35E64C951F84DF5200E2CA65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E64C931F84DF5200E2CA65 /* Main.storyboard */; };
 		35E64C971F84DF5200E2CA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E64C961F84DF5200E2CA65 /* Assets.xcassets */; };
 		35E64C9A1F84DF5200E2CA65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E64C981F84DF5200E2CA65 /* LaunchScreen.storyboard */; };
+		AF579E731FD6A8A700A4E6E4 /* AddCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E701FD6A8A700A4E6E4 /* AddCardsViewController.swift */; };
+		AF579E741FD6A8A700A4E6E4 /* AddCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E711FD6A8A700A4E6E4 /* AddCardsTableViewCell.swift */; };
+		AF579E751FD6A8A700A4E6E4 /* AddCardsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF579E721FD6A8A700A4E6E4 /* AddCardsTableViewCell.xib */; };
+		AF579E791FD6AA1400A4E6E4 /* SavedCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E761FD6AA1400A4E6E4 /* SavedCardsViewController.swift */; };
+		AF579E7A1FD6AA1400A4E6E4 /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E771FD6AA1400A4E6E4 /* SavedTableViewCell.swift */; };
+		AF579E7B1FD6AA1400A4E6E4 /* SavedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF579E781FD6AA1400A4E6E4 /* SavedTableViewCell.xib */; };
+		AF579E7F1FD6ABA000A4E6E4 /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E7C1FD6ABA000A4E6E4 /* OrderHistoryViewController.swift */; };
+		AF579E801FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E7D1FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.swift */; };
+		AF579E811FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF579E7E1FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.xib */; };
+		AF579E831FD6AD3800A4E6E4 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E821FD6AD3800A4E6E4 /* AboutUsViewController.swift */; };
+		AF579E851FD6B43F00A4E6E4 /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E841FD6B43F00A4E6E4 /* TermsOfServiceViewController.swift */; };
+		AF579E871FD6B50700A4E6E4 /* changePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E861FD6B50700A4E6E4 /* changePasswordViewController.swift */; };
+		AF579E891FD6B5E700A4E6E4 /* EditBankProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E881FD6B5E700A4E6E4 /* EditBankProfileViewController.swift */; };
+		AF579E901FD6B63100A4E6E4 /* EditProfileTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E8A1FD6B63100A4E6E4 /* EditProfileTableViewCell1.swift */; };
+		AF579E911FD6B63100A4E6E4 /* EditProfileTableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF579E8B1FD6B63100A4E6E4 /* EditProfileTableViewCell1.xib */; };
+		AF579E921FD6B63100A4E6E4 /* EditProfileTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E8C1FD6B63100A4E6E4 /* EditProfileTableViewCell2.swift */; };
+		AF579E931FD6B63100A4E6E4 /* EditProfileTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF579E8D1FD6B63100A4E6E4 /* EditProfileTableViewCell2.xib */; };
+		AF579E941FD6B63100A4E6E4 /* EditProfileTableViewCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E8E1FD6B63100A4E6E4 /* EditProfileTableViewCell3.swift */; };
+		AF579E951FD6B63100A4E6E4 /* EditProfileTableViewCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF579E8F1FD6B63100A4E6E4 /* EditProfileTableViewCell3.xib */; };
 		FE40D0A2EBD8FF7C457CED4D /* Pods_PayZan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58664A2987A8C9551CE579E5 /* Pods_PayZan.framework */; };
 /* End PBXBuildFile section */
 
@@ -283,6 +302,25 @@
 		35E64C9B1F84DF5200E2CA65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58664A2987A8C9551CE579E5 /* Pods_PayZan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayZan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F0405BFA6A0577351F3211 /* Pods-PayZan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayZan.release.xcconfig"; path = "Pods/Target Support Files/Pods-PayZan/Pods-PayZan.release.xcconfig"; sourceTree = "<group>"; };
+		AF579E701FD6A8A700A4E6E4 /* AddCardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardsViewController.swift; sourceTree = "<group>"; };
+		AF579E711FD6A8A700A4E6E4 /* AddCardsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardsTableViewCell.swift; sourceTree = "<group>"; };
+		AF579E721FD6A8A700A4E6E4 /* AddCardsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardsTableViewCell.xib; sourceTree = "<group>"; };
+		AF579E761FD6AA1400A4E6E4 /* SavedCardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCardsViewController.swift; sourceTree = "<group>"; };
+		AF579E771FD6AA1400A4E6E4 /* SavedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
+		AF579E781FD6AA1400A4E6E4 /* SavedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavedTableViewCell.xib; sourceTree = "<group>"; };
+		AF579E7C1FD6ABA000A4E6E4 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
+		AF579E7D1FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewCell1.swift; sourceTree = "<group>"; };
+		AF579E7E1FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderHistoryTableViewCell1.xib; sourceTree = "<group>"; };
+		AF579E821FD6AD3800A4E6E4 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		AF579E841FD6B43F00A4E6E4 /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
+		AF579E861FD6B50700A4E6E4 /* changePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = changePasswordViewController.swift; sourceTree = "<group>"; };
+		AF579E881FD6B5E700A4E6E4 /* EditBankProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBankProfileViewController.swift; sourceTree = "<group>"; };
+		AF579E8A1FD6B63100A4E6E4 /* EditProfileTableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell1.swift; sourceTree = "<group>"; };
+		AF579E8B1FD6B63100A4E6E4 /* EditProfileTableViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileTableViewCell1.xib; sourceTree = "<group>"; };
+		AF579E8C1FD6B63100A4E6E4 /* EditProfileTableViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell2.swift; sourceTree = "<group>"; };
+		AF579E8D1FD6B63100A4E6E4 /* EditProfileTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileTableViewCell2.xib; sourceTree = "<group>"; };
+		AF579E8E1FD6B63100A4E6E4 /* EditProfileTableViewCell3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell3.swift; sourceTree = "<group>"; };
+		AF579E8F1FD6B63100A4E6E4 /* EditProfileTableViewCell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileTableViewCell3.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +400,9 @@
 				354E4D491FA71108008D108A /* RequestAgent */,
 				356651861F9DC75500330D33 /* MyTransaction */,
 				3554C31E1F8F5D850092EAC7 /* Profile */,
+				AF579E761FD6AA1400A4E6E4 /* SavedCardsViewController.swift */,
+				AF579E771FD6AA1400A4E6E4 /* SavedTableViewCell.swift */,
+				AF579E781FD6AA1400A4E6E4 /* SavedTableViewCell.xib */,
 				350CCD1B1F88A5BE003495B6 /* IconTableViewCell.swift */,
 				350CCD1C1F88A5BE003495B6 /* IconTableViewCell.xib */,
 				350CCD171F88A54F003495B6 /* HomeCollectionViewCell.swift */,
@@ -393,6 +434,16 @@
 				354E4D4E1FA71272008D108A /* RequestForAgentViewController.swift */,
 				35CB9D191F8BB2B900BF1073 /* OffersViewController.swift */,
 				35344DB41F862B3C00E35C5C /* SignupViewController.swift */,
+				AF579E821FD6AD3800A4E6E4 /* AboutUsViewController.swift */,
+				AF579E841FD6B43F00A4E6E4 /* TermsOfServiceViewController.swift */,
+				AF579E861FD6B50700A4E6E4 /* changePasswordViewController.swift */,
+				AF579E881FD6B5E700A4E6E4 /* EditBankProfileViewController.swift */,
+				AF579E8A1FD6B63100A4E6E4 /* EditProfileTableViewCell1.swift */,
+				AF579E8B1FD6B63100A4E6E4 /* EditProfileTableViewCell1.xib */,
+				AF579E8C1FD6B63100A4E6E4 /* EditProfileTableViewCell2.swift */,
+				AF579E8D1FD6B63100A4E6E4 /* EditProfileTableViewCell2.xib */,
+				AF579E8E1FD6B63100A4E6E4 /* EditProfileTableViewCell3.swift */,
+				AF579E8F1FD6B63100A4E6E4 /* EditProfileTableViewCell3.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -527,6 +578,12 @@
 				3554C32A1F8F5DCD0092EAC7 /* SignOutTableViewCell.xib */,
 				3554C32B1F8F5DCD0092EAC7 /* LoginTableViewCell.swift */,
 				3554C32C1F8F5DCD0092EAC7 /* LoginTableViewCell.xib */,
+				AF579E701FD6A8A700A4E6E4 /* AddCardsViewController.swift */,
+				AF579E711FD6A8A700A4E6E4 /* AddCardsTableViewCell.swift */,
+				AF579E721FD6A8A700A4E6E4 /* AddCardsTableViewCell.xib */,
+				AF579E7C1FD6ABA000A4E6E4 /* OrderHistoryViewController.swift */,
+				AF579E7D1FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.swift */,
+				AF579E7E1FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.xib */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -730,12 +787,17 @@
 				35E64C9A1F84DF5200E2CA65 /* LaunchScreen.storyboard in Resources */,
 				350CCD1A1F88A54F003495B6 /* HomeCollectionViewCell.xib in Resources */,
 				3554C33A1F8F5DCD0092EAC7 /* LoginTableViewCell.xib in Resources */,
+				AF579E911FD6B63100A4E6E4 /* EditProfileTableViewCell1.xib in Resources */,
 				35344DBD1F86824900E35C5C /* GoogleService-Info.plist in Resources */,
 				3554C3301F8F5DCD0092EAC7 /* ListTableViewCell.xib in Resources */,
+				AF579E811FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.xib in Resources */,
 				354E4D551FA7243B008D108A /* AddAgentTableViewCell.xib in Resources */,
 				3554C3321F8F5DCD0092EAC7 /* TableViewCell1.xib in Resources */,
+				AF579E951FD6B63100A4E6E4 /* EditProfileTableViewCell3.xib in Resources */,
 				35485D881FB46DE900CDB076 /* CreditCardTableViewCell.xib in Resources */,
 				35E64C971F84DF5200E2CA65 /* Assets.xcassets in Resources */,
+				AF579E931FD6B63100A4E6E4 /* EditProfileTableViewCell2.xib in Resources */,
+				AF579E751FD6A8A700A4E6E4 /* AddCardsTableViewCell.xib in Resources */,
 				3566518A1F9DC7A300330D33 /* MyTransactionTableViewCell.xib in Resources */,
 				35485D8C1FB46DE900CDB076 /* NetBankingTableViewCell.xib in Resources */,
 				3554C32E1F8F5DCD0092EAC7 /* ProfileTableViewCell.xib in Resources */,
@@ -745,6 +807,7 @@
 				3562EEFF1FA98C1200547C93 /* SubmitAgentTableViewCell.xib in Resources */,
 				3554C3381F8F5DCD0092EAC7 /* SignOutTableViewCell.xib in Resources */,
 				350CCD161F88A516003495B6 /* HomeTableViewCell.xib in Resources */,
+				AF579E7B1FD6AA1400A4E6E4 /* SavedTableViewCell.xib in Resources */,
 				3554C3341F8F5DCD0092EAC7 /* TableViewCell2.xib in Resources */,
 				35E64C951F84DF5200E2CA65 /* Main.storyboard in Resources */,
 			);
@@ -848,19 +911,24 @@
 				356490A11FBF7A2600078951 /* AddAgentResultVo.swift in Sources */,
 				354CF1AB1F90DAA4004ADDAD /* BaseViewController.swift in Sources */,
 				354E4D461FA6EB7C008D108A /* SendWalletVo.swift in Sources */,
+				AF579E801FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.swift in Sources */,
 				350CCD191F88A54F003495B6 /* HomeCollectionViewCell.swift in Sources */,
 				3564909D1FBF6BC900078951 /* AgentVillageResultVo.swift in Sources */,
 				353EB9BC1F9F06ED00AA67E9 /* ShadowView.swift in Sources */,
 				3554C3191F8F457B0092EAC7 /* RechargeDetailViewController.swift in Sources */,
+				AF579E731FD6A8A700A4E6E4 /* AddCardsViewController.swift in Sources */,
+				AF579E871FD6B50700A4E6E4 /* changePasswordViewController.swift in Sources */,
 				35344D9E1F8610C700E35C5C /* ISO8601DateTransform.swift in Sources */,
 				350CCD151F88A516003495B6 /* HomeTableViewCell.swift in Sources */,
 				3554C32D1F8F5DCD0092EAC7 /* ProfileTableViewCell.swift in Sources */,
+				AF579E921FD6B63100A4E6E4 /* EditProfileTableViewCell2.swift in Sources */,
 				35344DA81F8610C700E35C5C /* TransformType.swift in Sources */,
 				35344DB91F863B5900E35C5C /* TextFieldMaxLengths.swift in Sources */,
 				355120F71F948EED00C9AD9D /* ListResultVo.swift in Sources */,
 				356651891F9DC7A300330D33 /* MyTransactionTableViewCell.swift in Sources */,
 				3554C3371F8F5DCD0092EAC7 /* SignOutTableViewCell.swift in Sources */,
 				3564908F1FBF478A00078951 /* AgentReqVo.swift in Sources */,
+				AF579E791FD6AA1400A4E6E4 /* SavedCardsViewController.swift in Sources */,
 				35344DB71F862FD400E35C5C /* SignupVo.swift in Sources */,
 				35485D841FB46DE900CDB076 /* PayzAppViewController.swift in Sources */,
 				356490951FBF614300078951 /* AgentDistrictResultVo.swift in Sources */,
@@ -896,20 +964,24 @@
 				35344DA61F8610C700E35C5C /* TransformOf.swift in Sources */,
 				354CF19A1F9095B4004ADDAD /* UserVo.swift in Sources */,
 				3554C3311F8F5DCD0092EAC7 /* TableViewCell1.swift in Sources */,
+				AF579E741FD6A8A700A4E6E4 /* AddCardsTableViewCell.swift in Sources */,
 				354CF1B71F9117B1004ADDAD /* AddMoneyWalletViewController.swift in Sources */,
 				354CF19C1F909751004ADDAD /* RolesVo.swift in Sources */,
 				35442CE21F8DEA4D007798EC /* RechargeViewController.swift in Sources */,
 				356490911FBF47E200078951 /* AgentReqResultVo.swift in Sources */,
 				354CF1BC1F9151AD004ADDAD /* ResultVo.swift in Sources */,
+				AF579E941FD6B63100A4E6E4 /* EditProfileTableViewCell3.swift in Sources */,
 				354CF1B11F90F91F004ADDAD /* DTHViewController.swift in Sources */,
 				35CB9D181F8B7DF600BF1073 /* MBProgressHUD.m in Sources */,
 				353FE3721FA31AAE00152876 /* Services.swift in Sources */,
 				35344DA51F8610C700E35C5C /* ToJSON.swift in Sources */,
+				AF579E851FD6B43F00A4E6E4 /* TermsOfServiceViewController.swift in Sources */,
 				35344DA11F8610C700E35C5C /* Mappable.swift in Sources */,
 				35344DA91F8610C700E35C5C /* URLTransform.swift in Sources */,
 				35344DBB1F863B6500E35C5C /* NoCopyPasteUITextField.swift in Sources */,
 				353FE3741FA345F900152876 /* GlobalSupportingClass.swift in Sources */,
 				3554C3391F8F5DCD0092EAC7 /* LoginTableViewCell.swift in Sources */,
+				AF579E901FD6B63100A4E6E4 /* EditProfileTableViewCell1.swift in Sources */,
 				3545A89F1FA207A4005E4E7C /* BroadbandViewController.swift in Sources */,
 				35344DA71F8610C700E35C5C /* TransformOperators.swift in Sources */,
 				35344D9B1F8610C700E35C5C /* HexColorTransform.swift in Sources */,
@@ -917,6 +989,7 @@
 				35344D9A1F8610C700E35C5C /* FromJSON.swift in Sources */,
 				356490971FBF697F00078951 /* AgentMandalVo.swift in Sources */,
 				3569C1E41F876D3F00152B80 /* menuViewController.swift in Sources */,
+				AF579E831FD6AD3800A4E6E4 /* AboutUsViewController.swift in Sources */,
 				35E64C921F84DF5200E2CA65 /* ViewController.swift in Sources */,
 				350CCD1D1F88A5BE003495B6 /* IconTableViewCell.swift in Sources */,
 				354E4D4F1FA71272008D108A /* RequestForAgentViewController.swift in Sources */,
@@ -926,6 +999,8 @@
 				354CF1B31F90F93B004ADDAD /* DatacardViewController.swift in Sources */,
 				354CF19E1F90978B004ADDAD /* GetActVo.swift in Sources */,
 				354CF1B91F913E72004ADDAD /* GetUserWalletVo.swift in Sources */,
+				AF579E7F1FD6ABA000A4E6E4 /* OrderHistoryViewController.swift in Sources */,
+				AF579E891FD6B5E700A4E6E4 /* EditBankProfileViewController.swift in Sources */,
 				3569C1E61F876D6800152B80 /* MenuTableViewCell.swift in Sources */,
 				3545A8A01FA207A4005E4E7C /* WaterViewController.swift in Sources */,
 				35344DAD1F8611B100E35C5C /* LoginVo.swift in Sources */,
@@ -938,6 +1013,7 @@
 				3569C1E91F8773CA00152B80 /* SWRevealViewController.m in Sources */,
 				354CF1AD1F90E4BB004ADDAD /* ElectricityViewController.swift in Sources */,
 				35403DED1FA0687F0004DD20 /* TabsViewController.swift in Sources */,
+				AF579E7A1FD6AA1400A4E6E4 /* SavedTableViewCell.swift in Sources */,
 				35CB9D0F1F8B7B0700BF1073 /* ServiceController.swift in Sources */,
 				35E64C901F84DF5200E2CA65 /* AppDelegate.swift in Sources */,
 				35485D8B1FB46DE900CDB076 /* NetBankingTableViewCell.swift in Sources */,
