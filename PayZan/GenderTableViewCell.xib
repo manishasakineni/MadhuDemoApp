@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="17A365" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsV-mp-Rtu">
@@ -53,10 +54,10 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Female" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6b-4Q-Yxl">
-                        <rect key="frame" x="196" y="33" width="55" height="30"/>
+                        <rect key="frame" x="196" y="37" width="55" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="b4I-Cx-Dha"/>
-                            <constraint firstAttribute="width" constant="55" id="nA2-I6-3ZD"/>
+                            <constraint firstAttribute="width" constant="55" id="Ej0-zm-VDi"/>
+                            <constraint firstAttribute="height" constant="20" id="hJB-px-ynL"/>
                         </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -80,18 +81,18 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="nsV-mp-Rtu" secondAttribute="bottom" constant="8" id="16O-cQ-UZW"/>
                     <constraint firstItem="meL-6u-tlZ" firstAttribute="leading" secondItem="Tei-Ro-4dp" secondAttribute="trailing" constant="9" id="5B4-wq-7ZM"/>
+                    <constraint firstItem="Tei-Ro-4dp" firstAttribute="leading" secondItem="0RM-QH-5eQ" secondAttribute="leading" id="Bza-nf-sbU"/>
                     <constraint firstAttribute="bottom" secondItem="meL-6u-tlZ" secondAttribute="bottom" constant="6.5" id="Ht9-bF-Dpv"/>
-                    <constraint firstAttribute="trailing" secondItem="u6b-4Q-Yxl" secondAttribute="trailing" constant="69" id="Mfn-RC-dlw"/>
                     <constraint firstAttribute="bottom" secondItem="adB-cx-NaQ" secondAttribute="bottom" constant="8" id="NOn-8M-6P9"/>
                     <constraint firstItem="0RM-QH-5eQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="R9I-4t-Dti"/>
                     <constraint firstAttribute="bottom" secondItem="vtH-QD-RKJ" secondAttribute="bottom" constant="12.5" id="TPi-VZ-l4o"/>
-                    <constraint firstAttribute="bottom" secondItem="u6b-4Q-Yxl" secondAttribute="bottom" constant="6.5" id="WlB-fx-SbL"/>
+                    <constraint firstItem="u6b-4Q-Yxl" firstAttribute="centerY" secondItem="vtH-QD-RKJ" secondAttribute="centerY" id="VnD-nh-SCo"/>
                     <constraint firstItem="adB-cx-NaQ" firstAttribute="leading" secondItem="meL-6u-tlZ" secondAttribute="trailing" constant="71" id="Yes-vG-26S"/>
-                    <constraint firstItem="u6b-4Q-Yxl" firstAttribute="leading" secondItem="vtH-QD-RKJ" secondAttribute="trailing" constant="8" id="e9K-ak-Rjg"/>
                     <constraint firstAttribute="bottom" secondItem="Tei-Ro-4dp" secondAttribute="bottom" constant="12.5" id="fZj-iI-IKy"/>
                     <constraint firstItem="vtH-QD-RKJ" firstAttribute="leading" secondItem="meL-6u-tlZ" secondAttribute="trailing" constant="71" id="gNO-l9-CfU"/>
                     <constraint firstAttribute="trailing" secondItem="0RM-QH-5eQ" secondAttribute="trailing" constant="136" id="kLq-Wa-qaj"/>
                     <constraint firstItem="0RM-QH-5eQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ohF-LG-K6S"/>
+                    <constraint firstItem="u6b-4Q-Yxl" firstAttribute="leading" secondItem="vtH-QD-RKJ" secondAttribute="trailing" constant="8" id="scl-io-Lp7"/>
                     <constraint firstItem="vtH-QD-RKJ" firstAttribute="leading" secondItem="nsV-mp-Rtu" secondAttribute="trailing" constant="83" id="y5y-rw-8Zz"/>
                 </constraints>
             </tableViewCellContentView>

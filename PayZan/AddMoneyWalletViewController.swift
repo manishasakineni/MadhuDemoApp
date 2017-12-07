@@ -122,7 +122,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             let upperBorder: CALayer = CALayer()
             upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
-            upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:borderview.frame.size.width, height:1.0)
+            upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
             borderview.layer .addSublayer(upperBorder);
             
         }

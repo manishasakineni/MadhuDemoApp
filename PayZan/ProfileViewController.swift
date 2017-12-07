@@ -23,7 +23,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     
     var labelText1:String?
     
-    var listArr = ["Saved Cards","Order History","Change Password","About US","Support","Terms Of Service","Share"]
+    var listArr = ["Saved Cards","Order History","Change Password","About US","Terms Of Service","Support","Share"]
     
     var imageArray1 = [UIImage(named:"savedCards"),UIImage(named:"orderHistory"),UIImage(named:"changePassword"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us")]
     
@@ -353,24 +353,24 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
                 self.navigationController?.pushViewController(cableViewController, animated: true)
             }
+//            else if indexPath.row == 4 {
+//                
+//                let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "SavedCardsViewController") as! SavedCardsViewController
+//                self.navigationController?.pushViewController(cableViewController, animated: true)
+//            }
+                
             else if indexPath.row == 4 {
-                
-                let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "SavedCardsViewController") as! SavedCardsViewController
-                self.navigationController?.pushViewController(cableViewController, animated: true)
-            }
-                
-            else if indexPath.row == 5 {
                 
                 let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "TermsOfServiceViewController") as! TermsOfServiceViewController
                 self.navigationController?.pushViewController(cableViewController, animated: true)
             }
-            
-            else if indexPath.row == 6 {
-                
-                let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditBankProfileViewController") as! EditBankProfileViewController
-                self.navigationController?.pushViewController(cableViewController, animated: true)
-        }
-        
+//            
+//            else if indexPath.row == 6 {
+//                
+//                let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditBankProfileViewController") as! EditBankProfileViewController
+//                self.navigationController?.pushViewController(cableViewController, animated: true)
+//        }
+//        
     
             
         
