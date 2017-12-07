@@ -51,7 +51,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     var text: String? = nil
     var labelText:String?
     
-//    var editProfileArray = [String]()
     
     var editProfileArray:ProfileResultVo?
     
@@ -208,7 +207,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             cell.profileImag.clipsToBounds = true
             cell.profileImag.image = image
             
-//            let editArray:ProfileResultVo = editProfileArray[indexPath.row]!
             
             cell.firstNameTF.text = editProfileArray?.UserName
             cell.lastNameTF.text = editProfileArray?.FirstName

@@ -400,9 +400,6 @@
 				354E4D491FA71108008D108A /* RequestAgent */,
 				356651861F9DC75500330D33 /* MyTransaction */,
 				3554C31E1F8F5D850092EAC7 /* Profile */,
-				AF579E761FD6AA1400A4E6E4 /* SavedCardsViewController.swift */,
-				AF579E771FD6AA1400A4E6E4 /* SavedTableViewCell.swift */,
-				AF579E781FD6AA1400A4E6E4 /* SavedTableViewCell.xib */,
 				350CCD1B1F88A5BE003495B6 /* IconTableViewCell.swift */,
 				350CCD1C1F88A5BE003495B6 /* IconTableViewCell.xib */,
 				350CCD171F88A54F003495B6 /* HomeCollectionViewCell.swift */,
@@ -438,12 +435,7 @@
 				AF579E841FD6B43F00A4E6E4 /* TermsOfServiceViewController.swift */,
 				AF579E861FD6B50700A4E6E4 /* changePasswordViewController.swift */,
 				AF579E881FD6B5E700A4E6E4 /* EditBankProfileViewController.swift */,
-				AF579E8A1FD6B63100A4E6E4 /* EditProfileTableViewCell1.swift */,
-				AF579E8B1FD6B63100A4E6E4 /* EditProfileTableViewCell1.xib */,
-				AF579E8C1FD6B63100A4E6E4 /* EditProfileTableViewCell2.swift */,
-				AF579E8D1FD6B63100A4E6E4 /* EditProfileTableViewCell2.xib */,
-				AF579E8E1FD6B63100A4E6E4 /* EditProfileTableViewCell3.swift */,
-				AF579E8F1FD6B63100A4E6E4 /* EditProfileTableViewCell3.xib */,
+				AF579E761FD6AA1400A4E6E4 /* SavedCardsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -564,6 +556,14 @@
 		3554C31E1F8F5D850092EAC7 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				AF579E771FD6AA1400A4E6E4 /* SavedTableViewCell.swift */,
+				AF579E781FD6AA1400A4E6E4 /* SavedTableViewCell.xib */,
+				AF579E8A1FD6B63100A4E6E4 /* EditProfileTableViewCell1.swift */,
+				AF579E8B1FD6B63100A4E6E4 /* EditProfileTableViewCell1.xib */,
+				AF579E8C1FD6B63100A4E6E4 /* EditProfileTableViewCell2.swift */,
+				AF579E8D1FD6B63100A4E6E4 /* EditProfileTableViewCell2.xib */,
+				AF579E8E1FD6B63100A4E6E4 /* EditProfileTableViewCell3.swift */,
+				AF579E8F1FD6B63100A4E6E4 /* EditProfileTableViewCell3.xib */,
 				3554C31F1F8F5DCD0092EAC7 /* ProfileTableViewCell.swift */,
 				3554C3201F8F5DCD0092EAC7 /* ProfileTableViewCell.xib */,
 				3554C3211F8F5DCD0092EAC7 /* ListTableViewCell.swift */,

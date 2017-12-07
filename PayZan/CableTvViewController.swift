@@ -168,7 +168,6 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
                     let isActive = respVO.IsSuccess
                     
                     
-                    //                    let status = result["status"] as! String
                     
                     if(isActive == true){
                         
@@ -188,7 +187,7 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
                         self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                         
                     }
-                    //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+
             }
         }, failure:  {(error) in
         })

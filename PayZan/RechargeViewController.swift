@@ -95,15 +95,9 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         getPrepaidList()
         getPostpaidList()
-//        let color1 = hexStringToUIColor(hex: "#5f1a58")
         
-//        rechargeBtn.backgroundColor = color1
-//        
-//        rechargeBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-//        
-//        rechargeBtn.layer.cornerRadius = 5
         
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -296,7 +290,7 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
                         self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                         
                     }
-                    //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+
             }
         }, failure:  {(error) in
         })
@@ -328,7 +322,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
                     let isActive = respVO.IsSuccess
                     
                     
-                    //                    let status = result["status"] as! String
                     
                     if(isActive == true){
                         
@@ -350,7 +343,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
                         self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                         
                     }
-                    //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
             }
         }, failure:  {(error) in
         })
@@ -424,10 +416,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     
     @IBAction func postpiadChecboxAction(_ sender: UIButton) {
         
-//        postpaidCheckbox.setBackgroundImage(UIImage(named: "selectedBox"), for: .selected)
-//        prepaidChecbox.setBackgroundImage(UIImage(named: "unselectedBox"), for: .normal)
-        
-//        sender.isSelected = !sender.isSelected
         
         if (postpaidCheckbox.isSelected == true)
         {
@@ -494,9 +482,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
            
         }
     }
-//    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
-//        print("Cancel Contact Picker")
-//    }
     
     @IBAction func phoneBookAction(_ sender: Any) {
         

@@ -116,7 +116,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
         mySegmentControl.setBackgroundImage(self.imageWithColor(color: UIColor.clear), for:UIControlState.normal, barMetrics:UIBarMetrics.default)
         
-//        mySegmentControl.setBackgroundImage(self.imageWithColor(color: UIColor.init(red: 215/255.0, green: 0.0, blue: 30/255.0, alpha:1.0)), for:UIControlState.selected, barMetrics:UIBarMetrics.default);
         
         for  borderview in mySegmentControl.subviews {
             
@@ -184,18 +183,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             mytransactionView.isHidden = isHiddenTransactionView!
         }
         
-//        sendMoneyWalletView.isHidden = false
-//        addmoneyWalletView.isHidden = true
-//        mytransactionView.isHidden = true
-        
-        
-//        addMoneyBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-//        
-//        addMoneyBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-//        
-//        addMoneyBtn.layer.cornerRadius = 5
-        
-        
+
         
         mobileNumField.keyboardType = .phonePad
         addWalletFiled.keyboardType = .numberPad
@@ -410,11 +398,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         cell.dateLabel.text = myStringafd
         cell.fromLabel.text = listResult.Modified
         
-//        cell.ImgeVw.image = imageArray1[indexPath.row]
-        
-//        cell.layer.borderWidth = 0.5
-//        cell.layer.borderColor = UIColor.lightGray.cgColor
-        
         
         
         return cell
@@ -469,7 +452,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                             self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                             
                         }
-                        //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+
                 }
             }, failure:  {(error) in
             })
@@ -504,7 +487,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
         let dictHeaders = ["":"","":""] as NSDictionary
     
-//    let dictHeaders = ["Authorization":UserDefaults.standard.value(forKey: accessToken) as! String,"Authorization":UserDefaults.standard.value(forKey: accessToken) as! String] as NSDictionary
     
       print("dictHeader:\(dictHeaders)")
     
@@ -658,7 +640,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
         let dictHeaders = ["":"","":""] as NSDictionary
         
-        //    let dictHeaders = ["Authorization":UserDefaults.standard.value(forKey: accessToken) as! String,"Authorization":UserDefaults.standard.value(forKey: accessToken) as! String] as NSDictionary
         
         print("dictHeader:\(dictHeaders)")
         
@@ -678,8 +659,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                     
                     print("StatusCode:\(String(describing: statusCode))")
                     
-                    //                        let strStatusCode = result.value(forKey: "StatusCode") as! Int
-                    //                        print("strStatusCode",strStatusCode)
                     
                     if statusCode == true
                     {
@@ -699,7 +678,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
                         let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                         self.navigationController?.pushViewController(homeViewController, animated: true)
                         
-//                         self.showAlertViewWithTitle("Success", message: successMsg!, buttonTitle: "Ok")
                         
                         self.appDelegate.window?.makeToast(successMsg!, duration:kToastDuration, position:CSToastPositionCenter)
 
@@ -913,10 +891,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             }
         }
     }
-    //    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
-    //        print("Cancel Contact Picker")
-    //    }
-    
+        
     
     @IBAction func mySegmentAction(_ sender: Any) {
         

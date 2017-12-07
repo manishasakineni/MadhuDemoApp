@@ -73,7 +73,6 @@ class PayzAppViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         savedCardButtonOutLet.layer.borderWidth = 1
         
-       // savedCardButtonOutLet.layer.borderColor = UIColor.orange.cgColor
     
         savedCardButtonOutLet.layer.borderColor = UIColor(red:238.0/255.0, green:224.0/255.0, blue:225.0/255.0, alpha: 1.0).cgColor
         
@@ -188,16 +187,12 @@ class PayzAppViewController: UIViewController, UITableViewDelegate, UITableViewD
         savedCardsLabel.textColor = UIColor.white
 
         savedCardButtonOutLet.setImage(UIImage(named: "payment_savedcaddetails_white"), for: UIControlState.normal)
-//        savedCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_savedcaddetails_white"), for: UIControlState.normal)
+
         
         debitCardButtonOutLet.setImage(UIImage(named: "payment_creitcard_active"), for: UIControlState.normal)
         netBankingButtonOutLet.setImage(UIImage(named: "payment_bank_active"), for: UIControlState.normal)
         creditCardButtonOutLet.setImage(UIImage(named: "payment_creitcard_active"), for: UIControlState.normal)
         
-//        debitCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_creitcard_active"), for: UIControlState.normal)
-//        netBankingButtonOutLet.setBackgroundImage(UIImage(named: "payment_bank_active"), for: UIControlState.normal)
-//        creditCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_creitcard_active"), for: UIControlState.normal)
-
 
         tableView.reloadData()
         
@@ -230,12 +225,6 @@ class PayzAppViewController: UIViewController, UITableViewDelegate, UITableViewD
         debitCardButtonOutLet.setImage(UIImage(named: "payment_creitcard_active"), for: UIControlState.normal)
         netBankingButtonOutLet.setImage(UIImage(named: "payment_bank_active"), for: UIControlState.normal)
         
-
-//        creditCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_creditcard_white"), for: UIControlState.normal)
-//
-//        savedCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_savedcaddetails_active"), for: UIControlState.normal)
-//        debitCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_creitcard_active"), for: UIControlState.normal)
-//        netBankingButtonOutLet.setBackgroundImage(UIImage(named: "payment_bank_active"), for: UIControlState.normal)
 
 
         
@@ -272,13 +261,6 @@ class PayzAppViewController: UIViewController, UITableViewDelegate, UITableViewD
         netBankingButtonOutLet.setImage(UIImage(named: "payment_bank_active"), for: UIControlState.normal)
         
         
-//        debitCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_creditcard_white"), for: UIControlState.normal)
-//
-//        
-//        savedCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_savedcaddetails_active"), for: UIControlState.normal)
-//        creditCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_creitcard_active"), for: UIControlState.normal)
-//        netBankingButtonOutLet.setBackgroundImage(UIImage(named: "payment_bank_active"), for: UIControlState.normal)
-
         
         
 
@@ -310,11 +292,6 @@ class PayzAppViewController: UIViewController, UITableViewDelegate, UITableViewD
         debitCardButtonOutLet.setImage(UIImage(named: "payment_creitcard_active"), for: UIControlState.normal)
         creditCardButtonOutLet.setImage(UIImage(named: "payment_creitcard_active"), for: UIControlState.normal)
         
-//        netBankingButtonOutLet.setBackgroundImage(UIImage(named: "payment_bank_white"), for: UIControlState.normal)
-//
-//        savedCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_savedcaddetails_active"), for: UIControlState.normal)
-//        debitCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_creitcard_active"), for: UIControlState.normal)
-//        creditCardButtonOutLet.setBackgroundImage(UIImage(named: "payment_creitcard_active"), for: UIControlState.normal)
 
 
          tableView.reloadData()

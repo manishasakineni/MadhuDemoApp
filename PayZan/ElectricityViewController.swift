@@ -39,11 +39,6 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-//        
-//        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-//        
-//        payNowBtn.layer.cornerRadius = 5
         
         
         districtsFiled.layer.borderWidth = 0.5
@@ -197,7 +192,7 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
                             self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                             
                         }
-                        //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+
                 }
             }, failure:  {(error) in
             })

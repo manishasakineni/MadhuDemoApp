@@ -43,11 +43,6 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-//        
-//        payNowBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-//        
-//        payNowBtn.layer.cornerRadius = 5
         
         
         datacardNumField.layer.borderWidth = 0.5
@@ -201,7 +196,7 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
                         self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                         
                     }
-                    //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+
             }
         }, failure:  {(error) in
         })
@@ -233,7 +228,6 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
                     let isActive = respVO.IsSuccess
                     
                     
-                    //                    let status = result["status"] as! String
                     
                     if(isActive == true){
                         
@@ -255,7 +249,7 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
                         self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                         
                     }
-                    //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+
             }
         }, failure:  {(error) in
         })

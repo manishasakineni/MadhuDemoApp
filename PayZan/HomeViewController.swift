@@ -68,8 +68,6 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        print("userID:\(userID!)")
-//        print("walletID:\(walletID!)")
         
         
         let defaults = UserDefaults.standard
@@ -118,8 +116,6 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         self.myNewView = UIView(frame: CGRect(x: 10, y: 0, width: self.view.frame.size.width-20, height: 80))
         
-//        self.myNewView.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
-//        self.scrollView.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         
         myNewView.addSubview(scrollView)
         
@@ -219,10 +215,10 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-//        scrollView.delegate = self
         scrollView.frame = myNewView.bounds
         containerView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-           // CGRectMake(0, 0, scrollView.contentSize.width, scrollView.contentSize.height)
+
+    
     }
 
 
@@ -396,24 +392,6 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-//        if section == 0 {
-//         
-//    
-//          if collectionView.tag == 0 {
-//            
-//            return imageArray.count
-//            
-//            }
-//            
-//        }else if section == 1 {
-//            
-//            if collectionView.tag == 1{
-//                
-//                return imageArray1.count
-//            
-//            }
-//            
-//        }
         
         if collectionView.tag == 0 {
             
@@ -445,7 +423,6 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
             
             cell.productIMG.image = imageArray[ indexPath.row]
-//            cell.nameLBL.text = namesarra1[indexPath.row]
             
             if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                 layout.scrollDirection = .vertical
@@ -463,7 +440,6 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
             
             cell.productIMG.image =   imageArray1[indexPath.row]
             
-//            cell.nameLBL.text = namesarra2[indexPath.row]
             
             if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                 layout.scrollDirection = .vertical
@@ -478,7 +454,6 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
         
         cell.productIMG.image =   imageArray2[indexPath.row]
-//        cell.nameLBL.text = namesarra3[indexPath.row]
         
         cell.contentView.layer.cornerRadius = 20
         cell.contentView.layer.borderWidth = 1.0
@@ -550,20 +525,7 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
         }
     }
     
-    //for label heigt
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize{
-//        
-////        if collectionView.tag == 0 {
-////            
-////            return CGSize(width: 90, height: 200)
-////        }
-//        
-//        return CGSize(width: 85, height: 85)
-//        
-//    }
-    
+        
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         

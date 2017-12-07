@@ -29,6 +29,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         let defaults = UserDefaults.standard
@@ -77,13 +78,9 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
         self.profileTVC.separatorStyle = .none
         
-//        profileTVC.separatorColor = UIColor.clear
         
         profileTVC.sectionIndexBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         profileTVC.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
-       // profileTVC.layer.borderWidth = 2
-       // profileTVC.layer.borderColor = UIColor.gray.cgColor
         
         
         let nibName  = UINib(nibName: "ListTableViewCell" , bundle: nil)
@@ -104,10 +101,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     
     override func viewDidAppear(_ animated: Bool) {
         
-        //        headerView.isHidden = false
-        
-//        self.tabBarController?.tabBar.isHidden = true
-        
         
         
         super.viewDidAppear(true)
@@ -116,7 +109,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        self.tabBarController?.tabBar.isHidden = false
         
         
         let defaults = UserDefaults.standard
@@ -273,10 +265,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     }
         else {
         
-//            if isUserLogin == true {
-        
-                
-//                if indexPath.row == 7 {
             
                 
                     let cell = tableView.dequeueReusableCell(withIdentifier: "SignOutTableViewCell", for: indexPath) as! SignOutTableViewCell

@@ -219,8 +219,6 @@ let headerTitle = "PERSONAL INFORMATION"
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        /// 1. replacementString is NOT empty means we are entering text or pasting text: perform the logic
-        /// 2. replacementString is empty means we are deleting text: return true
         
         if textField.tag == 1{
             if string.characters.count > 0 {
@@ -378,19 +376,11 @@ let headerTitle = "PERSONAL INFORMATION"
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
-//        if districtsAry.isEmpty {
+
         
-//            self.myPickerView.isHidden = true
-        
-//            operatorField.text = "No Operators"
-//            operatorField.textColor = UIColor.red
-//            operatorField.isUserInteractionEnabled = false
-            
-//        }else {
-//            operatorField.isUserInteractionEnabled = true
+
             textField.inputView = self.myPickerView
-//        }
-        
+
         // ToolBar
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
@@ -894,7 +884,7 @@ let headerTitle = "PERSONAL INFORMATION"
                             self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                             
                         }
-                        //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+
                 }
             }, failure:  {(error) in
             })
@@ -951,7 +941,7 @@ let headerTitle = "PERSONAL INFORMATION"
                             self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                             
                         }
-                        //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+
                 }
             }, failure:  {(error) in
             })
@@ -1008,7 +998,7 @@ let headerTitle = "PERSONAL INFORMATION"
                             self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                             
                         }
-                        //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+
                 }
             }, failure:  {(error) in
             })
@@ -1064,7 +1054,7 @@ let headerTitle = "PERSONAL INFORMATION"
                             self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                             
                         }
-                        //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+
                 }
             }, failure:  {(error) in
             })
@@ -1110,7 +1100,6 @@ let headerTitle = "PERSONAL INFORMATION"
             
             let dictHeaders = ["":"","":""] as NSDictionary
             
-            //    let dictHeaders = ["Authorization":UserDefaults.standard.value(forKey: accessToken) as! String,"Authorization":UserDefaults.standard.value(forKey: accessToken) as! String] as NSDictionary
             
             print("dictHeader:\(dictHeaders)")
             

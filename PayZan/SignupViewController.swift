@@ -77,11 +77,6 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         mobileNumField.maxLength = 13
         mobileNumField.keyboardType = .phonePad
         
-//        signupBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-//        
-//        signupBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-//        
-//        signupBtn.layer.cornerRadius = 5
         
         facebookBtn.layer.cornerRadius = 3
         googleBtn.layer.cornerRadius = 3
@@ -147,9 +142,7 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.window?.rootViewController = viewController
                         
-//                        let statusMsg  = respVO.StatusMessage!
-                        
-//                        print("statusMsg:\(String(describing: statusMsg))")
+
                         
                         let alertController = UIAlertController(title: "Alert", message: "User registered successfully" , preferredStyle: UIAlertControllerStyle.alert)
                         
@@ -190,9 +183,7 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
                     }
                     else
                     {
-                        //                            self.view.makeToast(result.value(forKey:"statusMessage") as! String, duration:kToastDuration, position:CSToastPositionCenter)
                         
-                        //                            let alertController = UIAlertController(title: "", message: result.value(forKey:"statusMessage") as? String , preferredStyle: UIAlertControllerStyle.alert)
                         
                         let alertController = UIAlertController(title: "Success", message: "Network Error" , preferredStyle: UIAlertControllerStyle.alert)
                         

@@ -81,11 +81,6 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
         planField.layer.cornerRadius = 3
         
         
-//        rechargBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-//        
-//        rechargBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-//        
-//        rechargBtn.layer.cornerRadius = 5
         
         // Do any additional setup after loading the view.
     }
@@ -283,10 +278,6 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
     
     @IBAction func postpiadChecboxAction(_ sender: UIButton) {
         
-        //        postpaidCheckbox.setBackgroundImage(UIImage(named: "selectedBox"), for: .selected)
-        //        prepaidChecbox.setBackgroundImage(UIImage(named: "unselectedBox"), for: .normal)
-        
-        //        sender.isSelected = !sender.isSelected
         
         if (postpaidCheckbox.isSelected == true)
         {
@@ -352,9 +343,6 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
             
         }
     }
-    //    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
-    //        print("Cancel Contact Picker")
-    //    }
     
     @IBAction func phoneBookAction(_ sender: Any) {
         

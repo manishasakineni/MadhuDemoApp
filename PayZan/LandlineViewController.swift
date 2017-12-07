@@ -42,11 +42,6 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        rechargeBtn.backgroundColor = hexStringToUIColor(hex: "#5f1a58")
-//        
-//        rechargeBtn.backgroundColor = hexStringToUIColor(hex: "#8d2029")
-//        
-//        rechargeBtn.layer.cornerRadius = 5
         
         stdNumField.layer.borderWidth = 0.5
         stdNumField.layer.borderColor = UIColor.lightGray.cgColor
@@ -248,7 +243,7 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
                         self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                         
                     }
-                    //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
+
             }
         }, failure:  {(error) in
         })

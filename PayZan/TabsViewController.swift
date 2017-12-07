@@ -34,13 +34,6 @@ class TabsViewController: UITabBarController,UITabBarControllerDelegate {
         
         self.navigationController?.pushViewController(addMoneyViewController, animated: true)
         
-//        if viewController.isKind(of: ProfileViewController.self as AnyClass) {
-//            
-//            let viewController  = tabBarController.viewControllers?[1] as! AddMoneyWalletViewController
-//            
-//            viewController.isHiddenWithdrawView = false
-//            
-//        }
         
         return true
     }
