@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="84.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOs-HI-mzc">
@@ -35,11 +35,11 @@
                                     <color key="titleColor" red="0.22075173258781433" green="0.75513595342636108" blue="0.98076909780502319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PmN-vh-Dex">
-                                <rect key="frame" x="0.0" y="205" width="320" height="7"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PmN-vh-Dex">
+                                <rect key="frame" x="0.0" y="205" width="305" height="-253"/>
                                 <color key="backgroundColor" red="0.88354616119999996" green="0.88354616119999996" blue="0.88354616119999996" alpha="0.48785316780821919" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="7" id="mYc-yp-djd"/>
+                                    <constraint firstAttribute="height" id="mYc-yp-djd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -68,7 +68,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCy-NY-Dqf">
-                                <rect key="frame" x="129" y="52" width="80" height="15"/>
+                                <rect key="frame" x="129" y="52" width="70" height="15"/>
                                 <color key="backgroundColor" red="0.5" green="0.1156412591" blue="0.1531547593" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="+ Add Money">
@@ -86,9 +86,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hre-hU-rrS" firstAttribute="centerY" secondItem="pXW-Ih-GBB" secondAttribute="centerY" id="0qZ-HN-CMz"/>
-                            <constraint firstItem="PmN-vh-Dex" firstAttribute="top" secondItem="ZOs-HI-mzc" secondAttribute="top" constant="205" id="9Ut-OV-1qS"/>
+                            <constraint firstItem="PmN-vh-Dex" firstAttribute="top" secondItem="ZOs-HI-mzc" secondAttribute="top" constant="78.5" id="9Ut-OV-1qS"/>
                             <constraint firstItem="Y2s-3m-ELV" firstAttribute="centerX" secondItem="pXW-Ih-GBB" secondAttribute="centerX" id="DAc-Ab-8cr"/>
-                            <constraint firstItem="VVH-Uq-xnn" firstAttribute="leading" secondItem="CCy-NY-Dqf" secondAttribute="trailing" constant="64" id="EYC-aC-5Z1"/>
                             <constraint firstItem="6sZ-1J-eMN" firstAttribute="top" secondItem="pXW-Ih-GBB" secondAttribute="bottom" constant="8" symbolic="YES" id="FBA-On-CDz"/>
                             <constraint firstItem="pXW-Ih-GBB" firstAttribute="top" secondItem="Y2s-3m-ELV" secondAttribute="bottom" constant="5" id="Hfs-nq-Zpc"/>
                             <constraint firstItem="VVH-Uq-xnn" firstAttribute="centerY" secondItem="ZOs-HI-mzc" secondAttribute="centerY" id="Hk2-w5-L0d"/>
@@ -101,7 +100,7 @@
                             <constraint firstAttribute="trailing" secondItem="Y2s-3m-ELV" secondAttribute="trailing" constant="70" id="giP-Lz-1LH"/>
                             <constraint firstItem="pXW-Ih-GBB" firstAttribute="leading" secondItem="6sZ-1J-eMN" secondAttribute="leading" id="h6b-kJ-Lbh"/>
                             <constraint firstItem="Y2s-3m-ELV" firstAttribute="leading" secondItem="pXW-Ih-GBB" secondAttribute="leading" id="hW0-Lj-1OQ"/>
-                            <constraint firstAttribute="trailing" secondItem="PmN-vh-Dex" secondAttribute="trailing" constant="-16" id="iLD-gW-qtz"/>
+                            <constraint firstAttribute="trailing" secondItem="PmN-vh-Dex" secondAttribute="trailing" constant="-1" id="iLD-gW-qtz"/>
                             <constraint firstItem="kh1-K7-c7S" firstAttribute="top" secondItem="hre-hU-rrS" secondAttribute="bottom" constant="3" id="imP-Nr-o3D"/>
                             <constraint firstItem="VVH-Uq-xnn" firstAttribute="leading" secondItem="pXW-Ih-GBB" secondAttribute="trailing" constant="38" id="w3w-OZ-Sal"/>
                             <constraint firstItem="hre-hU-rrS" firstAttribute="leading" secondItem="kh1-K7-c7S" secondAttribute="leading" id="w5l-28-Vfh"/>

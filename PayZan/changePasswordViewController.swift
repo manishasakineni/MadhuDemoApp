@@ -10,6 +10,10 @@ import UIKit
 
 class changePasswordViewController: UIViewController {
 
+    @IBOutlet weak var eyebtnOutLet: UIButton!
+    
+    @IBOutlet weak var currentPswdTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,14 +30,25 @@ class changePasswordViewController: UIViewController {
          self.navigationController?.popViewController(animated: true)
     }
 
-    /*
-    // MARK: - Navigation
+   
+    @IBAction func eyebtnclicked(_ sender: Any) {
+        
+        if eyebtnOutLet.tag == 0
+        {
+            currentPswdTF.isSecureTextEntry = false
+            eyebtnOutLet.tag = 1
+        }
+            
+        else
+            
+        {
+            currentPswdTF.isSecureTextEntry = true
+            eyebtnOutLet.tag = 0
+            
+            
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
 
 }

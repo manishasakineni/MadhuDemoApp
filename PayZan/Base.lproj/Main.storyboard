@@ -244,10 +244,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZV-8A-Kgm">
-                                <rect key="frame" x="318" y="229" width="17" height="12"/>
+                                <rect key="frame" x="318" y="229" width="14" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="ANH-ap-UHj"/>
-                                    <constraint firstAttribute="width" constant="17" id="e7Y-uJ-JRh"/>
+                                    <constraint firstAttribute="width" constant="14" id="e7Y-uJ-JRh"/>
                                 </constraints>
                                 <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Eye"/>
@@ -857,19 +857,19 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sf2-Ze-vte">
-                                <rect key="frame" x="315" y="305" width="17" height="13"/>
+                                <rect key="frame" x="315" y="305" width="14" height="12"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="17" id="PNC-0t-bqw"/>
-                                    <constraint firstAttribute="height" constant="13" id="bwx-ke-ZBW"/>
+                                    <constraint firstAttribute="width" constant="14" id="PNC-0t-bqw"/>
+                                    <constraint firstAttribute="height" constant="12" id="bwx-ke-ZBW"/>
                                 </constraints>
                                 <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Eye"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H67-vk-lRV">
-                                <rect key="frame" x="315" y="256" width="17" height="12"/>
+                                <rect key="frame" x="315" y="256" width="14" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="Nnc-QR-PbE"/>
-                                    <constraint firstAttribute="width" constant="17" id="p3L-Vv-NpS"/>
+                                    <constraint firstAttribute="width" constant="14" id="p3L-Vv-NpS"/>
                                 </constraints>
                                 <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Eye"/>
@@ -4465,13 +4465,16 @@
                                 <state key="normal" title="Change Password"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noE-Gh-iGV">
-                                <rect key="frame" x="305" y="193" width="22" height="17"/>
+                                <rect key="frame" x="305" y="193" width="14" height="12"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="YIH-KS-8kw"/>
-                                    <constraint firstAttribute="width" constant="22" id="mBp-dJ-3Io"/>
+                                    <constraint firstAttribute="height" constant="12" id="YIH-KS-8kw"/>
+                                    <constraint firstAttribute="width" constant="14" id="mBp-dJ-3Io"/>
                                 </constraints>
                                 <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Eye"/>
+                                <connections>
+                                    <action selector="eyebtnclicked:" destination="GKA-HL-6CF" eventType="touchUpInside" id="GKB-hp-JyS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will need Re-Login " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghr-RP-b1F">
                                 <rect key="frame" x="131.5" y="490" width="126.5" height="15"/>
@@ -4505,7 +4508,7 @@
                             <constraint firstItem="ePs-9d-Ufu" firstAttribute="leading" secondItem="sla-xl-X5D" secondAttribute="leadingMargin" constant="29" id="BAx-R4-DQb"/>
                             <constraint firstItem="34P-ic-yYj" firstAttribute="top" secondItem="sla-xl-X5D" secondAttribute="top" constant="18" id="DXE-P4-4we"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qq4-pn-pwh" secondAttribute="trailing" constant="22" id="JtO-s1-Ur6"/>
-                            <constraint firstItem="noE-Gh-iGV" firstAttribute="centerY" secondItem="LVZ-oE-dix" secondAttribute="centerY" id="PEp-mq-pB6"/>
+                            <constraint firstItem="noE-Gh-iGV" firstAttribute="centerY" secondItem="LVZ-oE-dix" secondAttribute="centerY" constant="-2" id="PEp-mq-pB6"/>
                             <constraint firstItem="noE-Gh-iGV" firstAttribute="leading" secondItem="LVZ-oE-dix" secondAttribute="trailing" constant="-32" id="TLq-qs-cet"/>
                             <constraint firstItem="0Dc-5Q-je9" firstAttribute="top" secondItem="ePs-9d-Ufu" secondAttribute="bottom" constant="34" id="agJ-rQ-cDL"/>
                             <constraint firstItem="Qq4-pn-pwh" firstAttribute="leading" secondItem="sla-xl-X5D" secondAttribute="leadingMargin" constant="29" id="d5P-fW-Twu"/>
@@ -4521,6 +4524,10 @@
                             <constraint firstItem="KbK-Fp-Efe" firstAttribute="centerX" secondItem="Qq4-pn-pwh" secondAttribute="centerX" constant="3" id="zqT-HR-2b7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentPswdTF" destination="LVZ-oE-dix" id="wah-I9-krg"/>
+                        <outlet property="eyebtnOutLet" destination="noE-Gh-iGV" id="iD1-BS-1g8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMx-Pa-N7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

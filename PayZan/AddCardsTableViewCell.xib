@@ -34,7 +34,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wis-ff-x73">
-                        <rect key="frame" x="250" y="9" width="20" height="20"/>
+                        <rect key="frame" x="238" y="9" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="tGk-mq-m6f"/>
                             <constraint firstAttribute="height" constant="20" id="wno-0n-wxp"/>
@@ -43,7 +43,7 @@
                         <state key="normal" title="Button" image="payment_del_icon"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HC7-cn-DAX">
-                        <rect key="frame" x="292" y="9" width="20" height="20"/>
+                        <rect key="frame" x="280" y="9" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="r95-sT-ng5"/>
                             <constraint firstAttribute="height" constant="20" id="ris-n5-jdb"/>
@@ -51,7 +51,7 @@
                         <state key="normal" title="Button" image="edit_24"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGj-qM-lfL">
-                        <rect key="frame" x="8" y="9" width="20" height="20"/>
+                        <rect key="frame" x="19" y="9" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="20n-Vq-0po"/>
                             <constraint firstAttribute="height" constant="20" id="TrY-jF-SFy"/>
@@ -102,7 +102,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9Z-xl-bcD">
-                        <rect key="frame" x="248" y="43.5" width="20" height="20"/>
+                        <rect key="frame" x="236" y="43.5" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="FMj-I6-zeE"/>
                             <constraint firstAttribute="width" constant="20" id="gee-U9-BcK"/>
@@ -111,7 +111,7 @@
                         <state key="normal" title="Button" image="payment_del_icon"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Boq-lz-NSI">
-                        <rect key="frame" x="292" y="43.5" width="20" height="20"/>
+                        <rect key="frame" x="280" y="43.5" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="AZi-x3-WOO"/>
                             <constraint firstAttribute="height" constant="20" id="LEq-NT-fzc"/>
@@ -119,7 +119,7 @@
                         <state key="normal" title="Button" image="edit_24"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1W-GH-Fue">
-                        <rect key="frame" x="8.5" y="43" width="20" height="20"/>
+                        <rect key="frame" x="19.5" y="43" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="TWH-uK-kkJ"/>
                             <constraint firstAttribute="height" constant="20" id="oLP-k4-48u"/>
@@ -146,7 +146,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vu6-ST-3Rk">
-                        <rect key="frame" x="248" y="82.5" width="20" height="20"/>
+                        <rect key="frame" x="236" y="82.5" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Qsh-Bo-Npm"/>
                             <constraint firstAttribute="width" constant="20" id="hsz-AT-lyu"/>
@@ -155,7 +155,7 @@
                         <state key="normal" title="Button" image="payment_del_icon"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcZ-ru-WjB">
-                        <rect key="frame" x="292" y="83" width="20" height="20"/>
+                        <rect key="frame" x="280" y="83" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="jxn-Da-Vj2"/>
                             <constraint firstAttribute="width" constant="20" id="z9N-Ky-OWy"/>
@@ -163,7 +163,7 @@
                         <state key="normal" title="Button" image="edit_24"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUf-r7-tKa">
-                        <rect key="frame" x="8.5" y="82" width="20" height="20"/>
+                        <rect key="frame" x="19.5" y="82" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="qHO-Bc-fie"/>
                             <constraint firstAttribute="width" constant="20" id="u8z-5G-z9V"/>
@@ -190,7 +190,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8z-av-rRd">
-                        <rect key="frame" x="248" y="121.5" width="20" height="20"/>
+                        <rect key="frame" x="236" y="121.5" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="WGF-2C-iQ0"/>
                             <constraint firstAttribute="width" constant="20" id="yrk-J2-4oa"/>
@@ -199,7 +199,7 @@
                         <state key="normal" title="Button" image="payment_del_icon"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-1k-pAN">
-                        <rect key="frame" x="291" y="122" width="20" height="20"/>
+                        <rect key="frame" x="279" y="122" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="7fW-JF-0hB"/>
                             <constraint firstAttribute="height" constant="20" id="bPQ-1C-WSd"/>
@@ -207,7 +207,7 @@
                         <state key="normal" title="Button" image="edit_24"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpr-gT-kXv">
-                        <rect key="frame" x="8" y="120" width="20" height="20"/>
+                        <rect key="frame" x="19" y="120" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="d6P-pG-Uvg"/>
                             <constraint firstAttribute="height" constant="20" id="u1R-EL-JoA"/>
@@ -216,7 +216,7 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="HC7-cn-DAX" secondAttribute="trailing" id="0Dk-vQ-kMJ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="HC7-cn-DAX" secondAttribute="trailing" constant="12" id="0Dk-vQ-kMJ"/>
                     <constraint firstItem="PTZ-ku-C4i" firstAttribute="centerY" secondItem="PUf-r7-tKa" secondAttribute="centerY" id="0fF-Qg-lsG"/>
                     <constraint firstItem="fmv-YD-lWN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="4Ud-Rk-W74"/>
                     <constraint firstItem="Fho-6F-y0f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="53" id="4pn-mt-ctr"/>
@@ -234,9 +234,9 @@
                     <constraint firstItem="LVz-8g-aML" firstAttribute="top" secondItem="fmv-YD-lWN" secondAttribute="bottom" constant="8" id="LrW-Py-Gi1"/>
                     <constraint firstItem="QDz-eb-bgN" firstAttribute="leading" secondItem="Fho-6F-y0f" secondAttribute="leading" id="RcB-aa-mr4"/>
                     <constraint firstAttribute="trailing" secondItem="Fho-6F-y0f" secondAttribute="trailing" constant="46" id="Tnh-0g-sAc"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Boq-lz-NSI" secondAttribute="trailing" id="USa-PY-kHw"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Boq-lz-NSI" secondAttribute="trailing" constant="12" id="USa-PY-kHw"/>
                     <constraint firstItem="QDz-eb-bgN" firstAttribute="top" secondItem="Fho-6F-y0f" secondAttribute="bottom" constant="7" id="UkX-LD-aKe"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="zcZ-ru-WjB" secondAttribute="trailing" id="V54-iR-gAw"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="zcZ-ru-WjB" secondAttribute="trailing" constant="12" id="V54-iR-gAw"/>
                     <constraint firstItem="Boq-lz-NSI" firstAttribute="leading" secondItem="M9Z-xl-bcD" secondAttribute="trailing" constant="24" id="W5y-T5-3Te"/>
                     <constraint firstItem="wSD-jL-VBr" firstAttribute="top" secondItem="0fr-A1-IbM" secondAttribute="bottom" constant="8" id="Zv6-eC-hQj"/>
                     <constraint firstItem="3MK-PM-lCA" firstAttribute="top" secondItem="Fho-6F-y0f" secondAttribute="bottom" constant="8" id="aM8-II-eGg"/>
@@ -244,21 +244,21 @@
                     <constraint firstItem="0fr-A1-IbM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="dG7-6v-JlR"/>
                     <constraint firstItem="PTZ-ku-C4i" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-22.75" id="dep-kp-sNT"/>
                     <constraint firstItem="PTZ-ku-C4i" firstAttribute="top" secondItem="iru-Fz-KgK" secondAttribute="bottom" constant="8" id="dq7-AI-WYA"/>
-                    <constraint firstAttribute="leadingMargin" secondItem="Dpr-gT-kXv" secondAttribute="leading" id="fXQ-or-0nN"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="Dpr-gT-kXv" secondAttribute="leading" constant="-11" id="fXQ-or-0nN"/>
                     <constraint firstItem="M3Z-1k-pAN" firstAttribute="centerY" secondItem="Y8z-av-rRd" secondAttribute="centerY" id="gCm-9o-g8c"/>
-                    <constraint firstItem="w1W-GH-Fue" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="0.5" id="hMg-Pr-gu8"/>
+                    <constraint firstItem="w1W-GH-Fue" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="11.5" id="hMg-Pr-gu8"/>
                     <constraint firstItem="QDz-eb-bgN" firstAttribute="centerY" secondItem="3MK-PM-lCA" secondAttribute="centerY" id="hRN-ma-Wnn"/>
                     <constraint firstItem="0fr-A1-IbM" firstAttribute="top" secondItem="zcZ-ru-WjB" secondAttribute="bottom" constant="8" id="hYa-e8-WgV"/>
                     <constraint firstItem="M3Z-1k-pAN" firstAttribute="leading" secondItem="Y8z-av-rRd" secondAttribute="trailing" constant="23" id="htJ-o0-Zz6"/>
                     <constraint firstItem="iru-Fz-KgK" firstAttribute="top" secondItem="LVz-8g-aML" secondAttribute="bottom" constant="8" id="j9S-HR-cUq"/>
                     <constraint firstItem="iru-Fz-KgK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="kVl-da-KZy"/>
-                    <constraint firstAttribute="leadingMargin" secondItem="WGj-qM-lfL" secondAttribute="leading" id="lK5-ka-c58"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="WGj-qM-lfL" secondAttribute="leading" constant="-11" id="lK5-ka-c58"/>
                     <constraint firstItem="LVz-8g-aML" firstAttribute="centerY" secondItem="M9Z-xl-bcD" secondAttribute="centerY" id="qIu-4x-mad"/>
-                    <constraint firstItem="PUf-r7-tKa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="0.5" id="uDL-a7-Hmd"/>
+                    <constraint firstItem="PUf-r7-tKa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="11.5" id="uDL-a7-Hmd"/>
                     <constraint firstItem="GzT-ld-gnc" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-20.75" id="v1V-V4-NwJ"/>
                     <constraint firstItem="GzT-ld-gnc" firstAttribute="centerY" secondItem="WGj-qM-lfL" secondAttribute="centerY" constant="0.5" id="vaA-ar-pcW"/>
                     <constraint firstItem="3MK-PM-lCA" firstAttribute="leading" secondItem="QDz-eb-bgN" secondAttribute="trailing" constant="1" id="vfT-jn-Qiw"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="M3Z-1k-pAN" secondAttribute="trailing" constant="1" id="wEJ-11-h22"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="M3Z-1k-pAN" secondAttribute="trailing" constant="13" id="wEJ-11-h22"/>
                     <constraint firstAttribute="trailing" secondItem="iru-Fz-KgK" secondAttribute="trailing" constant="2" id="xXo-yg-2MA"/>
                     <constraint firstItem="fmv-YD-lWN" firstAttribute="top" secondItem="GzT-ld-gnc" secondAttribute="bottom" constant="3" id="yYK-8z-A01"/>
                     <constraint firstItem="LVz-8g-aML" firstAttribute="centerY" secondItem="w1W-GH-Fue" secondAttribute="centerY" id="yfC-sC-C3D"/>
