@@ -155,9 +155,9 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
         
         let strUrl = dthUrl
         
-        let url : NSURL = NSURL(string: strUrl)!
+//        let url : NSURL = NSURL(string: strUrl)!
         
-        serviceController.requestGETURL(strURL:url, success:{(result) in
+        serviceController.requestGETURL(strURL:strUrl, success:{(result) in
             DispatchQueue.main.async()
                 {
                     

@@ -11,9 +11,11 @@ import Foundation
 let reachability = Reachability()!
 var appDelegate = AppDelegate()
 
+let content_type = "application/json; charset=utf-8"
+
 class ServiceController: NSObject {
     
-    func requestGETURL(strURL:NSURL,success:@escaping(_ _result:AnyObject)->Void,failure:@escaping(_ _error:NSError) -> Void) {
+    func requestGETURL(strURL:String,success:@escaping(_ _result:AnyObject)->Void,failure:@escaping(_ _error:NSError) -> Void) {
         
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         
@@ -27,10 +29,42 @@ class ServiceController: NSObject {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         MBProgressHUD.hide(for:appDelegate.window,animated:true)
         MBProgressHUD.showAdded(to:appDelegate.window,animated:true)
-        let task = URLSession.shared.dataTask(with:strURL as URL){(data,response,error) in
+        
+        
+        let request = NSMutableURLRequest(url: NSURL(string: strURL)! as URL)
+        request.addValue(content_type, forHTTPHeaderField: "Content-Type")
+        request.addValue(content_type, forHTTPHeaderField: "Accept")
+        //// request.setValue(api_key, forHTTPHeaderField: "api_key")
+        //        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        //        request.setValue("Keep-Alive", forHTTPHeaderField: "Connection")
+        request.httpMethod = "GET"
+        
+        let defaults = UserDefaults.standard
+        
+        if let authToken = defaults.string(forKey: accessToken) {
+            
+            request.setValue("Bearer" + " " + authToken,forHTTPHeaderField: "Authorization")
+            
+        }
+        
+        
+        let task = URLSession.shared.dataTask(with:request as URLRequest){(data,response,error) in
             DispatchQueue.main.async(){
                 MBProgressHUD.hide(for:appDelegate.window,animated:true)
-                if error != nil
+                
+                let statusCode = (response as! HTTPURLResponse).statusCode
+                print("statusCode:\(statusCode)")
+                
+                if statusCode == 401 {
+                    
+                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = viewController
+                    
+                }
+               else if error != nil
                 {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     failure(error! as NSError)
@@ -78,7 +112,15 @@ class ServiceController: NSObject {
 //            request.addValue(postHeaders[kCustomer_id] as! String, forHTTPHeaderField: kCustomer_id)
 //            request.addValue(postHeaders[tokenType + " " + accessToken] as! String, forHTTPHeaderField: "Authorization")
             
-            request.setValue(tokenType + " " + accessToken,forHTTPHeaderField: "Authorization")
+//            request.setValue(tokenType + " " + accessToken,forHTTPHeaderField: "Authorization")
+            
+        }
+        
+        let defaults = UserDefaults.standard
+        
+        if let authToken = defaults.string(forKey: accessToken) {
+            
+            request.setValue("Bearer" + " " + authToken,forHTTPHeaderField: "Authorization")
             
         }
         
@@ -108,15 +150,29 @@ class ServiceController: NSObject {
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) {(data, response, error) in
             
-            print(data)
-            print(response)
-            print(error)
+//            print(data)
+//            print(response)
+//            print(error)
             
             DispatchQueue.main.async(){
                 
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 
                 MBProgressHUD.hide(for: appDelegate.window, animated: true)
+                
+                
+                let statusCode = (response as! HTTPURLResponse).statusCode
+                print("statusCode:\(statusCode)")
+                
+                if statusCode == 401 {
+                    
+                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = viewController
+                    
+                }
                 
                 if error != nil
                 {

@@ -166,9 +166,9 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         let strUrl = datacardUrl
         
-        let url : NSURL = NSURL(string: strUrl)!
+//        let url : NSURL = NSURL(string: strUrl)!
         
-        serviceController.requestGETURL(strURL:url, success:{(result) in
+        serviceController.requestGETURL(strURL:strUrl, success:{(result) in
             DispatchQueue.main.async()
                 {
                     
@@ -216,9 +216,9 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         let strUrl = postpaidUrl
         
-        let url : NSURL = NSURL(string: strUrl)!
+//        let url : NSURL = NSURL(string: strUrl)!
         
-        serviceController.requestGETURL(strURL:url, success:{(result) in
+        serviceController.requestGETURL(strURL:strUrl, success:{(result) in
             DispatchQueue.main.async()
                 {
                     

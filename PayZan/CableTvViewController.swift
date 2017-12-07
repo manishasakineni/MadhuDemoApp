@@ -155,9 +155,9 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
         
         let strUrl = cableTvUrl
         
-        let url : NSURL = NSURL(string: strUrl)!
+//        let url : NSURL = NSURL(string: strUrl)!
         
-        serviceController.requestGETURL(strURL:url, success:{(result) in
+        serviceController.requestGETURL(strURL:strUrl, success:{(result) in
             DispatchQueue.main.async()
                 {
                     

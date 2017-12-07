@@ -422,9 +422,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             print("strUrl: \(strUrl1)")
             
-            let url : NSURL = NSURL(string: strUrl1)!
+//            let url : NSURL = NSURL(string: strUrl1)!
             
-            serviceController.requestGETURL(strURL:url, success:{(result) in
+            serviceController.requestGETURL(strURL:strUrl1, success:{(result) in
                 DispatchQueue.main.async()
                     {
                         

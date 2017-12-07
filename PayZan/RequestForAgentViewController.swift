@@ -849,9 +849,9 @@ let headerTitle = "PERSONAL INFORMATION"
             
             let strUrl = PROVINCE_API
             
-            let url : NSURL = NSURL(string: strUrl)!
+//            let url : NSURL = NSURL(string: strUrl)!
             
-            serviceController.requestGETURL(strURL:url, success:{(result) in
+            serviceController.requestGETURL(strURL:strUrl, success:{(result) in
                 DispatchQueue.main.async()
                     {
                         
@@ -904,9 +904,9 @@ let headerTitle = "PERSONAL INFORMATION"
             
             let strUrl = DISTRICTS_API + String(provinceID)
             
-            let url : NSURL = NSURL(string: strUrl)!
+//            let url : NSURL = NSURL(string: strUrl)!
             
-            serviceController.requestGETURL(strURL:url, success:{(result) in
+            serviceController.requestGETURL(strURL:strUrl, success:{(result) in
                 DispatchQueue.main.async()
                     {
                         
@@ -961,9 +961,9 @@ let headerTitle = "PERSONAL INFORMATION"
             
             let strUrl = MANDALS_API + String(districtID)
             
-            let url : NSURL = NSURL(string: strUrl)!
+//            let url : NSURL = NSURL(string: strUrl)!
             
-            serviceController.requestGETURL(strURL:url, success:{(result) in
+            serviceController.requestGETURL(strURL:strUrl, success:{(result) in
                 DispatchQueue.main.async()
                     {
                         
@@ -1019,9 +1019,9 @@ let headerTitle = "PERSONAL INFORMATION"
             
             let strUrl = VILLAGES_API + String(mandalID)
             
-            let url : NSURL = NSURL(string: strUrl)!
+//            let url : NSURL = NSURL(string: strUrl)!
             
-            serviceController.requestGETURL(strURL:url, success:{(result) in
+            serviceController.requestGETURL(strURL:strUrl, success:{(result) in
                 DispatchQueue.main.async()
                     {
                         
