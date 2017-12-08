@@ -146,7 +146,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     func numberOfSections(in tableView: UITableView) -> Int {
         
         
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -267,7 +267,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
             
                 
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "SignOutTableViewCell", for: indexPath) as! SignOutTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SignOutTableViewCell", for: indexPath) as! SignOutTableViewCell
             
             
             if userNamee == "User Name" {
@@ -275,7 +275,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 cell.signOutBtn.isHidden = true
             }
             else {
-                
+            
             cell.signOutBtn.isHidden = false
                     
                     //                let cell = Bundle.main.loadNibNamed("SignOutTableViewCell", owner: self, options: nil)?.first as! SignOutTableViewCell
@@ -316,6 +316,8 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             
             // handle tap events
             print("You selected cell #\(indexPath.item)!")
+        
+        if indexPath.section == 1 {
             
             if indexPath.row == 0 {
                 
@@ -352,7 +354,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "TermsOfServiceViewController") as! TermsOfServiceViewController
                 self.navigationController?.pushViewController(cableViewController, animated: true)
             }
-//            
+          }
 //            else if indexPath.row == 6 {
 //                
 //                let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditBankProfileViewController") as! EditBankProfileViewController

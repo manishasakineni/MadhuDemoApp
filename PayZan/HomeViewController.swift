@@ -255,7 +255,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             }
             else {
                 
-            height = 220
+            height = 250
                 
             }
         }
