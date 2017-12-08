@@ -64,7 +64,12 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="ZH0-m6-fGN"/>
                         </constraints>
-                        <state key="normal" title="Button"/>
+                        <state key="normal" title="Add New Cards">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="addCardsAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fQT-PB-k6N"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your details are secured via 128 encryption by xxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MK-PM-lCA">
                         <rect key="frame" x="83" y="208" width="183.5" height="14"/>

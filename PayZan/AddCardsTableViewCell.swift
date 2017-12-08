@@ -21,4 +21,6 @@ class AddCardsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func addCardsAction(_ sender: Any) {
+    }
 }

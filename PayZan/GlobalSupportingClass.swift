@@ -77,8 +77,20 @@ class GlobalSupportingClass {
         return "Please provide 10 digits mobile number"
     }
     class func blankConfirmPasswordErrorMessage() -> NSString {
+        
         return "Please confirm password"
     }
+    class func changePasswordErrorMessage() -> NSString {
+        return "Please provide your current password"
+    }
+    class func newPasswordErrorMessage() -> NSString {
+        return "Please provide your new password"
+    }
+    class func reTypeNewnewPasswordErrorMessage() -> NSString {
+        return "Please provide your reTypeNew password"
+    }
+
+    
     class func passwordMissMatchErrorMessage() -> NSString {
         return "Password miss match"
     }

@@ -505,6 +505,27 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
     }
     
     
+    @IBAction func eyeBtnAction(_ sender: Any) {
+        
+        if eyeBtn.tag == 0
+        {
+            paswdField.isSecureTextEntry = false
+            eyeBtn.tag = 1
+        }
+            
+        else
+            
+        {
+            paswdField.isSecureTextEntry = true
+            eyeBtn.tag = 0
+            
+            
+        }
+
+    }
+    
+    
+    
     func isValidEmailAddress(emailAddressString: String) -> Bool {
         
         var returnValue = true

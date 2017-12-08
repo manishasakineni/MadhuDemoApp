@@ -168,51 +168,6 @@ class EditBankProfileViewController: UIViewController,UITableViewDelegate,UITabl
         
         
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-    
-        // handle tap events
-        print("You selected cell #\(indexPath.item)!")
         
-        if indexPath.row == 0 {
-            
-            let rchargeViewController = self.storyboard?.instantiateViewController(withIdentifier: "SavedCardsViewController") as! SavedCardsViewController
-            self.navigationController?.pushViewController(rchargeViewController, animated: true)
-        }
-        else if indexPath.row == 1 {
-            
-            let landViewController = self.storyboard?.instantiateViewController(withIdentifier: "OrderHistoryViewController") as! OrderHistoryViewController
-            self.navigationController?.pushViewController(landViewController, animated: true)
-            
-            
-        }
-        else if indexPath.row == 2 {
-            
-            let dthViewController = self.storyboard?.instantiateViewController(withIdentifier: "changePasswordViewController") as! changePasswordViewController
-            self.navigationController?.pushViewController(dthViewController, animated: true)
-            
-            
-        }
-        else if indexPath.row == 3 {
-            
-            let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
-            self.navigationController?.pushViewController(cableViewController, animated: true)
-        }
-        else if indexPath.row == 4 {
-            
-            let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "TermsOfServiceViewController") as! TermsOfServiceViewController
-            self.navigationController?.pushViewController(cableViewController, animated: true)
-        }
-        
-        else if indexPath.row == 5 {
-            
-            let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddCardsViewController") as! AddCardsViewController
-            self.navigationController?.pushViewController(cableViewController, animated: true)
-        }
-
-
-    
-    }
-    
 }
 
