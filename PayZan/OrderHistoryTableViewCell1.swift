@@ -25,7 +25,12 @@ class OrderHistoryTableViewCell1: UITableViewCell {
     func borderColor(){
         
         orderView.layer.borderWidth = 1
-        orderView.layer.borderColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0).cgColor
+        
+          orderView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        orderView.layer.cornerRadius = 5.0
+        
+       // orderView.layer.borderColor = UIColor(red:151.0/255.0, green:12.0/255.0, blue:10.0/255.0, alpha: 1.0).cgColor
         
         
         repeatBtnOutLet.layer.cornerRadius = 5

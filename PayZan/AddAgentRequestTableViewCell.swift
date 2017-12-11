@@ -17,6 +17,12 @@ class AddAgentRequestTableViewCell: UITableViewCell,UITextFieldDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        agentRequestField.layer.borderWidth = 0.5
+        agentRequestField.layer.borderColor = UIColor.lightGray.cgColor
+        agentRequestField.layer.cornerRadius = 3
+        agentRequestField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+
+        
         agentRequestField.delegate = self
         // Initialization code
     }

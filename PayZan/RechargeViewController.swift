@@ -11,6 +11,7 @@ import ContactsUI
 
 class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, CNContactPickerDelegate {
 
+    @IBOutlet weak var backArrowOutLet: NSLayoutConstraint!
     @IBOutlet weak var mainView: UIView!
     
     @IBOutlet weak var offersView: UIView!
@@ -62,6 +63,9 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     
     var selectedTextField:Int!
     
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,6 +91,10 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         planField.layer.borderColor = UIColor.lightGray.cgColor
         planField.layer.cornerRadius = 3
         planField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+        
+        
+   //     backArrowOutLet.textContainerInset = UIEdgeInsetsMake(10, 0, 10, 0);
+
         
         planField.delegate = self
         

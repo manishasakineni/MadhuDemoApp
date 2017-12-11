@@ -88,14 +88,17 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             
             print("defaults savedString: \(walletAmount)")
         }
-        
-        paySendBtn.layer.borderColor = UIColor.lightGray.cgColor
+        //  paySendBtn.layer.borderColor = UIColor.lightGray.cgColor
+
+        paySendBtn.layer.borderColor = UIColor(red:220.0/255.0, green:198.0/255.0, blue:204.0/255.0, alpha: 1.0).cgColor
+    
         paySendBtn.layer.borderWidth = 1.0
         
-        addWithdrawBtn.layer.borderColor = UIColor.lightGray.cgColor
+        addWithdrawBtn.layer.borderColor = UIColor(red:220.0/255.0, green:198.0/255.0, blue:204.0/255.0, alpha: 1.0).cgColor
+        
         addWithdrawBtn.layer.borderWidth = 1.0
         
-        myTransactionBtn.layer.borderColor = UIColor.lightGray.cgColor
+        myTransactionBtn.layer.borderColor = UIColor(red:220.0/255.0, green:198.0/255.0, blue:204.0/255.0, alpha: 1.0).cgColor
         myTransactionBtn.layer.borderWidth = 1.0
         
         
@@ -107,6 +110,11 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         self.tableView.separatorStyle = .none
         
         walletLabel.layer.cornerRadius = 5.0
+        
+         paySendBtn.layer.cornerRadius = 5.0
+         addWithdrawBtn.layer.cornerRadius = 5.0
+         myTransactionBtn.layer.cornerRadius = 5.0
+        
         
         walletLabel.layer.masksToBounds = true
         
@@ -258,13 +266,14 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             height = 250
                 
             }
+            
         }
         else if indexPath.row == 1{
             height = 80
         }
         else {
             
-            height = 60
+            height = 30
             
         }
         
