@@ -40,7 +40,6 @@
                                     <constraint firstAttribute="height" constant="19" id="SYD-Uy-86B"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

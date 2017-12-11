@@ -19,6 +19,12 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
     
     @IBOutlet weak var reTypeNewPswdOutLet: UITextField!
     
+    @IBOutlet weak var newpswdeyebtnOutlet: UIButton!
+    
+    
+    @IBOutlet weak var retypePswdOutLet: UIButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -264,6 +270,52 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
 
         
     }
+    
+    
+    @IBAction func newPswdAction(_ sender: Any) {
+        
+        if newpswdOutLet.tag == 0
+        {
+            newpswdOutLet.isSecureTextEntry = false
+            newpswdOutLet.tag = 1
+        }
+            
+        else
+            
+        {
+            newpswdOutLet.isSecureTextEntry = true
+            newpswdOutLet.tag = 0
+            
+            
+        }
+
+        
+        
+        
+    }
+    
+    
+    @IBAction func reTypePswdAction(_ sender: Any) {
+        
+        if retypePswdOutLet.tag == 0
+        {
+            reTypeNewPswdOutLet.isSecureTextEntry = false
+            retypePswdOutLet.tag = 1
+        }
+            
+        else
+            
+        {
+            currentPswdTF.isSecureTextEntry = true
+            reTypeNewPswdOutLet.tag = 0
+            
+            
+        }
+
+    }
+    
+    
+    
     
     @IBAction func changePswdAction(_ sender: Any) {
         
