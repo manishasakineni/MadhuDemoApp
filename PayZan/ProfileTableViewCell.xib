@@ -75,10 +75,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVH-Uq-xnn">
-                                <rect key="frame" x="273" y="27" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="Edit">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVH-Uq-xnn">
+                                <rect key="frame" x="273" y="27" width="24" height="30"/>
+                                <state key="normal" image="edit_24">
                                     <color key="titleColor" red="0.5" green="0.1156412591" blue="0.1531547593" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -134,5 +133,6 @@
     </objects>
     <resources>
         <image name="Profile" width="50" height="50"/>
+        <image name="edit_24" width="24" height="24"/>
     </resources>
 </document>

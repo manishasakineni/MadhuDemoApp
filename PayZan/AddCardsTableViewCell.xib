@@ -40,7 +40,7 @@
                             <constraint firstAttribute="height" constant="20" id="wno-0n-wxp"/>
                         </constraints>
                         <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" title="Button" image="payment_del_icon"/>
+                        <state key="normal" image="edit_24"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HC7-cn-DAX">
                         <rect key="frame" x="280" y="9" width="20" height="20"/>
@@ -48,7 +48,8 @@
                             <constraint firstAttribute="width" constant="20" id="r95-sT-ng5"/>
                             <constraint firstAttribute="height" constant="20" id="ris-n5-jdb"/>
                         </constraints>
-                        <state key="normal" title="Button" image="edit_24"/>
+                        <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" image="payment_del_icon"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGj-qM-lfL">
                         <rect key="frame" x="19" y="9" width="20" height="20"/>
@@ -113,7 +114,7 @@
                             <constraint firstAttribute="width" constant="20" id="gee-U9-BcK"/>
                         </constraints>
                         <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" title="Button" image="payment_del_icon"/>
+                        <state key="normal" image="edit_24"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Boq-lz-NSI">
                         <rect key="frame" x="280" y="43.5" width="20" height="20"/>
@@ -121,7 +122,8 @@
                             <constraint firstAttribute="width" constant="20" id="AZi-x3-WOO"/>
                             <constraint firstAttribute="height" constant="20" id="LEq-NT-fzc"/>
                         </constraints>
-                        <state key="normal" title="Button" image="edit_24"/>
+                        <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" image="payment_del_icon"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1W-GH-Fue">
                         <rect key="frame" x="19.5" y="43" width="20" height="20"/>
@@ -157,7 +159,7 @@
                             <constraint firstAttribute="width" constant="20" id="hsz-AT-lyu"/>
                         </constraints>
                         <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" title="Button" image="payment_del_icon"/>
+                        <state key="normal" image="edit_24"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcZ-ru-WjB">
                         <rect key="frame" x="280" y="83" width="20" height="20"/>
@@ -165,7 +167,8 @@
                             <constraint firstAttribute="height" constant="20" id="jxn-Da-Vj2"/>
                             <constraint firstAttribute="width" constant="20" id="z9N-Ky-OWy"/>
                         </constraints>
-                        <state key="normal" title="Button" image="edit_24"/>
+                        <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" image="payment_del_icon"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUf-r7-tKa">
                         <rect key="frame" x="19.5" y="82" width="20" height="20"/>
@@ -201,7 +204,7 @@
                             <constraint firstAttribute="width" constant="20" id="yrk-J2-4oa"/>
                         </constraints>
                         <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" title="Button" image="payment_del_icon"/>
+                        <state key="normal" image="edit_24"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-1k-pAN">
                         <rect key="frame" x="279" y="122" width="20" height="20"/>
@@ -209,7 +212,8 @@
                             <constraint firstAttribute="width" constant="20" id="7fW-JF-0hB"/>
                             <constraint firstAttribute="height" constant="20" id="bPQ-1C-WSd"/>
                         </constraints>
-                        <state key="normal" title="Button" image="edit_24"/>
+                        <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" image="payment_del_icon"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpr-gT-kXv">
                         <rect key="frame" x="19" y="120" width="20" height="20"/>
