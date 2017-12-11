@@ -23,9 +23,13 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     
     var labelText1:String?
     
-    var listArr = ["Saved Cards","Order History","Change Password","About US","Terms Of Service","Support","Share"]
+    let languagePicker = UIPickerView()
+    var toolBar = UIToolbar()
+    var pickerData : Array<String> = Array()
     
-    var imageArray1 = [UIImage(named:"savedCards"),UIImage(named:"orderHistory"),UIImage(named:"changePassword"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us")]
+    var listArr = ["Saved Cards","Order History","Change Password","About US","Terms Of Service","Support","Share","Change Language"]
+    
+    var imageArray1 = [UIImage(named:"savedCards"),UIImage(named:"orderHistory"),UIImage(named:"changePassword"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us")]
     
     private var activityViewController : UIActivityViewController!
     private var isPopoverPresented  : Bool = false
@@ -382,7 +386,13 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             }
 
             
-            
+            else if indexPath.row == 7 {
+                
+               
+                let LanguageVW = storyboard?.instantiateViewController(withIdentifier: "LanguageVW")
+                self.navigationController?.pushViewController(LanguageVW!, animated: true)
+                
+            }
             
             
           }

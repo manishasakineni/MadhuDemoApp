@@ -152,6 +152,9 @@
 /* Class = "UITextField"; placeholder = "Select Circle"; ObjectID = "Kv4-nR-Cxb"; */
 "Kv4-nR-Cxb.placeholder" = "Select Circle";
 
+/* Class = "UIButton"; normalTitle = "English"; ObjectID = "LO4-MS-J3X"; */
+"LO4-MS-J3X.normalTitle" = "English";
+
 /* Class = "UITextField"; placeholder = "Current Password"; ObjectID = "LVZ-oE-dix"; */
 "LVZ-oE-dix.placeholder" = "Current Password";
 
@@ -193,6 +196,9 @@
 
 /* Class = "UILabel"; text = "Offers"; ObjectID = "QDI-86-DfS"; */
 "QDI-86-DfS.text" = "Offers";
+
+/* Class = "UIButton"; normalTitle = "Telugu"; ObjectID = "Qh4-LZ-zIE"; */
+"Qh4-LZ-zIE.normalTitle" = "Telugu";
 
 /* Class = "UIButton"; normalTitle = "Change Password"; ObjectID = "Qq4-pn-pwh"; */
 "Qq4-pn-pwh.normalTitle" = "Change Password";

@@ -1,0 +1,11 @@
+/* 
+  Localize.strings
+  PayZan
+
+  Created by N@n!'$ Mac on 11/12/17.
+  Copyright © 2017 CalibrageMac02. All rights reserved.
+*/
+"restart" = "భాషా అనువర్తనాన్ని మార్చడానికి క్రమంలో మీరు మూసివేసి, మళ్లీ మళ్లీ తెరవాలి";
+"restartTitle" = "అనువర్తనం పునఃప్రారంభం అవసరం";
+"cancel" = "రద్దు";
+"close" = "ఇప్పుడే మూసివేయి";
