@@ -27,6 +27,10 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     
     var imageArray1 = [UIImage(named:"savedCards"),UIImage(named:"orderHistory"),UIImage(named:"changePassword"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us")]
     
+    private var activityViewController : UIActivityViewController!
+    private var isPopoverPresented  : Bool = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -343,24 +347,45 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
                 self.navigationController?.pushViewController(cableViewController, animated: true)
             }
-//            else if indexPath.row == 4 {
-//                
-//                let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "SavedCardsViewController") as! SavedCardsViewController
-//                self.navigationController?.pushViewController(cableViewController, animated: true)
-//            }
                 
             else if indexPath.row == 4 {
                 
                 let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "TermsOfServiceViewController") as! TermsOfServiceViewController
                 self.navigationController?.pushViewController(cableViewController, animated: true)
             }
+            
+            else if indexPath.row == 6 {
+                
+                
+                
+                let normalString = "Text to share"
+                
+                activityViewController = UIActivityViewController.init(activityItems: [normalString], applicationActivities: nil)
+                
+                let subject = "PayZan"
+                activityViewController.setValue(subject, forKey: "Subject")
+                
+                
+                if UIScreen.main.bounds.size.width > 500 {
+                    
+                    if activityViewController.responds(to: #selector(getter: UIViewController.popoverPresentationController)) {
+                        
+                        isPopoverPresented = true
+                        if let popView = activityViewController.popoverPresentationController {
+                            popView.sourceView = tableView
+                            popView.sourceRect = tableView.cellForRow(at: indexPath)!.frame
+                        }
+                    }
+                }
+                
+                self.present(activityViewController, animated: true, completion: nil)
+            }
+
+            
+            
+            
+            
           }
-//            else if indexPath.row == 6 {
-//                
-//                let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditBankProfileViewController") as! EditBankProfileViewController
-//                self.navigationController?.pushViewController(cableViewController, animated: true)
-//        }
-//        
     
             
         
