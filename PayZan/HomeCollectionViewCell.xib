@@ -26,17 +26,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mobileImg" translatesAutoresizingMaskIntoConstraints="NO" id="a3R-hD-lvD">
-                        <rect key="frame" x="5" y="9" width="109" height="110"/>
+                        <rect key="frame" x="2" y="2" width="118" height="124"/>
                         <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="a3R-hD-lvD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="9" id="Jfs-Ba-LAp"/>
-                <constraint firstAttribute="trailing" secondItem="a3R-hD-lvD" secondAttribute="trailing" constant="8" id="Mem-Yd-S1a"/>
-                <constraint firstItem="a3R-hD-lvD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="aHf-Nq-UZy"/>
-                <constraint firstAttribute="bottom" secondItem="a3R-hD-lvD" secondAttribute="bottom" constant="9" id="euh-Ws-jQI"/>
+                <constraint firstItem="a3R-hD-lvD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="Jfs-Ba-LAp"/>
+                <constraint firstAttribute="trailing" secondItem="a3R-hD-lvD" secondAttribute="trailing" constant="2" id="Mem-Yd-S1a"/>
+                <constraint firstItem="a3R-hD-lvD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="aHf-Nq-UZy"/>
+                <constraint firstAttribute="bottom" secondItem="a3R-hD-lvD" secondAttribute="bottom" constant="2" id="euh-Ws-jQI"/>
             </constraints>
             <size key="customSize" width="130" height="122"/>
             <connections>
