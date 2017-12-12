@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="seY-KT-opP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="17A365" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="seY-KT-opP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -345,10 +345,10 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  PAYZAN WALLET" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lc8-SI-edm">
-                                <rect key="frame" x="8" y="135" width="360" height="25"/>
-                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="8" y="135" width="359" height="24"/>
+                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="aSk-fD-3sL"/>
+                                    <constraint firstAttribute="height" constant="24" id="aSk-fD-3sL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
@@ -374,7 +374,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pap-CS-b8K">
-                                        <rect key="frame" x="254" y="9" width="90" height="50"/>
+                                        <rect key="frame" x="277" y="9" width="90" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="ssh-3D-cYp"/>
                                             <constraint firstAttribute="height" constant="50" id="vAh-Rk-xN7"/>
@@ -385,7 +385,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-zU-XKD">
-                                        <rect key="frame" x="32" y="9" width="90" height="50"/>
+                                        <rect key="frame" x="8" y="9" width="90" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ogs-XX-9yb"/>
                                             <constraint firstAttribute="width" constant="90" id="ewC-W9-Pic"/>
@@ -401,9 +401,9 @@
                                     <constraint firstItem="wad-GR-qDE" firstAttribute="centerY" secondItem="fPN-zU-XKD" secondAttribute="centerY" id="0yF-1Z-w87"/>
                                     <constraint firstItem="wad-GR-qDE" firstAttribute="top" secondItem="4sL-vJ-yut" secondAttribute="top" constant="9" id="3da-Z2-Oul"/>
                                     <constraint firstItem="wad-GR-qDE" firstAttribute="centerY" secondItem="Pap-CS-b8K" secondAttribute="centerY" id="A4e-eh-HJk"/>
-                                    <constraint firstItem="Pap-CS-b8K" firstAttribute="leading" secondItem="wad-GR-qDE" secondAttribute="trailing" constant="22" id="Ap3-sh-J0Y"/>
+                                    <constraint firstItem="fPN-zU-XKD" firstAttribute="leading" secondItem="4sL-vJ-yut" secondAttribute="leading" constant="8" id="Pzp-hI-aMg"/>
                                     <constraint firstItem="wad-GR-qDE" firstAttribute="centerY" secondItem="4sL-vJ-yut" secondAttribute="centerY" id="YPX-mR-vPh"/>
-                                    <constraint firstItem="wad-GR-qDE" firstAttribute="leading" secondItem="fPN-zU-XKD" secondAttribute="trailing" constant="20" id="frf-qE-05m"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pap-CS-b8K" secondAttribute="trailing" constant="8" id="bk2-jJ-3vr"/>
                                     <constraint firstAttribute="height" constant="69" id="obV-Ms-PfI"/>
                                     <constraint firstItem="wad-GR-qDE" firstAttribute="centerX" secondItem="4sL-vJ-yut" secondAttribute="centerX" id="qqE-qs-tXH"/>
                                 </constraints>
@@ -432,14 +432,14 @@
                             <constraint firstItem="WDO-bN-Gnn" firstAttribute="top" secondItem="VcN-Qt-fNx" secondAttribute="bottom" id="WLY-IZ-P2G"/>
                             <constraint firstAttribute="trailing" secondItem="VcN-Qt-fNx" secondAttribute="trailing" id="Y9d-Da-GIR"/>
                             <constraint firstItem="VcN-Qt-fNx" firstAttribute="leading" secondItem="Xo9-jO-eno" secondAttribute="leading" id="Zsb-kt-4yH"/>
-                            <constraint firstItem="CQa-pk-QVL" firstAttribute="leading" secondItem="lc8-SI-edm" secondAttribute="trailing" constant="-43" id="aCn-5c-T4p"/>
-                            <constraint firstAttribute="trailing" secondItem="lc8-SI-edm" secondAttribute="trailing" constant="7" id="aHh-1N-n9P"/>
+                            <constraint firstItem="CQa-pk-QVL" firstAttribute="leading" secondItem="lc8-SI-edm" secondAttribute="trailing" constant="-42" id="aCn-5c-T4p"/>
+                            <constraint firstAttribute="trailing" secondItem="lc8-SI-edm" secondAttribute="trailing" constant="8" id="aHh-1N-n9P"/>
                             <constraint firstItem="lc8-SI-edm" firstAttribute="leading" secondItem="Xo9-jO-eno" secondAttribute="leading" constant="8" id="bOk-VT-9t5"/>
                             <constraint firstItem="lc8-SI-edm" firstAttribute="top" secondItem="LMe-te-10n" secondAttribute="bottom" constant="2" id="eIy-lA-dnq"/>
                             <constraint firstAttribute="trailing" secondItem="LMe-te-10n" secondAttribute="trailing" id="iGb-gN-MMH"/>
                             <constraint firstItem="GiB-ZO-pMJ" firstAttribute="top" secondItem="Xo9-jO-eno" secondAttribute="top" constant="19" id="jkO-0D-uHx"/>
                             <constraint firstItem="LMe-te-10n" firstAttribute="leading" secondItem="Xo9-jO-eno" secondAttribute="leading" id="mMC-Kf-P59"/>
-                            <constraint firstItem="4sL-vJ-yut" firstAttribute="top" secondItem="lc8-SI-edm" secondAttribute="bottom" constant="7" id="no2-fv-0Dd"/>
+                            <constraint firstItem="4sL-vJ-yut" firstAttribute="top" secondItem="lc8-SI-edm" secondAttribute="bottom" constant="8" id="no2-fv-0Dd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UcI-XQ-78j"/>
