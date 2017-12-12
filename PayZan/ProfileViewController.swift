@@ -15,6 +15,8 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     var firstName  = String()
     var lastName  = String()
     
+    let tab = TabsViewController()
+    
     var userNamee:String?
     var userEmail:String?
     var walletBal:String?
@@ -200,15 +202,15 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             
             if isUserLogin == false {
                 
-                return 80
+                return 85
                 
             }
             
-            return 80
+            return 85
         }
         else if indexPath.section == 1 {
             
-            return 40
+            return 45
         }
             
         else{
@@ -225,13 +227,45 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             
             if isUserLogin == false {
                 
-                let cell = tableView.dequeueReusableCell(withIdentifier: "SignOutTableViewCell", for: indexPath) as! SignOutTableViewCell
+            let cell = Bundle.main.loadNibNamed("LoginTableViewCell", owner: self, options: nil)?.first as! LoginTableViewCell
+                
+                cell.selectionStyle = .none
+                
+                cell.newAccountBtn.layer.borderWidth = 1.0
+                cell.newAccountBtn.layer.borderColor = UIColor(red: 128/255.0, green: 0, blue: 0, alpha: 1.0).cgColor
+                
+                cell.loginBtn.addTarget(self, action: #selector(self.loginBtnClicked), for: .touchUpInside)
+                cell.newAccountBtn.addTarget(self, action: #selector(self.newAccountBtnClicked), for: .touchUpInside)
                 
                 cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 
                 
                 return cell
                 
+            }
+            
+            if userNamee == "User Name"{
+                
+                let cell = Bundle.main.loadNibNamed("LoginTableViewCell", owner: self, options: nil)?.first as! LoginTableViewCell
+                
+                
+                cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                
+                cell.selectionStyle = .none
+                
+                cell.newAccountBtn.layer.borderWidth = 1.0
+                cell.newAccountBtn.layer.borderColor = UIColor(red: 128/255.0, green: 0, blue: 0, alpha: 1.0).cgColor
+                
+                cell.loginBtn.addTarget(self, action: #selector(self.loginBtnClicked), for: .touchUpInside)
+                cell.newAccountBtn.addTarget(self, action: #selector(self.newAccountBtnClicked), for: .touchUpInside)
+                
+                
+                return cell
+            }
+            
+            if let tabStrings = self.tabBarController?.tabBar.items
+            {
+                tabStrings[1].title = "My Profile"
             }
             
              let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
@@ -246,9 +280,9 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             cell.layer.borderWidth = 0.5
             cell.layer.borderColor = UIColor.lightGray.cgColor
             
-             cell.userNameLabel.font = UIFont(name:"Helvetica Neue", size:11)
+//             cell.userNameLabel.font = UIFont(name:"Helvetica Neue", size:11)
             cell.userNameLabel.text = userNamee
-            cell.emaiLabel.font = UIFont(name:"Helvetica Neue", size:10)
+//            cell.emaiLabel.font = UIFont(name:"Helvetica Neue", size:10)
             cell.emaiLabel.text = userEmail
             cell.addWalletLabel.text = walletBal
             
@@ -266,32 +300,48 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = UIColor.lightGray.cgColor
         
-        cell.textLbl.font = UIFont(name:"Helvetica Neue", size:10)
+//        cell.textLbl.font = UIFont(name:"Helvetica Neue", size:17)
         cell.textLbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         
         return cell
     }
-        else {
+        else  {
         
             
-                
         let cell = tableView.dequeueReusableCell(withIdentifier: "SignOutTableViewCell", for: indexPath) as! SignOutTableViewCell
             
+            cell.signOutBtn.tag = indexPath.row
+            
+                if isUserLogin == true {
             
             if userNamee == "User Name" {
                 
                 cell.signOutBtn.isHidden = true
+                
+                cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                
+                if let tabStrings = self.tabBarController?.tabBar.items
+                {
+                    tabStrings[1].title = "Login"
+                }
+                
+                cell.signOutBtn.addTarget(self, action: #selector(self.signOutClicked), for: .touchUpInside)
             }
             else {
             
             cell.signOutBtn.isHidden = false
                     
-                    //                let cell = Bundle.main.loadNibNamed("SignOutTableViewCell", owner: self, options: nil)?.first as! SignOutTableViewCell
+                if let tabStrings = self.tabBarController?.tabBar.items
+                {
+                    tabStrings[1].title = "My Profile"
+                }
+                
+//            let cell = Bundle.main.loadNibNamed("SignOutTableViewCell", owner: self, options: nil)?.first as! SignOutTableViewCell
                     
-                    //                cell.backgroundColor = #colorLiteral(red: 0.8835461612, green: 0.8835461612, blue: 0.8835461612, alpha: 1)
-                    
-                    cell.signOutBtn.addTarget(self, action: #selector(self.signOutClicked), for: .touchUpInside)
-                    cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            cell.backgroundColor = #colorLiteral(red: 0.8835461612, green: 0.8835461612, blue: 0.8835461612, alpha: 1)
+                
+            cell.signOutBtn.addTarget(self, action: #selector(self.signOutClicked), for: .touchUpInside)
+//                    cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                     //                cell.contentView.layer.cornerRadius = 20
                     //                cell.contentView.layer.borderWidth = 1.0
                     //
@@ -308,12 +358,13 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                     
                     //                cell.contentView.layer.backgroundColor = UIColor.red.cgColor
                     
-                    
+//                return cell
                    }
-                    return cell
                 
+            
         }
-    
+     return cell
+        }
         
         }
     
@@ -431,55 +482,108 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     }
     
     
-    func signOutClicked(_sender: UIButton){
-        
-        
-
+    func loginBtnClicked(_sender: UIButton){
         
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-    
-        
-        if UserDefaults.standard.object(forKey: accessToken) != nil {
-            
-            UserDefaults.standard.removeObject(forKey: accessToken)
-            UserDefaults.standard.synchronize()
-        }
-        if UserDefaults.standard.object(forKey: tokenType) != nil {
-            
-            UserDefaults.standard.removeObject(forKey: tokenType)
-            UserDefaults.standard.synchronize()
-        }
-        if UserDefaults.standard.object(forKey: walletIDD) != nil {
-            
-            UserDefaults.standard.removeObject(forKey: walletIDD)
-            UserDefaults.standard.synchronize()
-        }
-        if UserDefaults.standard.object(forKey: userIDD) != nil {
-            
-            UserDefaults.standard.removeObject(forKey: userIDD)
-            UserDefaults.standard.synchronize()
-        }
-        
-        
-        if UserDefaults.standard.object(forKey: walletAmountt) != nil {
-            
-            UserDefaults.standard.removeObject(forKey: walletAmountt)
-            UserDefaults.standard.synchronize()
-        }
-        if UserDefaults.standard.object(forKey: uNamee) != nil {
-            
-            UserDefaults.standard.removeObject(forKey: uNamee)
-            UserDefaults.standard.synchronize()
-        }
-        if UserDefaults.standard.object(forKey: emailIdd) != nil {
-            
-            UserDefaults.standard.removeObject(forKey: emailIdd)
-            UserDefaults.standard.synchronize()
-        }
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = viewController
+        
+    }
+    func newAccountBtnClicked(_sender: UIButton){
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = viewController
+        
+    }
+    func signOutClicked(_sender: UIButton){
+        
+        
+        let indexPath : IndexPath = IndexPath(row: _sender.tag, section: 2)
+        
+        if let newCell : SignOutTableViewCell = profileTVC.cellForRow(at: indexPath) as? SignOutTableViewCell {
+            
+       
+        
+        isUserLogin = false
+        self.profileTVC .reloadData()
+        let button1 = UIBarButtonItem(image: UIImage(named: "Menu"), style: .plain, target: self, action: #selector(self.action))
+        
+        self.navigationItem.leftBarButtonItem  = button1
+        
+        self.navigationItem.title = "AAAAA"
+
+        if userNamee == "User Name" {
+            
+            newCell.signOutBtn.isHidden = true
+            
+            newCell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            
+            if let tabStrings = self.tabBarController?.tabBar.items
+            {
+                tabStrings[1].title = "My Profile"
+            }
+            
+        }
+        else {
+            
+            newCell.signOutBtn.isHidden = true
+            
+            if let tabStrings = self.tabBarController?.tabBar.items
+            {
+                tabStrings[1].title = "Login"
+            }
+        }
+            
+        }
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//    
+//        
+//        if UserDefaults.standard.object(forKey: accessToken) != nil {
+//            
+//            UserDefaults.standard.removeObject(forKey: accessToken)
+//            UserDefaults.standard.synchronize()
+//        }
+//        if UserDefaults.standard.object(forKey: tokenType) != nil {
+//            
+//            UserDefaults.standard.removeObject(forKey: tokenType)
+//            UserDefaults.standard.synchronize()
+//        }
+//        if UserDefaults.standard.object(forKey: walletIDD) != nil {
+//            
+//            UserDefaults.standard.removeObject(forKey: walletIDD)
+//            UserDefaults.standard.synchronize()
+//        }
+//        if UserDefaults.standard.object(forKey: userIDD) != nil {
+//            
+//            UserDefaults.standard.removeObject(forKey: userIDD)
+//            UserDefaults.standard.synchronize()
+//        }
+//        
+//        
+//        if UserDefaults.standard.object(forKey: walletAmountt) != nil {
+//            
+//            UserDefaults.standard.removeObject(forKey: walletAmountt)
+//            UserDefaults.standard.synchronize()
+//        }
+//        if UserDefaults.standard.object(forKey: uNamee) != nil {
+//            
+//            UserDefaults.standard.removeObject(forKey: uNamee)
+//            UserDefaults.standard.synchronize()
+//        }
+//        if UserDefaults.standard.object(forKey: emailIdd) != nil {
+//            
+//            UserDefaults.standard.removeObject(forKey: emailIdd)
+//            UserDefaults.standard.synchronize()
+//        }
+//        
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = viewController
         
     }
     

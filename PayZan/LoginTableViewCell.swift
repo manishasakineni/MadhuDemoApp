@@ -9,6 +9,10 @@
 import UIKit
 
 class LoginTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var loginBtn: UIButton!
+    
+    @IBOutlet weak var newAccountBtn: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

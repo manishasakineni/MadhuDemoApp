@@ -71,7 +71,7 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
        
         
-        self.tabBarController?.tabBar.isHidden = true
+//        self.tabBarController?.tabBar.isHidden = true
         
         networkField.delegate = self
         
@@ -117,7 +117,7 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         //        headerView.isHidden = false
         
-        self.tabBarController?.tabBar.isHidden = true
+//        self.tabBarController?.tabBar.isHidden = true
         
         super.viewDidAppear(true)
     }
@@ -386,7 +386,7 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     }
     @IBAction func backAction(_ sender: Any) {
         
-        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: true)
         
     }
    

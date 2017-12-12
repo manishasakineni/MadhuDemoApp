@@ -17,13 +17,18 @@ import SystemConfiguration
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,SWRevealViewControllerDelegate {
+    
+    var tabController = TabsViewController()
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
     }
 
     var window: UIWindow?
 
-
+let tabBarController = UITabBarController()
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -42,20 +47,95 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,SWReveal
 //        appDelegate.window?.rootViewController = viewController
         
         
+//        let tabViewController1 = HomeViewController(
+//            nibName: "HomeViewController",
+//            bundle: nil)
+//        let tabViewController2 = ViewController(
+//            nibName:"ViewController",
+//            bundle: nil)
+//        let tabViewController3 = AddMoneyWalletViewController(
+//            nibName:"AddMoneyWalletViewController",
+//            bundle: nil)
+//        let tabViewController4 = OffersViewController(
+//            nibName:"OffersViewController",
+//            bundle: nil)
         
+//                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                let homeController = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+////        let homeController = HomeViewController()
+//        homeController.tabBarItem = UITabBarItem(
+//            title: "Home",
+//            image: UIImage(named: "homePng"),
+//            tag: 0)
+//        
+////        let loginController = ViewController()
+//        let loginController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//        loginController.tabBarItem = UITabBarItem(
+//            title: "Login",
+//            image:UIImage(named: "myProfilePng") ,
+//            tag:1)
+//        
+////        let addMoneyControllers = AddMoneyWalletViewController()
+//        let addMoneyControllers = mainStoryboard.instantiateViewController(withIdentifier: "AddMoneyWalletViewController") as! AddMoneyWalletViewController
+//        addMoneyControllers.tabBarItem =  UITabBarItem(
+//            title: "Wallet",
+//            image:UIImage(named: "addMoneyWalletPng") ,
+//            tag:2)
+//        
+////        let offersControllers = OffersViewController()
+//        let offersControllers = mainStoryboard.instantiateViewController(withIdentifier: "OffersViewController") as! OffersViewController
+//        offersControllers.tabBarItem =  UITabBarItem(
+//            title: "Offers",
+//            image:UIImage(named: "offersPng") ,
+//            tag:3)
+//        
+//        let viewControllerList = [homeController, loginController, addMoneyControllers, offersControllers]
+//        tabController.viewControllers = viewControllerList
+//        window?.rootViewController = tabController
         
+//        tabController.viewControllers = viewControllerList.map { UINavigationController(rootViewController: $0) }
         
-        
+//        let controllers = [tabViewController1,tabViewController2,tabViewController3,tabViewController4]
+//        
+//        tabViewController1.tabBarItem = UITabBarItem(
+//            title: "Home",
+//            image: UIImage(named: "homePng"),
+//            tag: 1)
+//        tabViewController2.tabBarItem = UITabBarItem(
+//            title: "Login",
+//            image:UIImage(named: "myProfilePng") ,
+//            tag:2)
+//        tabViewController2.tabBarItem = UITabBarItem(
+//            title: "Wallet",
+//            image:UIImage(named: "addMoneyWalletPng") ,
+//            tag:3)
+//        tabViewController2.tabBarItem = UITabBarItem(
+//            title: "Offers",
+//            image:UIImage(named: "offersPng") ,
+//            tag:4)
+//
+//        tabController.viewControllers = controllers
+//        window?.rootViewController = tabBarController
+//                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                    appDelegate.window?.rootViewController = tabBarController
+       
         
         
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+        
+//        viewController.tabBar.items?[1].image = UIImage(named: "search")?.withRenderingMode(.alwaysTemplate)
+        viewController.tabBar.items?[1].title = "Login"
+//        viewController.tabBar.items?[1].selectedImage = UIImage(named: "search")?.withRenderingMode(.alwaysTemplate)
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = viewController
         
-        
-        
-        
+     
+//        self.tabController.tabBar.items![1].image = UIImage(named: "paySend")
+//        // items![0] index of your tab bar item.items![0] means tabbar first item
+//        
+//        self.tabController.tabBar.items![1].selectedImage = UIImage(named: "paySend")
         
         
         

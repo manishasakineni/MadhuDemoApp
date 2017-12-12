@@ -16,7 +16,7 @@ var imageArray1 = [UIImage(named:"mobileImg"),UIImage(named:"landlineImg"),UIIma
 var imageArray2 = [UIImage(named:"mobile"),UIImage(named:"landline"),UIImage(named:"electricity"),UIImage(named:"event"),UIImage(named:"sport"),UIImage(named:"television"),UIImage(named:"water-tap"),UIImage(named:"internet")]
 //for label names
 
-var namesarra1 = ["Mobile","Electricity","Cable TV","Landline","DTH","Internet","Water","data-card"]
+var namesarra1 = ["Mobile","Landline","DTH","Broadband","Cable TV","Electricity","Water","data-card"]
 
 var namesarra2 = ["Water","Landline","Electricity","Events","Sports","DTH","Mobile","Internet"]
 
@@ -113,11 +113,11 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         self.tableView.separatorStyle = .none
         
-        walletLabel.layer.cornerRadius = 5.0
+//        walletLabel.layer.cornerRadius = 5.0
         
-         paySendBtn.layer.cornerRadius = 5.0
-         addWithdrawBtn.layer.cornerRadius = 5.0
-         myTransactionBtn.layer.cornerRadius = 5.0
+//         paySendBtn.layer.cornerRadius = 5.0
+//         addWithdrawBtn.layer.cornerRadius = 5.0
+//         myTransactionBtn.layer.cornerRadius = 5.0
         
         
         walletLabel.layer.masksToBounds = true
@@ -179,19 +179,19 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         self.tabBarController?.delegate = self
         
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
-            
-            btnViewHeight.constant = 140
-            headerImgHeight.constant = 120
-        }
-        
-        else{
-        
-        
-            btnViewHeight.constant = 70
-            headerImgHeight.constant = 70
-        
-        }
+//        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+//            
+//            btnViewHeight.constant = 140
+//            headerImgHeight.constant = 120
+//        }
+//        
+//        else{
+//        
+//        
+//            btnViewHeight.constant = 70
+//            headerImgHeight.constant = 70
+//        
+//        }
         
         
     // Do any additional setup after loading the view.

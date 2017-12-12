@@ -8,12 +8,39 @@
 
 import UIKit
 
+enum TypeOfDay {
+    case weekday
+    case weekend
+}
 class TabsViewController: UITabBarController,UITabBarControllerDelegate {
 
+    
+    var typeOfDay: TypeOfDay = .weekday
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.delegate = self
+        
+        
+//        tabBarController?.viewControllers?.remove(at: 1)
+//        tabbarController.viewControllers?.replaceRange()
+        // Initial order is: WeekendVC, WeekdayVC, OtherVC
+//        if let currentViewControllers = self.viewControllers {
+//
+//            let weekendVC = currentViewControllers[0]
+//            let weekdayVC = currentViewControllers[1]
+//            let otherVC = currentViewControllers[2]
+//            let otherV = currentViewControllers[3]
+//            
+//            
+//            switch typeOfDay {
+//            case .weekend:
+//                self.viewControllers = [weekendVC, otherVC]
+//            case .weekday:
+//                self.viewControllers = [weekdayVC, otherVC]
+//            }
+//        }
 
         // Do any additional setup after loading the view.
     }
@@ -48,6 +75,25 @@ class TabsViewController: UITabBarController,UITabBarControllerDelegate {
             break
         case 1:
             print("profile")
+            
+//            tabBarController?.viewControllers?.remove(at: 1)
+            
+//            if ((tabBar.items?[1].title = "Login" as String) != nil){
+//                
+//                print("login")
+            
+//                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+////                self.navigationController?.pushViewController(viewController, animated: true)
+//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                appDelegate.window?.rootViewController = viewController
+//            }
+//            else {
+//                print("profile")
+//                
+//            }
+            
+           
             break
         case 2:
             print("wallet")

@@ -215,6 +215,12 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
                         
                         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
+                        
+                        if let tabStrings = self.tabBarController?.tabBar.items
+                        {
+                            tabStrings[1].title = "My Profile"
+                        }
+                        
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.window?.rootViewController = viewController
                         
