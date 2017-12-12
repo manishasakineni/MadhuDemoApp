@@ -53,6 +53,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     
     @IBOutlet weak var btnViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     var userID:String?
     var walletID:String?
     
@@ -181,12 +182,14 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
             btnViewHeight.constant = 140
+            headerImgHeight.constant = 120
         }
         
         else{
         
         
-        btnViewHeight.constant = 70
+            btnViewHeight.constant = 70
+            headerImgHeight.constant = 70
         
         }
         
@@ -452,7 +455,7 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
             
             cell.productIMG.image = imageArray[ indexPath.row]
-            
+            cell.nameLBL.text = namesarra1[indexPath.row]
             if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                 layout.scrollDirection = .vertical
             }
@@ -468,7 +471,7 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
             
             cell.productIMG.image =   imageArray1[indexPath.row]
-            
+            cell.nameLBL.text = namesarra1[indexPath.row]
             
             if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                 layout.scrollDirection = .vertical
@@ -483,6 +486,7 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
         
         cell.productIMG.image =   imageArray2[indexPath.row]
+        cell.nameLBL.text = namesarra1[indexPath.row]
         
         cell.contentView.layer.cornerRadius = 20
         cell.contentView.layer.borderWidth = 1.0

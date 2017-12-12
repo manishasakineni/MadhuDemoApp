@@ -699,17 +699,17 @@
 		35E64C8E1F84DF5200E2CA65 /* PayZan */ = {
 			isa = PBXGroup;
 			children = (
+				35E64C8F1F84DF5200E2CA65 /* AppDelegate.swift */,
+				35E64C931F84DF5200E2CA65 /* Main.storyboard */,
+				3D8AA36C1FDECC7E001784D2 /* Localizable.strings */,
 				35CB9D101F8B7CE800BF1073 /* Utilities */,
 				3569C1DE1F8767F000152B80 /* Sidemenu */,
 				35344D7A1F860FC100E35C5C /* ObjectMapper */,
 				35344DAE1F861B2E00E35C5C /* Model */,
 				35344DB01F861B4200E35C5C /* Controllers */,
 				35344DAF1F861B3700E35C5C /* Views */,
-				35E64C8F1F84DF5200E2CA65 /* AppDelegate.swift */,
 				354CF1AA1F90DAA4004ADDAD /* BaseViewController.swift */,
-				3D8AA36C1FDECC7E001784D2 /* Localizable.strings */,
 				35E64C911F84DF5200E2CA65 /* ViewController.swift */,
-				35E64C931F84DF5200E2CA65 /* Main.storyboard */,
 				35E64C961F84DF5200E2CA65 /* Assets.xcassets */,
 				35E64C981F84DF5200E2CA65 /* LaunchScreen.storyboard */,
 				35E64C9B1F84DF5200E2CA65 /* Info.plist */,

@@ -32,6 +32,18 @@ class LanguageViewController: UIViewController {
         
         self.changeToLanguage("te")
     }
+    
+    
+    @IBAction func sinhala(_ sender: Any) {
+        
+        self.changeToLanguage("si")
+    }
+    
+    
+    @IBAction func Tamil(_ sender: Any) {
+        
+        self.changeToLanguage("ta")
+    }
 
     private  func changeToLanguage(_ langCode : String) {
         
