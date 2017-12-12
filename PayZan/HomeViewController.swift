@@ -50,6 +50,9 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     
     @IBOutlet weak var myTransactionBtn: UIButton!
     
+    
+    @IBOutlet weak var btnViewHeight: NSLayoutConstraint!
+    
     var userID:String?
     var walletID:String?
     
@@ -175,9 +178,26 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         self.tabBarController?.delegate = self
         
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            btnViewHeight.constant = 140
+        }
+        
+        else{
+        
+        
+        btnViewHeight.constant = 70
+        
+        }
+        
         
     // Do any additional setup after loading the view.
     }
+    
+    
+    
+    
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -1,456 +1,459 @@
 
 /* Class = "UITextField"; placeholder = "Re-Type New Password"; ObjectID = "0Dc-5Q-je9"; */
-"0Dc-5Q-je9.placeholder" = "క్రొత్త పాస్ వర్డ్ ను టైప్ చేయండి";
+"0Dc-5Q-je9.placeholder" = "Re-Type New Password";
 
 /* Class = "UITextField"; placeholder = "Amount"; ObjectID = "0fE-tX-ood"; */
-"0fE-tX-ood.placeholder" = "మొత్తం";
+"0fE-tX-ood.placeholder" = "Amount";
 
 /* Class = "UILabel"; text = "My Wallet"; ObjectID = "0fk-ih-S21"; */
-"0fk-ih-S21.text" = "నా పర్సు";
+"0fk-ih-S21.text" = "My Wallet";
 
 /* Class = "UISegmentedControl"; 0ud-Qh-g5L.segmentTitles[0] = "Talktime Topup"; ObjectID = "0ud-Qh-g5L"; */
-"0ud-Qh-g5L.segmentTitles[0]" = "టాక్టైమ్ టాప్అప్";
+"0ud-Qh-g5L.segmentTitles[0]" = "Talktime Topup";
 
 /* Class = "UISegmentedControl"; 0ud-Qh-g5L.segmentTitles[1] = "Special Recharge"; ObjectID = "0ud-Qh-g5L"; */
-"0ud-Qh-g5L.segmentTitles[1]" = "స్పెషల్ రీఛార్జ్";
+"0ud-Qh-g5L.segmentTitles[1]" = "Special Recharge";
 
 /* Class = "UILabel"; text = "Prepaid"; ObjectID = "11m-sD-dOi"; */
-"11m-sD-dOi.text" = "ప్రీపెయిడ్";
+"11m-sD-dOi.text" = "Prepaid";
 
 /* Class = "UIButton"; normalTitle = "1000 +"; ObjectID = "14x-N8-8RR"; */
 "14x-N8-8RR.normalTitle" = "1000 +";
 
 /* Class = "UITextField"; placeholder = "+94 Mobile Number"; ObjectID = "2fA-ud-OQ4"; */
-"2fA-ud-OQ4.placeholder" = "+94 మొబైల్ సంఖ్య";
+"2fA-ud-OQ4.placeholder" = "+94 Mobile Number";
 
 /* Class = "UIButton"; normalTitle = "Sign up with Google"; ObjectID = "47B-2O-OXT"; */
-"47B-2O-OXT.normalTitle" = "Google తో సైన్ అప్ చేయండి";
+"47B-2O-OXT.normalTitle" = "Sign up with Google";
 
 /* Class = "UIButton"; normalTitle = "Paid"; ObjectID = "4Qk-pu-XaB"; */
-"4Qk-pu-XaB.normalTitle" = "చెల్లింపు";
+"4Qk-pu-XaB.normalTitle" = "Paid";
 
 /* Class = "UIButton"; normalTitle = "Pay Now"; ObjectID = "5rY-fI-Wpd"; */
-"5rY-fI-Wpd.normalTitle" = "ఇప్పుడు చెల్లించండి";
+"5rY-fI-Wpd.normalTitle" = "Pay Now";
 
 /* Class = "UILabel"; text = "About Us"; ObjectID = "5wB-CZ-ade"; */
-"5wB-CZ-ade.text" = "మా గురించి";
+"5wB-CZ-ade.text" = "About Us";
 
 /* Class = "UILabel"; text = "Wallet Balance :"; ObjectID = "6H9-oI-C3q"; */
-"6H9-oI-C3q.text" = "వాలెట్ సంతులనం :";
+"6H9-oI-C3q.text" = "Wallet Balance :";
 
 /* Class = "UITextField"; placeholder = "Amount"; ObjectID = "6Yi-nl-E7Q"; */
-"6Yi-nl-E7Q.placeholder" = "మొత్తం";
+"6Yi-nl-E7Q.placeholder" = "Amount";
 
 /* Class = "UITabBarItem"; title = "Offers"; ObjectID = "7Ov-Qq-6Qr"; */
-"7Ov-Qq-6Qr.title" = "ఆఫర్స్";
+"7Ov-Qq-6Qr.title" = "Offers";
 
 /* Class = "UITextField"; placeholder = "Account Number"; ObjectID = "8bF-BT-cXb"; */
-"8bF-BT-cXb.placeholder" = "ఖాతా సంఖ్య";
+"8bF-BT-cXb.placeholder" = "Account Number";
 
 /* Class = "UILabel"; text = "My Profile"; ObjectID = "8ia-iA-u4o"; */
-"8ia-iA-u4o.text" = "నా జీవన వివరణ";
+"8ia-iA-u4o.text" = "My Profile";
 
 /* Class = "UILabel"; text = "Select an option to pay"; ObjectID = "8kF-QR-xcj"; */
-"8kF-QR-xcj.text" = "చెల్లించడానికి ఎంపికను ఎంచుకోండి";
+"8kF-QR-xcj.text" = "Select an option to pay";
 
 /* Class = "UITextField"; placeholder = "Select Network"; ObjectID = "8vu-VI-3PM"; */
-"8vu-VI-3PM.placeholder" = "నెట్వర్క్ని ఎంచుకోండి";
+"8vu-VI-3PM.placeholder" = "Select Network";
 
 /* Class = "UITextField"; placeholder = "Select Network"; ObjectID = "90F-uX-Uw7"; */
-"90F-uX-Uw7.placeholder" = "నెట్వర్క్ని ఎంచుకోండి";
+"90F-uX-Uw7.placeholder" = "Select Network";
 
 /* Class = "UILabel"; text = "Add New Card"; ObjectID = "93H-lA-xqZ"; */
-"93H-lA-xqZ.text" = "క్రొత్త కార్డ్ని జోడించండి";
+"93H-lA-xqZ.text" = "Add New Card";
 
 /* Class = "UIButton"; normalTitle = "Added"; ObjectID = "9Qj-1a-3QY"; */
-"9Qj-1a-3QY.normalTitle" = "చేర్చబడింది";
+"9Qj-1a-3QY.normalTitle" = "Added";
 
 /* Class = "UILabel"; text = "Offers"; ObjectID = "9SV-vg-vl6"; */
-"9SV-vg-vl6.text" = "ఆఫర్స్";
+"9SV-vg-vl6.text" = "Offers";
 
 /* Class = "UITextField"; placeholder = "Operator"; ObjectID = "9cK-kp-OxP"; */
-"9cK-kp-OxP.placeholder" = "ఆపరేటర్";
+"9cK-kp-OxP.placeholder" = "Operator";
 
 /* Class = "UITextField"; placeholder = "Enter Promo code"; ObjectID = "AaI-XU-MYE"; */
-"AaI-XU-MYE.placeholder" = "ప్రోమో కోడ్ను నమోదు చేయండి";
+"AaI-XU-MYE.placeholder" = "Enter Promo code";
 
 /* Class = "UILabel"; text = "Edit Profile"; ObjectID = "Ac5-Ug-Dba"; */
-"Ac5-Ug-Dba.text" = "ప్రొఫైల్ను సవరించండి";
+"Ac5-Ug-Dba.text" = "Edit Profile";
 
 /* Class = "UILabel"; text = "Sign Up"; ObjectID = "AlS-9h-23f"; */
-"AlS-9h-23f.text" = "చేరడం";
+"AlS-9h-23f.text" = "Sign Up";
 
 /* Class = "UILabel"; text = "Agent Request"; ObjectID = "BKJ-PN-8gU"; */
-"BKJ-PN-8gU.text" = "ఏజెంట్ అభ్యర్థన";
+"BKJ-PN-8gU.text" = "Agent Request";
 
 /* Class = "UITextField"; placeholder = "Datacard Number"; ObjectID = "BVi-VB-WY0"; */
-"BVi-VB-WY0.placeholder" = "డాటాకార్డ్ సంఖ్య";
+"BVi-VB-WY0.placeholder" = "Datacard Number";
 
 /* Class = "UIButton"; normalTitle = "Signin with Google"; ObjectID = "BbB-e5-ZuT"; */
-"BbB-e5-ZuT.normalTitle" = "గూగుల్ తో సైన్ ఇన్ చేయండి";
+"BbB-e5-ZuT.normalTitle" = "Signin with Google";
 
 /* Class = "UITabBarItem"; title = "Wallet"; ObjectID = "CIv-NA-Xpz"; */
-"CIv-NA-Xpz.title" = "పర్సు";
+"CIv-NA-Xpz.title" = "Wallet";
 
 /* Class = "UITextField"; placeholder = "Amount"; ObjectID = "CQ0-17-4ZC"; */
-"CQ0-17-4ZC.placeholder" = "మొత్తం";
+"CQ0-17-4ZC.placeholder" = "Amount";
 
 /* Class = "UILabel"; text = "and"; ObjectID = "CRJ-d4-sbV"; */
-"CRJ-d4-sbV.text" = "మరియు";
+"CRJ-d4-sbV.text" = "and";
 
 /* Class = "UIButton"; normalTitle = "Term's & Condition's"; ObjectID = "Dac-VZ-o4K"; */
-"Dac-VZ-o4K.normalTitle" = "టర్మ్ & కండిషన్ యొక్క";
+"Dac-VZ-o4K.normalTitle" = "Term's & Condition's";
 
 /* Class = "UILabel"; text = "and"; ObjectID = "Dgl-br-GGf"; */
-"Dgl-br-GGf.text" = "మరియు";
+"Dgl-br-GGf.text" = "and";
 
 /* Class = "UILabel"; text = "On Sign Up, you accept our"; ObjectID = "DnQ-K0-ESa"; */
-"DnQ-K0-ESa.text" = "సైన్ అప్ న, మీరు మా అంగీకరించాలి";
+"DnQ-K0-ESa.text" = "On Sign Up, you accept our";
 
 /* Class = "UIButton"; normalTitle = " Send Money"; ObjectID = "E3b-0D-xLU"; */
-"E3b-0D-xLU.normalTitle" = "డబ్బు పంపండి";
+"E3b-0D-xLU.normalTitle" = " Send Money";
 
 /* Class = "UILabel"; text = "Mobile recharge & Pay bill"; ObjectID = "E91-R0-e8a"; */
-"E91-R0-e8a.text" = "మొబైల్ రీచార్జ్ & పే బిల్లు";
+"E91-R0-e8a.text" = "Mobile recharge & Pay bill";
 
 /* Class = "UILabel"; text = "Profile"; ObjectID = "EBl-Gq-mBi"; */
-"EBl-Gq-mBi.text" = "ప్రొఫైల్";
+"EBl-Gq-mBi.text" = "Profile";
 
 /* Class = "UIButton"; normalTitle = "Done"; ObjectID = "EVt-jn-ZUN"; */
-"EVt-jn-ZUN.normalTitle" = "పూర్తి";
+"EVt-jn-ZUN.normalTitle" = "Done";
 
 /* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "Eq4-Sz-kCM"; */
-"Eq4-Sz-kCM.placeholder" = "పాస్వర్డ్ని నిర్ధారించండి";
+"Eq4-Sz-kCM.placeholder" = "Confirm Password";
 
 /* Class = "UILabel"; text = "Offers Section"; ObjectID = "F2y-Ai-s3z"; */
-"F2y-Ai-s3z.text" = "ఆఫర్స్ సెక్షన్";
+"F2y-Ai-s3z.text" = "Offers Section";
 
 /* Class = "UITextField"; placeholder = "Mobile Number"; ObjectID = "IFr-HT-Tti"; */
-"IFr-HT-Tti.placeholder" = "మొబైల్ సంఖ్య";
+"IFr-HT-Tti.placeholder" = "Mobile Number";
 
 /* Class = "UILabel"; text = "Landline"; ObjectID = "IMk-Gp-eSE"; */
-"IMk-Gp-eSE.text" = "ల్యాండ్లైన్";
+"IMk-Gp-eSE.text" = "Landline";
 
 /* Class = "UILabel"; text = "Electricity"; ObjectID = "IRN-6C-i67"; */
-"IRN-6C-i67.text" = "విద్యుత్";
+"IRN-6C-i67.text" = "Electricity";
 
 /* Class = "UILabel"; text = "- or -"; ObjectID = "IvK-xP-GwP"; */
-"IvK-xP-GwP.text" = "- లేదా -";
+"IvK-xP-GwP.text" = "- or -";
 
 /* Class = "UILabel"; text = "Broadband"; ObjectID = "KEU-VK-E5W"; */
-"KEU-VK-E5W.text" = "బ్రాడ్బ్యాండ్";
+"KEU-VK-E5W.text" = "Broadband";
 
 /* Class = "UIButton"; normalTitle = "500 +"; ObjectID = "KNl-2V-MXm"; */
 "KNl-2V-MXm.normalTitle" = "500 +";
 
 /* Class = "UITextField"; placeholder = "Service Number"; ObjectID = "KZK-Fn-WR5"; */
-"KZK-Fn-WR5.placeholder" = "సర్వీస్ సంఖ్య";
+"KZK-Fn-WR5.placeholder" = "Service Number";
 
 /* Class = "UILabel"; text = "Note: Once the password change is successful,                                         "; ObjectID = "KbK-Fp-Efe"; */
-"KbK-Fp-Efe.text" = "గమనిక: పాస్ వర్డ్ మార్పు విజయవంతమైతే,                                         ";
+"KbK-Fp-Efe.text" = "Note: Once the password change is successful,                                         ";
 
 /* Class = "UITextField"; placeholder = "Select Circle"; ObjectID = "Kv4-nR-Cxb"; */
-"Kv4-nR-Cxb.placeholder" = "సర్కిల్ని ఎంచుకోండి";
+"Kv4-nR-Cxb.placeholder" = "Select Circle";
 
 /* Class = "UIButton"; normalTitle = "English"; ObjectID = "LO4-MS-J3X"; */
 "LO4-MS-J3X.normalTitle" = "English";
 
 /* Class = "UITextField"; placeholder = "Current Password"; ObjectID = "LVZ-oE-dix"; */
-"LVZ-oE-dix.placeholder" = "ప్రస్తుత పాస్వర్డ్";
+"LVZ-oE-dix.placeholder" = "Current Password";
 
 /* Class = "UILabel"; text = "D T H"; ObjectID = "M3l-Db-APJ"; */
 "M3l-Db-APJ.text" = "D T H";
 
 /* Class = "UITextField"; placeholder = "Amount"; ObjectID = "MRL-66-dzi"; */
-"MRL-66-dzi.placeholder" = "మొత్తం";
+"MRL-66-dzi.placeholder" = "Amount";
 
 /* Class = "UIButton"; normalTitle = "Proceed to Pay Bill"; ObjectID = "Mdy-C6-HZn"; */
-"Mdy-C6-HZn.normalTitle" = "బిల్ చెల్లించడానికి కొనసాగించండి";
+"Mdy-C6-HZn.normalTitle" = "Proceed to Pay Bill";
 
 /* Class = "UITextField"; placeholder = "Enter Amount"; ObjectID = "N4n-h0-aHf"; */
-"N4n-h0-aHf.placeholder" = "మొత్తాన్ని నమోదు చేయండి";
+"N4n-h0-aHf.placeholder" = "Enter Amount";
 
 /* Class = "UILabel"; text = "D T H"; ObjectID = "NQF-sy-Dmk"; */
-"NQF-sy-Dmk.text" = "డి.టి.హెచ్";
+"NQF-sy-Dmk.text" = "D T H";
 
 /* Class = "UITextField"; placeholder = "Number with STD Code"; ObjectID = "OBb-qT-xb7"; */
-"OBb-qT-xb7.placeholder" = "STD కోడ్తో సంఖ్య";
+"OBb-qT-xb7.placeholder" = "Number with STD Code";
 
 /* Class = "UILabel"; text = "offers"; ObjectID = "OQX-tJ-O6y"; */
-"OQX-tJ-O6y.text" = "ఆఫర్స్";
+"OQX-tJ-O6y.text" = "offers";
 
 /* Class = "UILabel"; text = "By loging in, you accept our"; ObjectID = "OUT-ua-mys"; */
-"OUT-ua-mys.text" = "లాగిన్ చేయడం ద్వారా, మీరు మా అంగీకరించాలి";
+"OUT-ua-mys.text" = "By loging in, you accept our";
 
 /* Class = "UIButton"; normalTitle = "Pay Now"; ObjectID = "Oh7-tN-TGR"; */
-"Oh7-tN-TGR.normalTitle" = "ఇప్పుడు చెల్లించండి";
+"Oh7-tN-TGR.normalTitle" = "Pay Now";
 
 /* Class = "UITextField"; placeholder = "Select Board"; ObjectID = "PEV-za-pP3"; */
-"PEV-za-pP3.placeholder" = "బోర్డ్ను ఎంచుకోండి";
+"PEV-za-pP3.placeholder" = "Select Board";
 
 /* Class = "UILabel"; text = "Change Password"; ObjectID = "PMa-YG-vZV"; */
-"PMa-YG-vZV.text" = "పాస్వర్డ్ మార్చండి";
+"PMa-YG-vZV.text" = "Change Password";
 
 /* Class = "UIButton"; normalTitle = "Signup"; ObjectID = "QAV-w1-peO"; */
-"QAV-w1-peO.normalTitle" = "చేరడం";
+"QAV-w1-peO.normalTitle" = "Signup";
 
 /* Class = "UILabel"; text = "Offers"; ObjectID = "QDI-86-DfS"; */
-"QDI-86-DfS.text" = "ఆఫర్స్";
+"QDI-86-DfS.text" = "Offers";
 
 /* Class = "UIButton"; normalTitle = "Telugu"; ObjectID = "Qh4-LZ-zIE"; */
-"Qh4-LZ-zIE.normalTitle" = "తెలుగు";
+"Qh4-LZ-zIE.normalTitle" = "Telugu";
 
 /* Class = "UIButton"; normalTitle = "Change Password"; ObjectID = "Qq4-pn-pwh"; */
-"Qq4-pn-pwh.normalTitle" = "పాస్వర్డ్ మార్చండి";
+"Qq4-pn-pwh.normalTitle" = "Change Password";
 
 /* Class = "UILabel"; text = "Credit Card"; ObjectID = "R55-Cs-tdt"; */
-"R55-Cs-tdt.text" = "క్రెడిట్ కార్డ్";
+"R55-Cs-tdt.text" = "Credit Card";
 
 /* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "SDZ-Dh-cHF"; */
-"SDZ-Dh-cHF.normalTitle" = "చేరడం";
+"SDZ-Dh-cHF.normalTitle" = "Sign Up";
 
 /* Class = "UILabel"; text = "Don't have account..?"; ObjectID = "Sjc-1n-GnS"; */
-"Sjc-1n-GnS.text" = "ఖాతా లేదు ..?";
+"Sjc-1n-GnS.text" = "Don't have account..?";
 
 /* Class = "UIButton"; normalTitle = "Pay Now"; ObjectID = "TMb-8E-Ikj"; */
-"TMb-8E-Ikj.normalTitle" = "ఇప్పుడు చెల్లించండి";
+"TMb-8E-Ikj.normalTitle" = "Pay Now";
 
 /* Class = "UITextField"; placeholder = "Amount"; ObjectID = "UYn-0i-CFE"; */
-"UYn-0i-CFE.placeholder" = "మొత్తం";
+"UYn-0i-CFE.placeholder" = "Amount";
 
 /* Class = "UILabel"; text = "Water"; ObjectID = "Vab-zw-IxU"; */
-"Vab-zw-IxU.text" = "నీరు";
+"Vab-zw-IxU.text" = "Water";
 
 /* Class = "UILabel"; text = "- or -"; ObjectID = "WV8-5z-TVu"; */
-"WV8-5z-TVu.text" = "- లేదా -";
+"WV8-5z-TVu.text" = "- or -";
 
 /* Class = "UITabBarItem"; title = "Home"; ObjectID = "WsQ-XG-ga5"; */
-"WsQ-XG-ga5.title" = "హోమ్";
+"WsQ-XG-ga5.title" = "Home";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "XFI-To-x8d"; */
-"XFI-To-x8d.normalTitle" = "లాగిన్";
+"XFI-To-x8d.normalTitle" = "Login";
 
 /* Class = "UILabel"; text = "Complete Your Payment"; ObjectID = "XJg-xa-QlN"; */
-"XJg-xa-QlN.text" = "మీ చెల్లింపును పూర్తి చేయండి";
+"XJg-xa-QlN.text" = "Complete Your Payment";
 
 /* Class = "UIButton"; normalTitle = "Add Money"; ObjectID = "XZp-OG-lOq"; */
-"XZp-OG-lOq.normalTitle" = "డబ్బుని జోడించండి";
+"XZp-OG-lOq.normalTitle" = "Add Money";
 
 /* Class = "UITextField"; placeholder = "Amount"; ObjectID = "Xc0-gW-aCk"; */
-"Xc0-gW-aCk.placeholder" = "మొత్తం";
+"Xc0-gW-aCk.placeholder" = "Amount";
 
 /* Class = "UIButton"; normalTitle = "Privacy Policy"; ObjectID = "Y27-ng-8mR"; */
-"Y27-ng-8mR.normalTitle" = "గోప్యతా విధానం";
+"Y27-ng-8mR.normalTitle" = "Privacy Policy";
 
 /* Class = "UILabel"; text = "Order History"; ObjectID = "Y6h-hd-wc4"; */
-"Y6h-hd-wc4.text" = "ఆర్డర్ చరిత్ర";
+"Y6h-hd-wc4.text" = "Order History";
 
 /* Class = "UILabel"; text = "Terms of Service"; ObjectID = "Ya5-BC-km0"; */
-"Ya5-BC-km0.text" = "సేవా నిబంధనలు";
+"Ya5-BC-km0.text" = "Terms of Service";
 
 /* Class = "UILabel"; text = "Datacard"; ObjectID = "Yfw-KK-QHX"; */
-"Yfw-KK-QHX.text" = "డేటాకార్డు";
+"Yfw-KK-QHX.text" = "Datacard";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "Z8u-2P-my7"; */
+"Z8u-2P-my7.text" = "Language";
 
 /* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "Z91-Br-Zin"; */
-"Z91-Br-Zin.normalTitle" = "మార్చు";
+"Z91-Br-Zin.normalTitle" = "Edit";
 
 /* Class = "UIButton"; normalTitle = "210/-"; ObjectID = "Zu1-iE-Sc7"; */
 "Zu1-iE-Sc7.normalTitle" = "210/-";
 
 /* Class = "UITextField"; placeholder = "Subscriber ID"; ObjectID = "aAJ-8l-NGT"; */
-"aAJ-8l-NGT.placeholder" = "సబ్స్క్రయిబర్ ID";
+"aAJ-8l-NGT.placeholder" = "Subscriber ID";
 
 /* Class = "UITextField"; placeholder = "Select Operator"; ObjectID = "bYl-JJ-2ot"; */
-"bYl-JJ-2ot.placeholder" = "ఆపరేటర్ని ఎంచుకోండి";
+"bYl-JJ-2ot.placeholder" = "Select Operator";
 
 /* Class = "UIButton"; normalTitle = "Privacy Policy"; ObjectID = "bon-tx-trF"; */
-"bon-tx-trF.normalTitle" = "గోప్యతా విధానం";
+"bon-tx-trF.normalTitle" = "Privacy Policy";
 
 /* Class = "UIButton"; normalTitle = "100 +"; ObjectID = "bpT-co-sTR"; */
 "bpT-co-sTR.normalTitle" = "100 +";
 
 /* Class = "UITextField"; placeholder = "Mobile Number"; ObjectID = "byp-gI-7al"; */
-"byp-gI-7al.placeholder" = "మొబైల్ సంఖ్య";
+"byp-gI-7al.placeholder" = "Mobile Number";
 
 /* Class = "UILabel"; text = "offers"; ObjectID = "c2R-iD-s1W"; */
-"c2R-iD-s1W.text" = "ఆఫర్స్";
+"c2R-iD-s1W.text" = "offers";
 
 /* Class = "UIButton"; normalTitle = "Signin with Facebook"; ObjectID = "c75-Ec-7G0"; */
-"c75-Ec-7G0.normalTitle" = "Facebook తో సైన్ ఇన్ చేయండి";
+"c75-Ec-7G0.normalTitle" = "Signin with Facebook";
 
 /* Class = "UITextField"; placeholder = "Amount"; ObjectID = "cO3-oP-bV6"; */
-"cO3-oP-bV6.placeholder" = "మొత్తం";
+"cO3-oP-bV6.placeholder" = "Amount";
 
 /* Class = "UITextField"; placeholder = "Consumer Number "; ObjectID = "caX-Fk-t0T"; */
-"caX-Fk-t0T.placeholder" = "వినియోగదారు సంఖ్య ";
+"caX-Fk-t0T.placeholder" = "Consumer Number ";
 
 /* Class = "UILabel"; text = "Postpaid"; ObjectID = "cwF-Ic-g5Q"; */
-"cwF-Ic-g5Q.text" = "పోస్ట్పెయిడ్";
+"cwF-Ic-g5Q.text" = "Postpaid";
 
 /* Class = "UILabel"; text = "Offers"; ObjectID = "dd3-ZF-WsE"; */
-"dd3-ZF-WsE.text" = "ఆఫర్స్";
+"dd3-ZF-WsE.text" = "Offers";
 
 /* Class = "UILabel"; text = "Comment(Optional)"; ObjectID = "eJy-yK-tNX"; */
-"eJy-yK-tNX.text" = "వ్యాఖ్యను (ఆప్షనల్)";
+"eJy-yK-tNX.text" = "Comment(Optional)";
 
 /* Class = "UITextField"; placeholder = "Mobile Number"; ObjectID = "eMk-VF-dV8"; */
-"eMk-VF-dV8.placeholder" = "మొబైల్ సంఖ్య";
+"eMk-VF-dV8.placeholder" = "Mobile Number";
 
 /* Class = "UITextField"; placeholder = "New Password"; ObjectID = "ePs-9d-Ufu"; */
-"ePs-9d-Ufu.placeholder" = "క్రొత్త పాస్ వర్డ్";
+"ePs-9d-Ufu.placeholder" = "New Password";
 
 /* Class = "UITextField"; placeholder = "Operator"; ObjectID = "fTH-H9-VCZ"; */
-"fTH-H9-VCZ.placeholder" = "ఆపరేటర్";
+"fTH-H9-VCZ.placeholder" = "Operator";
 
 /* Class = "UITextField"; placeholder = "Email(Optional)"; ObjectID = "fg5-I1-WH3"; */
-"fg5-I1-WH3.placeholder" = "ఇమెయిల్ (ఆప్షనల్)";
+"fg5-I1-WH3.placeholder" = "Email(Optional)";
 
 /* Class = "UIButton"; normalTitle = "Confirm Now"; ObjectID = "g86-Cd-VkP"; */
-"g86-Cd-VkP.normalTitle" = "ఇప్పుడు నిర్ధారించండి";
+"g86-Cd-VkP.normalTitle" = "Confirm Now";
 
 /* Class = "UILabel"; text = "Saved Cards"; ObjectID = "gSC-pc-rNY"; */
-"gSC-pc-rNY.text" = "సేవ్ చేసిన కార్డులు";
+"gSC-pc-rNY.text" = "Saved Cards";
 
 /* Class = "UILabel"; text = "You will need Re-Login "; ObjectID = "ghr-RP-b1F"; */
-"ghr-RP-b1F.text" = "మీరు మళ్ళీ లాగిన్ కావాలి ";
+"ghr-RP-b1F.text" = "You will need Re-Login ";
 
 /* Class = "UILabel"; text = "Offers"; ObjectID = "hpr-dh-Byd"; */
-"hpr-dh-Byd.text" = "ఆఫర్స్";
+"hpr-dh-Byd.text" = "Offers";
 
 /* Class = "UILabel"; text = "Login"; ObjectID = "iKJ-bn-fTz"; */
-"iKJ-bn-fTz.text" = "లాగిన్";
+"iKJ-bn-fTz.text" = "Login";
 
 /* Class = "UILabel"; text = "Saved Cards"; ObjectID = "iRO-wC-4Jd"; */
-"iRO-wC-4Jd.text" = "సేవ్ చేసిన కార్డులు";
+"iRO-wC-4Jd.text" = "Saved Cards";
 
 /* Class = "UILabel"; text = "Landline"; ObjectID = "j43-FM-dVU"; */
-"j43-FM-dVU.text" = "ల్యాండ్లైన్";
+"j43-FM-dVU.text" = "Landline";
 
 /* Class = "UITextField"; placeholder = "Comments"; ObjectID = "kCr-ao-ads"; */
-"kCr-ao-ads.placeholder" = "వ్యాఖ్యలు";
+"kCr-ao-ads.placeholder" = "Comments";
 
 /* Class = "UITextField"; placeholder = "Amount"; ObjectID = "ktk-PI-XSS"; */
-"ktk-PI-XSS.placeholder" = "మొత్తం";
+"ktk-PI-XSS.placeholder" = "Amount";
 
 /* Class = "UIButton"; normalTitle = "Term's & Condition's"; ObjectID = "lAB-qy-QLc"; */
-"lAB-qy-QLc.normalTitle" = "టర్మ్ & కండిషన్ యొక్క";
+"lAB-qy-QLc.normalTitle" = "Term's & Condition's";
 
 /* Class = "UITextField"; placeholder = "Create a Password"; ObjectID = "lSf-cX-7eM"; */
-"lSf-cX-7eM.placeholder" = "పాస్వర్డ్ను సృష్టించండి";
+"lSf-cX-7eM.placeholder" = "Create a Password";
 
 /* Class = "UILabel"; text = "  PAYZAN WALLET"; ObjectID = "lc8-SI-edm"; */
-"lc8-SI-edm.text" = "పేజన్ వల్లేట్";
+"lc8-SI-edm.text" = "  PAYZAN WALLET";
 
 /* Class = "UIButton"; normalTitle = "Recharge"; ObjectID = "lhL-fu-5tJ"; */
-"lhL-fu-5tJ.normalTitle" = "రీఛార్జ్";
+"lhL-fu-5tJ.normalTitle" = "Recharge";
 
 /* Class = "UIButton"; normalTitle = "Recharge"; ObjectID = "mQX-qx-Odu"; */
-"mQX-qx-Odu.normalTitle" = "రీఛార్జ్";
+"mQX-qx-Odu.normalTitle" = "Recharge";
 
 /* Class = "UILabel"; text = "Debit Card"; ObjectID = "nfQ-Wn-ja5"; */
-"nfQ-Wn-ja5.text" = "డెబిట్ కార్డు";
+"nfQ-Wn-ja5.text" = "Debit Card";
 
 /* Class = "UILabel"; text = "Electricity"; ObjectID = "o3c-W7-7Jl"; */
-"o3c-W7-7Jl.text" = "విద్యుత్";
+"o3c-W7-7Jl.text" = "Electricity";
 
 /* Class = "UISegmentedControl"; oY3-Bu-bcL.segmentTitles[0] = "Send Money to wallet"; ObjectID = "oY3-Bu-bcL"; */
-"oY3-Bu-bcL.segmentTitles[0]" = "వాలెట్కు డబ్బు పంపండి";
+"oY3-Bu-bcL.segmentTitles[0]" = "Send Money to wallet";
 
 /* Class = "UISegmentedControl"; oY3-Bu-bcL.segmentTitles[1] = "Add Money to wallet"; ObjectID = "oY3-Bu-bcL"; */
-"oY3-Bu-bcL.segmentTitles[1]" = "వాలెట్కు డబ్బుని జోడించండి";
+"oY3-Bu-bcL.segmentTitles[1]" = "Add Money to wallet";
 
 /* Class = "UISegmentedControl"; oY3-Bu-bcL.segmentTitles[2] = "My Transactions"; ObjectID = "oY3-Bu-bcL"; */
-"oY3-Bu-bcL.segmentTitles[2]" = "నా లావాదేవీలు";
+"oY3-Bu-bcL.segmentTitles[2]" = "My Transactions";
 
 /* Class = "UILabel"; text = "Offers"; ObjectID = "p6x-LG-8PG"; */
-"p6x-LG-8PG.text" = "ఆఫర్స్";
+"p6x-LG-8PG.text" = "Offers";
 
 /* Class = "UITextField"; placeholder = "Service Number"; ObjectID = "pAP-j8-Ypy"; */
-"pAP-j8-Ypy.placeholder" = "సర్వీస్ సంఖ్";
+"pAP-j8-Ypy.placeholder" = "Service Number";
 
 /* Class = "UISegmentedControl"; pBd-mL-qTP.segmentTitles[0] = "Talktime Topup"; ObjectID = "pBd-mL-qTP"; */
-"pBd-mL-qTP.segmentTitles[0]" = "టాక్టైమ్ టాప్అప్";
+"pBd-mL-qTP.segmentTitles[0]" = "Talktime Topup";
 
 /* Class = "UISegmentedControl"; pBd-mL-qTP.segmentTitles[1] = "Special Recharge"; ObjectID = "pBd-mL-qTP"; */
-"pBd-mL-qTP.segmentTitles[1]" = "స్పెషల్ రీఛార్జ్";
+"pBd-mL-qTP.segmentTitles[1]" = "Special Recharge";
 
 /* Class = "UIButton"; normalTitle = "Sign up with Facebook"; ObjectID = "pa3-Sj-e5k"; */
-"pa3-Sj-e5k.normalTitle" = "Facebook తో సైన్ అప్ చేయండి";
+"pa3-Sj-e5k.normalTitle" = "Sign up with Facebook";
 
 /* Class = "UITextField"; placeholder = "Select Districts"; ObjectID = "piT-gT-cXh"; */
-"piT-gT-cXh.placeholder" = "జిల్లాలను ఎంచుకోండి";
+"piT-gT-cXh.placeholder" = "Select Districts";
 
 /* Class = "UITextField"; placeholder = "Mobile Number / Email"; ObjectID = "qwy-Ag-jFC"; */
-"qwy-Ag-jFC.placeholder" = "మొబైల్ సంఖ్య / ఇమెయిల్";
+"qwy-Ag-jFC.placeholder" = "Mobile Number / Email";
 
 /* Class = "UILabel"; text = "Mobile recharge & Pay bill"; ObjectID = "raH-yO-D3v"; */
-"raH-yO-D3v.text" = "మొబైల్ రీచార్జ్ & పే బిల్లు";
+"raH-yO-D3v.text" = "Mobile recharge & Pay bill";
 
 /* Class = "UILabel"; text = "Cable TV"; ObjectID = "tLL-LL-MI7"; */
-"tLL-LL-MI7.text" = "కేబుల్ TV";
+"tLL-LL-MI7.text" = "Cable TV";
 
 /* Class = "UILabel"; text = "00.0"; ObjectID = "tUp-hK-6CJ"; */
 "tUp-hK-6CJ.text" = "00.0";
 
 /* Class = "UIButton"; normalTitle = "Proceed to Pay Bill"; ObjectID = "th7-kr-Fk4"; */
-"th7-kr-Fk4.normalTitle" = "బిల్ చెల్లించడానికి కొనసాగించండి";
+"th7-kr-Fk4.normalTitle" = "Proceed to Pay Bill";
 
 /* Class = "UIButton"; normalTitle = "All"; ObjectID = "u4l-Qt-6iY"; */
-"u4l-Qt-6iY.normalTitle" = "అన్ని";
+"u4l-Qt-6iY.normalTitle" = "All";
 
 /* Class = "UITextField"; placeholder = "Select Operator"; ObjectID = "uZk-0F-Sd8"; */
-"uZk-0F-Sd8.placeholder" = "ఆపరేటర్ని ఎంచుకోండి";
+"uZk-0F-Sd8.placeholder" = "Select Operator";
 
 /* Class = "UILabel"; text = "Datacard"; ObjectID = "uh5-Ow-Lal"; */
 "uh5-Ow-Lal.text" = "Datacard";
 
 /* Class = "UITextField"; placeholder = "Amount"; ObjectID = "ukF-vd-ZYv"; */
-"ukF-vd-ZYv.placeholder" = "మొత్తం";
+"ukF-vd-ZYv.placeholder" = "Amount";
 
 /* Class = "UILabel"; text = "Already have an account..?"; ObjectID = "v5q-4J-kZd"; */
-"v5q-4J-kZd.text" = "ఖాతా కలిగి ఉన్నారా..?";
+"v5q-4J-kZd.text" = "Already have an account..?";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "vSL-Ji-4qN"; */
-"vSL-Ji-4qN.normalTitle" = "లాగిన్";
+"vSL-Ji-4qN.normalTitle" = "Login";
 
 /* Class = "UILabel"; text = "Postpaid"; ObjectID = "vZV-T8-s26"; */
-"vZV-T8-s26.text" = "పోస్ట్పెయిడ్";
+"vZV-T8-s26.text" = "Postpaid";
 
 /* Class = "UIButton"; normalTitle = "Received"; ObjectID = "w3D-IB-2ZC"; */
-"w3D-IB-2ZC.normalTitle" = "అందుకుంది";
+"w3D-IB-2ZC.normalTitle" = "Received";
 
 /* Class = "UILabel"; text = "Water"; ObjectID = "wQa-Qh-ruc"; */
-"wQa-Qh-ruc.text" = "నీరు";
+"wQa-Qh-ruc.text" = "Water";
 
 /* Class = "UILabel"; text = "Net Banking"; ObjectID = "wwo-Di-cTR"; */
-"wwo-Di-cTR.text" = "నెట్ బ్యాంకింగ్";
+"wwo-Di-cTR.text" = "Net Banking";
 
 /* Class = "UILabel"; text = "Offers"; ObjectID = "xZS-cK-7mK"; */
-"xZS-cK-7mK.text" = "ఆఫర్స్";
+"xZS-cK-7mK.text" = "Offers";
 
 /* Class = "UIButton"; normalTitle = "Recharge"; ObjectID = "xdy-zZ-sMi"; */
-"xdy-zZ-sMi.normalTitle" = "రీఛార్జ్";
+"xdy-zZ-sMi.normalTitle" = "Recharge";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "yAX-rc-cXR"; */
-"yAX-rc-cXR.placeholder" = "పాస్వర్డ్";
+"yAX-rc-cXR.placeholder" = "Password";
 
 /* Class = "UITextField"; placeholder = "Select Operator"; ObjectID = "yTD-Kv-ymc"; */
-"yTD-Kv-ymc.placeholder" = "ఆపరేటర్ని ఎంచుకోండి";
+"yTD-Kv-ymc.placeholder" = "Select Operator";
 
 /* Class = "UILabel"; text = "Prepaid"; ObjectID = "ygr-GJ-1kK"; */
-"ygr-GJ-1kK.text" = "ప్రీపెయిడ్";
+"ygr-GJ-1kK.text" = "Prepaid";
 
 /* Class = "UILabel"; text = "Cable TV"; ObjectID = "yui-Gj-fjj"; */
-"yui-Gj-fjj.text" = "కేబుల్ TV";
+"yui-Gj-fjj.text" = "Cable TV";
 
 /* Class = "UIButton"; normalTitle = "Can not Login..?"; ObjectID = "yuz-Ae-mEx"; */
-"yuz-Ae-mEx.normalTitle" = "లాగిన్ కాదు ..?";
+"yuz-Ae-mEx.normalTitle" = "Can not Login..?";
 
 /* Class = "UITabBarItem"; title = "My Profile"; ObjectID = "zJf-Ao-MRt"; */
-"zJf-Ao-MRt.title" = "నా జీవన వివరణ";
+"zJf-Ao-MRt.title" = "My Profile";
 
 /* Class = "UILabel"; text = "Broadband"; ObjectID = "zUm-af-Jit"; */
-"zUm-af-Jit.text" = "బ్రాడ్బ్యాండ్";
+"zUm-af-Jit.text" = "Broadband";
 
 /* Class = "UITextField"; placeholder = "Amount"; ObjectID = "zYy-Ju-m91"; */
-"zYy-Ju-m91.placeholder" = "మొత్తం";
+"zYy-Ju-m91.placeholder" = "Amount";

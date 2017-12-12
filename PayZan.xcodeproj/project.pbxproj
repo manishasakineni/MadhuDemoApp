@@ -302,6 +302,12 @@
 		35E64C961F84DF5200E2CA65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35E64C991F84DF5200E2CA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35E64C9B1F84DF5200E2CA65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D5668B01FDFBEB3009D540A /* ta */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ta; path = ta.lproj/Main.strings; sourceTree = "<group>"; };
+		3D5668B11FDFBEB3009D540A /* ta */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ta; path = ta.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3D5668B21FDFBEB3009D540A /* ta */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ta; path = ta.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3D5668B31FDFBEBF009D540A /* si */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = si; path = si.lproj/Main.strings; sourceTree = "<group>"; };
+		3D5668B41FDFBEBF009D540A /* si */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = si; path = si.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3D5668B51FDFBEBF009D540A /* si */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = si; path = si.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3D8AA3591FDEC4EC001784D2 /* LanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		3D8AA36B1FDECC7E001784D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3D8AA36D1FDECCBD001784D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -779,6 +785,8 @@
 				Base,
 				en,
 				te,
+				ta,
+				si,
 			);
 			mainGroup = 35E64C831F84DF5200E2CA65;
 			productRefGroup = 35E64C8D1F84DF5200E2CA65 /* Products */;
@@ -1047,6 +1055,8 @@
 				35E64C941F84DF5200E2CA65 /* Base */,
 				3D8AA36D1FDECCBD001784D2 /* en */,
 				3D8AA3701FDECCD8001784D2 /* te */,
+				3D5668B01FDFBEB3009D540A /* ta */,
+				3D5668B31FDFBEBF009D540A /* si */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1057,6 +1067,8 @@
 				35E64C991F84DF5200E2CA65 /* Base */,
 				3D8AA36E1FDECCBD001784D2 /* en */,
 				3D8AA3711FDECCD8001784D2 /* te */,
+				3D5668B11FDFBEB3009D540A /* ta */,
+				3D5668B41FDFBEBF009D540A /* si */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1067,6 +1079,8 @@
 				3D8AA36B1FDECC7E001784D2 /* Base */,
 				3D8AA36F1FDECCBD001784D2 /* en */,
 				3D8AA3721FDECCD8001784D2 /* te */,
+				3D5668B21FDFBEB3009D540A /* ta */,
+				3D5668B51FDFBEBF009D540A /* si */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1118,7 +1132,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "a36b1df5-260d-4bb6-86f7-7d004cbfac7f";
@@ -1167,7 +1181,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "a36b1df5-260d-4bb6-86f7-7d004cbfac7f";
 				SDKROOT = iphoneos;
