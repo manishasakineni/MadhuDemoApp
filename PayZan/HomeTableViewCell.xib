@@ -33,7 +33,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gyS-eh-zdM">
-                        <rect key="frame" x="8" y="44" width="192" height="202"/>
+                        <rect key="frame" x="15" y="44" width="178" height="202"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eQG-lE-4Jk">
                             <size key="itemSize" width="122" height="128"/>
@@ -54,8 +54,8 @@
                     <constraint firstItem="x14-pp-uGF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="W0w-Kh-nZD"/>
                     <constraint firstAttribute="trailing" secondItem="x14-pp-uGF" secondAttribute="trailing" constant="8" id="Yn7-Sz-QhF"/>
                     <constraint firstAttribute="bottom" secondItem="gyS-eh-zdM" secondAttribute="bottom" constant="7.5" id="cPA-9e-Jpd"/>
-                    <constraint firstItem="gyS-eh-zdM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="fIX-MN-f4w"/>
-                    <constraint firstAttribute="trailing" secondItem="gyS-eh-zdM" secondAttribute="trailing" constant="8" id="rHD-3p-7Kb"/>
+                    <constraint firstItem="gyS-eh-zdM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="fIX-MN-f4w"/>
+                    <constraint firstAttribute="trailing" secondItem="gyS-eh-zdM" secondAttribute="trailing" constant="15" id="rHD-3p-7Kb"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

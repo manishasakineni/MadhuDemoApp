@@ -139,6 +139,7 @@
 		35E64C971F84DF5200E2CA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E64C961F84DF5200E2CA65 /* Assets.xcassets */; };
 		35E64C9A1F84DF5200E2CA65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E64C981F84DF5200E2CA65 /* LaunchScreen.storyboard */; };
 		3D5460F61FE13776003509B6 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5460F51FE13776003509B6 /* Utilities.swift */; };
+		3D5460F81FE14183003509B6 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5460F71FE14183003509B6 /* QRCodeViewController.swift */; };
 		3D8AA35A1FDEC4EC001784D2 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AA3591FDEC4EC001784D2 /* LanguageViewController.swift */; };
 		3D8AA36A1FDECC7E001784D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D8AA36C1FDECC7E001784D2 /* Localizable.strings */; };
 		AF579E731FD6A8A700A4E6E4 /* AddCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E701FD6A8A700A4E6E4 /* AddCardsViewController.swift */; };
@@ -304,6 +305,7 @@
 		35E64C991F84DF5200E2CA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35E64C9B1F84DF5200E2CA65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D5460F51FE13776003509B6 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		3D5460F71FE14183003509B6 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		3D5668B01FDFBEB3009D540A /* ta */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ta; path = ta.lproj/Main.strings; sourceTree = "<group>"; };
 		3D5668B11FDFBEB3009D540A /* ta */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ta; path = ta.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3D5668B21FDFBEB3009D540A /* ta */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ta; path = ta.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 			children = (
 				35485D7B1FB46DE900CDB076 /* PayzAppViewController.swift */,
 				35344DB21F8628E500E35C5C /* HomeViewController.swift */,
+				3D5460F71FE14183003509B6 /* QRCodeViewController.swift */,
 				35403DEC1FA0687F0004DD20 /* TabsViewController.swift */,
 				35442CE11F8DEA4D007798EC /* RechargeViewController.swift */,
 				3554C3181F8F457B0092EAC7 /* RechargeDetailViewController.swift */,
@@ -1014,6 +1017,7 @@
 				35344D9A1F8610C700E35C5C /* FromJSON.swift in Sources */,
 				356490971FBF697F00078951 /* AgentMandalVo.swift in Sources */,
 				3569C1E41F876D3F00152B80 /* menuViewController.swift in Sources */,
+				3D5460F81FE14183003509B6 /* QRCodeViewController.swift in Sources */,
 				3D5460F61FE13776003509B6 /* Utilities.swift in Sources */,
 				AF579E831FD6AD3800A4E6E4 /* AboutUsViewController.swift in Sources */,
 				35E64C921F84DF5200E2CA65 /* ViewController.swift in Sources */,
