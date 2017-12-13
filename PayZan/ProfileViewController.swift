@@ -452,7 +452,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 
             }
             
-            else if indexPath.row == 6 {
+            else if indexPath.row == 5 {
                 
                 let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "TermsOfServiceViewController") as! TermsOfServiceViewController
                 self.navigationController?.pushViewController(cableViewController, animated: true)
@@ -461,7 +461,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             }
 
             
-            else if indexPath.row == 7 {
+            else if indexPath.row == 6 {
                 
                
                 let LanguageVW = storyboard?.instantiateViewController(withIdentifier: "LanguageVW")
