@@ -108,24 +108,21 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
         self.backbuttonOutLet.isHidden = false
         
-
-        
-        
         iPhoneScreenSizes()
         
-        mySegmentControl.setDividerImage(self.imageWithColor(color: UIColor.clear), forLeftSegmentState: UIControlState.normal, rightSegmentState: UIControlState.normal, barMetrics: UIBarMetrics.default)
-        
-        mySegmentControl.setBackgroundImage(self.imageWithColor(color: UIColor.clear), for:UIControlState.normal, barMetrics:UIBarMetrics.default)
-        
-        
-        for  borderview in mySegmentControl.subviews {
-            
-            let upperBorder: CALayer = CALayer()
-            upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
-            upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
-            borderview.layer .addSublayer(upperBorder);
-            
-        }
+//        mySegmentControl.setDividerImage(self.imageWithColor(color: UIColor.clear), forLeftSegmentState: UIControlState.normal, rightSegmentState: UIControlState.normal, barMetrics: UIBarMetrics.default)
+//        
+//        mySegmentControl.setBackgroundImage(self.imageWithColor(color: UIColor.clear), for:UIControlState.normal, barMetrics:UIBarMetrics.default)
+//        
+//        
+//        for  borderview in mySegmentControl.subviews {
+//            
+//            let upperBorder: CALayer = CALayer()
+//            upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+//            upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
+//            borderview.layer .addSublayer(upperBorder);
+//            
+//        }
         
         myTransactionTableView.dataSource = self
         myTransactionTableView.delegate = self
@@ -304,44 +301,116 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         case 480.0:
             print("iPhone 3,4")
             
-            mySegmentControl.backgroundColor = #colorLiteral(red: 0.9787510536, green: 0.9787510536, blue: 0.9787510536, alpha: 1)
-            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:9.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
+            mySegmentControl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:9.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)], for:UIControlState.normal)
             
             mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:9.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
+            
+            mySegmentControl.setDividerImage(self.imageWithColor(color: UIColor.clear), forLeftSegmentState: UIControlState.normal, rightSegmentState: UIControlState.normal, barMetrics: UIBarMetrics.default)
+            
+            mySegmentControl.setBackgroundImage(self.imageWithColor(color: UIColor.clear), for:UIControlState.normal, barMetrics:UIBarMetrics.default)
+            
+            
+            for  borderview in mySegmentControl.subviews {
+                
+                let upperBorder: CALayer = CALayer()
+                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+                upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
+                borderview.layer .addSublayer(upperBorder);
+                
+            }
         case 568.0:
             print("iPhone 5")
             
-            mySegmentControl.backgroundColor = #colorLiteral(red: 0.9787510536, green: 0.9787510536, blue: 0.9787510536, alpha: 1)
-            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:9.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
+            mySegmentControl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:9.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)], for:UIControlState.normal)
             
             mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:9.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
+            
+            mySegmentControl.setDividerImage(self.imageWithColor(color: UIColor.clear), forLeftSegmentState: UIControlState.normal, rightSegmentState: UIControlState.normal, barMetrics: UIBarMetrics.default)
+            
+            mySegmentControl.setBackgroundImage(self.imageWithColor(color: UIColor.clear), for:UIControlState.normal, barMetrics:UIBarMetrics.default)
+            
+            
+            for  borderview in mySegmentControl.subviews {
+                
+                let upperBorder: CALayer = CALayer()
+                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+                upperBorder.frame = CGRect(x:10, y:borderview.frame.size.height-1, width:borderview.frame.size.width-40, height:1.0)
+                borderview.layer .addSublayer(upperBorder);
+                
+            }
             
             
         case 667.0:
             print("iPhone 6")
             
-            mySegmentControl.backgroundColor = #colorLiteral(red: 0.9787510536, green: 0.9787510536, blue: 0.9787510536, alpha: 1)
-            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
+            mySegmentControl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)], for:UIControlState.normal)
             
             mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
+            
+            mySegmentControl.setDividerImage(self.imageWithColor(color: UIColor.clear), forLeftSegmentState: UIControlState.normal, rightSegmentState: UIControlState.normal, barMetrics: UIBarMetrics.default)
+            
+            mySegmentControl.setBackgroundImage(self.imageWithColor(color: UIColor.clear), for:UIControlState.normal, barMetrics:UIBarMetrics.default)
+            
+            
+            for  borderview in mySegmentControl.subviews {
+                
+                let upperBorder: CALayer = CALayer()
+                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+                upperBorder.frame = CGRect(x:15, y:borderview.frame.size.height-1, width:borderview.frame.size.width-35, height:1.0)
+                borderview.layer .addSublayer(upperBorder);
+                
+            }
             
         case 736.0:
             print("iPhone 6+")
             
-            mySegmentControl.backgroundColor = #colorLiteral(red: 0.9787510536, green: 0.9787510536, blue: 0.9787510536, alpha: 1)
-            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
+            mySegmentControl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)], for:UIControlState.normal)
             
             mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
+            
+            mySegmentControl.setDividerImage(self.imageWithColor(color: UIColor.clear), forLeftSegmentState: UIControlState.normal, rightSegmentState: UIControlState.normal, barMetrics: UIBarMetrics.default)
+            
+            mySegmentControl.setBackgroundImage(self.imageWithColor(color: UIColor.clear), for:UIControlState.normal, barMetrics:UIBarMetrics.default)
+            
+            
+            for  borderview in mySegmentControl.subviews {
+                
+                let upperBorder: CALayer = CALayer()
+                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+                upperBorder.frame = CGRect(x:20, y:borderview.frame.size.height-1, width:borderview.frame.size.width-25, height:1.0)
+                borderview.layer .addSublayer(upperBorder);
+                
+            }
             
         case 1024.0:
             print("iPadAir")
+            
+            mySegmentControl.setDividerImage(self.imageWithColor(color: UIColor.clear), forLeftSegmentState: UIControlState.normal, rightSegmentState: UIControlState.normal, barMetrics: UIBarMetrics.default)
+            
+            mySegmentControl.setBackgroundImage(self.imageWithColor(color: UIColor.clear), for:UIControlState.normal, barMetrics:UIBarMetrics.default)
+            
+            
+            for  borderview in mySegmentControl.subviews {
+                
+                let upperBorder: CALayer = CALayer()
+                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+                upperBorder.frame = CGRect(x:40, y:borderview.frame.size.height-1, width:borderview.frame.size.width-25, height:1.0)
+                borderview.layer.addSublayer(upperBorder);
+                
+            }
+            
+            
         default:
             print("not an iPhone")
             
-            mySegmentControl.backgroundColor = #colorLiteral(red: 0.9787510536, green: 0.9787510536, blue: 0.9787510536, alpha: 1)
-            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)], for:UIControlState.normal)
-            
-            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
+//            mySegmentControl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)], for:UIControlState.normal)
+//            
+//            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:11.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
             
         }
         

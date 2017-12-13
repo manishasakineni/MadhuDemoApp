@@ -382,7 +382,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 
 //            let cell = Bundle.main.loadNibNamed("SignOutTableViewCell", owner: self, options: nil)?.first as! SignOutTableViewCell
                     
-            cell.backgroundColor = #colorLiteral(red: 0.8835461612, green: 0.8835461612, blue: 0.8835461612, alpha: 1)
+            cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 
             cell.signOutBtn.addTarget(self, action: #selector(self.signOutClicked), for: .touchUpInside)
 //                    cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)

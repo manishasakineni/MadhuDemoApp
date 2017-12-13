@@ -114,7 +114,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
 //        myTransactionBtn.layer.borderWidth = 1.0
         
         
-        self.tabBarController?.tabBar.isHidden = false
+//        self.tabBarController?.tabBar.isHidden = false
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -186,7 +186,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             
         self.scrollView.contentSize = CGSize(width: 100, height: 100)
             
-        self.myNewView = UIView(frame: CGRect(x: 10, y: 0, width: self.view.frame.size.width-20, height: 80))
+        self.myNewView = UIView(frame: CGRect(x: 10, y: 0, width: self.view.frame.size.width-20, height: 100))
             
            
             
@@ -202,9 +202,9 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             
             self.scrollView.alwaysBounceHorizontal = true
             
-            let myImages = ["addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg"]
+            let myImages = ["baner","baner2","baner1","baner3","baner","baner1","baner2","baner3","baner"]
             let imageWidth:CGFloat = 250
-            let imageHeight:CGFloat = 80
+            let imageHeight:CGFloat = 100
             var xPosition:CGFloat = 0
             var scrollViewContentSize:CGFloat=0;
             
@@ -219,9 +219,9 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
                 //            myImageView.center = self.view.center
                 myImageView.frame.origin.x = xPosition
                 scrollView.addSubview(myImageView)
-                let spacer:CGFloat = 50
-                xPosition+=imageHeight + spacer
-                scrollViewContentSize+=imageHeight + spacer
+                let spacer:CGFloat = 20
+                xPosition+=imageWidth + spacer
+                scrollViewContentSize+=imageWidth + spacer
                 scrollView.contentSize = CGSize(width: scrollViewContentSize, height:imageHeight)
             }
             
@@ -262,7 +262,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     
     override func viewDidAppear(_ animated: Bool) {
         
-        self.tabBarController?.tabBar.isHidden = false
+//        self.tabBarController?.tabBar.isHidden = false
         
         let defaults = UserDefaults.standard
         
@@ -281,7 +281,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.tabBarController?.tabBar.isHidden = false
+//        self.tabBarController?.tabBar.isHidden = false
         
         let defaults = UserDefaults.standard
         
@@ -421,7 +421,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         }
         else {
             
-            height = 30
+            height = 60
             
         }
         
@@ -461,7 +461,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as UITableViewCell!
             cell.selectionStyle = .none
            
-            self.myNewView.backgroundColor = UIColor.blue
+//            self.myNewView.backgroundColor = UIColor.blue
             
             cell.contentView.addSubview(myNewView)
             

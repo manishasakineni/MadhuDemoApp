@@ -124,7 +124,7 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         let  strUrl = registerUrl
         
         
-        let dictParams = ["MobileNumber":mNumber,"Password":pword,"ConfirmPassword":pword,"Email":email,"RoleIds":"null"] as NSDictionary
+        let dictParams = ["MobileNumber":mNumber,"Password":pword,"ConfirmPassword":pword,"Email":email,"RoleIds":null] as NSDictionary
         
         print("dic params \(dictParams)")
         //CleverTap.sharedInstance()?.onUserLogin(dictParams as! [AnyHashable : Any])
