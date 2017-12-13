@@ -16,7 +16,7 @@ var imageArray1 = [UIImage(named:"mobileImg"),UIImage(named:"landlineImg"),UIIma
 var imageArray2 = [UIImage(named:"mobile"),UIImage(named:"landline"),UIImage(named:"electricity"),UIImage(named:"event"),UIImage(named:"sport"),UIImage(named:"television"),UIImage(named:"water-tap"),UIImage(named:"internet")]
 //for label names
 
-var namesarra1 = ["Mobile","Landline","DTH","Broadband","Cable TV","Electricity","Water","data-card"]
+var namesarra1 = ["Mobile","Landline","DTH","Broadband","Cable TV","Electricity","Water","Data Card"]
 
 var namesarra2 = ["Water","Landline","Electricity","Events","Sports","DTH","Mobile","Internet"]
 
@@ -83,6 +83,13 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             walletLabel.text = walletBal
             
             print("defaults savedString: \(String(describing: walletLabel.text))")
+            
+            if let tabStrings = self.tabBarController?.tabBar.items
+            {
+                tabStrings[1].title = "My Profile"
+            }
+
+            
         }
         
         if let walletAmount = defaults.string(forKey: "walletAmount") {
@@ -95,16 +102,16 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         }
         //  paySendBtn.layer.borderColor = UIColor.lightGray.cgColor
 
-        paySendBtn.layer.borderColor = UIColor(red:220.0/255.0, green:198.0/255.0, blue:204.0/255.0, alpha: 1.0).cgColor
-    
-        paySendBtn.layer.borderWidth = 1.0
-        
-        addWithdrawBtn.layer.borderColor = UIColor(red:220.0/255.0, green:198.0/255.0, blue:204.0/255.0, alpha: 1.0).cgColor
-        
-        addWithdrawBtn.layer.borderWidth = 1.0
-        
-        myTransactionBtn.layer.borderColor = UIColor(red:220.0/255.0, green:198.0/255.0, blue:204.0/255.0, alpha: 1.0).cgColor
-        myTransactionBtn.layer.borderWidth = 1.0
+//        paySendBtn.layer.borderColor = UIColor(red:220.0/255.0, green:198.0/255.0, blue:204.0/255.0, alpha: 1.0).cgColor
+//    
+//        paySendBtn.layer.borderWidth = 1.0
+//        
+//        addWithdrawBtn.layer.borderColor = UIColor(red:220.0/255.0, green:198.0/255.0, blue:204.0/255.0, alpha: 1.0).cgColor
+//        
+//        addWithdrawBtn.layer.borderWidth = 1.0
+//        
+//        myTransactionBtn.layer.borderColor = UIColor(red:220.0/255.0, green:198.0/255.0, blue:204.0/255.0, alpha: 1.0).cgColor
+//        myTransactionBtn.layer.borderWidth = 1.0
         
         
         self.tabBarController?.tabBar.isHidden = false
@@ -127,7 +134,19 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         self.scrollView.delegate = self
         self.scrollView.contentSize = CGSize(width: 100, height: 100)
         
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+        
+        self.myNewView = UIView(frame: CGRect(x: 10, y: 0, width: self.view.frame.size.width-20, height: 120))
+        
+        }
+        
+        else{
+            
         self.myNewView = UIView(frame: CGRect(x: 10, y: 0, width: self.view.frame.size.width-20, height: 80))
+
+        }
+        
+        
         
         
         myNewView.addSubview(scrollView)
@@ -270,12 +289,12 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         return 3
     }
     
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
-        
-        return 100
-        
-    }
+//    
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
+//        
+//        return 100
+//        
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -295,7 +314,17 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             
         }
         else if indexPath.row == 1{
-            height = 80
+            
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+                
+                height = 120
+            }
+            else {
+                
+                 height = 80
+                
+            }
+           
         }
         else {
             
@@ -563,14 +592,27 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
     
         
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            let cellsPerRow = 4
+            
+            let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+            let marginsAndInsets = flowLayout.sectionInset.left + flowLayout.sectionInset.right + flowLayout.minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
+            let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
+            return CGSize(width: itemWidth, height: itemWidth)
+        }
+        else {
+            
+
+            let cellsPerRow = 4
+            
+            let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+            let marginsAndInsets = flowLayout.sectionInset.left + flowLayout.sectionInset.right + flowLayout.minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
+            let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
+            return CGSize(width: itemWidth, height: itemWidth)
+        }
         
-        
-        let cellsPerRow = 4
-        
-        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let marginsAndInsets = flowLayout.sectionInset.left + flowLayout.sectionInset.right + flowLayout.minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
-        let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
-        return CGSize(width: itemWidth, height: itemWidth)
+      
     }
 }
 

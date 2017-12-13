@@ -34,25 +34,30 @@
                         <rect key="frame" x="2" y="2" width="118" height="124"/>
                         <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uz-ES-g5m">
-                        <rect key="frame" x="10" y="103" width="102" height="13"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uz-ES-g5m">
+                        <rect key="frame" x="10" y="96" width="102" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="g0n-Mk-Ncd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
-                        <variation key="heightClass=regular-widthClass=regular">
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <variation key="displayGamut=P3-heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                         </variation>
                     </label>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="2Uz-ES-g5m" firstAttribute="bottom" secondItem="a3R-hD-lvD" secondAttribute="bottom" constant="-10" id="802-Dh-rMA"/>
                 <constraint firstItem="a3R-hD-lvD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="Jfs-Ba-LAp"/>
                 <constraint firstAttribute="trailing" secondItem="a3R-hD-lvD" secondAttribute="trailing" constant="2" id="Mem-Yd-S1a"/>
-                <constraint firstItem="2Uz-ES-g5m" firstAttribute="centerX" secondItem="a3R-hD-lvD" secondAttribute="centerX" id="VrL-50-4Vt"/>
+                <constraint firstItem="2Uz-ES-g5m" firstAttribute="trailing" secondItem="a3R-hD-lvD" secondAttribute="trailing" constant="-8" id="ORA-aC-2N7"/>
+                <constraint firstItem="2Uz-ES-g5m" firstAttribute="centerX" secondItem="a3R-hD-lvD" secondAttribute="centerX" id="XfY-Zp-m6j"/>
                 <constraint firstItem="a3R-hD-lvD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="aHf-Nq-UZy"/>
                 <constraint firstAttribute="bottom" secondItem="a3R-hD-lvD" secondAttribute="bottom" constant="2" id="euh-Ws-jQI"/>
+                <constraint firstItem="2Uz-ES-g5m" firstAttribute="bottom" secondItem="a3R-hD-lvD" secondAttribute="bottom" constant="-10" id="k7m-Mh-svp"/>
+                <constraint firstItem="2Uz-ES-g5m" firstAttribute="leading" secondItem="a3R-hD-lvD" secondAttribute="leading" constant="8" id="ouh-lv-LTM"/>
             </constraints>
             <size key="customSize" width="130" height="122"/>
             <connections>
