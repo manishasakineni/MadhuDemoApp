@@ -17,6 +17,9 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     
     let tab = TabsViewController()
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
+    
     var userNamee:String?
     var userEmail:String?
     var walletBal:String?
@@ -29,9 +32,9 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     var toolBar = UIToolbar()
     var pickerData : Array<String> = Array()
     
-    var listArr = ["Saved Cards","Order History","Change Password","About US","Terms Of Service","Support","Share","Change Language"]
+    var listArr = ["Saved Cards","Order History","Change Password","About Us","Support","Terms Of Service","Choose Language"]
     
-    var imageArray1 = [UIImage(named:"savedCards"),UIImage(named:"orderHistory"),UIImage(named:"changePassword"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us")]
+    var imageArray1 = [UIImage(named:"savedCards"),UIImage(named:"orderHistory"),UIImage(named:"changePassword"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us")]
     
     private var activityViewController : UIActivityViewController!
     private var isPopoverPresented  : Bool = false
@@ -102,6 +105,19 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         let nibName2  = UINib(nibName: "ProfileTableViewCell" , bundle: nil)
         profileTVC.register(nibName2, forCellReuseIdentifier: "ProfileTableViewCell")
         
+        let nibName3  = UINib(nibName: "QRTableViewCell" , bundle: nil)
+        profileTVC.register(nibName3, forCellReuseIdentifier: "QRTableViewCell")
+        
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
         
     }
     override func didReceiveMemoryWarning() {
@@ -156,7 +172,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     func numberOfSections(in tableView: UITableView) -> Int {
         
         
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -167,6 +183,11 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         else if(section==1) {
             
             return 1.0
+        }
+        else if(section==2) {
+            
+            return 1.0
+            
         }
         else{
             
@@ -183,6 +204,10 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         else if section == 1 {
             
             return listArr.count
+        }
+        else if section == 2 {
+            
+            return 1
         }
         else{
             
@@ -211,6 +236,10 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         else if indexPath.section == 1 {
             
             return 45
+        }
+        else if indexPath.section == 2 {
+            
+            return 100
         }
             
         else{
@@ -305,7 +334,22 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
         return cell
     }
-        else  {
+    if indexPath.section == 2 {
+                
+                
+          let cell = tableView.dequeueReusableCell(withIdentifier: "QRTableViewCell", for: indexPath) as! QRTableViewCell
+        
+        cell.shareBtn.layer.cornerRadius = 5.0
+        cell.scanQRBtn.layer.cornerRadius = 5.0
+        
+        cell.shareBtn.tag = indexPath.row
+        
+        cell.shareBtn.addTarget(self, action: #selector(self.shareBtnClicked), for: .touchUpInside)
+        cell.scanQRBtn.addTarget(self, action: #selector(self.scanQRBtnClicked), for: .touchUpInside)
+      
+        return cell
+    }
+    else  {
         
             
         let cell = tableView.dequeueReusableCell(withIdentifier: "SignOutTableViewCell", for: indexPath) as! SignOutTableViewCell
@@ -405,35 +449,15 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 
             else if indexPath.row == 4 {
                 
-                let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "TermsOfServiceViewController") as! TermsOfServiceViewController
-                self.navigationController?.pushViewController(cableViewController, animated: true)
+                
             }
             
             else if indexPath.row == 6 {
                 
+                let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "TermsOfServiceViewController") as! TermsOfServiceViewController
+                self.navigationController?.pushViewController(cableViewController, animated: true)
                 
                 
-                let normalString = "Text to share"
-                
-                activityViewController = UIActivityViewController.init(activityItems: [normalString], applicationActivities: nil)
-                
-                let subject = "PayZan"
-                activityViewController.setValue(subject, forKey: "Subject")
-                
-                
-                if UIScreen.main.bounds.size.width > 500 {
-                    
-                    if activityViewController.responds(to: #selector(getter: UIViewController.popoverPresentationController)) {
-                        
-                        isPopoverPresented = true
-                        if let popView = activityViewController.popoverPresentationController {
-                            popView.sourceView = tableView
-                            popView.sourceRect = tableView.cellForRow(at: indexPath)!.frame
-                        }
-                    }
-                }
-                
-                self.present(activityViewController, animated: true, completion: nil)
             }
 
             
@@ -444,6 +468,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 self.navigationController?.pushViewController(LanguageVW!, animated: true)
                 
             }
+            
             
             
           }
@@ -484,26 +509,74 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     
     func loginBtnClicked(_sender: UIButton){
         
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//        
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = viewController
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = viewController
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
         
     }
     func newAccountBtnClicked(_sender: UIButton){
         
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+//        
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = viewController
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = viewController
+        
+        let signController = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+        self.navigationController?.pushViewController(signController, animated: true)
+        
+    }
+    
+    func shareBtnClicked(_sender: UIButton){
+        
+        let indexPath : IndexPath = IndexPath(row: _sender.tag, section: 2)
+        
+        if let newCell : QRTableViewCell = profileTVC.cellForRow(at: indexPath) as? QRTableViewCell {
+            
+            
+            let normalString = "Text to share"
+            
+            activityViewController = UIActivityViewController.init(activityItems: [normalString], applicationActivities: nil)
+            
+            let subject = "PayZan"
+            activityViewController.setValue(subject, forKey: "Subject")
+            
+            
+            if UIScreen.main.bounds.size.width > 500 {
+                
+                if activityViewController.responds(to: #selector(getter: UIViewController.popoverPresentationController)) {
+                    
+                    isPopoverPresented = true
+                    if let popView = activityViewController.popoverPresentationController {
+                        popView.sourceView = profileTVC
+                        popView.sourceRect = profileTVC.cellForRow(at: indexPath)!.frame
+                    }
+                }
+            }
+            
+            self.present(activityViewController, animated: true, completion: nil)
+            
+        }
+        
+       
+        
+    }
+    func scanQRBtnClicked(_sender: UIButton){
+        
+        let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "QRCodeViewController") as! QRCodeViewController
+        self.navigationController?.pushViewController(cableViewController, animated: true)
         
     }
     func signOutClicked(_sender: UIButton){
         
         
-        let indexPath : IndexPath = IndexPath(row: _sender.tag, section: 2)
+        let indexPath : IndexPath = IndexPath(row: _sender.tag, section: 3)
         
         if let newCell : SignOutTableViewCell = profileTVC.cellForRow(at: indexPath) as? SignOutTableViewCell {
             

@@ -21,6 +21,9 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
     
     @IBOutlet weak var offersView: UIView!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
+    
     var myPickerView : UIPickerView!
     
     var toolBar = UIToolbar()
@@ -61,6 +64,16 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
         
         accountNumField.keyboardType = .numberPad
         amountField.keyboardType = .numberPad
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
 
         // Do any additional setup after loading the view.
     }

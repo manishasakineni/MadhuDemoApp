@@ -19,6 +19,9 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
     
     @IBOutlet weak var payNowButtonOutLet: UIButton!
     
+    
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
     var myPickerView : UIPickerView!
     
     var toolBar = UIToolbar()
@@ -55,6 +58,16 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
         amountTextField.keyboardType = .numberPad
         serviceNumberTextFileld.keyboardType = .numberPad
         getOperatorList()
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
 
 
         // Do any additional setup after loading the view.

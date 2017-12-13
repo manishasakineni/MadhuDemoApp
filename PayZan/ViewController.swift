@@ -31,6 +31,7 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
     
     @IBOutlet weak var googleBtn: UIButton!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
     var dict : [String : AnyObject]!
     
@@ -474,6 +475,9 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = viewController
+        
+//        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+//        self.navigationController?.pushViewController(viewController, animated: true)
         
     }
     

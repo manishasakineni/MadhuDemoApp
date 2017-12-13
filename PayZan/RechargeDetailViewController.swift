@@ -44,6 +44,9 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
     
     @IBOutlet weak var rechargBtn: UIButton!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
+    
     var myPickerView : UIPickerView!
     
     var toolBar = UIToolbar()
@@ -80,7 +83,15 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
         planField.layer.borderColor = UIColor.lightGray.cgColor
         planField.layer.cornerRadius = 3
         
-        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
         
         // Do any additional setup after loading the view.
     }

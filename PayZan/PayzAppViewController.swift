@@ -34,6 +34,9 @@ class PayzAppViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet var netBankingLabel: UILabel!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
+    
     //CalibrageMac02.PayZan
     
     

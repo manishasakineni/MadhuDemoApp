@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/AddMoneyWalletViewController.swift"
-            timestampString = "532429566.034606"
+            timestampString = "534873410.669248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "888"
-            endingLineNumber = "888"
+            startingLineNumber = "899"
+            endingLineNumber = "899"
             landmarkName = "contactPicker(_:didSelect:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/RequestForAgentViewController.swift"
-            timestampString = "533036979.829924"
+            timestampString = "534873410.669248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "865"
-            endingLineNumber = "865"
+            startingLineNumber = "878"
+            endingLineNumber = "878"
             landmarkName = "getProvinceList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/RequestForAgentViewController.swift"
-            timestampString = "533036979.829924"
+            timestampString = "534873410.669248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "876"
-            endingLineNumber = "876"
+            startingLineNumber = "889"
+            endingLineNumber = "889"
             landmarkName = "getProvinceList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/RequestForAgentViewController.swift"
-            timestampString = "533036979.829924"
+            timestampString = "534873410.669248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "912"
-            endingLineNumber = "912"
+            startingLineNumber = "925"
+            endingLineNumber = "925"
             landmarkName = "getDistrictList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/RequestForAgentViewController.swift"
-            timestampString = "533036979.829924"
+            timestampString = "534873410.669248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1147"
-            endingLineNumber = "1147"
+            startingLineNumber = "1160"
+            endingLineNumber = "1160"
             landmarkName = "addAgentReqInfoService()"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/RequestForAgentViewController.swift"
-            timestampString = "533036979.829924"
+            timestampString = "534873410.669248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1137"
-            endingLineNumber = "1137"
+            startingLineNumber = "1150"
+            endingLineNumber = "1150"
             landmarkName = "addAgentReqInfoService()"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/RequestForAgentViewController.swift"
-            timestampString = "533036237.94024"
+            timestampString = "534873410.669248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "731"
-            endingLineNumber = "731"
+            startingLineNumber = "744"
+            endingLineNumber = "744"
             landmarkName = "submitAgentAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/ProfileViewController.swift"
-            timestampString = "534782282.94192"
+            timestampString = "534873410.669248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "512"
-            endingLineNumber = "512"
+            startingLineNumber = "585"
+            endingLineNumber = "585"
             landmarkName = "signOutClicked(_sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/ProfileViewController.swift"
-            timestampString = "534782282.94192"
+            timestampString = "534873410.669248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "505"
-            endingLineNumber = "505"
+            startingLineNumber = "578"
+            endingLineNumber = "578"
             landmarkName = "signOutClicked(_sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/ProfileViewController.swift"
-            timestampString = "534782282.94192"
+            timestampString = "534873410.669248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "520"
-            endingLineNumber = "520"
+            startingLineNumber = "593"
+            endingLineNumber = "593"
             landmarkName = "signOutClicked(_sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayZan/ProfileViewController.swift"
-            timestampString = "534838307.063164"
+            timestampString = "534873410.669248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "534"
-            endingLineNumber = "534"
+            startingLineNumber = "607"
+            endingLineNumber = "607"
             landmarkName = "signOutClicked(_sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -217,13 +217,109 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PayZan/HomeViewController.swift"
-            timestampString = "534852754.169747"
+            filePath = "PayZan/LanguageViewController.swift"
+            timestampString = "534873410.669248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "371"
-            endingLineNumber = "371"
-            landmarkName = "tableView(_:heightForRowAt:)"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "inetializeCamera()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayZan/LanguageViewController.swift"
+            timestampString = "534873410.669248"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "LanguageViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayZan/SignupViewController.swift"
+            timestampString = "534874870.341656"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "validateAllFields()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayZan/SignupViewController.swift"
+            timestampString = "534874875.581795"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
+            landmarkName = "signUpAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayZan/SignupViewController.swift"
+            timestampString = "534874965.033545"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "validateAllFields()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayZan/SignupViewController.swift"
+            timestampString = "534875264.045644"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "postSignUpService()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayZan/SignupViewController.swift"
+            timestampString = "534876027.07647"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "postSignUpService()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

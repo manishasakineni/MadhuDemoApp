@@ -12,6 +12,7 @@ class EditBankProfileViewController: UIViewController,UITableViewDelegate,UITabl
     
     @IBOutlet weak var editProfileTableView: UITableView!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
     var selectedButtonString = ""
     
@@ -44,7 +45,15 @@ class EditBankProfileViewController: UIViewController,UITableViewDelegate,UITabl
         editProfileTableView.register(nibName2, forCellReuseIdentifier: "EditProfileTableViewCell3")
         
         
-        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
         
         // Do any additional setup after loading the view.
     }

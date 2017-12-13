@@ -178,7 +178,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             }
             
             btnViewHeight.constant = 150
-            headerImgHeight.constant = 120
+            headerImgHeight.constant = 150
         
         }
         
@@ -227,7 +227,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             
             
             btnViewHeight.constant = 70
-            headerImgHeight.constant = 70
+            headerImgHeight.constant = 79
 
         }
         

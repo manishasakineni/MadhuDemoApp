@@ -22,6 +22,9 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
     
     @IBOutlet weak var distImg: UIImageView!
     
+    
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
     var serviceController = ServiceController()
     
     var myPickerView : UIPickerView!
@@ -65,6 +68,16 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
         print(five.rawValue)
         
         getOperatorList()
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
 
         // Do any additional setup after loading the view.
     }

@@ -20,6 +20,9 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
     
     @IBOutlet weak var offersView: UIView!
     
+    
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
     var myPickerView : UIPickerView!
     
     var toolBar = UIToolbar()
@@ -61,6 +64,16 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
         amountField.keyboardType = .numberPad
         
         getOperatorList()
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
 
         // Do any additional setup after loading the view.
     }

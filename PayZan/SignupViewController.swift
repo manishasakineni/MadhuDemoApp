@@ -38,6 +38,7 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
     
     @IBOutlet weak var confirmPasswordField: UITextField!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
 
       var dict : [String : AnyObject]!
     
@@ -81,6 +82,15 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         facebookBtn.layer.cornerRadius = 3
         googleBtn.layer.cornerRadius = 3
 
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -114,7 +124,7 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         let  strUrl = registerUrl
         
         
-        let dictParams = ["MobileNumber":mNumber,"Password":pword,"ConfirmPassword":pword,"Email":email,"RoleId":null] as NSDictionary
+        let dictParams = ["MobileNumber":mNumber,"Password":pword,"ConfirmPassword":pword,"Email":email,"RoleIds":"null"] as NSDictionary
         
         print("dic params \(dictParams)")
         //CleverTap.sharedInstance()?.onUserLogin(dictParams as! [AnyHashable : Any])
@@ -211,7 +221,7 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         
         let mnumb:NSString = mobileNumField.text! as NSString
         let pasword:NSString = paswdField.text! as NSString
-     //   let emailId:NSString = emailField.text! as NSString
+        let emailId:NSString = emailField.text! as NSString
         let confirmPassword:NSString = confirmPasswordField.text! as NSString
         
         
@@ -227,16 +237,16 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
 //        else if(!GlobalSupportingClass.phoneValidate(value: mnumb as String)) {
 //            errorMessage=GlobalSupportingClass.phoneValidateMessage() as String as String as NSString?
 //        }
-//        else if (emailId.length<=0) {
-//            errorMessage=GlobalSupportingClass.blankEmailIDErrorMessage() as String as String as NSString?
-//        }
-//        else if (emailId.length<=3) {
-//            errorMessage=GlobalSupportingClass.miniCharEmailIDErrorMessage() as String as String as NSString?
-//        }
-//        else if(!GlobalSupportingClass.isValidEmail(emailId as NSString))
-//        {
-//            errorMessage=GlobalSupportingClass.invalidEmaildIDFormatErrorMessage() as String as String as NSString?
-//        }
+        else if (emailId.length<=0) {
+            errorMessage=GlobalSupportingClass.blankEmailIDErrorMessage() as String as String as NSString?
+        }
+        else if (emailId.length<=3) {
+            errorMessage=GlobalSupportingClass.miniCharEmailIDErrorMessage() as String as String as NSString?
+        }
+        else if(!GlobalSupportingClass.isValidEmail(emailId as NSString))
+        {
+            errorMessage=GlobalSupportingClass.invalidEmaildIDFormatErrorMessage() as String as String as NSString?
+        }
             
         else if (pasword.length<=0) {
             errorMessage=GlobalSupportingClass.blankPasswordErrorMessage() as String as String as NSString?

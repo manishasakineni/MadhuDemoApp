@@ -56,6 +56,8 @@
 		35442CE21F8DEA4D007798EC /* RechargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35442CE11F8DEA4D007798EC /* RechargeViewController.swift */; };
 		3545A89F1FA207A4005E4E7C /* BroadbandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545A89D1FA207A4005E4E7C /* BroadbandViewController.swift */; };
 		3545A8A01FA207A4005E4E7C /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545A89E1FA207A4005E4E7C /* WaterViewController.swift */; };
+		354706441FE16A7B00F519C8 /* QRTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354706421FE16A7B00F519C8 /* QRTableViewCell.swift */; };
+		354706451FE16A7B00F519C8 /* QRTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354706431FE16A7B00F519C8 /* QRTableViewCell.xib */; };
 		35485D841FB46DE900CDB076 /* PayzAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35485D7B1FB46DE900CDB076 /* PayzAppViewController.swift */; };
 		35485D851FB46DE900CDB076 /* SavedCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35485D7C1FB46DE900CDB076 /* SavedCardsTableViewCell.swift */; };
 		35485D861FB46DE900CDB076 /* SavedCardsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35485D7D1FB46DE900CDB076 /* SavedCardsTableViewCell.xib */; };
@@ -216,6 +218,8 @@
 		35442CE11F8DEA4D007798EC /* RechargeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RechargeViewController.swift; sourceTree = "<group>"; };
 		3545A89D1FA207A4005E4E7C /* BroadbandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadbandViewController.swift; sourceTree = "<group>"; };
 		3545A89E1FA207A4005E4E7C /* WaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
+		354706421FE16A7B00F519C8 /* QRTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRTableViewCell.swift; sourceTree = "<group>"; };
+		354706431FE16A7B00F519C8 /* QRTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRTableViewCell.xib; sourceTree = "<group>"; };
 		35485D7B1FB46DE900CDB076 /* PayzAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayzAppViewController.swift; sourceTree = "<group>"; };
 		35485D7C1FB46DE900CDB076 /* SavedCardsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCardsTableViewCell.swift; sourceTree = "<group>"; };
 		35485D7D1FB46DE900CDB076 /* SavedCardsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavedCardsTableViewCell.xib; sourceTree = "<group>"; };
@@ -606,6 +610,8 @@
 				AF579E7C1FD6ABA000A4E6E4 /* OrderHistoryViewController.swift */,
 				AF579E7D1FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.swift */,
 				AF579E7E1FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.xib */,
+				354706421FE16A7B00F519C8 /* QRTableViewCell.swift */,
+				354706431FE16A7B00F519C8 /* QRTableViewCell.xib */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -825,6 +831,7 @@
 				35E64C971F84DF5200E2CA65 /* Assets.xcassets in Resources */,
 				AF579E931FD6B63100A4E6E4 /* EditProfileTableViewCell2.xib in Resources */,
 				AF579E751FD6A8A700A4E6E4 /* AddCardsTableViewCell.xib in Resources */,
+				354706451FE16A7B00F519C8 /* QRTableViewCell.xib in Resources */,
 				3566518A1F9DC7A300330D33 /* MyTransactionTableViewCell.xib in Resources */,
 				35485D8C1FB46DE900CDB076 /* NetBankingTableViewCell.xib in Resources */,
 				3554C32E1F8F5DCD0092EAC7 /* ProfileTableViewCell.xib in Resources */,
@@ -994,6 +1001,7 @@
 				3554C3311F8F5DCD0092EAC7 /* TableViewCell1.swift in Sources */,
 				AF579E741FD6A8A700A4E6E4 /* AddCardsTableViewCell.swift in Sources */,
 				354CF1B71F9117B1004ADDAD /* AddMoneyWalletViewController.swift in Sources */,
+				354706441FE16A7B00F519C8 /* QRTableViewCell.swift in Sources */,
 				354CF19C1F909751004ADDAD /* RolesVo.swift in Sources */,
 				35442CE21F8DEA4D007798EC /* RechargeViewController.swift in Sources */,
 				356490911FBF47E200078951 /* AgentReqResultVo.swift in Sources */,

@@ -12,6 +12,7 @@ class AddCardsViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @IBOutlet weak var addableView: UITableView!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()

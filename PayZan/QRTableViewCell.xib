@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QRTableViewCell" rowHeight="99" id="KGk-i7-Jjw" customClass="QRTableViewCell" customModule="PayZan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzj-zJ-Th5">
+                        <rect key="frame" x="120" y="57" width="80" height="30"/>
+                        <color key="backgroundColor" red="0.50196078430000002" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="VYj-Y1-Swe"/>
+                            <constraint firstAttribute="width" constant="80" id="nnb-aG-Bw4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <state key="normal" title="Share">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gm5-2Z-qcT">
+                        <rect key="frame" x="120" y="12" width="80" height="30"/>
+                        <color key="backgroundColor" red="0.50196078430000002" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="195-8T-6k8"/>
+                            <constraint firstAttribute="width" constant="80" id="XQg-oj-mKd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <state key="normal" title="ScanQR">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tzj-zJ-Th5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="120" id="CzS-8X-vTG"/>
+                    <constraint firstAttribute="trailing" secondItem="tzj-zJ-Th5" secondAttribute="trailing" constant="120" id="FKh-SG-uHh"/>
+                    <constraint firstItem="Gm5-2Z-qcT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="120" id="GQI-rr-oKt"/>
+                    <constraint firstItem="Gm5-2Z-qcT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="M9e-uf-YYK"/>
+                    <constraint firstItem="tzj-zJ-Th5" firstAttribute="top" secondItem="Gm5-2Z-qcT" secondAttribute="bottom" constant="15" id="a8v-G6-0oN"/>
+                    <constraint firstAttribute="trailing" secondItem="Gm5-2Z-qcT" secondAttribute="trailing" constant="120" id="uFx-a8-Sty"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="scanQRBtn" destination="Gm5-2Z-qcT" id="XHM-lI-h9j"/>
+                <outlet property="shareBtn" destination="tzj-zJ-Th5" id="WP4-e8-2Xh"/>
+            </connections>
+            <point key="canvasLocation" x="23" y="73.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -23,6 +23,9 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     
     @IBOutlet weak var payNowBtn: UIButton!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
+    
     var myPickerView : UIPickerView!
     
     var toolBar = UIToolbar()
@@ -66,6 +69,16 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         amountField.keyboardType = .numberPad
         
         getPrepaidList()
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
 
         // Do any additional setup after loading the view.
     }

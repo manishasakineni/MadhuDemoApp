@@ -12,6 +12,7 @@ class SavedCardsViewController: UIViewController,UITableViewDataSource,UITableVi
 
     @IBOutlet weak var savedCardTableView: UITableView!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +22,19 @@ class SavedCardsViewController: UIViewController,UITableViewDataSource,UITableVi
         savedCardTableView.register(nibName, forCellReuseIdentifier: "SavedTableViewCell")
         
         
-        
-        
         savedCardTableView.dataSource = self
         savedCardTableView.delegate = self
         
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
         
         // Do any additional setup after loading the view.
     }

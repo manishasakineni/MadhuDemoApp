@@ -16,6 +16,9 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
     
     @IBOutlet weak var proceedToPayButtonOutLet: UIButton!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
+    
     var myPickerView : UIPickerView!
     
     var toolBar = UIToolbar()
@@ -58,6 +61,16 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         consumerNumberTextField.keyboardType = .numberPad
         
         getOperatorList()
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
 
 
         // Do any additional setup after loading the view.

@@ -22,6 +22,9 @@ let headerTitle = "PERSONAL INFORMATION"
     
     @IBOutlet weak var requestForAgentTableView: UITableView!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
+    
     weak var reqdelegate: RequeatAgentDelegate?
     
     var myPickerView = UIPickerView()
@@ -79,6 +82,16 @@ let headerTitle = "PERSONAL INFORMATION"
         requestForAgentTableView.delegate = self
         
         getProvinceList()
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
 
         // Do any additional setup after loading the view.
     }

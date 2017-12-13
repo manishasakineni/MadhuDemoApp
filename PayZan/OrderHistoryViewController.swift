@@ -12,6 +12,7 @@ class OrderHistoryViewController: UIViewController,UITableViewDataSource,UITable
 
     @IBOutlet weak var orderTableView: UITableView!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()

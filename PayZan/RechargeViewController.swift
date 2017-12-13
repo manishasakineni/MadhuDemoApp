@@ -45,6 +45,9 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     
     @IBOutlet weak var rechargeBtn: UIButton!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
+    
     var serviceController = ServiceController()
     
     var operatorList = [String]()
@@ -103,6 +106,17 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         getPrepaidList()
         getPostpaidList()
+        
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
         
         
         

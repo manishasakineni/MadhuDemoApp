@@ -18,6 +18,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
 
     @IBOutlet weak var editTableView: UITableView!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
     let headerTitle = "PERSONAL INFORMATION"
     var image:UIImage?
@@ -98,6 +99,16 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         }
         
         getEditProfileList()
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
         
            }
     

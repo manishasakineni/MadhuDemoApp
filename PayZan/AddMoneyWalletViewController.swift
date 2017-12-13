@@ -58,6 +58,7 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
     @IBOutlet weak var addedBtn: UIButton!
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
     let strUrl1 = "29,30,31,32,33,34,35,36,37"
     
@@ -224,6 +225,16 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         borderColors()
         
         myTransactionGetService(string: strUrl1)
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
 
         // Do any additional setup after loading the view.
     }

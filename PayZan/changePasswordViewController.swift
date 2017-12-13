@@ -25,6 +25,7 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
     @IBOutlet weak var retypePswdOutLet: UIButton!
     
     
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +54,15 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
         reTypeNewPswdOutLet.delegate = self
         
 
-        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
 
         // Do any additional setup after loading the view.
     }

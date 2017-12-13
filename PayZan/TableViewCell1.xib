@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="17A365" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,25 +63,25 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU5-ju-F4E">
-                        <rect key="frame" x="13" y="71" width="68" height="20"/>
+                        <rect key="frame" x="8" y="71" width="87" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Csm-wU-d9H"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                        <state key="normal" title="Edit">
+                        <state key="normal" title="Change Photo">
                             <color key="titleColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="DU5-ju-F4E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="3ig-40-djg"/>
+                    <constraint firstItem="DU5-ju-F4E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="3ig-40-djg"/>
                     <constraint firstItem="pIQ-WJ-qNC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="3zw-qA-FHV"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Y5p-Qd-iwV" secondAttribute="trailing" constant="48" id="8Cj-K4-bim"/>
                     <constraint firstItem="G7r-lq-giz" firstAttribute="leading" secondItem="pIQ-WJ-qNC" secondAttribute="trailing" constant="28" id="AX8-mh-hFv"/>
                     <constraint firstItem="IeJ-tf-7Ge" firstAttribute="leading" secondItem="pIQ-WJ-qNC" secondAttribute="trailing" constant="27" id="Fxi-yV-gc4"/>
                     <constraint firstItem="ggd-ui-B6u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="91" id="Ixp-OT-hpb"/>
                     <constraint firstItem="G7r-lq-giz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="Ros-3b-JrJ"/>
-                    <constraint firstItem="ggd-ui-B6u" firstAttribute="leading" secondItem="DU5-ju-F4E" secondAttribute="trailing" constant="18" id="Sos-Bm-9fn"/>
+                    <constraint firstItem="ggd-ui-B6u" firstAttribute="leading" secondItem="DU5-ju-F4E" secondAttribute="trailing" constant="4" id="Sos-Bm-9fn"/>
                     <constraint firstItem="Y5p-Qd-iwV" firstAttribute="leading" secondItem="pIQ-WJ-qNC" secondAttribute="trailing" constant="28" id="SqE-Dc-qnc"/>
                     <constraint firstAttribute="trailing" secondItem="G7r-lq-giz" secondAttribute="trailing" constant="56" id="X4S-tB-mIG"/>
                     <constraint firstItem="pIQ-WJ-qNC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="bqM-lC-Qbt"/>

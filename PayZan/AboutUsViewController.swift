@@ -10,8 +10,21 @@ import UIKit
 
 class AboutUsViewController: UIViewController {
 
+    @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            headerImgHeight.constant = 150
+        }
+        else {
+            
+            headerImgHeight.constant = 79
+            
+        }
 
         // Do any additional setup after loading the view.
     }
