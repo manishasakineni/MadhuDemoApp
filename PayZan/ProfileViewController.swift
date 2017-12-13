@@ -231,7 +231,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 
                 cell.selectionStyle = .none
                 
-                cell.newAccountBtn.layer.borderWidth = 1.0
+                cell.newAccountBtn.layer.borderWidth = 0.5
                 cell.newAccountBtn.layer.borderColor = UIColor(red: 128/255.0, green: 0, blue: 0, alpha: 1.0).cgColor
                 
                 cell.loginBtn.addTarget(self, action: #selector(self.loginBtnClicked), for: .touchUpInside)
@@ -253,7 +253,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 
                 cell.selectionStyle = .none
                 
-                cell.newAccountBtn.layer.borderWidth = 1.0
+                cell.newAccountBtn.layer.borderWidth = 0.5
                 cell.newAccountBtn.layer.borderColor = UIColor(red: 128/255.0, green: 0, blue: 0, alpha: 1.0).cgColor
                 
                 cell.loginBtn.addTarget(self, action: #selector(self.loginBtnClicked), for: .touchUpInside)
@@ -515,7 +515,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
         self.navigationItem.leftBarButtonItem  = button1
         
-        self.navigationItem.title = "AAAAA"
+//        self.navigationItem.title = "AAAAA"
 
         if userNamee == "User Name" {
             
@@ -536,54 +536,48 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             if let tabStrings = self.tabBarController?.tabBar.items
             {
                 tabStrings[1].title = "Login"
+                
+                        if UserDefaults.standard.object(forKey: accessToken) != nil {
+                
+                            UserDefaults.standard.removeObject(forKey: accessToken)
+                            UserDefaults.standard.synchronize()
+                        }
+                        if UserDefaults.standard.object(forKey: tokenType) != nil {
+                
+                            UserDefaults.standard.removeObject(forKey: tokenType)
+                            UserDefaults.standard.synchronize()
+                        }
+                        if UserDefaults.standard.object(forKey: walletIDD) != nil {
+                
+                            UserDefaults.standard.removeObject(forKey: walletIDD)
+                            UserDefaults.standard.synchronize()
+                        }
+                        if UserDefaults.standard.object(forKey: userIDD) != nil {
+                
+                            UserDefaults.standard.removeObject(forKey: userIDD)
+                            UserDefaults.standard.synchronize()
+                        }
+                
+                
+                        if UserDefaults.standard.object(forKey: walletAmountt) != nil {
+                
+                            UserDefaults.standard.removeObject(forKey: walletAmountt)
+                            UserDefaults.standard.synchronize()
+                        }
+                        if UserDefaults.standard.object(forKey: uNamee) != nil {
+                            
+                            UserDefaults.standard.removeObject(forKey: uNamee)
+                            UserDefaults.standard.synchronize()
+                        }
+                        if UserDefaults.standard.object(forKey: emailIdd) != nil {
+                            
+                            UserDefaults.standard.removeObject(forKey: emailIdd)
+                            UserDefaults.standard.synchronize()
+                        }
             }
         }
             
         }
-//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-//    
-//        
-//        if UserDefaults.standard.object(forKey: accessToken) != nil {
-//            
-//            UserDefaults.standard.removeObject(forKey: accessToken)
-//            UserDefaults.standard.synchronize()
-//        }
-//        if UserDefaults.standard.object(forKey: tokenType) != nil {
-//            
-//            UserDefaults.standard.removeObject(forKey: tokenType)
-//            UserDefaults.standard.synchronize()
-//        }
-//        if UserDefaults.standard.object(forKey: walletIDD) != nil {
-//            
-//            UserDefaults.standard.removeObject(forKey: walletIDD)
-//            UserDefaults.standard.synchronize()
-//        }
-//        if UserDefaults.standard.object(forKey: userIDD) != nil {
-//            
-//            UserDefaults.standard.removeObject(forKey: userIDD)
-//            UserDefaults.standard.synchronize()
-//        }
-//        
-//        
-//        if UserDefaults.standard.object(forKey: walletAmountt) != nil {
-//            
-//            UserDefaults.standard.removeObject(forKey: walletAmountt)
-//            UserDefaults.standard.synchronize()
-//        }
-//        if UserDefaults.standard.object(forKey: uNamee) != nil {
-//            
-//            UserDefaults.standard.removeObject(forKey: uNamee)
-//            UserDefaults.standard.synchronize()
-//        }
-//        if UserDefaults.standard.object(forKey: emailIdd) != nil {
-//            
-//            UserDefaults.standard.removeObject(forKey: emailIdd)
-//            UserDefaults.standard.synchronize()
-//        }
-//        
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        appDelegate.window?.rootViewController = viewController
         
     }
     

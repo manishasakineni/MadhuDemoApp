@@ -132,58 +132,105 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         self.scrollView = UIScrollView()
         self.scrollView.delegate = self
-        self.scrollView.contentSize = CGSize(width: 100, height: 100)
+        
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            
+        self.scrollView.contentSize = CGSize(width: 100, height: 100)
         
         self.myNewView = UIView(frame: CGRect(x: 10, y: 0, width: self.view.frame.size.width-20, height: 120))
+            
+            
+            myNewView.addSubview(scrollView)
+            
+            scrollView.showsHorizontalScrollIndicator = false
+            
+            scrollView.isScrollEnabled = true
+            
+            containerView.backgroundColor = UIColor.red
+            
+            containerView.isUserInteractionEnabled = true
+            
+            self.scrollView.alwaysBounceHorizontal = true
+            
+            let myImages = ["addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg"]
+            let imageWidth:CGFloat = 250
+            let imageHeight:CGFloat = 120
+            var xPosition:CGFloat = 0
+            var scrollViewContentSize:CGFloat=0;
+            
+            for index in 0 ..< myImages.count
+            {
+                let myImage:UIImage = UIImage(named: myImages[index])!
+                let myImageView:UIImageView = UIImageView()
+                myImageView.image = myImage
+                myImageView.contentMode = UIViewContentMode.scaleAspectFill
+                myImageView.frame.size.width = imageWidth
+                myImageView.frame.size.height = imageHeight
+                //            myImageView.center = self.view.center
+                myImageView.frame.origin.x = xPosition
+                scrollView.addSubview(myImageView)
+                let spacer:CGFloat = 50
+                xPosition+=imageHeight + spacer
+                scrollViewContentSize+=imageHeight + spacer
+                scrollView.contentSize = CGSize(width: scrollViewContentSize, height:imageHeight)
+            }
+            
+            btnViewHeight.constant = 150
+            headerImgHeight.constant = 120
         
         }
         
         else{
             
+        self.scrollView.contentSize = CGSize(width: 100, height: 100)
+            
         self.myNewView = UIView(frame: CGRect(x: 10, y: 0, width: self.view.frame.size.width-20, height: 80))
+            
+           
+            
+            myNewView.addSubview(scrollView)
+            
+            scrollView.showsHorizontalScrollIndicator = false
+            
+            scrollView.isScrollEnabled = true
+            
+            containerView.backgroundColor = UIColor.red
+            
+            containerView.isUserInteractionEnabled = true
+            
+            self.scrollView.alwaysBounceHorizontal = true
+            
+            let myImages = ["addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg"]
+            let imageWidth:CGFloat = 250
+            let imageHeight:CGFloat = 80
+            var xPosition:CGFloat = 0
+            var scrollViewContentSize:CGFloat=0;
+            
+            for index in 0 ..< myImages.count
+            {
+                let myImage:UIImage = UIImage(named: myImages[index])!
+                let myImageView:UIImageView = UIImageView()
+                myImageView.image = myImage
+                myImageView.contentMode = UIViewContentMode.scaleAspectFill
+                myImageView.frame.size.width = imageWidth
+                myImageView.frame.size.height = imageHeight
+                //            myImageView.center = self.view.center
+                myImageView.frame.origin.x = xPosition
+                scrollView.addSubview(myImageView)
+                let spacer:CGFloat = 50
+                xPosition+=imageHeight + spacer
+                scrollViewContentSize+=imageHeight + spacer
+                scrollView.contentSize = CGSize(width: scrollViewContentSize, height:imageHeight)
+            }
+            
+            
+            btnViewHeight.constant = 70
+            headerImgHeight.constant = 70
 
         }
         
-        
-        
-        
-        myNewView.addSubview(scrollView)
-        
-        scrollView.showsHorizontalScrollIndicator = false
-        
-        scrollView.isScrollEnabled = true
-        
-        containerView.backgroundColor = UIColor.red
-        
-        containerView.isUserInteractionEnabled = true
-        
-        self.scrollView.alwaysBounceHorizontal = true
-        
-        let myImages = ["addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg"]
-        let imageWidth:CGFloat = 250
-        let imageHeight:CGFloat = 80
-        var xPosition:CGFloat = 0
-        var scrollViewContentSize:CGFloat=0;
-        
-        for index in 0 ..< myImages.count
-        {
-            let myImage:UIImage = UIImage(named: myImages[index])!
-            let myImageView:UIImageView = UIImageView()
-            myImageView.image = myImage
-            myImageView.contentMode = UIViewContentMode.scaleAspectFill
-            myImageView.frame.size.width = imageWidth
-            myImageView.frame.size.height = imageHeight
-//            myImageView.center = self.view.center
-            myImageView.frame.origin.x = xPosition
-            scrollView.addSubview(myImageView)
-            let spacer:CGFloat = 50
-            xPosition+=imageHeight + spacer
-            scrollViewContentSize+=imageHeight + spacer
-            scrollView.contentSize = CGSize(width: scrollViewContentSize, height:imageHeight)
-        }
-
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -199,23 +246,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         self.tabBarController?.delegate = self
         
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
-            
-            btnViewHeight.constant = 150
-            headerImgHeight.constant = 120
-            
-            
-        }
-        
-        else{
-        
-        
-            btnViewHeight.constant = 70
-            headerImgHeight.constant = 70
-            
-        
-        }
-        
+       
   
     }
     
@@ -274,7 +305,36 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     
     }
 
+    func iPhoneScreenSizes(){
+        let bounds = UIScreen.main.bounds
+        let height = bounds.size.height
+        
+        switch height {
+        case 480.0:
+            print("iPhone 3,4")
 
+        case 568.0:
+            print("iPhone 5")
+            
+        case 667.0:
+            print("iPhone 6")
+            
+        case 736.0:
+            print("iPhone 6+")
+            
+            
+        case 1024.0:
+            print("iPadAir")
+            
+            
+        default:
+            print("not an iPhone")
+            
+            
+        }
+        
+        
+    }
     
     
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -304,11 +364,44 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             
             if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
                 
-                height = 420
+                height = 500
             }
             else {
                 
-            height = 250
+                let bounds = UIScreen.main.bounds
+                let sHeight = bounds.size.height
+                
+                switch sHeight {
+                case 480.0:
+                    print("iPhone 3,4")
+                    
+                    height = 180
+                    
+                case 568.0:
+                    print("iPhone 5")
+                    
+                     height = 200
+                    
+                case 667.0:
+                    print("iPhone 6")
+                    
+                    height = 250
+                    
+                case 736.0:
+                    print("iPhone 6+")
+                    
+                    height = 280
+                    
+                    
+                case 1024.0:
+                    print("iPadAir")
+                    
+                    
+                default:
+                    print("not an iPhone")
+                    
+                    
+                }
                 
             }
             
@@ -317,7 +410,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             
             if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
                 
-                height = 120
+                height = 150
             }
             else {
                 
@@ -368,7 +461,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as UITableViewCell!
             cell.selectionStyle = .none
            
-//            self.myNewView.backgroundColor = UIColor.blue
+            self.myNewView.backgroundColor = UIColor.blue
             
             cell.contentView.addSubview(myNewView)
             
