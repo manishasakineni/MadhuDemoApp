@@ -51,6 +51,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     @IBOutlet weak var myTransactionBtn: UIButton!
     
     
+    
     @IBOutlet weak var btnViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
@@ -179,22 +180,24 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         self.tabBarController?.delegate = self
         
-//        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
-//            
-//            btnViewHeight.constant = 140
-//            headerImgHeight.constant = 120
-//        }
-//        
-//        else{
-//        
-//        
-//            btnViewHeight.constant = 70
-//            headerImgHeight.constant = 70
-//        
-//        }
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            
+            btnViewHeight.constant = 150
+            headerImgHeight.constant = 120
+            
+            
+        }
+        
+        else{
         
         
-    // Do any additional setup after loading the view.
+            btnViewHeight.constant = 70
+            headerImgHeight.constant = 70
+            
+        
+        }
+        
+  
     }
     
     
