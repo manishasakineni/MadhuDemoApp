@@ -59,7 +59,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PageMenu.xcscheme</key>
+		<key>Localize.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -107,17 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7FD8F1F83D08CA96096FC689D51E8D92</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>978A447F57E812AEE5D676FF361F1416</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>A7FEAA14E89971698ACA148F7F7202F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AEB6A767AE7A0D63D687628642DFE8E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -133,6 +128,11 @@
 			<true/>
 		</dict>
 		<key>DDBCFDE490CDFDABF6F16A26F346932D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F09CE227DAF6C882933D4DDED02EDEB6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -471,13 +471,13 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
     
     @IBAction func signupBtnAction(_ sender: Any) {
         
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = viewController
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = viewController
         
-//        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
-//        self.navigationController?.pushViewController(viewController, animated: true)
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
         
     }
     

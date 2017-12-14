@@ -14,6 +14,7 @@ import Google
 import GoogleSignIn
 import FBSDKLoginKit
 import SystemConfiguration
+import Localize
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate,SWRevealViewControllerDelegate {
@@ -31,6 +32,31 @@ let tabBarController = UITabBarController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        let localize = Localize.shared
+        // Set your localize provider.
+        localize.update(provider: .json)
+        // Set your file name
+        localize.update(fileName: "lang")
+        // Set your default languaje.
+//        localize.update(defaultLanguage: "fr")
+        // If you want change a user language, different to default in phone use thimethod.
+        localize.update(language: "en")
+        localize.update(defaultLanguage: "si")
+        // If you want remove storaged languaje use
+        localize.resetLanguage()
+        // The used language
+        print(localize.language())
+        // List of aviable languajes
+        print(localize.availableLanguages())
+        
+        // Or you can use static methods for all
+        
+        Localize.update(fileName: "lang")
+//        Localize.update(defaultLanguage: "fr")
+        Localize.update(defaultLanguage: "si")
+        Localize.update(language: "en-DE")
         
         IQKeyboardManager.sharedManager().enable = true
         

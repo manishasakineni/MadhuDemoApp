@@ -10,7 +10,8 @@ pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'FacebookShare', :git => 'https://github.com/1amageek/facebook-sdk-swift'
 pod 'Google/SignIn'
-pod 'PageMenu'
+#pod 'PageMenu'
+pod 'Localize' , '~> 1.5.2'
 
   # Pods for PayZan
 

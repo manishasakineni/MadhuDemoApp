@@ -488,12 +488,12 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
     
     @IBAction func backAction(_ sender: Any) {
         
-//        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
         
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = viewController
+        //let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        //let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //appDelegate.window?.rootViewController = viewController
     }
     
     @IBAction func eyeAction(_ sender: Any) {

@@ -47,6 +47,11 @@
 		35344DB91F863B5900E35C5C /* TextFieldMaxLengths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35344DB81F863B5900E35C5C /* TextFieldMaxLengths.swift */; };
 		35344DBB1F863B6500E35C5C /* NoCopyPasteUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35344DBA1F863B6500E35C5C /* NoCopyPasteUITextField.swift */; };
 		35344DBD1F86824900E35C5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35344DBC1F86824900E35C5C /* GoogleService-Info.plist */; };
+		3535A3781FE29CD700F9DB53 /* lang-en-DE.json in Resources */ = {isa = PBXBuildFile; fileRef = 3535A3741FE29CD700F9DB53 /* lang-en-DE.json */; };
+		3535A3791FE29CD700F9DB53 /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 3535A3751FE29CD700F9DB53 /* lang-en.json */; };
+		3535A37A1FE29CD700F9DB53 /* lang-es.json in Resources */ = {isa = PBXBuildFile; fileRef = 3535A3761FE29CD700F9DB53 /* lang-es.json */; };
+		3535A37B1FE29CD700F9DB53 /* lang-fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 3535A3771FE29CD700F9DB53 /* lang-fr.json */; };
+		3535A37D1FE2A69800F9DB53 /* lang-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 3535A37C1FE2A69800F9DB53 /* lang-si.json */; };
 		35374F291FA4616D009C98DE /* LoginResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35374F281FA4616D009C98DE /* LoginResultVo.swift */; };
 		3539E4521FB1972A005ACC7C /* SignUpResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3539E4511FB1972A005ACC7C /* SignUpResultVo.swift */; };
 		353EB9BC1F9F06ED00AA67E9 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */; };
@@ -209,6 +214,11 @@
 		35344DB81F863B5900E35C5C /* TextFieldMaxLengths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldMaxLengths.swift; sourceTree = "<group>"; };
 		35344DBA1F863B6500E35C5C /* NoCopyPasteUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoCopyPasteUITextField.swift; sourceTree = "<group>"; };
 		35344DBC1F86824900E35C5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3535A3741FE29CD700F9DB53 /* lang-en-DE.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en-DE.json"; sourceTree = "<group>"; };
+		3535A3751FE29CD700F9DB53 /* lang-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en.json"; sourceTree = "<group>"; };
+		3535A3761FE29CD700F9DB53 /* lang-es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-es.json"; sourceTree = "<group>"; };
+		3535A3771FE29CD700F9DB53 /* lang-fr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-fr.json"; sourceTree = "<group>"; };
+		3535A37C1FE2A69800F9DB53 /* lang-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-si.json"; sourceTree = "<group>"; };
 		35374F281FA4616D009C98DE /* LoginResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResultVo.swift; sourceTree = "<group>"; };
 		3539E4511FB1972A005ACC7C /* SignUpResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpResultVo.swift; sourceTree = "<group>"; };
 		353EB9BB1F9F06ED00AA67E9 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
@@ -481,6 +491,18 @@
 			name = MapperVo;
 			sourceTree = "<group>";
 		};
+		3535A3731FE29CA800F9DB53 /* LanguageFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3535A3741FE29CD700F9DB53 /* lang-en-DE.json */,
+				3535A3751FE29CD700F9DB53 /* lang-en.json */,
+				3535A3761FE29CD700F9DB53 /* lang-es.json */,
+				3535A3771FE29CD700F9DB53 /* lang-fr.json */,
+				3535A37C1FE2A69800F9DB53 /* lang-si.json */,
+			);
+			name = LanguageFiles;
+			sourceTree = "<group>";
+		};
 		3539E4501FB196E5005ACC7C /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,6 +744,7 @@
 				35344DAF1F861B3700E35C5C /* Views */,
 				354CF1AA1F90DAA4004ADDAD /* BaseViewController.swift */,
 				35E64C911F84DF5200E2CA65 /* ViewController.swift */,
+				3535A3731FE29CA800F9DB53 /* LanguageFiles */,
 				35E64C961F84DF5200E2CA65 /* Assets.xcassets */,
 				35E64C981F84DF5200E2CA65 /* LaunchScreen.storyboard */,
 				35E64C9B1F84DF5200E2CA65 /* Info.plist */,
@@ -821,6 +844,7 @@
 				350CCD1A1F88A54F003495B6 /* HomeCollectionViewCell.xib in Resources */,
 				3554C33A1F8F5DCD0092EAC7 /* LoginTableViewCell.xib in Resources */,
 				AF579E911FD6B63100A4E6E4 /* EditProfileTableViewCell1.xib in Resources */,
+				3535A37D1FE2A69800F9DB53 /* lang-si.json in Resources */,
 				35344DBD1F86824900E35C5C /* GoogleService-Info.plist in Resources */,
 				3554C3301F8F5DCD0092EAC7 /* ListTableViewCell.xib in Resources */,
 				AF579E811FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.xib in Resources */,
@@ -828,14 +852,17 @@
 				3554C3321F8F5DCD0092EAC7 /* TableViewCell1.xib in Resources */,
 				AF579E951FD6B63100A4E6E4 /* EditProfileTableViewCell3.xib in Resources */,
 				35485D881FB46DE900CDB076 /* CreditCardTableViewCell.xib in Resources */,
+				3535A37B1FE29CD700F9DB53 /* lang-fr.json in Resources */,
 				35E64C971F84DF5200E2CA65 /* Assets.xcassets in Resources */,
 				AF579E931FD6B63100A4E6E4 /* EditProfileTableViewCell2.xib in Resources */,
+				3535A3781FE29CD700F9DB53 /* lang-en-DE.json in Resources */,
 				AF579E751FD6A8A700A4E6E4 /* AddCardsTableViewCell.xib in Resources */,
 				354706451FE16A7B00F519C8 /* QRTableViewCell.xib in Resources */,
 				3566518A1F9DC7A300330D33 /* MyTransactionTableViewCell.xib in Resources */,
 				35485D8C1FB46DE900CDB076 /* NetBankingTableViewCell.xib in Resources */,
 				3554C32E1F8F5DCD0092EAC7 /* ProfileTableViewCell.xib in Resources */,
 				35485D861FB46DE900CDB076 /* SavedCardsTableViewCell.xib in Resources */,
+				3535A3791FE29CD700F9DB53 /* lang-en.json in Resources */,
 				354E4D4D1FA71203008D108A /* AddAgentRequestTableViewCell.xib in Resources */,
 				3554C3361F8F5DCD0092EAC7 /* GenderTableViewCell.xib in Resources */,
 				3D8AA36A1FDECC7E001784D2 /* Localizable.strings in Resources */,
@@ -845,6 +872,7 @@
 				AF579E7B1FD6AA1400A4E6E4 /* SavedTableViewCell.xib in Resources */,
 				3554C3341F8F5DCD0092EAC7 /* TableViewCell2.xib in Resources */,
 				35E64C951F84DF5200E2CA65 /* Main.storyboard in Resources */,
+				3535A37A1FE29CD700F9DB53 /* lang-es.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -905,7 +933,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/PageMenu/PageMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Localize/Localize.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -920,7 +948,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PageMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
