@@ -14,6 +14,9 @@ class GenderTableViewCell: UITableViewCell {
     @IBOutlet weak var maleUnCheckBtn: UIImageView!
     
     @IBOutlet weak var femaleUnCheck: UIImageView!
+    
+    
+    @IBOutlet weak var saveBtn: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

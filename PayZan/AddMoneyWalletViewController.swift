@@ -313,10 +313,15 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             for  borderview in mySegmentControl.subviews {
                 
+//                let upperBorder: CALayer = CALayer()
+//                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+//                upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
+//                borderview.layer .addSublayer(upperBorder);
+                
                 let upperBorder: CALayer = CALayer()
                 upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
                 upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
-                borderview.layer .addSublayer(upperBorder);
+                borderview.layer.addSublayer(upperBorder);
                 
             }
         case 568.0:
@@ -334,10 +339,15 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             for  borderview in mySegmentControl.subviews {
                 
+//                let upperBorder: CALayer = CALayer()
+//                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+//                upperBorder.frame = CGRect(x:10, y:borderview.frame.size.height-1, width:borderview.frame.size.width-40, height:1.0)
+//                borderview.layer .addSublayer(upperBorder);
+                
                 let upperBorder: CALayer = CALayer()
                 upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
-                upperBorder.frame = CGRect(x:10, y:borderview.frame.size.height-1, width:borderview.frame.size.width-40, height:1.0)
-                borderview.layer .addSublayer(upperBorder);
+                upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
+                borderview.layer.addSublayer(upperBorder);
                 
             }
             
@@ -357,10 +367,14 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             for  borderview in mySegmentControl.subviews {
                 
+//                let upperBorder: CALayer = CALayer()
+//                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+//                upperBorder.frame = CGRect(x:15, y:borderview.frame.size.height-1, width:borderview.frame.size.width-35, height:1.0)
+//                borderview.layer .addSublayer(upperBorder);
                 let upperBorder: CALayer = CALayer()
                 upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
-                upperBorder.frame = CGRect(x:15, y:borderview.frame.size.height-1, width:borderview.frame.size.width-35, height:1.0)
-                borderview.layer .addSublayer(upperBorder);
+                upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
+                borderview.layer.addSublayer(upperBorder);
                 
             }
             
@@ -379,15 +393,24 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             for  borderview in mySegmentControl.subviews {
                 
+//                let upperBorder: CALayer = CALayer()
+//                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+//                upperBorder.frame = CGRect(x:20, y:borderview.frame.size.height-1, width:borderview.frame.size.width-25, height:1.0)
+//                borderview.layer .addSublayer(upperBorder);
                 let upperBorder: CALayer = CALayer()
                 upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
-                upperBorder.frame = CGRect(x:20, y:borderview.frame.size.height-1, width:borderview.frame.size.width-25, height:1.0)
-                borderview.layer .addSublayer(upperBorder);
+                upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
+                borderview.layer.addSublayer(upperBorder);
                 
             }
             
         case 1024.0:
             print("iPadAir")
+            
+            mySegmentControl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:17.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)], for:UIControlState.normal)
+            
+            mySegmentControl.setTitleTextAttributes([NSFontAttributeName:UIFont(name:"Helvetica Neue", size:17.0)!,NSForegroundColorAttributeName:#colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)], for:UIControlState.selected)
             
             mySegmentControl.setDividerImage(self.imageWithColor(color: UIColor.clear), forLeftSegmentState: UIControlState.normal, rightSegmentState: UIControlState.normal, barMetrics: UIBarMetrics.default)
             
@@ -396,10 +419,16 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
             
             for  borderview in mySegmentControl.subviews {
                 
+                
                 let upperBorder: CALayer = CALayer()
                 upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
-                upperBorder.frame = CGRect(x:40, y:borderview.frame.size.height-1, width:borderview.frame.size.width-25, height:1.0)
+                upperBorder.frame = CGRect(x:0, y:borderview.frame.size.height-1, width:view.frame.size.width, height:1.0)
                 borderview.layer.addSublayer(upperBorder);
+                
+//                let upperBorder: CALayer = CALayer()
+//                upperBorder.backgroundColor = UIColor.init(red: 113/255.0, green: 25/255.0, blue: 34/255.0, alpha: 1.0).cgColor
+//                upperBorder.frame = CGRect(x:65, y:borderview.frame.size.height-1, width:borderview.frame.size.width-10, height:1.0)
+//                borderview.layer.addSublayer(upperBorder);
                 
             }
             

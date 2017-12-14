@@ -133,13 +133,15 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         self.scrollView = UIScrollView()
         self.scrollView.delegate = self
         
+//        self.scrollView.backgroundColor = UIColor.red
+        
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
             
         self.scrollView.contentSize = CGSize(width: 100, height: 100)
         
-        self.myNewView = UIView(frame: CGRect(x: 10, y: 0, width: self.view.frame.size.width-20, height: 120))
+        self.myNewView = UIView(frame: CGRect(x: 10, y: 0, width: self.view.frame.size.width-20, height: 100))
             
             
             myNewView.addSubview(scrollView)
@@ -154,9 +156,9 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             
             self.scrollView.alwaysBounceHorizontal = true
             
-            let myImages = ["addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg","addsImg"]
-            let imageWidth:CGFloat = 250
-            let imageHeight:CGFloat = 120
+           let myImages = ["baner","baner2","baner1","baner3","baner","baner1","baner2","baner3","baner"]
+            let imageWidth:CGFloat = 200
+            let imageHeight:CGFloat = 100
             var xPosition:CGFloat = 0
             var scrollViewContentSize:CGFloat=0;
             
@@ -165,15 +167,15 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
                 let myImage:UIImage = UIImage(named: myImages[index])!
                 let myImageView:UIImageView = UIImageView()
                 myImageView.image = myImage
-                myImageView.contentMode = UIViewContentMode.scaleAspectFill
+                myImageView.contentMode = UIViewContentMode.scaleAspectFit
                 myImageView.frame.size.width = imageWidth
                 myImageView.frame.size.height = imageHeight
                 //            myImageView.center = self.view.center
                 myImageView.frame.origin.x = xPosition
                 scrollView.addSubview(myImageView)
-                let spacer:CGFloat = 50
-                xPosition+=imageHeight + spacer
-                scrollViewContentSize+=imageHeight + spacer
+                let spacer:CGFloat = 10
+                xPosition+=imageWidth + spacer
+                scrollViewContentSize+=imageWidth + spacer
                 scrollView.contentSize = CGSize(width: scrollViewContentSize, height:imageHeight)
             }
             
@@ -184,9 +186,9 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         else{
             
-        self.scrollView.contentSize = CGSize(width: 100, height: 100)
+        self.scrollView.contentSize = CGSize(width: 100, height: 80)
             
-        self.myNewView = UIView(frame: CGRect(x: 10, y: 0, width: self.view.frame.size.width-20, height: 100))
+        self.myNewView = UIView(frame: CGRect(x: 10, y: 0, width: self.view.frame.size.width-20, height: 80))
             
            
             
@@ -203,8 +205,8 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             self.scrollView.alwaysBounceHorizontal = true
             
             let myImages = ["baner","baner2","baner1","baner3","baner","baner1","baner2","baner3","baner"]
-            let imageWidth:CGFloat = 250
-            let imageHeight:CGFloat = 100
+            let imageWidth:CGFloat = 150
+            let imageHeight:CGFloat = 80
             var xPosition:CGFloat = 0
             var scrollViewContentSize:CGFloat=0;
             
@@ -213,13 +215,13 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
                 let myImage:UIImage = UIImage(named: myImages[index])!
                 let myImageView:UIImageView = UIImageView()
                 myImageView.image = myImage
-                myImageView.contentMode = UIViewContentMode.scaleAspectFill
+                myImageView.contentMode = UIViewContentMode.scaleAspectFit
                 myImageView.frame.size.width = imageWidth
                 myImageView.frame.size.height = imageHeight
                 //            myImageView.center = self.view.center
                 myImageView.frame.origin.x = xPosition
                 scrollView.addSubview(myImageView)
-                let spacer:CGFloat = 20
+                let spacer:CGFloat = 10
                 xPosition+=imageWidth + spacer
                 scrollViewContentSize+=imageWidth + spacer
                 scrollView.contentSize = CGSize(width: scrollViewContentSize, height:imageHeight)
@@ -410,7 +412,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             
             if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
                 
-                height = 150
+                height = 130
             }
             else {
                 

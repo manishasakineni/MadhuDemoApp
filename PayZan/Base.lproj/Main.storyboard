@@ -633,13 +633,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVt-jn-ZUN">
-                                        <rect key="frame" x="322" y="10" width="46" height="23"/>
+                                        <rect key="frame" x="329" y="6" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="46" id="JGS-XR-EpW"/>
-                                            <constraint firstAttribute="height" constant="23" id="cNk-Zo-Dfm"/>
+                                            <constraint firstAttribute="width" constant="30" id="JGS-XR-EpW"/>
+                                            <constraint firstAttribute="height" constant="30" id="cNk-Zo-Dfm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <state key="normal" title="Done"/>
+                                        <state key="normal" image="head_notification_icon"/>
                                         <connections>
                                             <action selector="doneAction:" destination="gJT-69-uzW" eventType="touchUpInside" id="jsh-tg-Kqn"/>
                                         </connections>
@@ -649,8 +649,8 @@
                                 <constraints>
                                     <constraint firstItem="FUV-Ch-kLW" firstAttribute="leading" secondItem="MgQ-TN-iJf" secondAttribute="leading" constant="8" id="4k0-f9-05g"/>
                                     <constraint firstItem="Ac5-Ug-Dba" firstAttribute="centerY" secondItem="FUV-Ch-kLW" secondAttribute="centerY" constant="-1" id="5Nr-wu-o8i"/>
-                                    <constraint firstItem="EVt-jn-ZUN" firstAttribute="top" secondItem="MgQ-TN-iJf" secondAttribute="top" constant="10" id="AqQ-G1-Dgk"/>
-                                    <constraint firstAttribute="trailing" secondItem="EVt-jn-ZUN" secondAttribute="trailing" constant="7" id="CF0-22-VrF"/>
+                                    <constraint firstItem="EVt-jn-ZUN" firstAttribute="top" secondItem="MgQ-TN-iJf" secondAttribute="top" constant="6" id="AqQ-G1-Dgk"/>
+                                    <constraint firstAttribute="trailing" secondItem="EVt-jn-ZUN" secondAttribute="trailing" constant="16" id="CF0-22-VrF"/>
                                     <constraint firstItem="Ac5-Ug-Dba" firstAttribute="leading" secondItem="FUV-Ch-kLW" secondAttribute="trailing" constant="-7" id="VDs-Ge-Oyn"/>
                                     <constraint firstItem="FUV-Ch-kLW" firstAttribute="top" secondItem="MgQ-TN-iJf" secondAttribute="top" constant="6" id="hdu-xT-HIe"/>
                                     <constraint firstAttribute="height" constant="40" id="ppv-ET-zgc"/>
@@ -880,7 +880,7 @@
                                     <action selector="googleAction:" destination="qoL-hZ-UmZ" eventType="touchUpInside" id="VUu-Lk-xmp"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email(Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fg5-I1-WH3">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fg5-I1-WH3">
                                 <rect key="frame" x="27" y="183" width="322" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Hs7-ns-e0X"/>
@@ -1478,7 +1478,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wSF-Zb-qo8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wSF-Zb-qo8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1498,7 +1498,7 @@
                     <tabBarItem key="tabBarItem" title="My Profile" image="myProfilePng" selectedImage="myProfilePng" id="zJf-Ao-MRt"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mt6-f4-R4S">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mt6-f4-R4S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1518,7 +1518,7 @@
                     <tabBarItem key="tabBarItem" title="Wallet" image="addMoneyWalletPng" selectedImage="addMoneyWalletPng" id="CIv-NA-Xpz"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HiU-Ff-lBp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HiU-Ff-lBp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1538,7 +1538,7 @@
                     <tabBarItem key="tabBarItem" title="Offers" image="offersPng" selectedImage="offersPng" id="7Ov-Qq-6Qr"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yIj-u9-loA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yIj-u9-loA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4656,7 +4656,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wB-CZ-ade">
-                                        <rect key="frame" x="142" y="9" width="92" height="21"/>
+                                        <rect key="frame" x="72" y="9" width="92" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="ieb-0S-fdB"/>
                                             <constraint firstAttribute="width" constant="92" id="q7U-pI-3ac"/>
@@ -4669,7 +4669,7 @@
                                 <color key="backgroundColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="5wB-CZ-ade" firstAttribute="centerY" secondItem="HN5-bw-GKT" secondAttribute="centerY" id="FIx-xk-a0f"/>
-                                    <constraint firstItem="5wB-CZ-ade" firstAttribute="centerX" secondItem="HN5-bw-GKT" secondAttribute="centerX" id="fQU-6G-XSI"/>
+                                    <constraint firstItem="5wB-CZ-ade" firstAttribute="centerX" secondItem="HN5-bw-GKT" secondAttribute="centerX" constant="-69.5" id="fQU-6G-XSI"/>
                                     <constraint firstItem="hNE-tg-qd4" firstAttribute="top" secondItem="HN5-bw-GKT" secondAttribute="top" constant="5" id="fig-fE-bvq"/>
                                     <constraint firstItem="hNE-tg-qd4" firstAttribute="leading" secondItem="HN5-bw-GKT" secondAttribute="leading" constant="25" id="lIs-KJ-ZR7"/>
                                     <constraint firstAttribute="height" constant="40" id="y0r-0j-nEm"/>
@@ -4728,7 +4728,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya5-BC-km0">
-                                        <rect key="frame" x="111.5" y="9.5" width="152" height="21"/>
+                                        <rect key="frame" x="69.5" y="9.5" width="152" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Wvy-ql-2Hx"/>
                                             <constraint firstAttribute="width" constant="152" id="ZeC-kT-LSN"/>
@@ -4744,7 +4744,7 @@
                                     <constraint firstAttribute="height" constant="40" id="FoJ-ed-vLr"/>
                                     <constraint firstItem="wWJ-ea-Cxb" firstAttribute="top" secondItem="PSZ-bu-yNJ" secondAttribute="top" constant="5" id="MUQ-Mw-vPf"/>
                                     <constraint firstItem="wWJ-ea-Cxb" firstAttribute="leading" secondItem="PSZ-bu-yNJ" secondAttribute="leading" constant="20" id="MdA-O7-Dgp"/>
-                                    <constraint firstItem="Ya5-BC-km0" firstAttribute="centerX" secondItem="PSZ-bu-yNJ" secondAttribute="centerX" id="cOr-rs-4se"/>
+                                    <constraint firstItem="Ya5-BC-km0" firstAttribute="centerX" secondItem="PSZ-bu-yNJ" secondAttribute="centerX" constant="-42" id="cOr-rs-4se"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -4847,14 +4847,13 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qq4-pn-pwh">
-                                <rect key="frame" x="45" y="335" width="292" height="30"/>
-                                <color key="backgroundColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="45" y="335" width="292" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="OeZ-I4-L3v"/>
+                                    <constraint firstAttribute="height" constant="35" id="OeZ-I4-L3v"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Change Password"/>
+                                <state key="normal" title="Change Password" backgroundImage="buttonColor"/>
                                 <connections>
                                     <action selector="changePswdAction:" destination="GKA-HL-6CF" eventType="touchUpInside" id="dTu-mb-N5t"/>
                                 </connections>
@@ -4935,7 +4934,7 @@
                             <constraint firstItem="0Dc-5Q-je9" firstAttribute="top" secondItem="ePs-9d-Ufu" secondAttribute="bottom" constant="34" id="agJ-rQ-cDL"/>
                             <constraint firstItem="Qq4-pn-pwh" firstAttribute="leading" secondItem="sla-xl-X5D" secondAttribute="leadingMargin" constant="29" id="d5P-fW-Twu"/>
                             <constraint firstItem="lww-dz-nB9" firstAttribute="centerY" secondItem="0Dc-5Q-je9" secondAttribute="centerY" id="daG-mr-z2D"/>
-                            <constraint firstItem="KbK-Fp-Efe" firstAttribute="top" secondItem="Qq4-pn-pwh" secondAttribute="bottom" constant="42" id="daL-OX-8xg"/>
+                            <constraint firstItem="KbK-Fp-Efe" firstAttribute="top" secondItem="Qq4-pn-pwh" secondAttribute="bottom" constant="37" id="daL-OX-8xg"/>
                             <constraint firstItem="LVZ-oE-dix" firstAttribute="leading" secondItem="sla-xl-X5D" secondAttribute="leadingMargin" constant="29" id="dc2-Z4-2Ge"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LVZ-oE-dix" secondAttribute="trailing" constant="22" id="mtm-Rp-Qqt"/>
                             <constraint firstItem="ghr-RP-b1F" firstAttribute="top" secondItem="KbK-Fp-Efe" secondAttribute="bottom" id="mwb-bV-xjS"/>
@@ -5000,7 +4999,7 @@
                                             <constraint firstAttribute="width" constant="76" id="DJB-Nj-BER"/>
                                             <constraint firstAttribute="height" constant="21" id="IWq-Bq-ANP"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>

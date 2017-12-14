@@ -163,7 +163,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         else{
             if indexPath.row == 4{
                 
-                return 80
+                return 150
             }
             return 50
             
@@ -311,6 +311,9 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                 
                 let cell = Bundle.main.loadNibNamed("GenderTableViewCell", owner: self, options: nil)?.first as! GenderTableViewCell
                 
+                
+                cell.selectionStyle = .none
+                
                 cell.maleUnCheckBtn.image = (male == true) ? UIImage(named:"checked_83366") : UIImage(named:"icons8-Unchecked Circle-50")
                 
                 cell.femaleUnCheck.image = (female == true) ? UIImage(named:"checked_83366") : UIImage(named:"icons8-Unchecked Circle-50")
@@ -319,6 +322,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                 
                 
                 cell.femaleBtn.addTarget(self, action: #selector(self.femaleBtnClicked), for: .touchUpInside)
+                
+                cell.saveBtn.addTarget(self, action: #selector(self.saveBtnClicked), for: .touchUpInside)
                 
                 
                 return cell
@@ -376,6 +381,12 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
 //            
 //            
 //        }
+    }
+    
+    func saveBtnClicked(_ sender: UIButton) {
+        
+        
+        
     }
     
     func openCamera() {
