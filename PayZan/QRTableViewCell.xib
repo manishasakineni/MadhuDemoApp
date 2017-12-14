@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="17A365" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,8 +27,7 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzj-zJ-Th5">
                         <rect key="frame" x="120" y="51" width="80" height="35"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="35" id="VYj-Y1-Swe"/>
-                            <constraint firstAttribute="width" constant="80" id="nnb-aG-Bw4"/>
+                            <constraint firstAttribute="height" constant="35" id="jFz-kc-0Zz"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                         <state key="normal" title="Share" backgroundImage="buttonColor">
@@ -37,8 +37,7 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gm5-2Z-qcT">
                         <rect key="frame" x="120" y="12" width="80" height="35"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="35" id="195-8T-6k8"/>
-                            <constraint firstAttribute="width" constant="80" id="XQg-oj-mKd"/>
+                            <constraint firstAttribute="height" constant="35" id="ka5-vh-hz7"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                         <state key="normal" title="ScanQR" backgroundImage="buttonColor">
@@ -47,12 +46,13 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="tzj-zJ-Th5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="120" id="CzS-8X-vTG"/>
-                    <constraint firstAttribute="trailing" secondItem="tzj-zJ-Th5" secondAttribute="trailing" constant="120" id="FKh-SG-uHh"/>
-                    <constraint firstItem="Gm5-2Z-qcT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="120" id="GQI-rr-oKt"/>
-                    <constraint firstItem="Gm5-2Z-qcT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="M9e-uf-YYK"/>
-                    <constraint firstItem="tzj-zJ-Th5" firstAttribute="top" secondItem="Gm5-2Z-qcT" secondAttribute="bottom" constant="4" id="a8v-G6-0oN"/>
-                    <constraint firstAttribute="trailing" secondItem="Gm5-2Z-qcT" secondAttribute="trailing" constant="120" id="uFx-a8-Sty"/>
+                    <constraint firstItem="tzj-zJ-Th5" firstAttribute="top" secondItem="Gm5-2Z-qcT" secondAttribute="bottom" constant="4" id="2e5-1x-a4Z"/>
+                    <constraint firstItem="Gm5-2Z-qcT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="9bd-Dx-zT0"/>
+                    <constraint firstItem="tzj-zJ-Th5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="112" id="CcU-py-7Kb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="tzj-zJ-Th5" secondAttribute="trailing" constant="112" id="fFl-Ah-dZl"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Gm5-2Z-qcT" secondAttribute="trailing" constant="112" id="iPb-cN-aG8"/>
+                    <constraint firstItem="tzj-zJ-Th5" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="rj1-be-RH5"/>
+                    <constraint firstItem="Gm5-2Z-qcT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="112" id="tbD-A6-Wke"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
