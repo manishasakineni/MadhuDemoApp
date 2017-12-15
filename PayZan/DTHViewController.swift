@@ -248,7 +248,8 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
                     
                     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     
-                    let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                    let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
+                    //                    let navigationController = UINavigationController(rootViewController: viewController)
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.window?.rootViewController = viewController
                 }

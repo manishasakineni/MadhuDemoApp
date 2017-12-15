@@ -44,6 +44,7 @@ let tabBarController = UITabBarController()
         // If you want change a user language, different to default in phone use thimethod.
         localize.update(language: "en")
         localize.update(defaultLanguage: "si")
+        localize.update(defaultLanguage: "ta")
         // If you want remove storaged languaje use
         localize.resetLanguage()
         // The used language
@@ -56,7 +57,8 @@ let tabBarController = UITabBarController()
         Localize.update(fileName: "lang")
 //        Localize.update(defaultLanguage: "fr")
         Localize.update(defaultLanguage: "si")
-        Localize.update(language: "en-DE")
+        Localize.update(defaultLanguage: "ta")
+//        Localize.update(language: "en-DE")
         
         IQKeyboardManager.sharedManager().enable = true
         
@@ -151,7 +153,7 @@ let tabBarController = UITabBarController()
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
         
 //        viewController.tabBar.items?[1].image = UIImage(named: "search")?.withRenderingMode(.alwaysTemplate)
-        viewController.tabBar.items?[1].title = "Login"
+        viewController.tabBar.items?[1].title = "Login".localize(value: "Login")
 //        viewController.tabBar.items?[1].selectedImage = UIImage(named: "search")?.withRenderingMode(.alwaysTemplate)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

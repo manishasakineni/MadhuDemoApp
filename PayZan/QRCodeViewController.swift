@@ -16,6 +16,7 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     
     @IBOutlet weak var startBtn: UIButton!
     
+    @IBOutlet weak var scanView: UIView!
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
@@ -28,6 +29,8 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scanView.isHidden = true
 
         //        navigationBarView.layer.cornerRadius = 5;
         //        btnStartStop.layer.cornerRadius = 5;
@@ -54,11 +57,11 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             print(error)
             return false
         }
-        
+        scanView.isHidden = false
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        videoPreviewLayer?.frame = view.layer.bounds
-        view.layer.addSublayer(videoPreviewLayer!)
+        videoPreviewLayer?.frame = scanView.layer.bounds
+        scanView.layer.addSublayer(videoPreviewLayer!)
         
         /* Check for metadata */
         let captureMetadataOutput = AVCaptureMetadataOutput()
@@ -73,6 +76,7 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     
     func stopReading() {
         captureSession?.stopRunning()
+        scanView.isHidden = true
         captureSession = nil
         videoPreviewLayer?.removeFromSuperlayer()
     }
@@ -97,11 +101,13 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
                 if !isReading {
                     if (self.startReading()) {
                         startBtn.setTitle("Stop", for: .normal)
+                        scanView.isHidden = false
                         msgLabel.text = "Scanning for QR Code..."
                     }
                 }
                 else {
                     stopReading()
+                    scanView.isHidden = true
                     startBtn.setTitle("Start", for: .normal)
                 }
                 isReading = !isReading

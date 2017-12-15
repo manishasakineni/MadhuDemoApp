@@ -15,6 +15,7 @@
 		350CCD1E1F88A5BE003495B6 /* IconTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350CCD1C1F88A5BE003495B6 /* IconTableViewCell.xib */; };
 		350D9B7D1FB715B3001332FC /* GetProfileVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D9B7C1FB715B3001332FC /* GetProfileVo.swift */; };
 		350D9B7F1FB7165D001332FC /* ProfileResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D9B7E1FB7165D001332FC /* ProfileResultVo.swift */; };
+		3515FA2C1FE3C4A9009D84E2 /* lang-ta.json in Resources */ = {isa = PBXBuildFile; fileRef = 3515FA2B1FE3C4A9009D84E2 /* lang-ta.json */; };
 		3524CE3B1F8D06B400959172 /* ImageTint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3524CE3A1F8D06B400959172 /* ImageTint.swift */; };
 		35344D931F8610C700E35C5C /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35344D7B1F8610C700E35C5C /* CustomDateFormatTransform.swift */; };
 		35344D941F8610C700E35C5C /* DataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35344D7C1F8610C700E35C5C /* DataTransform.swift */; };
@@ -49,8 +50,6 @@
 		35344DBD1F86824900E35C5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35344DBC1F86824900E35C5C /* GoogleService-Info.plist */; };
 		3535A3781FE29CD700F9DB53 /* lang-en-DE.json in Resources */ = {isa = PBXBuildFile; fileRef = 3535A3741FE29CD700F9DB53 /* lang-en-DE.json */; };
 		3535A3791FE29CD700F9DB53 /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 3535A3751FE29CD700F9DB53 /* lang-en.json */; };
-		3535A37A1FE29CD700F9DB53 /* lang-es.json in Resources */ = {isa = PBXBuildFile; fileRef = 3535A3761FE29CD700F9DB53 /* lang-es.json */; };
-		3535A37B1FE29CD700F9DB53 /* lang-fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 3535A3771FE29CD700F9DB53 /* lang-fr.json */; };
 		3535A37D1FE2A69800F9DB53 /* lang-si.json in Resources */ = {isa = PBXBuildFile; fileRef = 3535A37C1FE2A69800F9DB53 /* lang-si.json */; };
 		35374F291FA4616D009C98DE /* LoginResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35374F281FA4616D009C98DE /* LoginResultVo.swift */; };
 		3539E4521FB1972A005ACC7C /* SignUpResultVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3539E4511FB1972A005ACC7C /* SignUpResultVo.swift */; };
@@ -181,6 +180,7 @@
 		350CCD1C1F88A5BE003495B6 /* IconTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IconTableViewCell.xib; sourceTree = "<group>"; };
 		350D9B7C1FB715B3001332FC /* GetProfileVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProfileVo.swift; sourceTree = "<group>"; };
 		350D9B7E1FB7165D001332FC /* ProfileResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileResultVo.swift; sourceTree = "<group>"; };
+		3515FA2B1FE3C4A9009D84E2 /* lang-ta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-ta.json"; sourceTree = "<group>"; };
 		3524CE3A1F8D06B400959172 /* ImageTint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTint.swift; sourceTree = "<group>"; };
 		35344D7B1F8610C700E35C5C /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatTransform.swift; sourceTree = "<group>"; };
 		35344D7C1F8610C700E35C5C /* DataTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTransform.swift; sourceTree = "<group>"; };
@@ -216,8 +216,6 @@
 		35344DBC1F86824900E35C5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3535A3741FE29CD700F9DB53 /* lang-en-DE.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en-DE.json"; sourceTree = "<group>"; };
 		3535A3751FE29CD700F9DB53 /* lang-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en.json"; sourceTree = "<group>"; };
-		3535A3761FE29CD700F9DB53 /* lang-es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-es.json"; sourceTree = "<group>"; };
-		3535A3771FE29CD700F9DB53 /* lang-fr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-fr.json"; sourceTree = "<group>"; };
 		3535A37C1FE2A69800F9DB53 /* lang-si.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-si.json"; sourceTree = "<group>"; };
 		35374F281FA4616D009C98DE /* LoginResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResultVo.swift; sourceTree = "<group>"; };
 		3539E4511FB1972A005ACC7C /* SignUpResultVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpResultVo.swift; sourceTree = "<group>"; };
@@ -472,6 +470,8 @@
 				AF579E861FD6B50700A4E6E4 /* changePasswordViewController.swift */,
 				AF579E881FD6B5E700A4E6E4 /* EditBankProfileViewController.swift */,
 				AF579E761FD6AA1400A4E6E4 /* SavedCardsViewController.swift */,
+				AF579E701FD6A8A700A4E6E4 /* AddCardsViewController.swift */,
+				AF579E7C1FD6ABA000A4E6E4 /* OrderHistoryViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -496,9 +496,8 @@
 			children = (
 				3535A3741FE29CD700F9DB53 /* lang-en-DE.json */,
 				3535A3751FE29CD700F9DB53 /* lang-en.json */,
-				3535A3761FE29CD700F9DB53 /* lang-es.json */,
-				3535A3771FE29CD700F9DB53 /* lang-fr.json */,
 				3535A37C1FE2A69800F9DB53 /* lang-si.json */,
+				3515FA2B1FE3C4A9009D84E2 /* lang-ta.json */,
 			);
 			name = LanguageFiles;
 			sourceTree = "<group>";
@@ -626,10 +625,8 @@
 				3554C32A1F8F5DCD0092EAC7 /* SignOutTableViewCell.xib */,
 				3554C32B1F8F5DCD0092EAC7 /* LoginTableViewCell.swift */,
 				3554C32C1F8F5DCD0092EAC7 /* LoginTableViewCell.xib */,
-				AF579E701FD6A8A700A4E6E4 /* AddCardsViewController.swift */,
 				AF579E711FD6A8A700A4E6E4 /* AddCardsTableViewCell.swift */,
 				AF579E721FD6A8A700A4E6E4 /* AddCardsTableViewCell.xib */,
-				AF579E7C1FD6ABA000A4E6E4 /* OrderHistoryViewController.swift */,
 				AF579E7D1FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.swift */,
 				AF579E7E1FD6ABA000A4E6E4 /* OrderHistoryTableViewCell1.xib */,
 				354706421FE16A7B00F519C8 /* QRTableViewCell.swift */,
@@ -852,7 +849,6 @@
 				3554C3321F8F5DCD0092EAC7 /* TableViewCell1.xib in Resources */,
 				AF579E951FD6B63100A4E6E4 /* EditProfileTableViewCell3.xib in Resources */,
 				35485D881FB46DE900CDB076 /* CreditCardTableViewCell.xib in Resources */,
-				3535A37B1FE29CD700F9DB53 /* lang-fr.json in Resources */,
 				35E64C971F84DF5200E2CA65 /* Assets.xcassets in Resources */,
 				AF579E931FD6B63100A4E6E4 /* EditProfileTableViewCell2.xib in Resources */,
 				3535A3781FE29CD700F9DB53 /* lang-en-DE.json in Resources */,
@@ -870,9 +866,9 @@
 				3554C3381F8F5DCD0092EAC7 /* SignOutTableViewCell.xib in Resources */,
 				350CCD161F88A516003495B6 /* HomeTableViewCell.xib in Resources */,
 				AF579E7B1FD6AA1400A4E6E4 /* SavedTableViewCell.xib in Resources */,
+				3515FA2C1FE3C4A9009D84E2 /* lang-ta.json in Resources */,
 				3554C3341F8F5DCD0092EAC7 /* TableViewCell2.xib in Resources */,
 				35E64C951F84DF5200E2CA65 /* Main.storyboard in Resources */,
-				3535A37A1FE29CD700F9DB53 /* lang-es.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1155,8 +1151,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Nagender Kodali (S5M9P6PHFH)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nagender Kodali (S5M9P6PHFH)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 6KY3CH8YG8;
@@ -1179,7 +1175,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "a36b1df5-260d-4bb6-86f7-7d004cbfac7f";
+				PROVISIONING_PROFILE = "1f3b747b-95fb-4a80-a2a4-c8ab5c48e1ec";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1210,8 +1206,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Nagender Kodali (S5M9P6PHFH)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nagender Kodali (S5M9P6PHFH)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 6KY3CH8YG8;
@@ -1227,7 +1223,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "a36b1df5-260d-4bb6-86f7-7d004cbfac7f";
+				PROVISIONING_PROFILE = "1f3b747b-95fb-4a80-a2a4-c8ab5c48e1ec";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1242,16 +1238,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Nagender Kodali (S5M9P6PHFH)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nagender Kodali (S5M9P6PHFH)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
 				DEVELOPMENT_TEAM = 6KY3CH8YG8;
 				INFOPLIST_FILE = PayZan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PayZan.PayZanCustomer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a36b1df5-260d-4bb6-86f7-7d004cbfac7f";
-				PROVISIONING_PROFILE_SPECIFIER = PayZanCustomerDevelopmentProfile;
+				PROVISIONING_PROFILE = "1f3b747b-95fb-4a80-a2a4-c8ab5c48e1ec";
+				PROVISIONING_PROFILE_SPECIFIER = PayZanCustomerDistribution;
 				SWIFT_OBJC_BRIDGING_HEADER = "PayZan/PayZan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1265,16 +1261,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Nagender Kodali (S5M9P6PHFH)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nagender Kodali (S5M9P6PHFH)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nagender Kodali (6KY3CH8YG8)";
 				DEVELOPMENT_TEAM = 6KY3CH8YG8;
 				INFOPLIST_FILE = PayZan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PayZan.PayZanCustomer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a36b1df5-260d-4bb6-86f7-7d004cbfac7f";
-				PROVISIONING_PROFILE_SPECIFIER = PayZanCustomerDevelopmentProfile;
+				PROVISIONING_PROFILE = "1f3b747b-95fb-4a80-a2a4-c8ab5c48e1ec";
+				PROVISIONING_PROFILE_SPECIFIER = PayZanCustomerDistribution;
 				SWIFT_OBJC_BRIDGING_HEADER = "PayZan/PayZan-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

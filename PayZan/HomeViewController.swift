@@ -16,7 +16,8 @@ var imageArray1 = [UIImage(named:"mobileImg"),UIImage(named:"landlineImg"),UIIma
 var imageArray2 = [UIImage(named:"mobile"),UIImage(named:"landline"),UIImage(named:"electricity"),UIImage(named:"event"),UIImage(named:"sport"),UIImage(named:"television"),UIImage(named:"water-tap"),UIImage(named:"internet")]
 //for label names
 
-var namesarra1 = ["Mobile","Landline","DTH","Broadband","Cable TV","Electricity","Water","Data Card"]
+//var namesarra1 = ["Mobile","Landline","DTH","Broadband","Cable TV","Electricity","Water","Data Card"]
+var namesarra1 = [String]()
 
 var namesarra2 = ["Water","Landline","Electricity","Events","Sports","DTH","Mobile","Internet"]
 
@@ -24,7 +25,7 @@ var namesarra3 = ["Mobile","Landline","Electricity","Events","Sports","DTH","Wat
 
 //for heading names
 
-var namesarra4 = ["  RECHARGE AND BILL PAYMENT","  BOOK ON PAYZAN","  Mera Cashback Sale"]
+var namesarra4 = [String]()
 
 class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableViewDelegate,UITableViewDataSource,SWRevealViewControllerDelegate,UIScrollViewDelegate,UITabBarDelegate {
     
@@ -73,7 +74,9 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        namesarra4 = ["HRECHARGEANDBILLPAYMENT".localize(value: "Your HRECHARGEANDBILLPAYMENT"),"  BOOK ON PAYZAN","  Mera Cashback Sale"]
         
+        namesarra1 = ["HMobile".localize(value: "Your HMobile"),"HLandline".localize(value: "Your HLandline"),"HDTH".localize(value: "Your HDTH"),"HBroadband".localize(value: "Your HBroadband"),"HCableTV".localize(value: "Your HCableTV"),"HElectricity".localize(value: "Your HElectricity"),"HWater".localize(value: "Your HWater"),"HDataCard".localize(value: "Your HDataCard")]
         
         let defaults = UserDefaults.standard
         
@@ -86,7 +89,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             
             if let tabStrings = self.tabBarController?.tabBar.items
             {
-                tabStrings[1].title = "My Profile"
+                tabStrings[1].title = "MyProfile".localize(value: "My Profile")
             }
 
             
@@ -275,6 +278,8 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             walletLabel.text = walletBal
             
             print("defaults savedString: \(walletAmount)")
+            
+            
         }
         
         super.viewDidAppear(true)
@@ -282,6 +287,14 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
+        
+        namesarra4 = ["HRECHARGEANDBILLPAYMENT".localize(value: "Your HRECHARGEANDBILLPAYMENT"),"BOOKONPAYZAN".localize(value: "Your HRECHARGEANDBILLPAYMENT"),"MeraCashbackSale".localize(value: "Your HRECHARGEANDBILLPAYMENT")]
+        
+        namesarra1 = ["HMobile".localize(value: "Your HMobile"),"HLandline".localize(value: "Your HLandline"),"HDTH".localize(value: "Your HDTH"),"HBroadband".localize(value: "Your HBroadband"),"HCableTV".localize(value: "Your HCableTV"),"HElectricity".localize(value: "Your HElectricity"),"HWater".localize(value: "Your HWater"),"HDataCard".localize(value: "Your HDataCard")]
+        
+        tableView.reloadData()
         
 //        self.tabBarController?.tabBar.isHidden = false
         
@@ -294,6 +307,12 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             walletLabel.text = walletBal
             
             print("defaults savedString: \(walletAmount)")
+            
+            if let tabStrings = self.tabBarController?.tabBar.items
+            {
+                tabStrings[1].title = "MyProfile".localize(value: "My Profile")
+            }
+            
         }
 
     }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="17A365" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="seY-KT-opP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="seY-KT-opP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,6 +68,9 @@
                                 <state key="normal" title="Can not Login..?">
                                     <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.CannotLogin"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSL-Ji-4qN">
                                 <rect key="frame" x="27" y="303" width="322" height="40"/>
@@ -97,6 +100,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                         <color key="textColor" red="0.40445570359999999" green="0.40846021560000001" blue="0.40846021560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Donthaveaccount"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAV-w1-peO">
                                         <rect key="frame" x="131" y="8" width="58" height="24"/>
@@ -133,6 +139,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" red="0.40445570359999999" green="0.40846021560000001" blue="0.40846021560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.or"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c75-Ec-7G0">
                                 <rect key="frame" x="49" y="439" width="276" height="30"/>
@@ -181,6 +190,9 @@
                                         <state key="normal" title="Term's &amp; Condition's">
                                             <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.TermCondition"/>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By loging in, you accept our" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUT-ua-mys">
                                         <rect key="frame" x="32" y="11" width="137" height="20"/>
@@ -191,6 +203,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                         <color key="textColor" red="0.40445570359999999" green="0.40846021560000001" blue="0.40846021560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Byloginginyouacceptour"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRJ-d4-sbV">
                                         <rect key="frame" x="256" y="14" width="24" height="13"/>
@@ -201,6 +216,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                         <color key="textColor" red="0.40445570359999999" green="0.40846021560000001" blue="0.40846021560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.and"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bon-tx-trF">
                                         <rect key="frame" x="276" y="10" width="69" height="20"/>
@@ -212,6 +230,9 @@
                                         <state key="normal" title="Privacy Policy">
                                             <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.PrivacyPolicy"/>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFI-jg-e5R">
                                         <rect key="frame" x="142" y="0.0" width="0.0" height="43"/>
@@ -377,6 +398,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.AddWithdraw"/>
+                                        </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         </variation>
@@ -400,6 +424,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.PaySend"/>
+                                        </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         </variation>
@@ -409,6 +436,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.MyTransactions"/>
+                                        </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         </variation>
@@ -648,6 +678,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.EditProfile"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DyX-cI-nt1">
                                         <rect key="frame" x="268" y="0.0" width="46" height="40"/>
@@ -736,7 +769,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.Mobile Number"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.MobileNumber"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Create a Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lSf-cX-7eM">
@@ -764,6 +797,9 @@
                                         <state key="normal" title="Term's &amp; Condition's">
                                             <color key="titleColor" red="0.43573520116999664" green="0.050304071860899205" blue="0.0012372610516671861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.TermCondition"/>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On Sign Up, you accept our" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnQ-K0-ESa">
                                         <rect key="frame" x="34" y="10" width="139" height="21"/>
@@ -774,6 +810,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                         <color key="textColor" red="0.40445570364880706" green="0.408460215566122" blue="0.408460215566122" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.OnSignUpyouacceptour"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgl-br-GGf">
                                         <rect key="frame" x="248" y="14" width="28" height="13"/>
@@ -784,6 +823,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                         <color key="textColor" red="0.40445570359999999" green="0.40846021560000001" blue="0.40846021560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.and"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y27-ng-8mR">
                                         <rect key="frame" x="272" y="10" width="73" height="20"/>
@@ -795,6 +837,9 @@
                                         <state key="normal" title="Privacy Policy">
                                             <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.PrivacyPolicy"/>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RS-fs-5kE">
                                         <rect key="frame" x="142.5" y="0.0" width="0.0" height="43"/>
@@ -868,6 +913,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                         <color key="textColor" red="0.40445570359999999" green="0.40846021560000001" blue="0.40846021560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Alreadyhaveanaccount"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -887,6 +935,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" red="0.40445570359999999" green="0.40846021560000001" blue="0.40846021560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.or"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pa3-Sj-e5k">
                                 <rect key="frame" x="59" y="457" width="267" height="30"/>
@@ -930,6 +981,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.Email"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toA-2X-qbw">
                                 <rect key="frame" x="0.0" y="79" width="375" height="40"/>
@@ -957,6 +1011,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.SignUp"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.50196078431372548" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1466,6 +1523,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.MyProfile"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.50196078431372548" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1549,6 +1609,7 @@
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
                                 <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Home"/>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1590,7 +1651,11 @@
         <scene sceneID="IYG-Bl-mlM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="rWA-Rt-rtK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wallet" image="addMoneyWalletPng" selectedImage="addMoneyWalletPng" id="CIv-NA-Xpz"/>
+                    <tabBarItem key="tabBarItem" title="Wallet" image="addMoneyWalletPng" selectedImage="addMoneyWalletPng" id="CIv-NA-Xpz">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Wallet"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HiU-Ff-lBp">
@@ -1610,7 +1675,11 @@
         <scene sceneID="cLA-vB-ekh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="bJF-fQ-vJh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Offers" image="offersPng" selectedImage="offersPng" id="7Ov-Qq-6Qr"/>
+                    <tabBarItem key="tabBarItem" title="Offers" image="offersPng" selectedImage="offersPng" id="7Ov-Qq-6Qr">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Offers"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yIj-u9-loA">
@@ -2126,6 +2195,9 @@
                                         <state key="normal" title="Proceed to Pay Bill" backgroundImage="buttonColor">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.ProceedtoPayBill"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="payNowAction:" destination="ztm-tg-F9G" eventType="touchUpInside" id="ydH-8a-MtL"/>
                                         </connections>
@@ -2546,6 +2618,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.SubscriberID"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropMenu" translatesAutoresizingMaskIntoConstraints="NO" id="fcu-Lf-loV">
                                         <rect key="frame" x="306" y="69" width="30" height="22"/>
@@ -2563,7 +2638,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="SelectOperator"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.SelectOperator"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-oP-bV6">
@@ -2758,6 +2833,9 @@
                                                 <state key="normal" title="Proceed to Pay Bill" backgroundImage="buttonColor">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.ProceedtoPayBill"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="payNowAction:" destination="ADG-F4-MPn" eventType="touchUpInside" id="a7O-6Q-lIr"/>
                                                 </connections>
@@ -2772,7 +2850,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Offers Section"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.OffersSection"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
@@ -3164,7 +3242,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.SelectCircle"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.Amount"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Select Operator" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yTD-Kv-ymc">
@@ -3313,6 +3391,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.MyWallet"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VqT-vc-9gG">
                                         <rect key="frame" x="5" y="9" width="46" height="20"/>
@@ -3353,6 +3434,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.WalletBalance"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUp-hK-6CJ">
                                         <rect key="frame" x="221" y="56" width="86" height="21"/>
@@ -3420,6 +3504,9 @@
                                                 <state key="normal" title="All">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.All"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="allBtnAction:" destination="olS-Sq-Nuz" eventType="touchUpInside" id="XCD-Pr-1bq"/>
                                                 </connections>
@@ -3431,6 +3518,9 @@
                                                 <state key="normal" title="Paid">
                                                     <color key="titleColor" red="0.49126976729999999" green="0.1146827117" blue="0.21897879240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Paid"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="paidBtnAction:" destination="olS-Sq-Nuz" eventType="touchUpInside" id="XCS-tj-UXG"/>
                                                 </connections>
@@ -3442,6 +3532,9 @@
                                                 <state key="normal" title="Received">
                                                     <color key="titleColor" red="0.49126976729999999" green="0.1146827117" blue="0.21897879240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Received"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="receivedAction:" destination="olS-Sq-Nuz" eventType="touchUpInside" id="Ja1-x5-5dS"/>
                                                 </connections>
@@ -3453,6 +3546,9 @@
                                                 <state key="normal" title="Added">
                                                     <color key="titleColor" red="0.49126976729999999" green="0.1146827117" blue="0.21897879240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Added"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="addedBtnAction:" destination="olS-Sq-Nuz" eventType="touchUpInside" id="djd-Z1-5xg"/>
                                                 </connections>
@@ -3520,7 +3616,7 @@
                                             <action selector="thousandBtnAction:" destination="olS-Sq-Nuz" eventType="touchUpInside" id="gpO-J1-U15"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N4n-h0-aHf">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N4n-h0-aHf">
                                         <rect key="frame" x="30" y="93" width="315" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="yCk-Dm-Qge"/>
@@ -3528,6 +3624,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.Amount"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Promo code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AaI-XU-MYE">
                                         <rect key="frame" x="30" y="145" width="315" height="31"/>
@@ -3537,6 +3636,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.EnterPromocode"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZp-OG-lOq">
                                         <rect key="frame" x="30" y="204" width="315" height="40"/>
@@ -3547,6 +3649,9 @@
                                         <state key="normal" title="Add Money" backgroundImage="buttonColor">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.AddMoney"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="addMoneyAction:" destination="olS-Sq-Nuz" eventType="touchUpInside" id="9HY-bT-t3K"/>
                                         </connections>
@@ -3585,6 +3690,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.MobileNumber"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Yi-nl-E7Q">
                                         <rect key="frame" x="30" y="81" width="316" height="30"/>
@@ -3594,6 +3702,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.Amount"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Comments(Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kCr-ao-ads">
                                         <rect key="frame" x="30" y="133" width="316" height="30"/>
@@ -3603,6 +3714,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.CommentOptional"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3b-0D-xLU">
                                         <rect key="frame" x="30" y="211" width="317" height="40"/>
@@ -3613,6 +3727,9 @@
                                         <state key="normal" title=" Send Money" backgroundImage="buttonColor">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.SendMoney"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="sendMoneyAction:" destination="olS-Sq-Nuz" eventType="touchUpInside" id="5S2-S7-nWh"/>
                                         </connections>
@@ -3891,6 +4008,9 @@
                                 <state key="normal" title="Proceed to Pay Bill" backgroundImage="buttonColor">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.ProceedtoPayBill"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="payNowButtonAction:" destination="YfQ-6k-OWb" eventType="touchUpInside" id="3iS-Km-nH3"/>
                                 </connections>
@@ -4064,6 +4184,9 @@
                                         <state key="normal" title="Proceed to Pay Bill" backgroundImage="buttonColor">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.ProceedtoPayBill"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="proceedToPayButtonAction:" destination="evL-fb-znC" eventType="touchUpInside" id="Gzt-L8-lw0"/>
                                         </connections>
@@ -4097,7 +4220,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.ConsumerNumber "/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizePlaceholder" value="app.ConsumerNumber"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
@@ -4315,6 +4438,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.AgentRequest"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcI-Xq-Eoh">
                                         <rect key="frame" x="268" y="0.0" width="46" height="40"/>
@@ -5153,7 +5279,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="OeZ-I4-L3v"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Change Password" backgroundImage="buttonColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -5183,6 +5309,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.YouwillneedReLogin"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note: Once the password change is successful,                                         " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbK-Fp-Efe">
                                 <rect key="frame" x="61.5" y="407" width="265" height="20"/>
@@ -5193,6 +5322,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Oncethepasswordchangeissuccessful"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u63-fl-o3u">
                                 <rect key="frame" x="305" y="222.5" width="14" height="14"/>
@@ -5407,6 +5539,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.Nobarcodecaptured"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvg-j2-bvS">
                                 <rect key="frame" x="0.0" y="375" width="375" height="30"/>
@@ -5418,10 +5553,17 @@
                                 <state key="normal" title="SCAN BARCODE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="app.SCANBARCODE"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="scanBtnAction:" destination="XEW-Nx-rb0" eventType="touchUpInside" id="gD9-Yq-mfc"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPL-a2-jJK">
+                                <rect key="frame" x="0.0" y="117" width="375" height="550"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -5433,8 +5575,12 @@
                             <constraint firstAttribute="trailing" secondItem="aol-Kz-CzQ" secondAttribute="trailing" id="Hy0-0T-AFI"/>
                             <constraint firstItem="aol-Kz-CzQ" firstAttribute="leading" secondItem="VF9-fm-kQT" secondAttribute="leading" id="JKc-ZX-C6r"/>
                             <constraint firstItem="Pvg-j2-bvS" firstAttribute="top" secondItem="bLt-VL-PVK" secondAttribute="bottom" constant="23" id="N1r-Jy-cWJ"/>
+                            <constraint firstItem="tPL-a2-jJK" firstAttribute="top" secondItem="aol-Kz-CzQ" secondAttribute="bottom" constant="-2" id="ToD-hw-ODZ"/>
                             <constraint firstItem="aol-Kz-CzQ" firstAttribute="leading" secondItem="Ogq-K8-VeP" secondAttribute="trailing" constant="-66" id="WV7-nC-wwM"/>
+                            <constraint firstItem="L7X-ba-E9l" firstAttribute="top" secondItem="tPL-a2-jJK" secondAttribute="bottom" id="cyO-gw-KQ0"/>
+                            <constraint firstItem="tPL-a2-jJK" firstAttribute="leading" secondItem="VF9-fm-kQT" secondAttribute="leading" id="dwo-9H-CQS"/>
                             <constraint firstAttribute="trailing" secondItem="7eq-Dw-dkD" secondAttribute="trailing" id="e6J-8l-Sa5"/>
+                            <constraint firstAttribute="trailing" secondItem="tPL-a2-jJK" secondAttribute="trailing" id="hkj-fi-8tq"/>
                             <constraint firstAttribute="trailing" secondItem="Pvg-j2-bvS" secondAttribute="trailing" id="kJL-jh-pY2"/>
                             <constraint firstItem="Pvg-j2-bvS" firstAttribute="leading" secondItem="VF9-fm-kQT" secondAttribute="leading" id="ltx-rq-CVI"/>
                             <constraint firstItem="aol-Kz-CzQ" firstAttribute="top" secondItem="7eq-Dw-dkD" secondAttribute="bottom" id="nsT-Jx-8CS"/>
@@ -5445,6 +5591,7 @@
                     <connections>
                         <outlet property="headerImgHeight" destination="2kx-Jo-RBs" id="cca-pq-JoJ"/>
                         <outlet property="msgLabel" destination="bLt-VL-PVK" id="Gxv-Gz-7YF"/>
+                        <outlet property="scanView" destination="tPL-a2-jJK" id="QLh-dh-wFZ"/>
                         <outlet property="startBtn" destination="Pvg-j2-bvS" id="9N4-Be-MQ9"/>
                     </connections>
                 </viewController>

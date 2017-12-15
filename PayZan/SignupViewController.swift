@@ -312,10 +312,23 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
 
     @IBAction func loginAction(_ sender: Any) {
         
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = viewController
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = viewController
+        
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        
+//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
+//        //                    let navigationController = UINavigationController(rootViewController: viewController)
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = viewController
+        
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+//        self.navigationController?.popViewController(animated: true)
         
     }
     

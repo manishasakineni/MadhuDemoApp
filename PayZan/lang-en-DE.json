@@ -1,4 +1,23 @@
 {
+    "SCards" : "Saved Cards",
+    "OHistory" : "Order History",
+    "CPassword" : "Change Password",
+    "AUs" : "About Us",
+    "Support" : "Support",
+    "TService" : "Terms Of Service",
+    "CLanguage" : "Choose Language",
+    
+    "HMobile" : "Mobile",
+    "HLandline" : "Landline",
+    "HDTH" : "DTH",
+    "HBroadband" : "Broadband",
+    "HCableTV" : "Cable TV",
+    "HElectricity" : "Electricity",
+    "HWater" : "Water",
+    "HDataCard" : "Data Card",
+    "HRECHARGEANDBILLPAYMENT" : "RECHARGE AND BILL PAYMENT",
+    "HMyProfile" : "My Profile",
+    
     "app" : {
         "ReTypeNewPassword" : "Re-Type New Password",
         "Amount" : "Amount",
@@ -30,7 +49,6 @@
         "SelectOperator" : "Select Operator",
         "CableTV" : "CableTV",
         "CannotLogin" : "Cannot Login?",
-        "MyProfile" : "My Profile",
         "Broadband" : "Broadband",
         "AddNewCard" : "Add New Card",
         "Added" : "Added",
@@ -40,7 +58,7 @@
         "SignUp" : "SignUp",
         "DatacardNumber" : "Datacard Number",
         "SigninwithGoogle" : "Signin with Google",
-        "wallet" : "wallet",
+        "Wallet" : "Wallet",
         "TermCondition" : "Term's & Condition's",
         "and" : "and",
         "SendMoney" : "Send Money",
@@ -58,7 +76,7 @@
         "SelectBoard" : "Select Board",
         "ChangePassword" : "Change Password",
         "Signup" : "SignUp",
-        "Credit Card" : "Credit Card",
+        "CreditCard" : "Credit Card",
         "Home" : "Home",
         "Login" : "Login",
         "CompleteYourPayment" : "Complete Your Payment",
@@ -82,7 +100,46 @@
         "All" : "All",
         "Alreadyhaveanaccount" : "Already have an account?",
         "Received" : "Received",
-        "NetBanking" : "NetBanking"
+        "NetBanking" : "NetBanking",
+        
+        "SubscriberID" : "Subscriber ID",
+        "ProceedtoPayBill" : "Proceed to Pay Bill",
+        
+        "SCANBARCODE" : "SCANBARCODE",
+        "Nobarcodecaptured" : "No barcode captured",
+        "PaySend" : "Pay/Send",
+        "AddWithdraw" : "Add Withdraw",
+        "MyTransactions" : "My Transactions",
+        "AgentRequest" : "Agent Request",
+        
+        "FirstName" : "First Name",
+        "LastName" : "Last Name",
+        "ChangePhoto" : "Change Photo",
+        "UserName" : "User Name",
+        "Gender" : "Gender",
+        "Female" : "Female",
+        "Male" : "Male",
+        "Save" : "Save",
+        "Signout" : "Sign out",
+        "LogintoPayZan" : "Login to PayZan",
+        "CreateaNewAccount" : "Create a New Account",
+        "AddNewCards" : "Add New Cards",
+        "ScanQR" : "ScanQR",
+        "Share" : "Share",
+        "NewPassword" : "New Password",
+        "YouwillneedReLogin" : "You will need Re-Login",
+        "Oncethepasswordchangeissuccessful" : "Note:Once the password change is successful",
+        "MyWallet" : "My Wallet",
+        "WalletBalance" : "Wallet Balance:",
+        
+        "Byloginginyouacceptour" : "By loging in, you accept our",
+        "or" : "or",
+        "Donthaveaccount" : "Don't have account...?",
+        "Email" : "Email",
+        "OnSignUpyouacceptour" : "On SignUp, you accept our",
+        "PartnerwithPayzan" : "Partner with Payzan",
+        "ChooseLanguage": "Choose Language"
+        
         
         
     }

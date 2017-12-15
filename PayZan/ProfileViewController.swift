@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize
 
 class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,ViewControllerBDelegate {
 
@@ -32,7 +33,9 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     var toolBar = UIToolbar()
     var pickerData : Array<String> = Array()
     
-    var listArr = ["Saved Cards","Order History","Change Password","About Us","Support","Terms Of Service","Choose Language"]
+//    var listArr = ["Saved Cards","Order History","Change Password","About Us","Support","Terms Of Service","Choose Language"]
+    
+    var listArr = [String]()
     
     var imageArray1 = [UIImage(named:"savedCards"),UIImage(named:"orderHistory"),UIImage(named:"changePassword"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us"),UIImage(named:"about_us")]
     
@@ -119,10 +122,26 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             
         }
         
+        localize()
+        
+        
+       listArr =  ["SCards".localize(value: "Your SCards"),"OHistory".localize(value: "Your OHistory"),"CPassword".localize(value: "Your CPassword"),"AUs".localize(value: "Your AUs"),"Support".localize(value: "Your Support"),"TService".localize(value: "Your TService"),"CLanguage".localize(value: "Your CLanguage")]
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func localize() {
+        
+//                yourLabel.text = "app.names".localize(values: "mark", "henrry", "peater")
+        
+        print("app.names".localize(values: "mani", "manoj", "peater"))
+        
+        print("username".localize(value: "Your username"))
+        
+//                otherLabel.text = "app.username".localize(value: "Your username")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -135,7 +154,9 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+      listArr = ["SCards".localize(value: "Your SCards"),"OHistory".localize(value: "Your OHistory"),"CPassword".localize(value: "Your CPassword"),"AUs".localize(value: "Your AUs"),"Support".localize(value: "Your Support"),"TService".localize(value: "Your TService"),"CLanguage".localize(value: "Your CLanguage")]
         
+        profileTVC.reloadData()
         
         let defaults = UserDefaults.standard
         
@@ -294,7 +315,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             
             if let tabStrings = self.tabBarController?.tabBar.items
             {
-                tabStrings[1].title = "My Profile"
+                tabStrings[1].title = "MyProfile".localize(value: "My Profile")
             }
             
              let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
@@ -366,7 +387,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 
                 if let tabStrings = self.tabBarController?.tabBar.items
                 {
-                    tabStrings[1].title = "Login"
+                    tabStrings[1].title = "Login".localize(value: "Login")
                 }
                 
                 cell.signOutBtn.addTarget(self, action: #selector(self.signOutClicked), for: .touchUpInside)
@@ -377,7 +398,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                     
                 if let tabStrings = self.tabBarController?.tabBar.items
                 {
-                    tabStrings[1].title = "My Profile"
+                    tabStrings[1].title = "MyProfile".localize(value: "My Profile")
                 }
                 
 //            let cell = Bundle.main.loadNibNamed("SignOutTableViewCell", owner: self, options: nil)?.first as! SignOutTableViewCell
@@ -464,12 +485,54 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             else if indexPath.row == 6 {
                 
                
-                let LanguageVW = storyboard?.instantiateViewController(withIdentifier: "LanguageVW")
-                self.navigationController?.pushViewController(LanguageVW!, animated: true)
+//                let LanguageVW = storyboard?.instantiateViewController(withIdentifier: "LanguageVW")
+//                self.navigationController?.pushViewController(LanguageVW!, animated: true)
+                
+//                listArr.removeAll()
+                
+                let actionSheet = UIAlertController(title: nil, message: "app.ChooseLanguage".localize(), preferredStyle: .actionSheet)
+                for language in Localize.availableLanguages() {
+                    let displayName = Localize.displayNameForLanguage(language)
+                    let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
+                        (alert: UIAlertAction!) -> Void in
+                        Localize.update(language: language)
+                        
+                        self.listArr = ["SCards".localize(value: "Your SCards"),"OHistory".localize(value: "Your OHistory"),"CPassword".localize(value: "Your CPassword"),"AUs".localize(value: "Your AUs"),"Support".localize(value: "Your Support"),"TService".localize(value: "Your TService"),"CLanguage".localize(value: "Your CLanguage")]
+                        
+                        self.profileTVC.reloadData()
+                        
+                    })
+                    actionSheet.addAction(languageAction)
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {
+                    (alert: UIAlertAction) -> Void in
+                })
+                actionSheet.addAction(cancelAction)
+                
+                
+//                self.present(actionSheet, animated: true, completion: nil)
+                
+                
+                if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.phone) {
+                    
+                    
+                    self.present(actionSheet, animated: true, completion: nil)
+                }
+                    
+                else{
+                    
+                    let popup = UIPopoverController.init(contentViewController: actionSheet)
+                    
+                    popup.present(from: CGRect(x:self.view.frame.size.width/2, y:self.view.frame.size.height/4, width:0, height:0), in: self.view, permittedArrowDirections: UIPopoverArrowDirection.any, animated: true)
+                    
+                    // CGRect(x: 0, y: 0, width: 100, height: 100)
+                }
                 
             }
             
+            listArr = ["SCards".localize(value: "Your SCards"),"OHistory".localize(value: "Your OHistory"),"CPassword".localize(value: "Your CPassword"),"AUs".localize(value: "Your AUs"),"Support".localize(value: "Your Support"),"TService".localize(value: "Your TService"),"CLanguage".localize(value: "Your CLanguage")]
             
+            self.profileTVC.reloadData()
             
           }
     
@@ -482,7 +545,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
         let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
         
-        editViewController.image = UIImage[named:"user"]
+        editViewController.image = UIImage(named:"user")
         
         
         self.navigationController?.pushViewController(editViewController, animated: true)
@@ -599,7 +662,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             
             if let tabStrings = self.tabBarController?.tabBar.items
             {
-                tabStrings[1].title = "My Profile"
+                tabStrings[1].title = "MyProfile".localize(value: "My Profile")
             }
             
         }
@@ -609,7 +672,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             
             if let tabStrings = self.tabBarController?.tabBar.items
             {
-                tabStrings[1].title = "Login"
+                tabStrings[1].title = "Login".localize(value: "Login")
                 
                         if UserDefaults.standard.object(forKey: accessToken) != nil {
                 

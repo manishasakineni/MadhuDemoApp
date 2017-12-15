@@ -62,7 +62,7 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBarController?.tabBar.isHidden = true
+//        self.tabBarController?.tabBar.isHidden = true
         
         networkField.delegate = self
         
@@ -74,14 +74,17 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
         mobileField.layer.borderWidth = 0.5
         mobileField.layer.borderColor = UIColor.lightGray.cgColor
         mobileField.layer.cornerRadius = 3
+        mobileField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         networkField.layer.borderWidth = 0.5
         networkField.layer.borderColor = UIColor.lightGray.cgColor
         networkField.layer.cornerRadius = 3
+        networkField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         planField.layer.borderWidth = 0.5
         planField.layer.borderColor = UIColor.lightGray.cgColor
         planField.layer.cornerRadius = 3
+        planField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -105,7 +108,7 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
         
         //        headerView.isHidden = false
         
-        self.tabBarController?.tabBar.isHidden = true
+//        self.tabBarController?.tabBar.isHidden = true
         
         super.viewDidAppear(true)
     }
@@ -230,8 +233,8 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
     
     @IBAction func rechargeAction(_ sender: Any) {
         
-        let rechargeViewController = self.storyboard?.instantiateViewController(withIdentifier: "PayzAppViewController") as! PayzAppViewController
-        self.navigationController?.pushViewController(rechargeViewController, animated: true)
+//        let rechargeViewController = self.storyboard?.instantiateViewController(withIdentifier: "PayzAppViewController") as! PayzAppViewController
+//        self.navigationController?.pushViewController(rechargeViewController, animated: true)
 
     }
     
