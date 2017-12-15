@@ -482,7 +482,8 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
         let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
         
-       
+        editViewController.image = UIImage[named:"user"]
+        
         
         self.navigationController?.pushViewController(editViewController, animated: true)
     }
