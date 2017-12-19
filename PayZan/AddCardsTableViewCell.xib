@@ -56,7 +56,7 @@
                             <constraint firstAttribute="width" constant="20" id="20n-Vq-0po"/>
                             <constraint firstAttribute="height" constant="20" id="TrY-jF-SFy"/>
                         </constraints>
-                        <state key="normal" title="Button" image="payment_lock_icon"/>
+                        <state key="normal" title="Button" image="bank icon"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-6F-y0f">
                         <rect key="frame" x="53" y="170" width="221" height="30"/>
@@ -132,7 +132,7 @@
                             <constraint firstAttribute="width" constant="20" id="TWH-uK-kkJ"/>
                             <constraint firstAttribute="height" constant="20" id="oLP-k4-48u"/>
                         </constraints>
-                        <state key="normal" title="Button" image="payment_lock_icon"/>
+                        <state key="normal" title="Button" image="bank icon"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iru-Fz-KgK">
                         <rect key="frame" x="2" y="72" width="316" height="2"/>
@@ -176,7 +176,7 @@
                             <constraint firstAttribute="height" constant="20" id="qHO-Bc-fie"/>
                             <constraint firstAttribute="width" constant="20" id="u8z-5G-z9V"/>
                         </constraints>
-                        <state key="normal" title="Button" image="payment_lock_icon"/>
+                        <state key="normal" title="Button" image="bank icon"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fr-A1-IbM">
                         <rect key="frame" x="2" y="111" width="316" height="2"/>
@@ -220,7 +220,7 @@
                             <constraint firstAttribute="width" constant="20" id="d6P-pG-Uvg"/>
                             <constraint firstAttribute="height" constant="20" id="u1R-EL-JoA"/>
                         </constraints>
-                        <state key="normal" title="Button" image="payment_lock_icon"/>
+                        <state key="normal" title="Button" image="bank icon"/>
                     </button>
                 </subviews>
                 <constraints>
@@ -279,6 +279,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="bank icon" width="128" height="81"/>
         <image name="edit" width="30" height="30"/>
         <image name="payment_del_icon" width="13" height="15"/>
         <image name="payment_lock_icon" width="14" height="19"/>

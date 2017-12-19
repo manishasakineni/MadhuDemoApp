@@ -488,7 +488,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  PAYZAN WALLET" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lc8-SI-edm">
-                                        <rect key="frame" x="1" y="4" width="110" height="14.5"/>
+                                        <rect key="frame" x="14" y="4" width="110" height="14.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -498,7 +498,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.3380244006849315" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="lc8-SI-edm" firstAttribute="leading" secondItem="3cy-ij-H1D" secondAttribute="leading" constant="1" id="99u-lA-7Rz"/>
+                                    <constraint firstItem="lc8-SI-edm" firstAttribute="leading" secondItem="3cy-ij-H1D" secondAttribute="leading" constant="14" id="99u-lA-7Rz"/>
                                     <constraint firstItem="CQa-pk-QVL" firstAttribute="top" secondItem="3cy-ij-H1D" secondAttribute="top" constant="5" id="CQg-NM-SSq"/>
                                     <constraint firstAttribute="bottom" secondItem="lc8-SI-edm" secondAttribute="bottom" constant="5.5" id="Qzr-71-3ft"/>
                                     <constraint firstAttribute="bottom" secondItem="CQa-pk-QVL" secondAttribute="bottom" constant="4" id="UcH-ie-HAL"/>
@@ -1611,7 +1611,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wSF-Zb-qo8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wSF-Zb-qo8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1631,7 +1631,7 @@
                     <tabBarItem key="tabBarItem" title="My Profile" image="myProfilePng" selectedImage="myProfilePng" id="zJf-Ao-MRt"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mt6-f4-R4S">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mt6-f4-R4S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1655,7 +1655,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HiU-Ff-lBp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HiU-Ff-lBp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1679,7 +1679,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yIj-u9-loA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yIj-u9-loA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -5080,8 +5080,8 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wB-CZ-ade">
                                         <rect key="frame" x="63" y="9.5" width="92" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="ieb-0S-fdB"/>
-                                            <constraint firstAttribute="width" constant="92" id="q7U-pI-3ac"/>
+                                            <constraint firstAttribute="width" constant="92" id="Ra3-Ke-CgC"/>
+                                            <constraint firstAttribute="height" constant="21" id="fb3-2j-y7s"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -5093,10 +5093,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="5wB-CZ-ade" firstAttribute="centerY" secondItem="HN5-bw-GKT" secondAttribute="centerY" id="FIx-xk-a0f"/>
-                                    <constraint firstItem="5wB-CZ-ade" firstAttribute="centerX" secondItem="HN5-bw-GKT" secondAttribute="centerX" constant="-78.5" id="fQU-6G-XSI"/>
+                                    <constraint firstItem="5wB-CZ-ade" firstAttribute="leading" secondItem="hNE-tg-qd4" secondAttribute="trailing" constant="3" id="a2M-kO-NnO"/>
                                     <constraint firstItem="hNE-tg-qd4" firstAttribute="top" secondItem="HN5-bw-GKT" secondAttribute="top" constant="5" id="fig-fE-bvq"/>
                                     <constraint firstItem="hNE-tg-qd4" firstAttribute="leading" secondItem="HN5-bw-GKT" secondAttribute="leading" constant="10" id="lIs-KJ-ZR7"/>
+                                    <constraint firstItem="5wB-CZ-ade" firstAttribute="centerY" secondItem="hNE-tg-qd4" secondAttribute="centerY" id="odM-XG-1kE"/>
                                     <constraint firstAttribute="height" constant="40" id="y0r-0j-nEm"/>
                                 </constraints>
                             </view>
@@ -5152,11 +5152,11 @@
                                             <action selector="backAction:" destination="uiF-Pl-sIU" eventType="touchUpInside" id="HDC-K6-eqm"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Terms of Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya5-BC-km0">
-                                        <rect key="frame" x="63" y="9.5" width="152" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya5-BC-km0">
+                                        <rect key="frame" x="63" y="10" width="123" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="Wvy-ql-2Hx"/>
-                                            <constraint firstAttribute="width" constant="152" id="ZeC-kT-LSN"/>
+                                            <constraint firstAttribute="width" constant="123" id="WbT-Si-R8E"/>
+                                            <constraint firstAttribute="height" constant="21" id="o9c-qs-E4r"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -5168,11 +5168,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Ya5-BC-km0" firstAttribute="centerY" secondItem="PSZ-bu-yNJ" secondAttribute="centerY" id="6ks-UD-jc1"/>
                                     <constraint firstAttribute="height" constant="40" id="FoJ-ed-vLr"/>
                                     <constraint firstItem="wWJ-ea-Cxb" firstAttribute="top" secondItem="PSZ-bu-yNJ" secondAttribute="top" constant="5" id="MUQ-Mw-vPf"/>
                                     <constraint firstItem="wWJ-ea-Cxb" firstAttribute="leading" secondItem="PSZ-bu-yNJ" secondAttribute="leading" constant="10" id="MdA-O7-Dgp"/>
-                                    <constraint firstItem="Ya5-BC-km0" firstAttribute="centerX" secondItem="PSZ-bu-yNJ" secondAttribute="centerX" constant="-43" id="cOr-rs-4se"/>
+                                    <constraint firstItem="Ya5-BC-km0" firstAttribute="leading" secondItem="wWJ-ea-Cxb" secondAttribute="trailing" constant="3" id="Oam-0O-esa"/>
+                                    <constraint firstItem="Ya5-BC-km0" firstAttribute="centerY" secondItem="wWJ-ea-Cxb" secondAttribute="centerY" id="naS-l4-7DL"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -5192,7 +5192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRz-8z-JUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6788" y="263"/>
+            <point key="canvasLocation" x="6788" y="262.21889055472263"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="59J-be-6hL">
@@ -5617,7 +5617,7 @@
                 <navigationController storyboardIdentifier="LoginNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="3ZU-Ct-hC3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oWr-Ht-Jv6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oWr-Ht-Jv6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
