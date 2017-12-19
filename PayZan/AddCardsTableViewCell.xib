@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="17A365" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +39,7 @@
                             <constraint firstAttribute="height" constant="20" id="wno-0n-wxp"/>
                         </constraints>
                         <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" image="edit_24"/>
+                        <state key="normal" image="edit"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HC7-cn-DAX">
                         <rect key="frame" x="280" y="9" width="20" height="20"/>
@@ -115,7 +115,7 @@
                             <constraint firstAttribute="width" constant="20" id="gee-U9-BcK"/>
                         </constraints>
                         <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" image="edit_24"/>
+                        <state key="normal" image="edit"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Boq-lz-NSI">
                         <rect key="frame" x="280" y="43.5" width="20" height="20"/>
@@ -159,7 +159,7 @@
                             <constraint firstAttribute="width" constant="20" id="hsz-AT-lyu"/>
                         </constraints>
                         <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" image="edit_24"/>
+                        <state key="normal" image="edit"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcZ-ru-WjB">
                         <rect key="frame" x="280" y="83" width="20" height="20"/>
@@ -203,7 +203,7 @@
                             <constraint firstAttribute="width" constant="20" id="yrk-J2-4oa"/>
                         </constraints>
                         <color key="tintColor" red="0.55862781419999996" green="0.1237523261" blue="0.16566267079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" image="edit_24"/>
+                        <state key="normal" image="edit"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-1k-pAN">
                         <rect key="frame" x="279" y="122" width="20" height="20"/>
@@ -279,7 +279,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="edit_24" width="24" height="24"/>
+        <image name="edit" width="30" height="30"/>
         <image name="payment_del_icon" width="13" height="15"/>
         <image name="payment_lock_icon" width="14" height="19"/>
     </resources>
