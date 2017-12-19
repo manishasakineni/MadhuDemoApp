@@ -99,6 +99,12 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     // Touch and TextFieldShouldReturn Functions
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -280,7 +286,7 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         
         if let errorMsg = errorMessage{
             
-            self.showAlertViewWithTitle("Alert", message: errorMsg as String, buttonTitle: "Retry")
+            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
             return false;
         }
         return true
@@ -300,7 +306,7 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
             }
             else {
                 
-                self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+                self.appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
                 return
                 
             }

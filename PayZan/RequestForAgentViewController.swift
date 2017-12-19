@@ -101,6 +101,14 @@ let headerTitle = "PERSONAL INFORMATION"
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        requestForAgentTableView.reloadData()
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         
@@ -606,9 +614,9 @@ let headerTitle = "PERSONAL INFORMATION"
         
         if indexPath.row == 0{
             
-            cell.titleLabel?.text = "First Name"
+            cell.titleLabel?.text = "app.FirstName".localize()
 //            "Select District"
-            cell.agentRequestField.placeholder = "First Name"
+            cell.agentRequestField.placeholder = "app.FirstName".localize()
             
             cell.agentRequestField.text = firstName
             
@@ -617,92 +625,92 @@ let headerTitle = "PERSONAL INFORMATION"
         }
          else if indexPath.row == 1{
             
-            cell.titleLabel?.text = "Middle Name"
-            cell.agentRequestField.placeholder = "Middle Name"
+            cell.titleLabel?.text = "app.MiddleName".localize()
+            cell.agentRequestField.placeholder = "app.MiddleName".localize()
             cell.agentRequestField.text = middileName
             
         }
         else if indexPath.row == 2{
             
-            cell.titleLabel?.text = "Last Name"
-            cell.agentRequestField.placeholder = "Last Name"
+            cell.titleLabel?.text = "app.LastName".localize()
+            cell.agentRequestField.placeholder = "app.LastName".localize()
             cell.agentRequestField.text = lastName
             
         }
         else if indexPath.row == 3{
             
-            cell.titleLabel?.text = "Mobile No"
-            cell.agentRequestField.placeholder = "Mobile No"
+            cell.titleLabel?.text = "app.MobileNo".localize()
+            cell.agentRequestField.placeholder = "app.MobileNo".localize()
             cell.agentRequestField.text = mobileNo
             
         }
         else if indexPath.row == 4{
             
-            cell.titleLabel?.text = "Email"
-            cell.agentRequestField.placeholder = "Email"
+            cell.titleLabel?.text = "app.Email".localize()
+            cell.agentRequestField.placeholder = "app.Email".localize()
             cell.agentRequestField.text = emailID
             
         }
         else if indexPath.row == 5{
             
-            cell.titleLabel?.text = "Select Province"
-            cell.agentRequestField.placeholder = "Select Province"
+            cell.titleLabel?.text = "app.SelectProvince".localize()
+            cell.agentRequestField.placeholder = "app.SelectProvince".localize()
             
             cell.agentRequestField.text = selectedProvinceStr
             
         }
         else if indexPath.row == 6{
             
-            cell.titleLabel?.text = "Select District"
-            cell.agentRequestField.placeholder = "Select District"
+            cell.titleLabel?.text = "app.SelectDistricts".localize()
+            cell.agentRequestField.placeholder = "app.SelectDistricts".localize()
             
             cell.agentRequestField.text = selectedDistrictStr
             
         }
         else if indexPath.row == 7{
             
-            cell.titleLabel?.text = "Select Mandal"
-            cell.agentRequestField.placeholder = "Select Mandal"
+            cell.titleLabel?.text = "app.SelectMandal".localize()
+            cell.agentRequestField.placeholder = "app.SelectMandal".localize()
             
             cell.agentRequestField.text = selectedMandalStr
             
         }
         else if indexPath.row == 8{
             
-            cell.titleLabel?.text = "Select Village"
-            cell.agentRequestField.placeholder = "Select Village"
+            cell.titleLabel?.text = "app.SelectVillage".localize()
+            cell.agentRequestField.placeholder = "app.SelectVillage".localize()
             
             cell.agentRequestField.text = selectedVillageStr
             
         }
         else if indexPath.row == 9{
             
-            cell.titleLabel?.text = "Address1"
-            cell.agentRequestField.placeholder = "Address1"
+            cell.titleLabel?.text = "app.Address1".localize()
+            cell.agentRequestField.placeholder = "app.Address1".localize()
             
             cell.agentRequestField.text = address1
             
         }
         else if indexPath.row == 10{
             
-            cell.titleLabel?.text = "Address2"
-            cell.agentRequestField.placeholder = "Address2"
+            cell.titleLabel?.text = "app.Address2".localize()
+            cell.agentRequestField.placeholder = "app.Address2".localize()
             
             cell.agentRequestField.text = address2
             
             }
         else if indexPath.row == 11{
             
-            cell.titleLabel?.text = "Landmark"
-            cell.agentRequestField.placeholder = "Landmark"
+            cell.titleLabel?.text = "app.Landmark"
+            cell.agentRequestField.placeholder = "app.Landmark".localize()
             
             cell.agentRequestField.text = landmark
             
             }
         else if indexPath.row == 12{
             
-            cell.titleLabel?.text = "Enter your comments"
-            cell.agentRequestField.placeholder = "Enter your comments"
+            cell.titleLabel?.text = "app.Enteryourcomments".localize()
+            cell.agentRequestField.placeholder = "app.Enteryourcomments".localize()
             
             cell.agentRequestField.text = comments
             
@@ -728,6 +736,7 @@ let headerTitle = "PERSONAL INFORMATION"
         
     print("sender:\(sender.tag)")
         
+        requestForAgentTableView.reloadData()
         
         if self.validateAllFields()
         {
@@ -739,7 +748,7 @@ let headerTitle = "PERSONAL INFORMATION"
                 }
                 else {
                     
-                    self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+                    self.appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
                     return
                     
         }
@@ -850,7 +859,7 @@ let headerTitle = "PERSONAL INFORMATION"
         
         if let errorMsg = errorMessage{
             
-            self.showAlertViewWithTitle("Alert", message: errorMsg as String, buttonTitle: "Retry")
+            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
             return false;
         }
         return true
@@ -905,7 +914,7 @@ let headerTitle = "PERSONAL INFORMATION"
         }
         else {
             
-            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
             return
             
         }
@@ -962,7 +971,7 @@ let headerTitle = "PERSONAL INFORMATION"
         }
         else {
             
-            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
             return
             
         }
@@ -1019,7 +1028,7 @@ let headerTitle = "PERSONAL INFORMATION"
         }
         else {
             
-            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
             return
             
         }
@@ -1075,7 +1084,7 @@ let headerTitle = "PERSONAL INFORMATION"
         }
         else {
             
-            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
             return
             
         }

@@ -72,6 +72,12 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     @IBAction func backAction(_ sender: Any) {
         
          self.navigationController?.popViewController(animated: true)
@@ -336,7 +342,7 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
                 
             }
             else{
-                appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+                appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
                 return
             }
             

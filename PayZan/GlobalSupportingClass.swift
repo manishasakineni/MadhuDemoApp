@@ -22,118 +22,118 @@ class GlobalSupportingClass {
     // MARK: - Error Messages
     
     
-    class func blankProvinceErrorMessage() -> NSString {
-        return "Please provide your province"
+    class func blankProvinceErrorMessage() -> String {
+        return "app.Pleaseprovideyourprovince".localize()
     }
-    class func blankDistrictErrorMessage() -> NSString {
-        return "Please provide your district"
+    class func blankDistrictErrorMessage() -> String {
+        return "app.Pleaseprovideyourdistrict".localize()
     }
-    class func blankMandalErrorMessage() -> NSString {
-        return "Please provide your mandal"
+    class func blankMandalErrorMessage() -> String {
+        return "app.Pleaseprovideyourmandal".localize()
     }
-    class func blankVillageErrorMessage() -> NSString {
-        return "Please provide your village"
+    class func blankVillageErrorMessage() -> String {
+        return "app.Pleaseprovideyourvillage".localize()
     }
-    class func blankAddress1ErrorMessage() -> NSString {
-        return "Please provide your address1"
+    class func blankAddress1ErrorMessage() -> String {
+        return "app.Pleaseprovideyouraddress1".localize()
     }
-    class func blankAddress2ErrorMessage() -> NSString {
-        return "Please provide your address2"
-    }
-    
-    class func blankLandmarkErrorMessage() -> NSString {
-        return "Please provide your landmark"
-    }
-    class func blankCommentsErrorMessage() -> NSString {
-        return "Please provide your comments"
+    class func blankAddress2ErrorMessage() -> String {
+        return "app.Pleaseprovideyouraddress2".localize()
     }
     
-    class func invalidEmaildIDFormatErrorMessage() -> NSString {
-        return "Please provide valid email id"
+    class func blankLandmarkErrorMessage() -> String {
+        return "app.Pleaseprovideyourlandmark".localize()
     }
-    class func blankEmailIDErrorMessage() -> NSString {
-        return "Please provide email id"
-    }
-    class func blankPasswordErrorMessage() -> NSString {
-        return "Please provide password"
-    }
-    class func blankSendAmountErrorMessage() -> NSString {
-        return "Please enter wallet amount"
+    class func blankCommentsErrorMessage() -> String {
+        return "app.Pleaseprovideyourcomments".localize()
     }
     
-    class func invalidDigitsInPasswordErrorMessage() -> NSString {
-        return "Password should be of minimum 5 character"
+    class func invalidEmaildIDFormatErrorMessage() -> String {
+        return "app.Pleaseprovidevalidemailid".localize()
     }
-    class func blankFnameErrorMessage() -> NSString {
-        return "Please provide your first name"
+    class func blankEmailIDErrorMessage() -> String {
+        return "app.Pleaseprovideemailid".localize()
     }
-    class func blankLnameErrorMessage() -> NSString {
-        return "Please provide your last name"
+    class func blankPasswordErrorMessage() -> String {
+        return "app.Pleaseprovidepassword".localize()
     }
-    class func blankPhoneNumberErrorMessage() -> NSString {
-        return "Please provide your mobile number"
+    class func blankSendAmountErrorMessage() -> String {
+        return "app.Pleaseenterwalletamount".localize()
     }
-    class func invalidPhoneNumberErrorMessage() -> NSString {
-        return "Please provide 10 digits mobile number"
+    
+    class func invalidDigitsInPasswordErrorMessage() -> String {
+        return "app.Passwordshouldbeofminimum5character".localize()
     }
-    class func blankConfirmPasswordErrorMessage() -> NSString {
+    class func blankFnameErrorMessage() -> String {
+        return "app.Pleaseprovideyourfirstname".localize()
+    }
+    class func blankLnameErrorMessage() -> String {
+        return "app.Pleaseprovideyourlastname".localize()
+    }
+    class func blankPhoneNumberErrorMessage() -> String {
+        return "app.Pleaseprovideyourmobilenumber".localize()
+    }
+    class func invalidPhoneNumberErrorMessage() -> String {
+        return "app.Pleaseprovide10digit mobilenumber".localize()
+    }
+    class func blankConfirmPasswordErrorMessage() -> String {
         
-        return "Please confirm password"
+        return "app.Pleaseconfirmpassword".localize()
     }
-    class func changePasswordErrorMessage() -> NSString {
-        return "Please provide your current password"
+    class func changePasswordErrorMessage() -> String {
+        return "app.Pleaseprovideyourcurrentpassword".localize()
     }
-    class func newPasswordErrorMessage() -> NSString {
-        return "Please provide your new password"
+    class func newPasswordErrorMessage() -> String {
+        return "app.Pleaseprovideyournewpassword".localize()
     }
-    class func reTypeNewnewPasswordErrorMessage() -> NSString {
-        return "Please provide your reTypeNew password"
+    class func reTypeNewnewPasswordErrorMessage() -> String {
+        return "app.PleaseprovideyourreTypeNewpassword".localize()
     }
 
     
-    class func passwordMissMatchErrorMessage() -> NSString {
-        return "Password miss match"
+    class func passwordMissMatchErrorMessage() -> String {
+        return "app.Passwordmissmatch".localize()
     }
-    class func blankDOBErrorMessage() -> NSString {
-        return "Please provide your date of birth"
+    class func blankDOBErrorMessage() -> String {
+        return "app.Pleaseprovideyourdateofbirth".localize()
     }
-    class func networkErrorMessage() -> NSString {
-        return "Network is either slow or not Connected"
+    class func networkErrorMessage() -> String {
+        return "app.NetworkiseitherslowornotConnected".localize()
     }
-    class func invalidLoginErrorMessage() -> NSString {
-        return "Invalid username or password"
+    class func invalidLoginErrorMessage() -> String {
+        return "app.Invalidusernameorpassword".localize()
     }
-    class func someErrorOccuredErrorMessage() -> NSString {
-        return "Some Error Occured"
+    class func someErrorOccuredErrorMessage() -> String {
+        return "app.SomeErrorOccured".localize()
     }
-    class func successfullyDoneMessage() -> NSString {
-        return "Successfully Done"
+    class func successfullyDoneMessage() -> String {
+        return "app.SuccessfullyDone".localize()
     }
     
-    class func pinvalidationMessage() -> NSString {
-        return "Please Enter Valid Pin"
+    class func pinvalidationMessage() -> String {
+        return "app.PleaseEnterValidPin".localize()
     }
-    class func cloudvalidationMessage() -> NSString {
-        return "Please Enter Valid Information"
+    class func cloudvalidationMessage() -> String {
+        return "app.PleaseEnterValidInformation".localize()
     }
-    class func specialCharacterMessage() -> NSString {
-        return "Passwords must have at least one non alphanumeric character"
+    class func specialCharacterMessage() -> String {
+        return "app.Passwordsmusthaveatleastonenonalphanumericcharacter".localize()
     }
-    class func capitalLetterMessage() -> NSString {
-        return "Passwords must have at least one uppercase ('A'-'Z')"
+    class func capitalLetterMessage() -> String {
+        return "app.Passwordsmusthaveatleastoneuppercase".localize()
     }
-    class func numberMessage() -> NSString {
-        return "Passwords must have at least one digit ('0'-'9')"
+    class func numberMessage() -> String {
+        return "app.Passwordsmusthaveatleastonedigit".localize()
     }
-    class func miniCharEmailIDErrorMessage() -> NSString {
-        return "Email should be of minimum 4 character"
+    class func miniCharEmailIDErrorMessage() -> String {
+        return "app.Emailshouldbeofminimum4character".localize()
     }
-    class func phoneValidateMessage() -> NSString {
-        return "Mobilenumber should start with ('7'-'9')"
+    class func phoneValidateMessage() -> String {
+        return "app.Mobilenumbershouldstartwith".localize()
     }
-    class func invalidLoginMessage() -> NSString {
+    class func invalidLoginMessage() -> String {
         
-        return "Invalid Username or Password"
+        return "app.InvalidUsernameorPassword".localize()
     }
     
     // MARK: - Phone Number Valdation

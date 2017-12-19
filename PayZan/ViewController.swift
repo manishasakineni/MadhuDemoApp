@@ -42,7 +42,7 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         
 //        self.revealViewController().delegate = self
         
-        self.tabBarController?.tabBar.isHidden = true
+//        self.tabBarController?.tabBar.isHidden = true
         
 //        headerView.isHidden = true
         
@@ -87,13 +87,15 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         
 //        headerView.isHidden = false
         
-        self.tabBarController?.tabBar.isHidden = true
+//        self.tabBarController?.tabBar.isHidden = true
         
         super.viewDidAppear(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
         
         // Hide the navigation bar on the this view controller
        // self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -102,7 +104,7 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        self.tabBarController?.tabBar.isHidden = false
+//        self.tabBarController?.tabBar.isHidden = false
         // Show the navigation bar on other view controllers
        // self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
@@ -279,7 +281,7 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
         
         if let errorMsg = errorMessage{
             
-            self.showAlertViewWithTitle("Alert", message: errorMsg as String, buttonTitle: "Retry")
+            self.showAlertViewWithTitle("app.Alert".localize(), message: errorMsg as String, buttonTitle: "app.Retry".localize())
             return false;
         }
         return true
@@ -296,7 +298,7 @@ class ViewController: BaseViewController,UITextFieldDelegate,GIDSignInUIDelegate
            
         }
         else{
-                appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+                appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
                 return
         }
         

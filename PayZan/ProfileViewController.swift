@@ -154,6 +154,8 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.tabBarController?.tabBar.isHidden = false
+        
       listArr = ["SCards".localize(value: "Your SCards"),"OHistory".localize(value: "Your OHistory"),"CPassword".localize(value: "Your CPassword"),"AUs".localize(value: "Your AUs"),"Support".localize(value: "Your Support"),"TService".localize(value: "Your TService"),"CLanguage".localize(value: "Your CLanguage")]
         
         profileTVC.reloadData()

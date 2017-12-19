@@ -221,8 +221,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             
             cell.firstNameTF.text = editProfileArray?.UserName
             cell.lastNameTF.text = editProfileArray?.FirstName
-            cell.firstNameTF.placeholder = "First Name"
-            cell.lastNameTF.placeholder = "Last Name"
+            cell.firstNameTF.placeholder = "app.FirstName".localize()
+            cell.lastNameTF.placeholder = "app.LastName".localize()
             cell.editButton.addTarget(self, action: #selector(self.editBtnClicked), for: .touchDown)
             
             return cell
@@ -238,8 +238,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             if indexPath.row == 0{
                 
                 cell.detailsTF.text = editProfileArray?.UserName
-                cell.detailsLbl?.text = "Display Name"
-                cell.detailsTF.placeholder = "Display Name"
+                cell.detailsLbl?.text = "app.UserName".localize()
+                cell.detailsTF.placeholder = "app.UserName".localize()
                 cell.detailsTF.layer.borderWidth = 0.5
                 cell.detailsTF.layer.borderColor = UIColor.lightGray.cgColor
                 cell.detailsTF.layer.cornerRadius = 3
@@ -255,8 +255,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             else if indexPath.row == 1{
                 
                 cell.detailsTF.text = editProfileArray?.Email
-                cell.detailsLbl?.text = "Email"
-                cell.detailsTF.placeholder = "Email"
+                cell.detailsLbl?.text = "app.Email".localize()
+                cell.detailsTF.placeholder = "app.Email".localize()
                 cell.detailsTF.layer.borderWidth = 0.5
                 cell.detailsTF.layer.borderColor = UIColor.lightGray.cgColor
                 cell.detailsTF.layer.cornerRadius = 3
@@ -269,8 +269,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
             else if indexPath.row == 2{
                 
                 cell.detailsTF.text = editProfileArray?.UserName
-                cell.detailsLbl?.text = "Contact No"
-                cell.detailsTF.placeholder = "Contact No"
+                cell.detailsLbl?.text = "app.MobileNo".localize()
+                cell.detailsTF.placeholder = "app.MobileNo".localize()
                 cell.detailsTF.layer.borderWidth = 0.5
                 cell.detailsTF.layer.borderColor = UIColor.lightGray.cgColor
                 cell.detailsTF.layer.cornerRadius = 3
@@ -284,7 +284,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
                 
                 
                 cell.detailsLbl?.text = editProfileArray?.DOB
-                cell.detailsTF.placeholder = "Date Of Birth"
+                cell.detailsTF.placeholder = "app.DateOfBirth".localize()
                 cell.detailsTF.layer.borderWidth = 0.5
                 cell.detailsTF.layer.borderColor = UIColor.lightGray.cgColor
                 cell.detailsTF.layer.cornerRadius = 3
@@ -346,18 +346,18 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         print("I Clicked a button")
         
         
-        let alert:UIAlertController=UIAlertController(title: "Choose Profile Image", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
-        let cameraAction = UIAlertAction(title: "From Camera", style: UIAlertActionStyle.default)
+        let alert:UIAlertController=UIAlertController(title: "app.ChooseProfileImage".localize(), message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        let cameraAction = UIAlertAction(title: "app.FromCamera".localize(), style: UIAlertActionStyle.default)
         {
             UIAlertAction in
             self.openCamera()
         }
-        let gallaryAction = UIAlertAction(title: "From Gallery", style: UIAlertActionStyle.default)
+        let gallaryAction = UIAlertAction(title: "app.FromGallery".localize(), style: UIAlertActionStyle.default)
         {
             UIAlertAction in
             self.openGallary()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel)
+        let cancelAction = UIAlertAction(title: "app.Cancel".localize(), style: UIAlertActionStyle.cancel)
         {
             UIAlertAction in
         }
@@ -571,7 +571,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         }
         else {
             
-            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
             return
             
         }

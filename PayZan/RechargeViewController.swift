@@ -327,7 +327,7 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         }
         else {
             self.networkField.isUserInteractionEnabled = false
-            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
             return
         }
         
@@ -378,7 +378,7 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         }
         else {
              self.networkField.isUserInteractionEnabled = false
-            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
             return
         }
     }

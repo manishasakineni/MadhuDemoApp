@@ -80,6 +80,13 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     func pickUp(_ textField : UITextField){
         
         // UIPickerView
@@ -205,7 +212,7 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         }
         else {
              self.selectBoardTextField.isUserInteractionEnabled = false
-            appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
             return
         }
     }
@@ -229,15 +236,15 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
             }
             else {
                 
-                let alertController = UIAlertController(title: "Alert", message: "Please Login to your PayZan account", preferredStyle: UIAlertControllerStyle.alert)
+                let alertController = UIAlertController(title: "app.Alert".localize(), message: "app.LoginAlert".localize(), preferredStyle: UIAlertControllerStyle.alert)
                 
                 
-                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
+                let cancelAction = UIAlertAction(title: "app.Cancel".localize(), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                     print("Cancel")
                     
                     
                 }
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+                let okAction = UIAlertAction(title: "app.Ok".localize(), style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
                     print("OK")
                     
                     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -257,7 +264,7 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         }
         else {
             
-            self.appDelegate.window?.makeToast("The Internet connection appears to be offline. Please connect to the internet", duration:kToastDuration, position:CSToastPositionCenter)
+            self.appDelegate.window?.makeToast(kNetworkStatusMessage, duration:kToastDuration, position:CSToastPositionCenter)
             return
             
         }

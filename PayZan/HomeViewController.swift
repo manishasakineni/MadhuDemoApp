@@ -308,14 +308,26 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
             
             print("defaults savedString: \(walletAmount)")
             
-            if let tabStrings = self.tabBarController?.tabBar.items
-            {
-                tabStrings[1].title = "MyProfile".localize(value: "My Profile")
-            }
+        }
+        
+        if let tabStrings = self.tabBarController?.tabBar.items
+        {
+            let tabTitle:String! = tabStrings[1].title
             
+            if  tabTitle == "Login" || tabTitle == "உள் நுழை" || tabTitle == "ඇතුල් වන්න"{
+                
+                tabStrings[1].title = "app.Login".localize()
+                
+            }
+            else {
+                
+                tabStrings[1].title = "app.MyProfile".localize()
+            }
         }
 
     }
+    
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

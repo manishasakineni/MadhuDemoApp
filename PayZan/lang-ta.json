@@ -16,7 +16,7 @@
     "HWater" : "நீர்",
     "HDataCard" : "தரவு அட்டை",
     "HRECHARGEANDBILLPAYMENT" : "ரீசார்ஜ் மற்றும் பில் செலுத்துதல்",
-    "HMyProfile" : "என் சுயவிவரம்",
+    "HMyProfile" : "சுயவிவர",
 
 "app" : {
     
@@ -33,7 +33,7 @@
     "AboutUs" : "எங்களை பற்றி",
     "WalletBalance" : "வால்ட் சமநிலை",
     "Offers" : "சலுகைகள்",
-    "MyProfile" : "என் சுயவிவரம்",
+    "MyProfile" : "சுயவிவர",
     "AccountNumber" : "கணக்கு எண்",
     "MobileRechargePayBill" : "மொபைல் ரீசார்ஜ் & பேபால் பில்",
     "BrowsePlans" : "திட்டங்களை உலாவும்",
@@ -138,7 +138,71 @@
     "Email" : "மின்னஞ்சல்",
     "OnSignUpyouacceptour" : "பதிவுசெய்தலில், நீங்கள் எங்கள் ஏற்றுக்கொள்கிறீர்கள்",
     "PartnerwithPayzan" : "பேஸனுடனான கூட்டாளர்",
-    "ChooseLanguage": "மொழியைத் தேர்வு செய்க"
+    "ChooseLanguage": "மொழியைத் தேர்வு செய்க",
+    
+    "LoginAlert" : "தயவுசெய்து உங்கள் PayZan கணக்கில் உள்நுழைக",
+    "Alert" : "எச்சரிக்கை",
+    "Ok" : "சரி",
+    "Cancel" : "ரத்து",
+    "Therequesttimedout" : "கோரிக்கை நேரம் முடிந்தது.",
+    "Pleasecheckyourinternetconnection" : "உங்கள் இணைய இணைப்பு சரிபார்க்கவும்!",
+    "Pleaseprovideyourmobilenumber" : "உங்கள் மொபைல் எண்ணை வழங்கவும்",
+    "Retry" : "மீண்டும் முயற்சி செய்",
+    
+    "Pleaseprovideyourprovince" : "உங்கள் மாகாணத்தை வழங்கவும்",
+    "Pleaseprovideyourdistrict" : "உங்கள் மாவட்டத்தை வழங்கவும்",
+    "Pleaseprovideyourmandal" : "உங்கள் மண்டலை வழங்கவும்",
+    "Pleaseprovideyourvillage" : "தயவுசெய்து உங்கள் கிராமத்தை வழங்கவும்",
+    "Pleaseprovideyouraddress1" : "தயவுசெய்து உங்கள் முகவரி 1 ஐ வழங்கவும்",
+    "Pleaseprovideyouraddress2" : "உங்கள் முகவரி 2 ஐ வழங்கவும்",
+    "Pleaseprovideyourlandmark" : "உங்கள் அடையாளத்தை வழங்கவும்",
+    "Pleaseprovideyourcomments" : "உங்கள் கருத்துக்களை வழங்கவும்",
+    
+    "Pleaseprovidevalidemailid" : "சரியான மின்னஞ்சல் ஐடியை வழங்கவும்",
+    "Pleaseprovideemailid" : "மின்னஞ்சல் ஐடியை வழங்கவும்",
+    "Pleaseprovidepassword" : "கடவுச்சொல்லை வழங்கவும்",
+    "Pleaseenterwalletamount" : "பணப்பை அளவு உள்ளிடவும்",
+    "Passwordshouldbeofminimum5character" : "கடவுச்சொற்கள் குறைந்தபட்சம் 5 எழுத்துக்கள் கொண்டிருக்கும்",
+    
+    "Pleaseprovideyourfirstname" : "உங்கள் முதல் பெயரை வழங்கவும்",
+    "Pleaseprovideyourlastname" : "உங்கள் கடைசி பெயரை வழங்கவும்",
+    "Pleaseprovide10digitsmobilenumber" : "10 இலக்க எண்ணை வழங்கவும்",
+    "Pleaseconfirmpassword" : "கடவுச்சொல்லை உறுதிப்படுத்துக",
+    "Pleaseprovideyourcurrentpassword" : "தயவுசெய்து உங்கள் தற்போதைய கடவுச்சொல்லை வழங்கவும்",
+    "Pleaseprovideyournewpassword" : "உங்கள் புதிய கடவுச்சொல்லை வழங்கவும்",
+    "PleaseprovideyourreTypeNewpassword" : "உங்கள் reTypeNew கடவுச்சொல்லை வழங்கவும்",
+    "Passwordmissmatch" : "கடவுச்சொல் மிஸ் பொருத்தம்",
+    "Please provideyourdateofbirth" : "உங்கள் பிறந்த தேதியை வழங்கவும்",
+    "NetworkiseitherslowornotConnected" : "நெட்வொர்க் மெதுவாக அல்லது இணைக்கப்படவில்லை",
+    "Invalidusernameorpassword" : "தவறான பயனர் பெயர் அல்லது கடவுச்சொல்",
+    "SomeErrorOccured" : "சில பிழை ஏற்பட்டது",
+    "SuccessfullyDone" : "வெற்றிகரமாக முடிந்தது",
+    "PleaseEnterValidPin" : "செல்லுபடியாகும் பின்னை உள்ளிடுக",
+    "PleaseEnterValidInformation" : "செல்லுபடியாகும் தகவலை உள்ளிடுக",
+    "Passwordsmusthaveatleastonenonalphanumericcharacter" : "கடவுச்சொற்களை குறைந்தபட்சம் ஒரு எண்ணெழுத்து எழுத்துக்குறி இருக்க வேண்டும்",
+    "Passwordsmusthaveatleastoneuppercase" : "கடவுச்சொற்களை குறைந்தபட்சம் ஒரு பெரிய எழுத்தாக ('A' - 'Z') கொண்டிருக்க வேண்டும்",
+    "Passwordsmusthaveatleastonedigit" : "கடவுச்சொற்களில் குறைந்தது ஒரு இலக்கத்தை ('0' - '9') கொண்டிருக்க வேண்டும்",
+    "Emailshouldbeofminimum4character" : "மின்னஞ்சல் குறைந்தபட்சம் 4 எழுத்து இருக்க வேண்டும்",
+    "Mobilenumbershouldstartwith" : "மொபிலெம்பம்பர் ('7' - '9') தொடங்க வேண்டும்",
+    "InvalidUsernameorPassword" : "தவறான பயனர்பெயர் அல்லது கடவுச்சொல்",
+    
+    "MiddleName" : "மத்திய பெயர்",
+    "MobileNo" : "அலைபேசி எண்",
+    "SelectProvince" : "மாகாணத்தைத் தேர்ந்தெடுக்கவும்",
+    "SelectMandal" : "மண்டலை தேர்ந்தெடுக்கவும்",
+    "SelectVillage" : "கிராமத்தைத் தேர்ந்தெடுக்கவும்",
+    "Address1" : "முகவரி 1",
+    "Address2" : "முகவரி 2",
+    "Landmark" : "தனித்துவமான",
+    "Enteryourcomments" : "உங்கள் கருத்துகளை உள்ளிடவும்",
+    
+    "DateOfBirth" : "பிறந்த தேதி",
+    
+    "ChooseProfileImage" : "Choose Profile Image",
+    "FromCamera" : "From Camera",
+    "From Gallery" : "From Gallery"
+    
+    
     
 }
 }

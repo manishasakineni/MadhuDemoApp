@@ -9,13 +9,13 @@
 import Foundation
 
 
-//let baseUrl:String = "http://192.168.1.160/PayZanAPI/api/"
+let baseUrl:String = "http://192.168.1.160/PayZanAPI/api/"
 
 //let baseUrl:String = "http://payzandev1.azurewebsites.net/api/"
 
 //let baseUrl:String = "http://payzandev.azurewebsites.net/api/Register/"
 
-let baseUrl:String = "http://103.211.39.50/PayZan/PayZanAPI/api/"
+//let baseUrl:String = "http://103.211.39.50/PayZan/PayZanAPI/api/"
 
 let kIsFirstTime:String = "kIsFirstTime"
 
@@ -33,8 +33,13 @@ let uNamee = "uNamee"
 
 let emailIdd = "emailIdd"
 
-let kNetworkStatusMessage = "Please check your internet connection!"
+let kNetworkStatusMessage = "app.Pleasecheckyourinternetconnection".localize()
+
+let kInternetConnection = "The Internet connection appears to be offline. Please connect to the internet"
 
 let kToastDuration  = 3.0
 
-let kRequestTimedOutMessage = "The request timed out."
+let kRequestTimedOutMessage = "app.Therequesttimedout".localize()
+
+
+

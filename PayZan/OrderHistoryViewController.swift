@@ -36,6 +36,12 @@ class OrderHistoryViewController: UIViewController,UITableViewDataSource,UITable
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     @IBAction func backAction(_ sender: Any) {
         
          self.navigationController?.popViewController(animated: true)
