@@ -135,6 +135,13 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         super.viewDidAppear(true)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
+        // Hide the navigation bar on the this view controller
+        // self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     
     
     func pickUp(_ textField : UITextField){

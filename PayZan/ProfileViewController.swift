@@ -315,7 +315,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             
             if let tabStrings = self.tabBarController?.tabBar.items
             {
-                tabStrings[1].title = "MyProfile".localize(value: "My Profile")
+                tabStrings[1].title = "app.MyProfile".localize()
             }
             
              let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
@@ -387,7 +387,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 
                 if let tabStrings = self.tabBarController?.tabBar.items
                 {
-                    tabStrings[1].title = "Login".localize(value: "Login")
+                    tabStrings[1].title = "app.Login".localize()
                 }
                 
                 cell.signOutBtn.addTarget(self, action: #selector(self.signOutClicked), for: .touchUpInside)
@@ -398,7 +398,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                     
                 if let tabStrings = self.tabBarController?.tabBar.items
                 {
-                    tabStrings[1].title = "MyProfile".localize(value: "My Profile")
+                    tabStrings[1].title = "app.MyProfile".localize(value: "My Profile")
                 }
                 
 //            let cell = Bundle.main.loadNibNamed("SignOutTableViewCell", owner: self, options: nil)?.first as! SignOutTableViewCell
@@ -497,7 +497,22 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                         (alert: UIAlertAction!) -> Void in
                         Localize.update(language: language)
                         
-                        self.listArr = ["SCards".localize(value: "Your SCards"),"OHistory".localize(value: "Your OHistory"),"CPassword".localize(value: "Your CPassword"),"AUs".localize(value: "Your AUs"),"Support".localize(value: "Your Support"),"TService".localize(value: "Your TService"),"CLanguage".localize(value: "Your CLanguage")]
+                        self.listArr = ["SCards".localize(value: "Saved Cards"),"OHistory".localize(value: "Order History"),"CPassword".localize(value: "Change Password"),"AUs".localize(value: "About Us"),"Support".localize(value: "Support"),"TService".localize(value: "Terms of Service"),"CLanguage".localize(value: "Choose Language")]
+                        
+                        if let tabStrings = self.tabBarController?.tabBar.items
+                        {
+                            let tabTitle:String! = tabStrings[1].title
+                            
+                            if  tabTitle == "Login" || tabTitle == "உள் நுழை" || tabTitle == "ඇතුල් වන්න"{
+                            
+                            tabStrings[1].title = "app.Login".localize()
+                                
+                            }
+                            else {
+                                
+                                tabStrings[1].title = "app.MyProfile".localize()
+                            }
+                        }
                         
                         self.profileTVC.reloadData()
                         
@@ -662,7 +677,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             
             if let tabStrings = self.tabBarController?.tabBar.items
             {
-                tabStrings[1].title = "MyProfile".localize(value: "My Profile")
+                tabStrings[1].title = "app.MyProfile".localize()
             }
             
         }
@@ -672,7 +687,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             
             if let tabStrings = self.tabBarController?.tabBar.items
             {
-                tabStrings[1].title = "Login".localize(value: "Login")
+                tabStrings[1].title = "app.Login".localize()
                 
                         if UserDefaults.standard.object(forKey: accessToken) != nil {
                 

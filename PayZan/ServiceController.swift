@@ -52,6 +52,8 @@ class ServiceController: NSObject {
             DispatchQueue.main.async(){
                 MBProgressHUD.hide(for:appDelegate.window,animated:true)
                 
+                if response != nil {
+                
                 let statusCode = (response as! HTTPURLResponse).statusCode
                 print("statusCode:\(statusCode)")
                 
@@ -64,10 +66,15 @@ class ServiceController: NSObject {
                     appDelegate.window?.rootViewController = viewController
                     
                 }
-               else if error != nil
+                }
+               if error != nil
                 {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    failure(error! as NSError)
+                    
+//                    failure(error! as NSError)
+                    
+                    appDelegate.window?.makeToast(error?.localizedDescription, duration:kToastDuration , position:CSToastPositionCenter)
+                    
                 }else{
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     
@@ -78,6 +85,7 @@ class ServiceController: NSObject {
                     }
                     catch{
                         print("error=\(error)")
+                        appDelegate.window?.makeToast(error.localizedDescription, duration:kToastDuration , position:CSToastPositionCenter)
                         return
                     }
                     
@@ -160,7 +168,8 @@ class ServiceController: NSObject {
                 
                 MBProgressHUD.hide(for: appDelegate.window, animated: true)
                 
-                
+                if response != nil {
+
                 let statusCode = (response as! HTTPURLResponse).statusCode
                 print("statusCode:\(statusCode)")
                 
@@ -173,7 +182,7 @@ class ServiceController: NSObject {
                     appDelegate.window?.rootViewController = viewController
                     
                 }
-                
+                }
                 if error != nil
                 {
                     print("error=\(String(describing: error))")

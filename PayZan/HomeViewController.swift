@@ -288,7 +288,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+        self.tabBarController?.tabBar.isHidden = false
         
         namesarra4 = ["HRECHARGEANDBILLPAYMENT".localize(value: "Your HRECHARGEANDBILLPAYMENT"),"BOOKONPAYZAN".localize(value: "Your HRECHARGEANDBILLPAYMENT"),"MeraCashbackSale".localize(value: "Your HRECHARGEANDBILLPAYMENT")]
         

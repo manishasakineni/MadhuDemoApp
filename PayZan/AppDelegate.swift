@@ -153,7 +153,7 @@ let tabBarController = UITabBarController()
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
         
 //        viewController.tabBar.items?[1].image = UIImage(named: "search")?.withRenderingMode(.alwaysTemplate)
-        viewController.tabBar.items?[1].title = "Login".localize(value: "Login")
+        viewController.tabBar.items?[1].title = "app.Login".localize()
 //        viewController.tabBar.items?[1].selectedImage = UIImage(named: "search")?.withRenderingMode(.alwaysTemplate)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
