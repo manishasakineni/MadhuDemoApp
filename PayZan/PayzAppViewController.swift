@@ -9,6 +9,8 @@
 import UIKit
 
 class PayzAppViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+   //MARK:- OutLets
 
     @IBOutlet var tableView: UITableView!
     
@@ -37,16 +39,18 @@ class PayzAppViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
     
-    //CalibrageMac02.PayZan
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        //MARK:- NibName
+
         
         let nibName  = UINib(nibName: "SavedCardsTableViewCell" , bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "SavedCardsTableViewCell")
@@ -71,6 +75,8 @@ class PayzAppViewController: UIViewController, UITableViewDelegate, UITableViewD
         borderColors()
         
     }
+    
+      //MARK:- borderColors
 
     func borderColors(){
         
@@ -104,7 +110,8 @@ class PayzAppViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
-    
+    //MARK:- Tableview Datasource Methods
+
     public func numberOfSections(in tableView: UITableView) -> Int{
         
         return 1
@@ -166,6 +173,8 @@ class PayzAppViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //MARK:-  Button Actions
     
     @IBAction func savedCardsButtonAction(_ sender: Any) {
         selectedButtonString = "savedCards"
@@ -299,6 +308,8 @@ class PayzAppViewController: UIViewController, UITableViewDelegate, UITableViewD
 
          tableView.reloadData()
     }
+    
+    
     
     @IBAction func backBtnAction(_ sender: Any) {
         

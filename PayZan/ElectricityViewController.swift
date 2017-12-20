@@ -10,6 +10,9 @@ import UIKit
 
 class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
+    //MARK:- OutLets
+
+    
     @IBOutlet weak var districtsFiled: UITextField!
     
     @IBOutlet weak var serviceNumField: UITextField!
@@ -24,6 +27,9 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
     
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
+    //MARK:- Variables
+
     
     var serviceController = ServiceController()
     
@@ -42,7 +48,8 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //MARK:- TextField Colors
+
         
         districtsFiled.layer.borderWidth = 0.5
         districtsFiled.layer.borderColor = UIColor.lightGray.cgColor
@@ -69,6 +76,9 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
         
         getOperatorList()
         
+        //MARK:- headerImgHeight For iphone and ipad
+
+        
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
             headerImgHeight.constant = 150
@@ -93,10 +103,11 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    //MARK:- UIPickerView
 
     func pickUp(_ textField : UITextField){
         
-        // UIPickerView
+        
         self.myPickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
@@ -114,15 +125,14 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
             textField.inputView = self.myPickerView
         }
         
-        // ToolBar
+        //MARK:- ToolBar
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
-//            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
-        // Adding Button ToolBar
+        //MARK:- Adding Button ToolBar
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(RechargeViewController.doneClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(RechargeViewController.cancelClick))
@@ -178,7 +188,6 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
             
             let strUrl = electricityUrl
             
-//            let url : NSURL = NSURL(string: strUrl)!
             
             serviceController.requestGETURL(strURL:strUrl, success:{(result) in
                 DispatchQueue.main.async()
@@ -191,7 +200,6 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
                         let isActive = respVO.IsSuccess
                         
                         
-                        //                    let status = result["status"] as! String
                         
                         if(isActive == true){
                             
@@ -225,6 +233,9 @@ class ElectricityViewController: BaseViewController,UIPickerViewDelegate, UIPick
             
         }
     }
+    
+    //MARK:- Button Actions
+
     
     @IBAction func backAction(_ sender: Any) {
         

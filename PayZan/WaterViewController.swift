@@ -10,6 +10,8 @@ import UIKit
 
 class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate {
     
+    //MARK:- OutLets
+    
     @IBOutlet weak var selectBoardTextField: UITextField!
     @IBOutlet weak var consumerNumberTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
@@ -18,7 +20,11 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
+    let serviceController = ServiceController()
+
     
+    //MARK:- Variables
+
     var myPickerView : UIPickerView!
     
     var toolBar = UIToolbar()
@@ -26,7 +32,6 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
     var userId:String?
     var walletId:String?
     
-    let serviceController = ServiceController()
     
     var operatorList = [String]()
     
@@ -36,7 +41,9 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         
         self.navigationController?.isNavigationBarHidden = true
         
-             
+        //MARK:- TextField Colors
+
+        
         selectBoardTextField.layer.borderWidth = 0.5
         selectBoardTextField.layer.borderColor = UIColor.lightGray.cgColor
         selectBoardTextField.layer.cornerRadius = 3
@@ -46,7 +53,6 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         consumerNumberTextField.layer.borderColor = UIColor.lightGray.cgColor
         consumerNumberTextField.layer.cornerRadius = 3
         
-       // consumerNumberTextField.leftViewMode = .whileEditing
         
         consumerNumberTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
@@ -61,6 +67,9 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         consumerNumberTextField.keyboardType = .numberPad
         
         getOperatorList()
+        
+        //MARK:- headerImgHeight For iphone and ipad
+
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -87,9 +96,12 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    //MARK:- UIPickerView
+
+    
     func pickUp(_ textField : UITextField){
         
-        // UIPickerView
+        
         self.myPickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
@@ -107,15 +119,14 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
             textField.inputView = self.myPickerView
         }
         
-        // ToolBar
+        //MARK:- ToolBar
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
-        //            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
-        // Adding Button ToolBar
+        //MARK:- Adding Button ToolBar
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(RechargeViewController.doneClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(RechargeViewController.cancelClick))
@@ -164,6 +175,9 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
         self.selectBoardTextField.text = operatorList[row]
         
     }
+    
+    //MARK:- getOperatorList
+
     
     func getOperatorList(){
         
@@ -218,7 +232,7 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
     }
     
     
-    
+      //MARK:- Button Actions
     
     
 
@@ -231,7 +245,6 @@ class WaterViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDa
             
             if walletId != nil && userId != nil {
                 
-                //                sendMoneyToWalletService()
                 
             }
             else {

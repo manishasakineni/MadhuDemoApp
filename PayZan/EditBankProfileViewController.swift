@@ -10,9 +10,15 @@ import UIKit
 
 class EditBankProfileViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    //MARK:- OutLets
+
+    
     @IBOutlet weak var editProfileTableView: UITableView!
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
+    //MARK:- Variables
+
     
     var selectedButtonString = ""
     
@@ -30,7 +36,8 @@ class EditBankProfileViewController: UIViewController,UITableViewDelegate,UITabl
         editProfileTableView.dataSource = self
         editProfileTableView.delegate = self
         
-        
+        //MARK:- NibName
+
         
         let nibName  = UINib(nibName: "EditProfileTableViewCell1" , bundle: nil)
         editProfileTableView.register(nibName, forCellReuseIdentifier: "EditProfileTableViewCell1")
@@ -44,6 +51,8 @@ class EditBankProfileViewController: UIViewController,UITableViewDelegate,UITabl
         let nibName2  = UINib(nibName: "EditProfileTableViewCell3" , bundle: nil)
         editProfileTableView.register(nibName2, forCellReuseIdentifier: "EditProfileTableViewCell3")
         
+        //MARK:- headerImgHeight For iphone and ipad
+
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -69,6 +78,8 @@ class EditBankProfileViewController: UIViewController,UITableViewDelegate,UITabl
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    //MARK:- Button Action
+
     
     @IBAction func backAction(_ sender: Any) {
         
@@ -77,7 +88,8 @@ class EditBankProfileViewController: UIViewController,UITableViewDelegate,UITabl
         
     }
     
-    
+    //MARK:- UITableView Datasource Methods
+ 
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -112,38 +124,6 @@ class EditBankProfileViewController: UIViewController,UITableViewDelegate,UITabl
         
         return 70
     }
-    
-    func maleBtnClicked(_ sender: UIButton) {
-        
-        male = true
-        female = false
-        
-        
-        
-        let indexPath = IndexPath(item: 5, section: 1)
-        
-        editProfileTableView.reloadRows(at: [indexPath], with: .fade)
-        
-        editProfileTableView.reloadData()
-        
-        
-    }
-    
-    func femaleBtnClicked(_ sender: UIButton){
-        
-        male = false
-        female = true
-        
-        
-        
-        let indexPath = IndexPath(item: 5, section: 1)
-        
-        editProfileTableView.reloadRows(at: [indexPath], with: .fade)
-        
-        editProfileTableView.reloadData()
-        
-    }
-
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -182,6 +162,46 @@ class EditBankProfileViewController: UIViewController,UITableViewDelegate,UITabl
         
         
     }
+
+    
+    //MARK:- maleBtnClicked
+
+    
+    func maleBtnClicked(_ sender: UIButton) {
         
+        male = true
+        female = false
+        
+        
+        
+        let indexPath = IndexPath(item: 5, section: 1)
+        
+        editProfileTableView.reloadRows(at: [indexPath], with: .fade)
+        
+        editProfileTableView.reloadData()
+        
+        
+    }
+    
+    //MARK:- femaleBtnClicked
+
+    
+    func femaleBtnClicked(_ sender: UIButton){
+        
+        male = false
+        female = true
+        
+        
+        
+        let indexPath = IndexPath(item: 5, section: 1)
+        
+        editProfileTableView.reloadRows(at: [indexPath], with: .fade)
+        
+        editProfileTableView.reloadData()
+        
+    }
+
+    
+    
 }
 

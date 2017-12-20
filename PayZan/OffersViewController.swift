@@ -10,6 +10,9 @@ import UIKit
 
 class OffersViewController: UIViewController,UITabBarControllerDelegate,UITabBarDelegate {
     
+    //MARK:- OutLets
+
+    
     
     @IBOutlet weak var headerView: UIView!
     
@@ -20,6 +23,9 @@ class OffersViewController: UIViewController,UITabBarControllerDelegate,UITabBar
         super.viewDidLoad()
         
     self.tabBarController?.delegate = self
+        
+        //MARK:- headerImgHeight For iphone and ipad
+
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -38,6 +44,9 @@ class OffersViewController: UIViewController,UITabBarControllerDelegate,UITabBar
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK:- Button Action
+
     
     @IBAction func backAction(_ sender: Any) {
         

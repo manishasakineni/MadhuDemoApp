@@ -10,6 +10,8 @@ import UIKit
 
 class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource{
     
+    //MARK:- OutLets
+
     
     @IBOutlet weak var selectOperatorTextField: UITextField!
     
@@ -22,13 +24,18 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
-    var myPickerView : UIPickerView!
+    let serviceController = ServiceController()
     
+   
+    
+    //MARK:- Variables
+
+    var myPickerView : UIPickerView!
     var toolBar = UIToolbar()
     var userId:String?
     var walletId:String?
     
-    let serviceController = ServiceController()
+    
     
     var operatorList = [String]()
     
@@ -37,6 +44,8 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK:- TextField Colors
+
         
         selectOperatorTextField.layer.borderWidth = 0.5
         selectOperatorTextField.layer.borderColor = UIColor.lightGray.cgColor
@@ -58,6 +67,9 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
         amountTextField.keyboardType = .numberPad
         serviceNumberTextFileld.keyboardType = .numberPad
         getOperatorList()
+        
+        //MARK:- headerImgHeight For iphone and ipad
+
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -84,9 +96,12 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    //MARK:- UIPickerView
+
+    
     func pickUp(_ textField : UITextField){
         
-        // UIPickerView
+        
         self.myPickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
@@ -104,15 +119,14 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
             textField.inputView = self.myPickerView
         }
         
-        // ToolBar
+        //MARK:- ToolBar
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
-        //            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
-        // Adding Button ToolBar
+        //MARK:- Adding Button ToolBar
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(RechargeViewController.doneClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(RechargeViewController.cancelClick))
@@ -162,13 +176,15 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
         
     }
     
+    //MARK:- getOperatorList
+
+    
     func getOperatorList(){
         
         if(appDelegate.checkInternetConnectivity()){
             
             let strUrl = broadbandUrl
             
-//            let url : NSURL = NSURL(string: strUrl)!
             
             serviceController.requestGETURL(strURL:strUrl, success:{(result) in
                 DispatchQueue.main.async()
@@ -217,7 +233,9 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
     }
     
     
+    //MARK:- Button Actions
     
+ 
     
     
     
@@ -227,7 +245,6 @@ class BroadbandViewController: BaseViewController,UITextFieldDelegate,UIPickerVi
             
             if walletId != nil && userId != nil {
                 
-                //                sendMoneyToWalletService()
                 
             }
             else {

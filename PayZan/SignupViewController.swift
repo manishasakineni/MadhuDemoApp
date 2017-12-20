@@ -15,6 +15,8 @@ import GoogleSignIn
 
 class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarControllerDelegate,UITabBarDelegate {
     
+    //MARK:- OutLets
+
     
     @IBOutlet weak var mobileNumField: UITextField!
     
@@ -28,9 +30,7 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
     
     @IBOutlet weak var signupBtn: UIButton!
     
-    let serviceController = ServiceController()
     
-//    var appDelegate = AppDelegate()
     
     @IBOutlet weak var facebookBtn: UIButton!
     
@@ -40,15 +40,18 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
 
+    let serviceController = ServiceController()
+
+    
       var dict : [String : AnyObject]!
     
-   // let SErviceController = ServiceController()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //MARK:- TextField Colors
+
         mobileNumField.layer.borderWidth = 0.5
         mobileNumField.layer.borderColor = UIColor.lightGray.cgColor
         mobileNumField.layer.cornerRadius = 3
@@ -81,6 +84,9 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         
         facebookBtn.layer.cornerRadius = 3
         googleBtn.layer.cornerRadius = 3
+        
+        //MARK:- headerImgHeight For iphone and ipad
+
 
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -111,11 +117,17 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         self.view.endEditing(true)
     }
     
+    //MARK:- textFieldShouldReturn
+
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         //        self.view.endEditing(true)
         return true
     }
+    
+    //MARK:- postSignUpService
+
     
     func postSignUpService(){
         
@@ -216,13 +228,15 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         })
         
     }
+    //MARK:- validateAllFields
+
+    
     func validateAllFields() -> Bool
     {
         mobileNumField.text=mobileNumField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
         paswdField.text=paswdField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
         emailField.text=emailField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
         
-        //        txtPersonalEmail.text=txtPersonalEmail.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         confirmPasswordField.text=confirmPasswordField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
         
         let mnumb:NSString = mobileNumField.text! as NSString
@@ -231,7 +245,6 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         let confirmPassword:NSString = confirmPasswordField.text! as NSString
         
         
-        //Check whether textField are left empty or not
         var errorMessage:NSString?
         
         if (mnumb.length<=0) {
@@ -292,10 +305,9 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         return true
     }
 
-    
-    // BUtoons Actions
-    
-    @IBAction func signUpAction(_ sender: Any) {
+    //MARK:- BUtoons Actions
+
+       @IBAction func signUpAction(_ sender: Any) {
         
         
         if self.validateAllFields()
@@ -370,6 +382,9 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         
     }
     
+    //MARK:- getFBUserData
+
+    
     func getFBUserData(){
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
@@ -401,107 +416,11 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         
     }
     
+    //MARK:- Button Actions
+
+    
     @IBAction func googleAction(_ sender: Any) {
         
-//        MBProgressHUD.showAdded(to:appDelegate.window,animated:true)
-//        
-//        
-//        GIDSignIn.sharedInstance().signIn()
-//        
-//        
-//    }
-//    
-//    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
-//        
-//        MBProgressHUD.hide(for:appDelegate.window,animated:true)
-//    }
-//    
-//    // Present a view that prompts the user to sign in with Google
-//    func sign(_ signIn: GIDSignIn!,
-//              present viewController: UIViewController!) {
-//        self.present(viewController, animated: true, completion: nil)
-//    }
-//    
-//    // Dismiss the "Sign in with Google" view
-//    func sign(_ signIn: GIDSignIn!,
-//              dismiss viewController: UIViewController!) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
-//    
-//    
-//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-//        
-//        //        if error != nil{
-//        //            print(error ?? "google error")
-//        //            return
-//        //        }
-//        if (error == nil)
-//        {
-//            
-//            if UIDevice.current.userInterfaceIdiom == .phone {
-//                //            if UserDefaults.standard.bool(forKey: "checkLogin") {
-//                
-//                let userId = user.userID                  // For client-side use only!
-//                let idToken = user.authentication.idToken // Safe to send to the server
-//                let fullName = user.profile.name
-//                let givenName = user.profile.givenName
-//                let familyName = user.profile.familyName
-//                let email = user.profile.email
-//                let profileUrl = user.profile.imageURL(withDimension: 200)
-//                //            let mobile = user.profile.
-//                
-//                
-//                print("fullName:\(String(describing: fullName))")
-//                print("givenName:\(String(describing: givenName))")
-//                print("email:\(String(describing: email))")
-//                print("profileUrl:\(String(describing: profileUrl))")
-//                
-//                UserDefaults.standard.setValue("true", forKey: kIsFirstTime)
-//                UserDefaults.standard.synchronize()
-//                
-//                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
-//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//                appDelegate.window?.rootViewController = viewController
-//                
-//            }
-//            else if UIDevice.current.userInterfaceIdiom == .pad {
-//                
-//                let userId = user.userID                  // For client-side use only!
-//                let idToken = user.authentication.idToken // Safe to send to the server
-//                let fullName = user.profile.name
-//                let givenName = user.profile.givenName
-//                let familyName = user.profile.familyName
-//                let email = user.profile.email
-//                //            let mobile = user.profile.
-//                
-//                
-//                print("fullName:\(String(describing: fullName))")
-//                print("givenName:\(String(describing: givenName))")
-//                print("email:\(String(describing: email))")
-//                
-//                UserDefaults.standard.setValue("true", forKey: kIsFirstTime)
-//                UserDefaults.standard.synchronize()
-//                
-//                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "TabsViewController") as! UITabBarController
-//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//                appDelegate.window?.rootViewController = viewController
-//                
-//            }
-//        }
-//        else {
-//            Thread.sleep(forTimeInterval: 1.0)
-//            var configureError: Error?
-//            //    [[GGLContext sharedInstance] configureWithError:&configureError];
-//            assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
-//            GIDSignIn.sharedInstance().delegate = self as GIDSignInDelegate
-//            
-//        }
-//        
-//  
-//        
-//        
         
     }
     
@@ -553,7 +472,8 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
 
     }
     
-    
+    //MARK:- isValidEmailAddress
+
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {
         
@@ -578,6 +498,9 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         return  returnValue
     }
     
+    //MARK:- displayAlertMessage
+
+    
     func displayAlertMessage(messageToDisplay: String)
     {
         let alertController = UIAlertController(title: "Alert", message: messageToDisplay, preferredStyle: .alert)
@@ -594,6 +517,9 @@ class SignupViewController: BaseViewController,UITextFieldDelegate,UITabBarContr
         self.present(alertController, animated: true, completion:nil)
     }
 }
+
+//MARK:- extension String
+
 extension String {
     
         func isEqualToString(find: String) -> Bool {
@@ -608,7 +534,9 @@ extension String {
         }
     }
     
-    //Validate Email
+    //MARK:- Validate Email
+
+    
     
     var isEmail: Bool {
         do {
@@ -623,7 +551,8 @@ extension String {
         return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
     }
     
-    //validate Password
+     //MARK:- validate Password
+    
     var isValidPassword: Bool {
         do {
             let regex = try NSRegularExpression(pattern: "^[a-zA-Z_0-9\\-_,;.:#+*?=!§$%&/()@]+$", options: .caseInsensitive)

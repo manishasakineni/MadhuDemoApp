@@ -10,6 +10,8 @@ import UIKit
 
 class AddCardsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    //MARK:- OutLets
+    
     @IBOutlet weak var addableView: UITableView!
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
@@ -17,6 +19,8 @@ class AddCardsViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK:- NibName
+
         
         let nibName  = UINib(nibName: "AddCardsTableViewCell" , bundle: nil)
         addableView.register(nibName, forCellReuseIdentifier: "AddCardsTableViewCell")
@@ -42,6 +46,8 @@ class AddCardsViewController: UIViewController,UITableViewDelegate,UITableViewDa
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    //MARK:- Button Action
+    
     @IBAction func backAction(_ sender: Any) {
         
         
@@ -50,7 +56,7 @@ class AddCardsViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
     }
     
-    
+    //MARK:- UITableView Datasource Methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
         

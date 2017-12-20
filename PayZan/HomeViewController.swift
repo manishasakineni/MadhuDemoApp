@@ -8,26 +8,32 @@
 
 import UIKit
 
+ //MARK:- For images
 
 var imageArray = [UIImage(named:"mobileImg"),UIImage(named:"landlineImg"),UIImage(named:"dth"),UIImage(named:"broadband"),UIImage(named:"cabletv"),UIImage(named:"electricityImg"),UIImage(named:"waterImg"),UIImage(named:"datacard")]
 
 var imageArray1 = [UIImage(named:"mobileImg"),UIImage(named:"landlineImg"),UIImage(named:"dth"),UIImage(named:"broadband"),UIImage(named:"cabletv"),UIImage(named:"electricityImg"),UIImage(named:"waterImg"),UIImage(named:"datacard")]
 
 var imageArray2 = [UIImage(named:"mobile"),UIImage(named:"landline"),UIImage(named:"electricity"),UIImage(named:"event"),UIImage(named:"sport"),UIImage(named:"television"),UIImage(named:"water-tap"),UIImage(named:"internet")]
-//for label names
 
-//var namesarra1 = ["Mobile","Landline","DTH","Broadband","Cable TV","Electricity","Water","Data Card"]
+
+//  //MARK:- for label names
+
+
 var namesarra1 = [String]()
 
 var namesarra2 = ["Water","Landline","Electricity","Events","Sports","DTH","Mobile","Internet"]
 
 var namesarra3 = ["Mobile","Landline","Electricity","Events","Sports","DTH","Water","Internet"]
 
-//for heading names
+  //MARK:-  for heading names
 
 var namesarra4 = [String]()
 
 class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableViewDelegate,UITableViewDataSource,SWRevealViewControllerDelegate,UIScrollViewDelegate,UITabBarDelegate {
+    
+    
+     //MARK:-  OutLets
     
     @IBOutlet weak var sideMenuBtn: UIButton!
     
@@ -56,6 +62,10 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     @IBOutlet weak var btnViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
+    //MARK:- Variables
+
+    
     var userID:String?
     var walletID:String?
     
@@ -74,7 +84,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        namesarra4 = ["HRECHARGEANDBILLPAYMENT".localize(value: "Your HRECHARGEANDBILLPAYMENT"),"  BOOK ON PAYZAN","  Mera Cashback Sale"]
+        namesarra4 = ["    HRECHARGEANDBILLPAYMENT".localize(value: "Your HRECHARGEANDBILLPAYMENT"),"  BOOK ON PAYZAN","  Mera Cashback Sale"]
         
         namesarra1 = ["HMobile".localize(value: "Your HMobile"),"HLandline".localize(value: "Your HLandline"),"HDTH".localize(value: "Your HDTH"),"HBroadband".localize(value: "Your HBroadband"),"HCableTV".localize(value: "Your HCableTV"),"HElectricity".localize(value: "Your HElectricity"),"HWater".localize(value: "Your HWater"),"HDataCard".localize(value: "Your HDataCard")]
         
@@ -138,7 +148,8 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
 //        self.scrollView.backgroundColor = UIColor.red
         
-        
+        //MARK:- headerImgHeight For iphone and ipad
+
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
             
@@ -238,9 +249,9 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         
         
-        // Do any additional setup after loading the view, typically from a nib.
         
-        
+        //MARK:- NibName
+
         let nibName  = UINib(nibName: "HomeTableViewCell" , bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "HomeTableViewCell")
         
@@ -290,13 +301,12 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         self.tabBarController?.tabBar.isHidden = false
         
-        namesarra4 = ["HRECHARGEANDBILLPAYMENT".localize(value: "Your HRECHARGEANDBILLPAYMENT"),"BOOKONPAYZAN".localize(value: "Your HRECHARGEANDBILLPAYMENT"),"MeraCashbackSale".localize(value: "Your HRECHARGEANDBILLPAYMENT")]
+        namesarra4 = ["    HRECHARGEANDBILLPAYMENT".localize(value: "Your HRECHARGEANDBILLPAYMENT"),"BOOKONPAYZAN".localize(value: "Your HRECHARGEANDBILLPAYMENT"),"MeraCashbackSale".localize(value: "Your HRECHARGEANDBILLPAYMENT")]
         
         namesarra1 = ["HMobile".localize(value: "Your HMobile"),"HLandline".localize(value: "Your HLandline"),"HDTH".localize(value: "Your HDTH"),"HBroadband".localize(value: "Your HBroadband"),"HCableTV".localize(value: "Your HCableTV"),"HElectricity".localize(value: "Your HElectricity"),"HWater".localize(value: "Your HWater"),"HDataCard".localize(value: "Your HDataCard")]
         
         tableView.reloadData()
         
-//        self.tabBarController?.tabBar.isHidden = false
         
         let defaults = UserDefaults.standard
         
@@ -337,6 +347,8 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
 
     
     }
+    
+     //MARK:- iPhoneScreenSizes
 
     func iPhoneScreenSizes(){
         let bounds = UIScreen.main.bounds
@@ -368,7 +380,8 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
         
     }
-    
+    //MARK:- Tableview Datasource Methods
+
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -517,6 +530,9 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
     }
     
+    //MARK:- addAgentAction
+
+    
     func addAgentAction(_ sender: UIButton) {
         
         let addMoneyViewController = self.storyboard?.instantiateViewController(withIdentifier: "RequestForAgentViewController") as! RequestForAgentViewController
@@ -525,6 +541,7 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
         
     }
     
+     //MARK:- Button Actions
     
     @IBAction func menuAction(_ sender: Any) {
         
@@ -571,6 +588,8 @@ class HomeViewController: UIViewController,UITabBarControllerDelegate,UITableVie
     }
     
 }
+
+ //MARK:- Collectionview Extension
 
 extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
@@ -665,6 +684,8 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
         
     }
     
+     //MARK:- Collectionview didSelectItemAt indexPath
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
@@ -715,6 +736,8 @@ extension HomeViewController:UICollectionViewDelegate, UICollectionViewDataSourc
             self.navigationController?.pushViewController(dthViewController, animated: true)
         }
     }
+    
+      //MARK:- Collectionview sizeForItemAt indexPath
     
         
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

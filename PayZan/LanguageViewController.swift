@@ -12,6 +12,8 @@ import Localize
 
 class LanguageViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
     
+    //MARK:- OutLet
+  
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
@@ -26,7 +28,8 @@ class LanguageViewController: UIViewController,AVCaptureMetadataOutputObjectsDel
         print("level.one.two.three".localize())
         print("the.same.lavel".localize())
         
-        
+        //MARK:- headerImgHeight For iphone and ipad
+
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
             headerImgHeight.constant = 150
@@ -45,11 +48,11 @@ class LanguageViewController: UIViewController,AVCaptureMetadataOutputObjectsDel
     }
     
    
-    
+    //MARK:- Button Actions
+
     
     @IBAction func english(_ sender: Any) {
         
-//       self.changeToLanguage("en")
         
         let actionSheet = UIAlertController(title: nil, message: "app.update.language".localize(), preferredStyle: UIAlertControllerStyle.actionSheet)
         for language in Localize.availableLanguages() {
@@ -88,6 +91,15 @@ class LanguageViewController: UIViewController,AVCaptureMetadataOutputObjectsDel
         
         self.changeToLanguage("ta")
     }
+    
+    @IBAction func backAction(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    
+    //MARK:- changeToLanguage
+
 
     private  func changeToLanguage(_ langCode : String) {
         
@@ -130,9 +142,5 @@ class LanguageViewController: UIViewController,AVCaptureMetadataOutputObjectsDel
     }
     
     
-    @IBAction func backAction(_ sender: Any) {
-        
-        self.navigationController?.popViewController(animated: true)
-    }
-
+  
 }

@@ -9,10 +9,16 @@
 import UIKit
 
 class TermsOfServiceViewController: UIViewController {
+    
+    //MARK:- OutLet
+
 
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //MARK:- headerImgHeight For iphone and ipad
+
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -37,6 +43,9 @@ class TermsOfServiceViewController: UIViewController {
         
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    //MARK:- Button Action
+
     
     @IBAction func backAction(_ sender: Any) {
         

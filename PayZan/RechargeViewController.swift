@@ -10,6 +10,9 @@ import UIKit
 import ContactsUI
 
 class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, CNContactPickerDelegate {
+    
+    //MARK:- OutLets
+ 
 
     @IBOutlet weak var backArrowOutLet: NSLayoutConstraint!
     @IBOutlet weak var mainView: UIView!
@@ -48,6 +51,9 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
     
+    //MARK:- Variables
+
+    
     var serviceController = ServiceController()
     
     var operatorList = [String]()
@@ -72,11 +78,11 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
-        
-//        self.tabBarController?.tabBar.isHidden = true
-        
         networkField.delegate = self
+ 
+        
+        //MARK:- TextField Colors
+        
         
         mobileField.layer.borderWidth = 0.5
         mobileField.layer.borderColor = UIColor.lightGray.cgColor
@@ -106,7 +112,8 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         getPrepaidList()
         getPostpaidList()
-        
+        //MARK:- headerImgHeight For iphone and ipad
+
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -143,15 +150,15 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         // self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    
-    func pickUp(_ textField : UITextField){
+    //MARK:- UIPickerView
+
+        func pickUp(_ textField : UITextField){
         
-        // UIPickerView
+        
         self.myPickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
-//        textField.inputView = self.myPickerView
         if operatorList.isEmpty {
             
             self.myPickerView.isHidden = true
@@ -165,15 +172,14 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             textField.inputView = self.myPickerView
         }
         
-        // ToolBar
+        //MARK:- ToolBar
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
-//            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
-        // Adding Button ToolBar
+        //MARK:- Adding Button ToolBar
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(RechargeViewController.doneClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(RechargeViewController.cancelClick))
@@ -188,6 +194,9 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         networkField.resignFirstResponder()
         planField.resignFirstResponder()
     }
+    
+    //MARK:- cancelClick
+    
     func cancelClick() {
         networkField.resignFirstResponder()
         planField.resignFirstResponder()
@@ -210,8 +219,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             pickerList = operatorList
             
             networkField = textField
-            
-//            pickerSample = pickerData
             
             networkField.tag = 1
             
@@ -244,8 +251,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       
-//        return pickerList.count
         
         if (selectedTextField == 1){
             
@@ -266,7 +271,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
 
             return "\(pickerSample[row])"
         }
-//       return pickerList[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
@@ -281,7 +285,7 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         }
         
     }
-    
+    //MARK:- getPrepaidList
     
     func getPrepaidList(){
         
@@ -289,7 +293,6 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         let strUrl = prepaidUrl
         
-//        let url : NSURL = NSURL(string: strUrl)!
         
         serviceController.requestGETURL(strURL:strUrl, success:{(result) in
             DispatchQueue.main.async()
@@ -333,13 +336,14 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
     }
     
+    //MARK:- getPostpaidList
+    
     func getPostpaidList(){
         
         if(appDelegate.checkInternetConnectivity()){
         
         let strUrl = postpaidUrl
         
-//        let url : NSURL = NSURL(string: strUrl)!
         
         serviceController.requestGETURL(strURL:strUrl, success:{(result) in
             DispatchQueue.main.async()
@@ -383,6 +387,7 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         }
     }
     
+    //MARK:- Button Actions
     
     @IBAction func rechargeAction(_ sender: Any) {
         
@@ -483,6 +488,22 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
     }
     
+    
+    
+      @IBAction func phoneBookAction(_ sender: Any) {
+        
+        
+        if #available(iOS 9.0, *) {
+            let cnPicker = CNContactPickerViewController()
+            cnPicker.delegate = self
+            self.present(cnPicker, animated: true, completion: nil)
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        
+    }
+    
     //MARK:- CNContactPickerDelegate Method
     
     @available(iOS 9.0, *)
@@ -508,23 +529,11 @@ class RechargeViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
                 // Fallback on earlier versions
             }
             
-           
+            
         }
     }
     
-    @IBAction func phoneBookAction(_ sender: Any) {
-        
-        
-        if #available(iOS 9.0, *) {
-            let cnPicker = CNContactPickerViewController()
-            cnPicker.delegate = self
-            self.present(cnPicker, animated: true, completion: nil)
-        } else {
-            // Fallback on earlier versions
-        }
-        
-        
-    }
+
 
 }
 

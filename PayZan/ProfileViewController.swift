@@ -10,6 +10,9 @@ import UIKit
 import Localize
 
 class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,ViewControllerBDelegate {
+    
+    //MARK:- OutLets
+ 
 
     @IBOutlet weak var profileTVC: UITableView!
     
@@ -20,6 +23,8 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
+    //MARK:- Variables
+
     
     var userNamee:String?
     var userEmail:String?
@@ -99,6 +104,9 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         profileTVC.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         
+        //MARK:- NibName
+
+        
         let nibName  = UINib(nibName: "ListTableViewCell" , bundle: nil)
         profileTVC.register(nibName, forCellReuseIdentifier: "ListTableViewCell")
         
@@ -111,7 +119,8 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         let nibName3  = UINib(nibName: "QRTableViewCell" , bundle: nil)
         profileTVC.register(nibName3, forCellReuseIdentifier: "QRTableViewCell")
         
-        
+        //MARK:- headerImgHeight For iphone and ipad
+
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
             headerImgHeight.constant = 150
@@ -133,15 +142,16 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK:- localize
+
+    
     func localize() {
         
-//                yourLabel.text = "app.names".localize(values: "mark", "henrry", "peater")
         
         print("app.names".localize(values: "mani", "manoj", "peater"))
         
         print("username".localize(value: "Your username"))
         
-//                otherLabel.text = "app.username".localize(value: "Your username")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -174,6 +184,8 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
     }
     
+    //MARK:- textChanged
+    
     func textChanged(text: String?) {
         
          labelText1 = text!
@@ -190,7 +202,8 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         }
     }
     
-    
+    //MARK:- Tableview Datasource Methods
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -332,9 +345,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             cell.layer.borderWidth = 0.5
             cell.layer.borderColor = UIColor.lightGray.cgColor
             
-//             cell.userNameLabel.font = UIFont(name:"Helvetica Neue", size:11)
             cell.userNameLabel.text = userNamee
-//            cell.emaiLabel.font = UIFont(name:"Helvetica Neue", size:10)
             cell.emaiLabel.text = userEmail
             cell.addWalletLabel.text = walletBal
             
@@ -352,7 +363,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = UIColor.lightGray.cgColor
         
-//        cell.textLbl.font = UIFont(name:"Helvetica Neue", size:17)
         cell.textLbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         
         return cell
@@ -403,8 +413,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                     tabStrings[1].title = "app.MyProfile".localize(value: "My Profile")
                 }
                 
-//            let cell = Bundle.main.loadNibNamed("SignOutTableViewCell", owner: self, options: nil)?.first as! SignOutTableViewCell
-                    
+                
             cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 
             cell.signOutBtn.addTarget(self, action: #selector(self.signOutClicked), for: .touchUpInside)
@@ -487,10 +496,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
             else if indexPath.row == 6 {
                 
                
-//                let LanguageVW = storyboard?.instantiateViewController(withIdentifier: "LanguageVW")
-//                self.navigationController?.pushViewController(LanguageVW!, animated: true)
-                
-//                listArr.removeAll()
+
                 
                 let actionSheet = UIAlertController(title: nil, message: "app.ChooseLanguage".localize(), preferredStyle: .actionSheet)
                 for language in Localize.availableLanguages() {
@@ -527,9 +533,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                 actionSheet.addAction(cancelAction)
                 
                 
-//                self.present(actionSheet, animated: true, completion: nil)
-                
-                
                 if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.phone) {
                     
                     
@@ -542,8 +545,7 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
                     
                     popup.present(from: CGRect(x:self.view.frame.size.width/2, y:self.view.frame.size.height/4, width:0, height:0), in: self.view, permittedArrowDirections: UIPopoverArrowDirection.any, animated: true)
                     
-                    // CGRect(x: 0, y: 0, width: 100, height: 100)
-                }
+            }
                 
             }
             
@@ -558,6 +560,9 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
     }
     
+    //MARK:- editAction
+
+    
     func editAction(_ sender: UIButton){
         
         let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
@@ -568,6 +573,8 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         self.navigationController?.pushViewController(editViewController, animated: true)
     }
     
+    //MARK:- addMoneyAction
+
     
     func addMoneyAction(_ sender: UIButton) {
         
@@ -582,11 +589,15 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
     }
     
+    //MARK:- btnAction
+    
     func btnAction(_ sender: UIButton) {
         
         
     }
     
+    //MARK:- loginBtnClicked
+
     
     func loginBtnClicked(_sender: UIButton){
         
@@ -600,6 +611,10 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         self.navigationController?.pushViewController(viewController, animated: true)
         
     }
+    
+    //MARK:- newAccountBtnClicked
+
+    
     func newAccountBtnClicked(_sender: UIButton){
         
 //        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -614,6 +629,8 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
     }
     
+    //MARK:- shareBtnClicked
+
     func shareBtnClicked(_sender: UIButton){
         
         let indexPath : IndexPath = IndexPath(row: _sender.tag, section: 2)
@@ -648,12 +665,19 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
        
         
     }
+    
+     //MARK:- scanQRBtnClicked
+    
     func scanQRBtnClicked(_sender: UIButton){
         
         let cableViewController = self.storyboard?.instantiateViewController(withIdentifier: "QRCodeViewController") as! QRCodeViewController
         self.navigationController?.pushViewController(cableViewController, animated: true)
         
     }
+    
+    //MARK:- signOutClicked
+
+    
     func signOutClicked(_sender: UIButton){
         
         
@@ -669,7 +693,6 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
         self.navigationItem.leftBarButtonItem  = button1
         
-//        self.navigationItem.title = "AAAAA"
 
         if userNamee == "User Name" {
             
@@ -735,12 +758,15 @@ class ProfileViewController: BaseViewController,UITableViewDelegate,UITableViewD
         
     }
     
-    
+    //MARK:- action
+
     func action(_sender: UIButton){
         
         print(111111)
         
     }
+    
+    //MARK:- Button Actions
     
     @IBAction func backAction(_ sender: Any) {
         

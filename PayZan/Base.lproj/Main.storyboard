@@ -1368,7 +1368,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ia-uN-4KJ">
-                                <rect key="frame" x="38" y="135" width="25" height="25"/>
+                                <rect key="frame" x="65" y="135" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="6ss-8i-fNX"/>
                                     <constraint firstAttribute="height" constant="25" id="YtB-jA-KO8"/>
@@ -1390,9 +1390,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prepaid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygr-GJ-1kK">
-                                <rect key="frame" x="65" y="137" width="111" height="21"/>
+                                <rect key="frame" x="95" y="137" width="90" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="111" id="H80-VQ-LbU"/>
+                                    <constraint firstAttribute="width" constant="90" id="H80-VQ-LbU"/>
                                     <constraint firstAttribute="height" constant="21" id="ueK-Yt-JLb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -1414,9 +1414,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Postpaid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZV-T8-s26">
-                                <rect key="frame" x="236" y="136" width="123" height="21"/>
+                                <rect key="frame" x="240" y="136" width="106" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="9SI-ZO-wEr"/>
+                                    <constraint firstAttribute="width" constant="106" id="9SI-ZO-wEr"/>
                                     <constraint firstAttribute="height" constant="21" id="Ojk-eR-C3Y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -1436,10 +1436,10 @@
                             <constraint firstItem="fZ9-dv-Sk5" firstAttribute="top" secondItem="1Ia-uN-4KJ" secondAttribute="bottom" constant="27" id="AKP-6m-Jjk"/>
                             <constraint firstItem="elu-k5-1kC" firstAttribute="leading" secondItem="ssc-VN-wKY" secondAttribute="leading" id="JEo-Q2-h44"/>
                             <constraint firstItem="1Ia-uN-4KJ" firstAttribute="top" secondItem="elu-k5-1kC" secondAttribute="bottom" constant="16" id="LnB-DR-9tv"/>
-                            <constraint firstItem="vZV-T8-s26" firstAttribute="leading" secondItem="7nI-XE-5rD" secondAttribute="trailing" constant="3" id="MiM-ne-aeU"/>
+                            <constraint firstItem="vZV-T8-s26" firstAttribute="leading" secondItem="7nI-XE-5rD" secondAttribute="trailing" constant="7" id="MiM-ne-aeU"/>
                             <constraint firstAttribute="trailing" secondItem="wgg-eW-0Bm" secondAttribute="trailing" id="Qs4-4G-Rvp"/>
                             <constraint firstAttribute="trailing" secondItem="elu-k5-1kC" secondAttribute="trailing" id="V58-wP-Fkb"/>
-                            <constraint firstItem="GK2-Xd-43b" firstAttribute="leading" secondItem="ygr-GJ-1kK" secondAttribute="trailing" constant="-5.5" id="VCq-Pm-8MZ"/>
+                            <constraint firstItem="GK2-Xd-43b" firstAttribute="leading" secondItem="ygr-GJ-1kK" secondAttribute="trailing" constant="-15" id="VCq-Pm-8MZ"/>
                             <constraint firstItem="7nI-XE-5rD" firstAttribute="centerY" secondItem="vZV-T8-s26" secondAttribute="centerY" id="WNi-rc-Tyc"/>
                             <constraint firstItem="GK2-Xd-43b" firstAttribute="centerY" secondItem="ssc-VN-wKY" secondAttribute="centerY" constant="-174.5" id="Ytk-Vz-8Dn"/>
                             <constraint firstAttribute="trailing" secondItem="fZ9-dv-Sk5" secondAttribute="trailing" id="aYL-NX-Ujh"/>
@@ -1447,7 +1447,7 @@
                             <constraint firstItem="wgg-eW-0Bm" firstAttribute="leading" secondItem="ssc-VN-wKY" secondAttribute="leading" id="b2M-Hd-f9d"/>
                             <constraint firstItem="1Ia-uN-4KJ" firstAttribute="centerY" secondItem="ygr-GJ-1kK" secondAttribute="centerY" id="h5C-Ge-lWH"/>
                             <constraint firstItem="wgg-eW-0Bm" firstAttribute="top" secondItem="ssc-VN-wKY" secondAttribute="top" id="t8L-HR-5Ec"/>
-                            <constraint firstItem="ygr-GJ-1kK" firstAttribute="leading" secondItem="1Ia-uN-4KJ" secondAttribute="trailing" constant="2" id="wBI-ex-Wmp"/>
+                            <constraint firstItem="ygr-GJ-1kK" firstAttribute="leading" secondItem="1Ia-uN-4KJ" secondAttribute="trailing" constant="5" id="wBI-ex-Wmp"/>
                             <constraint firstItem="GK2-Xd-43b" firstAttribute="centerX" secondItem="ssc-VN-wKY" secondAttribute="centerX" constant="-17.5" id="wW5-HA-xgN"/>
                         </constraints>
                     </view>

@@ -7,7 +7,8 @@
 //
 
 import UIKit
-//import TextFieldEffects
+
+//MARK:- RequeatAgentDelegate
 
 protocol RequeatAgentDelegate: class {
     
@@ -19,6 +20,9 @@ class RequestForAgentViewController: BaseViewController,UITableViewDelegate,UITa
     
     
 let headerTitle = "PERSONAL INFORMATION"
+    
+    //MARK:- OutLets
+
     
     @IBOutlet weak var requestForAgentTableView: UITableView!
     
@@ -72,6 +76,9 @@ let headerTitle = "PERSONAL INFORMATION"
         
         super.viewDidLoad()
         
+        //MARK:- NibName
+
+        
         let nibName  = UINib(nibName: "AddAgentRequestTableViewCell" , bundle: nil)
         requestForAgentTableView.register(nibName, forCellReuseIdentifier: "AddAgentRequestTableViewCell")
         
@@ -82,6 +89,9 @@ let headerTitle = "PERSONAL INFORMATION"
         requestForAgentTableView.delegate = self
         
         getProvinceList()
+        
+        //MARK:- headerImgHeight For iphone and ipad
+
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -108,6 +118,9 @@ let headerTitle = "PERSONAL INFORMATION"
         
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    //MARK:- textFieldDidBeginEditing
+
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
@@ -236,8 +249,10 @@ let headerTitle = "PERSONAL INFORMATION"
             
 
         
-        // myPickerView.endEditing(true)
     }
+    
+    //MARK:- shouldChangeCharactersIn range
+
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -265,6 +280,8 @@ let headerTitle = "PERSONAL INFORMATION"
         return true
     }
     
+    //MARK:- textFieldShouldEndEditing
+
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         
@@ -282,6 +299,8 @@ let headerTitle = "PERSONAL INFORMATION"
         return true
     }
     
+    //MARK:- textFieldDidEndEditing
+
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
@@ -386,13 +405,14 @@ let headerTitle = "PERSONAL INFORMATION"
             
         }
         
-        // textField.endEditing(true)
     }
+
+    //MARK:- UIPickerView
 
     
     func pickUp(_ textField : UITextField){
         
-        // UIPickerView
+        
         self.myPickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
@@ -402,15 +422,14 @@ let headerTitle = "PERSONAL INFORMATION"
 
             textField.inputView = self.myPickerView
 
-        // ToolBar
+        //MARK:- ToolBar
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
-        //            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
-        // Adding Button ToolBar
+        //MARK:- Adding Button ToolBar
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(RechargeViewController.doneClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(RechargeViewController.cancelClick))
@@ -427,14 +446,11 @@ let headerTitle = "PERSONAL INFORMATION"
     func doneClick() {
         activeTextField.resignFirstResponder()
         
-//        requestForAgentTableView.reloadData()
     }
     func cancelClick() {
         activeTextField.resignFirstResponder()
-//        requestForAgentTableView.reloadData()
     }
     
-    //MARK:- TextFiled Delegate
     
 
     
@@ -456,7 +472,6 @@ let headerTitle = "PERSONAL INFORMATION"
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-      //  self.activeTextField.text = pickerData[row]
         
         if activeTextField.tag == 5{
             
@@ -524,6 +539,7 @@ let headerTitle = "PERSONAL INFORMATION"
         
     }
     
+     //MARK:- UITableView Delegate & DataSource
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if(section==0){
@@ -615,12 +631,10 @@ let headerTitle = "PERSONAL INFORMATION"
         if indexPath.row == 0{
             
             cell.titleLabel?.text = "app.FirstName".localize()
-//            "Select District"
             cell.agentRequestField.placeholder = "app.FirstName".localize()
             
             cell.agentRequestField.text = firstName
             
-//            reqdelegate?.textChanged(text: cell.titleLabel?.text)
             
         }
          else if indexPath.row == 1{
@@ -732,6 +746,9 @@ let headerTitle = "PERSONAL INFORMATION"
         
     }
     
+    //MARK:- submitAgentAction
+
+    
     func submitAgentAction(_ sender: UIButton) {
         
     print("sender:\(sender.tag)")
@@ -756,11 +773,11 @@ let headerTitle = "PERSONAL INFORMATION"
      
     }
     
+     //MARK:- validateAllFields
     
     func validateAllFields() -> Bool
     {
         
-        //Check whether textField are left empty or not
         var errorMessage:NSString?
         
         let fName:NSString = firstName as NSString
@@ -865,13 +882,14 @@ let headerTitle = "PERSONAL INFORMATION"
         return true
     }
     
+      //MARK:- getProvinceList
+    
     func getProvinceList(){
         
         if(appDelegate.checkInternetConnectivity()){
             
             let strUrl = PROVINCE_API
             
-//            let url : NSURL = NSURL(string: strUrl)!
             
             serviceController.requestGETURL(strURL:strUrl, success:{(result) in
                 DispatchQueue.main.async()
@@ -920,13 +938,15 @@ let headerTitle = "PERSONAL INFORMATION"
         }
     }
     
+    //MARK:- getDistrictList
+
+    
     func getDistrictList(){
         
         if(appDelegate.checkInternetConnectivity()){
             
             let strUrl = DISTRICTS_API + String(provinceID)
             
-//            let url : NSURL = NSURL(string: strUrl)!
             
             serviceController.requestGETURL(strURL:strUrl, success:{(result) in
                 DispatchQueue.main.async()
@@ -938,7 +958,6 @@ let headerTitle = "PERSONAL INFORMATION"
                         let isActive = respVO.IsSuccess
                         
                         
-                        //                    let status = result["status"] as! String
                         
                         if(isActive == true){
                             
@@ -951,7 +970,6 @@ let headerTitle = "PERSONAL INFORMATION"
                                 print("index:\(index)")
                                 
                                 self.districtsAry.append(element.Name!)
-                                //                                self.provinceIDArray.append(element.Id!)
                                 
                             }
                             
@@ -977,13 +995,15 @@ let headerTitle = "PERSONAL INFORMATION"
         }
     }
     
+    //MARK:- getMandalList
+
+    
     func getMandalList(){
         
         if(appDelegate.checkInternetConnectivity()){
             
             let strUrl = MANDALS_API + String(districtID)
             
-//            let url : NSURL = NSURL(string: strUrl)!
             
             serviceController.requestGETURL(strURL:strUrl, success:{(result) in
                 DispatchQueue.main.async()
@@ -995,7 +1015,6 @@ let headerTitle = "PERSONAL INFORMATION"
                         let isActive = respVO.IsSuccess
                         
                         
-                        //                    let status = result["status"] as! String
                         
                         if(isActive == true){
                             
@@ -1008,7 +1027,6 @@ let headerTitle = "PERSONAL INFORMATION"
                                 print("index:\(index)")
                                 
                                 self.mandalsAry.append(element.Name!)
-                                //                                self.provinceIDArray.append(element.Id!)
                                 
                             }
                             
@@ -1034,14 +1052,14 @@ let headerTitle = "PERSONAL INFORMATION"
         }
     }
     
-    
+    //MARK:- getVillageList
+
     func getVillageList(){
         
         if(appDelegate.checkInternetConnectivity()){
             
             let strUrl = VILLAGES_API + String(mandalID)
             
-//            let url : NSURL = NSURL(string: strUrl)!
             
             serviceController.requestGETURL(strURL:strUrl, success:{(result) in
                 DispatchQueue.main.async()
@@ -1053,7 +1071,6 @@ let headerTitle = "PERSONAL INFORMATION"
                         let isActive = respVO.IsSuccess
                         
                         
-                        //                    let status = result["status"] as! String
                         
                         if(isActive == true){
                             
@@ -1064,7 +1081,6 @@ let headerTitle = "PERSONAL INFORMATION"
                                 print("index:\(index)")
                                 
                                 self.villagesAry.append(element.Name!)
-                                //                                self.provinceIDArray.append(element.Id!)
                                 
                             }
                             
@@ -1090,13 +1106,15 @@ let headerTitle = "PERSONAL INFORMATION"
         }
     }
     
+    //MARK:- addAgentReqInfoService
+
+    
     func addAgentReqInfoService(){
         
         
             let  strUrl = ADDAGENT_API
             
-            //        let null = NSNull()
-            
+        
             let currentDate = GlobalSupportingClass.getCurrentDate()
             
             print("currentDate\(currentDate)")
@@ -1176,6 +1194,8 @@ let headerTitle = "PERSONAL INFORMATION"
         
     }
     
+    //MARK:- Button Actions
+
     
     @IBAction func backAction(_ sender: Any) {
         

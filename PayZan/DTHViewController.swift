@@ -10,6 +10,9 @@ import UIKit
 
 class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
+    //MARK:- OutLets
+
+    
     @IBOutlet weak var subsriberIdField: UITextField!
     
     @IBOutlet weak var operatorField: UITextField!
@@ -23,6 +26,11 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
+    let serviceController = ServiceController()
+
+    
+    //MARK:- Variables
+
     var myPickerView : UIPickerView!
     
     var toolBar = UIToolbar()
@@ -35,7 +43,6 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
     
     var pickerData = ["Operator1" , "Operator2" , "Operator3" , "Operator4"]
     
-    let serviceController = ServiceController()
     
    var operatorList = [String]()
     
@@ -43,6 +50,8 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK:- TextField Colors
+
         
         subsriberIdField.layer.borderWidth = 0.5
         subsriberIdField.layer.borderColor = UIColor.lightGray.cgColor
@@ -64,6 +73,9 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
         amountField.keyboardType = .numberPad
         
         getOperatorList()
+        
+        //MARK:- headerImgHeight For iphone and ipad
+
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -89,9 +101,12 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    //MARK:- UIPickerView
+
+    
     func pickUp(_ textField : UITextField){
         
-        // UIPickerView
+        
         self.myPickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
@@ -109,15 +124,14 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
             textField.inputView = self.myPickerView
         }
         
-        // ToolBar
+        //MARK:- ToolBar
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
-//            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
-        // Adding Button ToolBar
+        //MARK:- Adding Button ToolBar
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(RechargeViewController.doneClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(RechargeViewController.cancelClick))
@@ -174,7 +188,6 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
         
         let strUrl = dthUrl
         
-//        let url : NSURL = NSURL(string: strUrl)!
         
         serviceController.requestGETURL(strURL:strUrl, success:{(result) in
             DispatchQueue.main.async()
@@ -206,7 +219,6 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
                         self.view.makeToast("Service not found", duration:kToastDuration, position:CSToastPositionCenter)
                         
                     }
-                    //  MBProgressHUD.hide(for:self.appDelegate.window, animated: true)
             }
         }, failure:  {(error) in
         })
@@ -218,6 +230,9 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
             return
         }
     }
+    
+    //MARK:- Button Actions
+
     
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -236,7 +251,6 @@ class DTHViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDa
             
             if walletId != nil && userId != nil {
                 
-                //                sendMoneyToWalletService()
                 
             }
             else {

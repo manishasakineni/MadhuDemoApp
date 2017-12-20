@@ -9,7 +9,8 @@
 import UIKit
 
 class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-
+    
+  //MARK:- OutLets
     
     @IBOutlet weak var operatorField: UITextField!
     
@@ -23,7 +24,10 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
-    
+    let serviceController = ServiceController()
+
+    //MARK:- Variables
+
     var myPickerView : UIPickerView!
     
     var toolBar = UIToolbar()
@@ -35,13 +39,13 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
     
     var pickerData = ["Operator1" , "Operator2" , "Operator3" , "Operator4"]
     
-    let serviceController = ServiceController()
     
     var operatorList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //MARK:- TextField Colors
+
         
         operatorField.layer.borderWidth = 0.5
         operatorField.layer.borderColor = UIColor.lightGray.cgColor
@@ -64,6 +68,9 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
         
         accountNumField.keyboardType = .numberPad
         amountField.keyboardType = .numberPad
+        
+        //MARK:- headerImgHeight For iphone and ipad
+
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -88,10 +95,12 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
         
         self.tabBarController?.tabBar.isHidden = true
     }
+    //MARK:- UIPickerView
+
     
     func pickUp(_ textField : UITextField){
         
-        // UIPickerView
+        
         self.myPickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
@@ -109,15 +118,14 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
             textField.inputView = self.myPickerView
         }
         
-        // ToolBar
+        //MARK:- ToolBar
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
-        //            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
-        // Adding Button ToolBar
+        //MARK:- Adding Button ToolBar
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(RechargeViewController.doneClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(RechargeViewController.cancelClick))
@@ -168,13 +176,15 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
         
     }
     
+    //MARK:- getOperatorList
+
+    
     func getOperatorList(){
         
         if(appDelegate.checkInternetConnectivity()){
         
         let strUrl = cableTvUrl
         
-//        let url : NSURL = NSURL(string: strUrl)!
         
         serviceController.requestGETURL(strURL:strUrl, success:{(result) in
             DispatchQueue.main.async()
@@ -220,6 +230,8 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
         }
     }
     
+    //MARK:- Button Actions
+
     
     @IBAction func paynowAction(_ sender: Any) {
         
@@ -227,7 +239,6 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
             
             if walletId != nil && userId != nil {
                 
-                //                sendMoneyToWalletService()
                 
             }
             else {
@@ -246,7 +257,6 @@ class CableTvViewController: BaseViewController,UIPickerViewDelegate, UIPickerVi
                     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     
                     let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
-                    //                    let navigationController = UINavigationController(rootViewController: viewController)
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.window?.rootViewController = viewController
                 }

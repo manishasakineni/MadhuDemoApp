@@ -10,6 +10,9 @@ import UIKit
 import ContactsUI
 
 class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, CNContactPickerDelegate {
+    
+    //MARK:- OutLets
+
 
     @IBOutlet weak var mainView: UIView!
     
@@ -46,6 +49,8 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
+    //MARK:- Variables
+
     
     var myPickerView : UIPickerView!
     
@@ -71,6 +76,9 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
         networkField.tag = 1
         planField.tag = 2
         
+        //MARK:- TextField Colors
+
+        
         mobileField.layer.borderWidth = 0.5
         mobileField.layer.borderColor = UIColor.lightGray.cgColor
         mobileField.layer.cornerRadius = 3
@@ -86,6 +94,9 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
         planField.layer.cornerRadius = 3
         planField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         
+        
+        //MARK:- headerImgHeight For iphone and ipad
+
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
             headerImgHeight.constant = 150
@@ -113,25 +124,26 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
         super.viewDidAppear(true)
     }
     
+    //MARK:- UIPickerView
+
     
     func pickUp(_ textField : UITextField){
         
-        // UIPickerView
+       
         self.myPickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.myPickerView.backgroundColor = UIColor.white
         textField.inputView = self.myPickerView
         
-        // ToolBar
+        // MARK:-ToolBar
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
-//            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
-        // Adding Button ToolBar
+        //MARK:- Adding Button ToolBar
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(RechargeViewController.doneClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(RechargeViewController.cancelClick))
@@ -146,6 +158,9 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
         networkField.resignFirstResponder()
         planField.resignFirstResponder()
     }
+    
+  //  MARK:-cancelClick
+    
     func cancelClick() {
         networkField.resignFirstResponder()
         planField.resignFirstResponder()
@@ -229,6 +244,9 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
         }
         
     }
+    
+    //MARK:- Button Actions
+ 
     
     
     @IBAction func rechargeAction(_ sender: Any) {
@@ -330,6 +348,21 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
         
     }
     
+    
+    @IBAction func phoneBookAction(_ sender: Any) {
+        
+        
+        if #available(iOS 9.0, *) {
+            let cnPicker = CNContactPickerViewController()
+            cnPicker.delegate = self
+            self.present(cnPicker, animated: true, completion: nil)
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        
+    }
+    
     //MARK:- CNContactPickerDelegate Method
     
     @available(iOS 9.0, *)
@@ -357,20 +390,7 @@ class RechargeDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
             
         }
     }
-    
-    @IBAction func phoneBookAction(_ sender: Any) {
-        
-        
-        if #available(iOS 9.0, *) {
-            let cnPicker = CNContactPickerViewController()
-            cnPicker.delegate = self
-            self.present(cnPicker, animated: true, completion: nil)
-        } else {
-            // Fallback on earlier versions
-        }
-        
-        
-    }
+
     
 
 

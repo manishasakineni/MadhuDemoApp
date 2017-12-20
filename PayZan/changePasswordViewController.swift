@@ -9,6 +9,9 @@
 import UIKit
 
 class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITabBarControllerDelegate {
+    
+    //MARK:- OutLets
+
 
     @IBOutlet weak var eyebtnOutLet: UIButton!
     
@@ -29,6 +32,9 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //MARK:- TextField Colors
+
         
         currentPswdTF.layer.borderWidth = 0.5
         currentPswdTF.layer.borderColor = UIColor.lightGray.cgColor
@@ -54,6 +60,9 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
         reTypeNewPswdOutLet.delegate = self
         
 
+        //MARK:- headerImgHeight For iphone and ipad
+
+        
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
             headerImgHeight.constant = 150
@@ -78,12 +87,16 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    //MARK:- Button Action
+
+    
     @IBAction func backAction(_ sender: Any) {
         
          self.navigationController?.popViewController(animated: true)
     }
     
-    
+    //MARK:- postLoginService
+
     
     func postLoginService(){
         
@@ -99,7 +112,6 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
         
         let dictHeaders = ["":"","":""] as NSDictionary
         
-        //        let dictHeaders = [accessToken:UserDefaults.standard.value(forKey: accessToken)as! String,"":""] as NSDictionary
         
         serviceController.requestPOSTURL(strURL: strUrl as NSString, postParams: dictParams, postHeaders: dictHeaders, successHandler:{(result) in
             DispatchQueue.main.async()
@@ -196,6 +208,9 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
     }
     
     
+    //MARK:- validateAllFields
+
+    
     func validateAllFields() -> Bool
     {
         currentPswdTF.text=currentPswdTF.text!.trimmingCharacters(in: CharacterSet.whitespaces)
@@ -206,7 +221,6 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
         let reTypeNewPswd:NSString = reTypeNewPswdOutLet.text! as NSString
         
         
-        //Check whether textField are left empty or not
         var errorMessage:NSString?
         
         if (currenuPswd.length<=0) {
@@ -264,6 +278,7 @@ class changePasswordViewController: BaseViewController,UITextFieldDelegate,UITab
     }
     
 
+    //MARK:- Button Action
 
    
     @IBAction func eyebtnclicked(_ sender: Any) {

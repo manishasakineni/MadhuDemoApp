@@ -9,6 +9,9 @@
 import UIKit
 
 class SavedCardsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    
+    //MARK:- OutLets
+
 
     @IBOutlet weak var savedCardTableView: UITableView!
     
@@ -17,7 +20,8 @@ class SavedCardsViewController: UIViewController,UITableViewDataSource,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //MARK:- NibName
+
         let nibName  = UINib(nibName: "SavedTableViewCell" , bundle: nil)
         savedCardTableView.register(nibName, forCellReuseIdentifier: "SavedTableViewCell")
         
@@ -25,6 +29,8 @@ class SavedCardsViewController: UIViewController,UITableViewDataSource,UITableVi
         savedCardTableView.dataSource = self
         savedCardTableView.delegate = self
         
+        //MARK:- headerImgHeight For iphone and ipad
+
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -50,6 +56,8 @@ class SavedCardsViewController: UIViewController,UITableViewDataSource,UITableVi
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    //MARK:- Button Action
+
     
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -57,7 +65,7 @@ class SavedCardsViewController: UIViewController,UITableViewDataSource,UITableVi
         
     }
     
-    
+   //MARK:- UITableView Datasource Methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
         

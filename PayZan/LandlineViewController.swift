@@ -11,6 +11,8 @@ import ContactsUI
 
 class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate,CNContactPickerDelegate {
     
+    //MARK:- OutLets
+
     
     @IBOutlet weak var operatorField: UITextField!
     
@@ -28,14 +30,17 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
+    let serviceController = ServiceController()
+
     
+    //MARK:- Variables
+
     var myPickerView : UIPickerView!
     
     var toolBar = UIToolbar()
     
     var pickerData = ["Operator1" , "Operator2" , "Operator3" , "Operator4"]
     
-    let serviceController = ServiceController()
     
     var operatorList = [String]()
     
@@ -45,6 +50,8 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK:- TextField Colors
+
         
         stdNumField.layer.borderWidth = 0.5
         stdNumField.layer.borderColor = UIColor.lightGray.cgColor
@@ -90,6 +97,9 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         getOperatorList()
         
+        //MARK:- headerImgHeight For iphone and ipad
+
+        
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
             headerImgHeight.constant = 150
@@ -113,9 +123,11 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    //MARK:- UIPickerView
+
     func pickUp(_ textField : UITextField){
         
-        // UIPickerView
+        
         self.myPickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
@@ -133,15 +145,14 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             textField.inputView = self.myPickerView
         }
         
-        // ToolBar
+        //MARK:- ToolBar
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
-//            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
-        // Adding Button ToolBar
+        //MARK:- Adding Button ToolBar
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(RechargeViewController.doneClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(RechargeViewController.cancelClick))
@@ -220,6 +231,9 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         }
     }
     
+    //MARK:- getOperatorList
+
+    
     func getOperatorList(){
         
         
@@ -227,7 +241,6 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         let strUrl = landlineUrl
         
-//        let url : NSURL = NSURL(string: strUrl)!
         
         serviceController.requestGETURL(strURL:strUrl, success:{(result) in
             DispatchQueue.main.async()
@@ -275,6 +288,8 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             return
         }
     }
+    
+    //MARK:- Button Actions
 
     
     @IBAction func addressBookAction(_ sender: Any) {
@@ -288,7 +303,6 @@ class LandlineViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         } else {
             
             
-            // Fallback on earlier versions
         }
         
     }

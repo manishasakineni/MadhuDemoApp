@@ -10,6 +10,8 @@ import UIKit
 
 class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
+    //MARK:- OutLets
+
     
     @IBOutlet weak var prepaidCheckBox: UIButton!
     
@@ -25,7 +27,11 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
+    let serviceController = ServiceController()
+
     
+    //MARK:- Variables
+
     var myPickerView : UIPickerView!
     
     var toolBar = UIToolbar()
@@ -41,12 +47,12 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
     
 
     
-    let serviceController = ServiceController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //MARK:- TextField Colors
+
         
         datacardNumField.layer.borderWidth = 0.5
         datacardNumField.layer.borderColor = UIColor.lightGray.cgColor
@@ -69,6 +75,9 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         amountField.keyboardType = .numberPad
         
         getPrepaidList()
+        
+        //MARK:- headerImgHeight For iphone and ipad
+
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -94,9 +103,12 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    //MARK:- UIPickerView
+
+    
     func pickUp(_ textField : UITextField){
         
-        // UIPickerView
+        
         self.myPickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
@@ -114,15 +126,14 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             textField.inputView = self.myPickerView
         }
         
-        // ToolBar
+        //MARK:- ToolBar
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = #colorLiteral(red: 0.4438641369, green: 0.09910114855, blue: 0.1335680187, alpha: 1)
-//            UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
-        // Adding Button ToolBar
+        //MARK:- Adding Button ToolBar
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(RechargeViewController.doneClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(RechargeViewController.cancelClick))
@@ -185,7 +196,6 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
         let strUrl = datacardUrl
         
-//        let url : NSURL = NSURL(string: strUrl)!
         
         serviceController.requestGETURL(strURL:strUrl, success:{(result) in
             DispatchQueue.main.async()
@@ -229,13 +239,14 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
     }
     
+     //MARK:- getPostpaidList
+    
     func getPostpaidList(){
         
         if(appDelegate.checkInternetConnectivity()){
         
         let strUrl = postpaidUrl
         
-//        let url : NSURL = NSURL(string: strUrl)!
         
         serviceController.requestGETURL(strURL:strUrl, success:{(result) in
             DispatchQueue.main.async()
@@ -283,6 +294,8 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
         
     }
     
+    //MARK:- Button Actions
+
     
     @IBAction func backAction(_ sender: Any) {
         
@@ -303,7 +316,6 @@ class DatacardViewController: BaseViewController,UIPickerViewDelegate, UIPickerV
             
             if walletId != nil && userId != nil {
                 
-                //                sendMoneyToWalletService()
                 
             }
             else {

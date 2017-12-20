@@ -9,6 +9,9 @@
 import UIKit
 
 class OrderHistoryViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    
+    //MARK:- OutLets
+
 
     @IBOutlet weak var orderTableView: UITableView!
     
@@ -17,6 +20,8 @@ class OrderHistoryViewController: UIViewController,UITableViewDataSource,UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK:- NibName
+
         
         let nibName  = UINib(nibName: "OrderHistoryTableViewCell1" , bundle: nil)
         orderTableView.register(nibName, forCellReuseIdentifier: "OrderHistoryTableViewCell1")
@@ -42,13 +47,16 @@ class OrderHistoryViewController: UIViewController,UITableViewDataSource,UITable
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    //MARK:- Button Action
+
+    
     @IBAction func backAction(_ sender: Any) {
         
          self.navigationController?.popViewController(animated: true)
     }
     
     
-    
+   //MARK:- UITableView Datasource Methods 
     
     func numberOfSections(in tableView: UITableView) -> Int {
         

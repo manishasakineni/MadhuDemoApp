@@ -12,6 +12,9 @@ import ContactsUI
 
 class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate,CNContactPickerDelegate {
     
+    //MARK:- OutLets
+
+    
     @IBOutlet weak var backbuttonOutLet: UIButton!
     @IBOutlet weak var walletBalLabel: UILabel!
    
@@ -61,13 +64,17 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
     let strUrl1 = "29,30,31,32,33,34,35,36,37"
-    
+    let serviceController = ServiceController()
+
     
 //    var appDelegate = AppDelegate()
     
     private var hCountInt = 0
     private var fCountInt = 0
     private var tCountInt = 0
+    
+    //MARK:- Variables
+
     
     var indexValue:Int!
     
@@ -88,7 +95,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     var userId:String?
     var walletId:String?
     
-    let serviceController = ServiceController()
     
     var walletArr = ["PayZan Cash Received","Transferred to bank Account"]
     
@@ -123,6 +129,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
 //            borderview.layer .addSublayer(upperBorder);
 //            
 //        }
+        
+        //MARK:- TextField Colors
+
         
         myTransactionTableView.dataSource = self
         myTransactionTableView.delegate = self
@@ -223,6 +232,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
         myTransactionGetService(string: strUrl1)
         
+        //MARK:- headerImgHeight For iphone and ipad
+
+        
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
             headerImgHeight.constant = 150
@@ -243,7 +255,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        self.tabBarController?.tabBar.isHidden = false
         
         let defaults = UserDefaults.standard
         
@@ -265,6 +276,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
         
     }
+    
+    //MARK:- borderColors
+
     
     func borderColors(){
         
@@ -292,7 +306,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
     }
     
-    
+    //MARK:- iPhoneScreenSizes
+
     func iPhoneScreenSizes(){
         let bounds = UIScreen.main.bounds
         let height = bounds.size.height
@@ -446,6 +461,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
     }
     
+    //MARK:- UITableView DataSource Methods
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -577,6 +594,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
     }
     
+    //MARK:- postWalletMoneyService
+
+    
    func postWalletMoneyService(){
     
     
@@ -660,6 +680,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
     }
 
+    //MARK:- Button Action
+
     
     @IBAction func addMoneyAction(_ sender: Any) {
         
@@ -715,6 +737,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
         
     }
+    //MARK:- sendMoneyToWalletService
+
     
     func sendMoneyToWalletService(){
         
@@ -727,7 +751,6 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
         let  strUrl = sendWalletUrl
         
-//        let null = NSNull()
         
         let currentDate = GlobalSupportingClass.getCurrentDate()
         
@@ -820,6 +843,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         
     }
     
+    //MARK:- Button Action
+
+    
     @IBAction func sendMoneyAction(_ sender: Any) {
         
         if validateSendMoneyFields(){
@@ -869,6 +895,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         }
     }
     
+    //MARK:- validateSendMoneyFields
+
     
     func validateSendMoneyFields() -> Bool
     {
@@ -901,7 +929,9 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
         return true
     }
     
-
+    //MARK:- Button Actions
+    
+    
     @IBAction func backAction(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: true)
@@ -1109,6 +1139,8 @@ class AddMoneyWalletViewController: BaseViewController,UITableViewDataSource,UIT
     
 }
 
+    //MARK:- customizeAppearance
+
 extension UISegmentedControl {
     
     func customizeAppearance(for height: Int) {
@@ -1128,13 +1160,18 @@ extension UISegmentedControl {
         
     }
     
+    //MARK:- removeBorders
+
+    
     func removeBorders() {
         setBackgroundImage(imageWithColor(color: backgroundColor!), for: .normal, barMetrics: .default)
         setBackgroundImage(imageWithColor(color: tintColor!), for: .selected, barMetrics: .default)
         setDividerImage(imageWithColor(color: UIColor.clear), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
     }
     
-    // create a 1x1 image with this color
+    //MARK:- imageWithColor
+
+    
     private func imageWithColor(color: UIColor) -> UIImage {
         let rect = CGRect(x: 0.0, y: 0.0, width:  1.0, height: 1.0)
         UIGraphicsBeginImageContext(rect.size)
@@ -1146,6 +1183,9 @@ extension UISegmentedControl {
         return image!
     }
 }
+
+//MARK:- extension  UIImage
+
 extension UIImage {
     
     func colored(with color: UIColor, size: CGSize) -> UIImage {

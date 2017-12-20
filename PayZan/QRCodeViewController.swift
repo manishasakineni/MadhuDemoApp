@@ -11,6 +11,8 @@ import AVFoundation
 
 class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
     
+    //MARK:- OutLets
+ 
     
     @IBOutlet weak var msgLabel: UILabel!
     
@@ -19,6 +21,9 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
     @IBOutlet weak var scanView: UIView!
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
+    
+    //MARK:- Variables
+
     
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
@@ -44,6 +49,10 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK:- startReading
+    
+
     
     func startReading() -> Bool {
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
@@ -74,12 +83,16 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
         return true
     }
     
+    //MARK:- stopReading
+    
     func stopReading() {
         captureSession?.stopRunning()
         scanView.isHidden = true
         captureSession = nil
         videoPreviewLayer?.removeFromSuperlayer()
     }
+    
+    //MARK:- captureOutput
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         for data in metadataObjects {
@@ -95,6 +108,7 @@ class QRCodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDeleg
             }
         }
     }
+     //MARK:- button Actions
     
     @IBAction func scanBtnAction(_ sender: Any) {
         

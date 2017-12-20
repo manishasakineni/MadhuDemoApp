@@ -8,6 +8,8 @@
 
 import UIKit
 
+//MARK:- ViewControllerBDelegate
+
 protocol ViewControllerBDelegate: class {
     
     func textChanged(text:String?)
@@ -15,21 +17,28 @@ protocol ViewControllerBDelegate: class {
 }
 
 class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate {
+    
+    //MARK:- OutLets
 
     @IBOutlet weak var editTableView: UITableView!
     
     @IBOutlet weak var headerImgHeight: NSLayoutConstraint!
     
-    let headerTitle = "PERSONAL INFORMATION"
-    var image:UIImage?
+    //MARK:- Constants
+
     
+    let headerTitle = "PERSONAL INFORMATION"
+    let picker = UIImagePickerController()
     let datePicker = UIDatePicker()
-    var dateStr = String()
     
     let TVC1 = TableViewCell1()
     let TVC2 = TableViewCell2()
     let GVC  = GenderTableViewCell()
     
+    //MARK:- Variables
+
+    var dateStr = String()
+    var image:UIImage?
     var userNamee:String!
     var userIdd:String!
     var userEmail:String!
@@ -45,7 +54,6 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     
     var isImageSave:Bool = false
     
-    let picker = UIImagePickerController()
     
     weak var delegate: ViewControllerBDelegate?
     
@@ -99,6 +107,9 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         }
         
         getEditProfileList()
+        
+        //MARK:- headerImgHeight For iphone and ipad
+
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             
@@ -339,7 +350,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     }
     
     
-    ////////// edit action /////
+    //MARK:- Edit Action
     
     
     func editBtnClicked(_ sender: UIButton) {
@@ -383,11 +394,15 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
 //        }
     }
     
+    //MARK:- saveBtnClicked
+
+    
     func saveBtnClicked(_ sender: UIButton) {
         
         
-        
     }
+    //MARK:- openCamera
+
     
     func openCamera() {
         picker.allowsEditing = true
@@ -397,6 +412,9 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
     }
     
+    //MARK:- openGallary
+
+    
     func openGallary() {
         picker.allowsEditing = true
         picker.sourceType = .photoLibrary
@@ -405,6 +423,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
     }
     
+    //MARK:- imagePickerController
+ 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -414,6 +434,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         editTableView.reloadData()
     }
     
+    //MARK:- UIPickerViewController
+
     
     func image(_ image: UIImage!, didFinishSavingWithError error: NSError!, contextInfo: AnyObject!) {
         if (error != nil) {
@@ -432,6 +454,9 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         dismiss(animated: true, completion: nil)
     }
     
+    //MARK:- saveImage
+
+    
     func saveImage (_ image: UIImage, path: String ) -> Bool{
         
         isImageSave = true
@@ -443,7 +468,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         return result
     }
     
-    
+    //MARK:- donePressed
+
     
     
     func donePressed(){
@@ -458,7 +484,8 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         editTableView.reloadData()
     }
     
-    
+    //MARK:- textFieldDidBeginEditing
+
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
@@ -472,13 +499,17 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
     }
     
-    
+    //MARK:- hideLabels
+
     
     func hideLabels(){
         
         
         
     }
+    
+    //MARK:- maleBtnClicked
+
     
     func maleBtnClicked(_ sender: UIButton) {
         
@@ -496,6 +527,9 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         
     }
     
+    //MARK:- femaleBtnClicked
+
+    
     func femaleBtnClicked(_ sender: UIButton){
         
         male = false
@@ -510,6 +544,9 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
         editTableView.reloadData()
         
     }
+    
+    //MARK:- Button Actions
+
     
     @IBAction func backAction(_ sender: Any) {
         
