@@ -11,6 +11,8 @@ import Foundation
 
 class SendWalletHistoryVo: Mappable {
     
+    //MARK:-  Declaration of SendWalletHistoryVo
+
     var UserId: String?
     var WalletId: String?
     var Balance: Int?
@@ -21,6 +23,8 @@ class SendWalletHistoryVo: Mappable {
     var Created: String?
     var Modified: String?
     
+    //MARK:-  initialization of SendWalletHistoryVo
+
     init(UserId:String?,WalletId:String?,Balance:Int?,Id:Int?,IsActive:Bool?,CreatedBy:String?,ModifiedBy:String?,Created:String?,Modified:String?) {
         
         self.UserId = UserId

@@ -10,6 +10,8 @@ import Foundation
 
 class OperatorVo: Mappable {
     
+    //MARK:-  Declaration of OperatorVo
+
     
     var ListResult: [ListResultVo]?
     var IsSuccess:Bool?
@@ -18,6 +20,8 @@ class OperatorVo: Mappable {
     var ValidationErrors:Any?
     var Exception:Any?
     
+    //MARK:-  initialization of OperatorVo
+
     init(ListResult:[ListResultVo]?, IsSuccess:Bool?, AffectedRecords:Int?,EndUserMessage:String?,ValidationErrors:Any?,Exception:Any?) {
         
         self.ListResult = ListResult

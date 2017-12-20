@@ -11,10 +11,13 @@ import Foundation
 
 class LoginVo: Mappable {
     
+    //MARK:-  Declaration of LoginVo
+
     var StatusCode: Int?
     var data: UserVo?
     
-    
+    //MARK:-  initialization of LoginVo
+
     init(StatusCode:Int?, data:UserVo?) {
         self.StatusCode = StatusCode
         self.data = data

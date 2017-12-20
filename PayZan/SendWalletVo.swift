@@ -11,6 +11,8 @@ import Foundation
 
 class SendWalletVo: Mappable {
     
+    //MARK:-  Declaration of SendWalletVo
+
     var Result: SendWalletHistoryVo?
     var IsSuccess: Bool?
     var AffectedRecords: Int?
@@ -18,7 +20,8 @@ class SendWalletVo: Mappable {
     var ValidationErrors: Any?
     var Exception: Any?
     
-    
+    //MARK:-  initialization of SendWalletVo
+
     
     init(Result:SendWalletHistoryVo?, IsSuccess:Bool?,AffectedRecords:Int?, EndUserMessage:String?,ValidationErrors:Any?, Exception:Any?) {
         self.Result = Result

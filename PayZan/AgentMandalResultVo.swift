@@ -7,20 +7,10 @@
 //
 
 import Foundation
+
 class AgentMandalResultVo: Mappable {
 
-//    {
-//    "Code": "TEST",
-//    "Name": "Test",
-//    "IsCity": true,
-//    "DistrictId": 1,
-//    "Id": 5,
-//    "IsActive": true,
-//    "CreatedBy": "05e3b552-21f3-486f-9b6c-41cdf738f2b8",
-//    "ModifiedBy": "05e3b552-21f3-486f-9b6c-41cdf738f2b8",
-//    "Created": "2017-11-14T22:23:11.470599+00:00",
-//    "Modified": "2017-11-14T22:23:11.470601+00:00"
-//    }
+    //MARK:-  Declaration of AgentMandalResultVo
     
     var Code: String?
     var Name: String?
@@ -29,7 +19,8 @@ class AgentMandalResultVo: Mappable {
     var Id: Int?
     var IsActive: Bool?
     
-    
+    //MARK:-  initialization of AgentMandalResultVo
+
     init(IsCity:Bool?, DistrictId:Int?,Code:String?,Name:String?,Id:Int?,IsActive:Bool?) {
         
         

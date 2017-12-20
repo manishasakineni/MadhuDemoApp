@@ -10,13 +10,16 @@ import Foundation
 
 class SignUpResultVo: Mappable {
     
-    
+    //MARK:-  Declaration of SignUpResultVo
+
     
     var Id: String?
     var Email: String?
     var UserName: String?
     var PhoneNumber: String?
     
+    //MARK:-  initialization of SignUpResultVo
+
     
     init(Id:String?, Email:String?, UserName:String?, PhoneNumber:String?) {
         

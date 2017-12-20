@@ -10,6 +10,8 @@ import Foundation
 
 class GetProfileVo: Mappable {
     
+    //MARK:-  Declaration of GetProfileVo
+
     
     var Result:ProfileResultVo?
     var IsSuccess:Bool?
@@ -18,6 +20,7 @@ class GetProfileVo: Mappable {
     var ValidationErrors:AnyObject?
     var Exception:Any?
     
+    //MARK:-  initialization of GetProfileVo
 
     
     init(Result:ProfileResultVo?, IsSuccess:Bool?, AffectedRecords:Int?,EndUserMessage:String?,ValidationErrors:AnyObject?, Exception:Any?) {

@@ -10,6 +10,8 @@ import Foundation
 
 class LoginResultVo: Mappable {
     
+    //MARK:-  Declaration of LoginResultVo
+
     
     var Result:RespVo?
     var IsSuccess:Bool?
@@ -19,10 +21,8 @@ class LoginResultVo: Mappable {
     var Exception:Any?
     
     
-//    var User: RespVo?
-//    var Roles:[RolesVo]?
-//    var ActivityRights:[GetActVo]?
-//    var UserWallet:GetUserWalletVo?
+    //MARK:-  initialization of LoginResultVo
+
     
     init(Result:RespVo?, IsSuccess:Bool?, AffectedRecords:Int?,EndUserMessage:String?,ValidationErrors:AnyObject?, Exception:Any?) {
         

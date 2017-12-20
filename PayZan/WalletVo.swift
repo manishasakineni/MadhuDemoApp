@@ -10,6 +10,8 @@ import Foundation
 
 class WalletVo: Mappable {
     
+    //MARK:-  Declaration of WalletVo
+
     var UserId: String?
     var WalletId: String?
     var Balance: Int?
@@ -20,6 +22,8 @@ class WalletVo: Mappable {
     var UpdatedByUserId: String?
     var UpdatedDate: String?
     
+    //MARK:-  initialization of WalletVo
+
     init(UserId:String?,WalletId:String?,Balance:Int?,Id:Int?,IsActive:Bool?,CreatedByUserId:String?,CreatedDate:String?,UpdatedByUserId:String?,UpdatedDate:String?) {
         
         self.UserId = UserId

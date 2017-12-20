@@ -7,32 +7,12 @@
 //
 
 import Foundation
-//{
-//    "Result": {
-//        "Id": 0,
-//        "AgentRequestCategoryId": 38,
-//        "TitleTypeId": 19,
-//        "FirstName": "madhu",
-//        "MiddleName": "babu",
-//        "LastName": "pari",
-//        "MobileNumber": "9885706781",
-//        "Email": "madhubme020@gmail.com",
-//        "AddressLine1": "knll",
-//        "AddressLine2": "srinagar",
-//        "Landmark": "hyd",
-//        "VillageId": 6,
-//        "Comments": "fgfgggggg",
-//        "Created": "2017-11-18T01:40:24.0666951+05:30"
-//    },
-//    "IsSuccess": true,
-//    "AffectedRecords": 1,
-//    "EndUserMessage": "Record Saved Successfully",
-//    "ValidationErrors": [],
-//    "Exception": null
-//}
 
 
 class AddAgentReqVo: Mappable {
+    
+    //MARK:-  Declaration of AddAgentReqVo
+
     
     var Result: [AddAgentResultVo]?
     var IsSuccess: Bool?
@@ -41,7 +21,8 @@ class AddAgentReqVo: Mappable {
     var ValidationErrors: Any?
     var Exception: Any?
     
-    
+    //MARK:-  initialization of AddAgentReqVo
+
     
     init(Result:[AddAgentResultVo]?, IsSuccess:Bool?,AffectedRecords:Int?, EndUserMessage:String?,ValidationErrors:Any?, Exception:Any?) {
         self.Result = Result

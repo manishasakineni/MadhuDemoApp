@@ -10,14 +10,16 @@ import Foundation
 
 class UserVo: Mappable {
     
-    
+    //MARK:-  Declaration of UserVo
+
     
         var Id: String?
         var Email: String?
         var UserName: String?
         var PhoneNumber: String?
     
-    
+    //MARK:-  initialization of UserVo
+
         init(Id:String?, Email:String?, UserName:String?, PhoneNumber:String?) {
     
             self.Id = Id

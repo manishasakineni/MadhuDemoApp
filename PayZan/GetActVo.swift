@@ -10,6 +10,8 @@ import Foundation
 
 class GetActVo: Mappable {
     
+    //MARK:-  Declaration of GetActVo
+
     var RoleId: String?
     var ActivityRightId: String?
     var CreatedByUserId: String?
@@ -17,6 +19,8 @@ class GetActVo: Mappable {
     var UpdatedByUserId: Int?
     var UpdatedDate: String?
     
+    //MARK:-  initialization of GetActVo
+
     init(RoleId:String?,ActivityRightId:String?,CreatedByUserId:String?,CreatedDate:String?,UpdatedByUserId:Int?,UpdatedDate:String?) {
         
         self.RoleId = RoleId

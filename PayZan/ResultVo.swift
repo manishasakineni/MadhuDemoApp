@@ -11,6 +11,8 @@ import Foundation
 
 class ResultVo: Mappable {
     
+    //MARK:-  Declaration of ResultVo
+
     var Result: WalletVo?
     var IsSuccess: Bool?
     var AffectedRecords: Int?
@@ -18,7 +20,8 @@ class ResultVo: Mappable {
     var ValidationErrors: Any?
     var Exception: Any?
 
-    
+    //MARK:-  initialization of ResultVo
+
     
     init(Result:WalletVo?, IsSuccess:Bool?,AffectedRecords:Int?, EndUserMessage:String?,ValidationErrors:Any?, Exception:Any?) {
         self.Result = Result

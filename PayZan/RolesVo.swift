@@ -10,9 +10,13 @@ import Foundation
 
 class RolesVo: Mappable {
     
+    //MARK:-  Declaration of RolesVo
+
     var UserId: String?
     var RoleId: String?
     
+    //MARK:-  initialization of RolesVo
+
     init(UserId:String?,RoleId:String?) {
         
         self.UserId = UserId

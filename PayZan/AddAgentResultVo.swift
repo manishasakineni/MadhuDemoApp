@@ -11,23 +11,8 @@ import Foundation
 
 class AddAgentResultVo: Mappable {
     
-    
-//    "Result": {
-//    "Id": 0,
-//    "AgentRequestCategoryId": 38,
-//    "TitleTypeId": 19,
-//    "FirstName": "madhu",
-//    "MiddleName": "babu",
-//    "LastName": "pari",
-//    "MobileNumber": "9885706781",
-//    "Email": "madhubme020@gmail.com",
-//    "AddressLine1": "knll",
-//    "AddressLine2": "srinagar",
-//    "Landmark": "hyd",
-//    "VillageId": 6,
-//    "Comments": "fgfgggggg",
-//    "Created": "2017-11-18T01:40:24.0666951+05:30"
-//    },
+    //MARK:-  Declaration of AddAgentResultVo
+ 
     
     var Code: String?
     var Name: String?
@@ -36,7 +21,8 @@ class AddAgentResultVo: Mappable {
     var Id: Int?
     var IsActive: Bool?
     
-    
+    //MARK:-  initialization of AddAgentResultVo
+
     init(PostCode:Int?, MandalId:Int?,Code:String?,Name:String?,Id:Int?,IsActive:Bool?) {
         
         

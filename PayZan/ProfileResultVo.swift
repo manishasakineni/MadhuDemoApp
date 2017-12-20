@@ -10,6 +10,9 @@ import Foundation
 
 class ProfileResultVo: Mappable {
     
+    //MARK:-  Declaration of ProfileResultVo
+
+    
     var UserName: String?
     var RoleIds: Any?
     var RoleNames: Any?
@@ -53,6 +56,9 @@ class ProfileResultVo: Mappable {
     var ModifiedBy: String?
     var Created: String?
     var Modified: String?
+    
+    //MARK:-  initialization of ProfileResultVo
+
     
     init(UserName:String?,RoleIds:Any?,RoleNames:Any?,Title:Any?,GenderType:Any?,VillageName:String?,MandalId:Int?,MandalName:String?,DistrictId:Int?,DistrictName:String?,ProvinceId:Int?,ProvinceName:String?,CountryId:Int?,CountryName:String?,ParentAspNetUserName:String?,ParentAspNetUserFirstName:String?,ParentAspNetUserMidlleName:String?,ParentAspNetUserLastName:String?,PostCode:Int?,AspNetUserId:Int?,TitleTypeId:Int?,FirstName:String?,MiddleName:String?,LastName:String?,Phone:String?,Email:String?,GenderTypeId:Int?,DOB:String?,Address1:String?,Address2:String?,Landmark:String?,VillageId:Int?,ParentAspNetUserId:Int?,Id:Int?,IsActive:Bool?,CreatedBy:String?,ModifiedBy:String?,Created:String?,Modified:String?) {
         

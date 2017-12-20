@@ -7,29 +7,12 @@
 //
 
 import Foundation
-//{
-//    "ListResult": [
-//    {
-//    "Code": "AMR",
-//    "Name": "Ampara",
-//    "MandalId": 4,
-//    "PostCode": 30125,
-//    "Id": 6,
-//    "IsActive": true,
-//    "CreatedBy": "05e3b552-21f3-486f-9b6c-41cdf738f2b8",
-//    "ModifiedBy": null,
-//    "Created": "2017-11-03T12:23:55.79936+00:00",
-//    "Modified": "2017-11-03T12:23:13.301+00:00"
-//    }
-//    ],
-//    "IsSuccess": true,
-//    "AffectedRecords": 1,
-//    "EndUserMessage": "Get All Successful",
-//    "ValidationErrors": [],
-//    "Exception": null
-//}
+
+
 
 class AgentVillageVo: Mappable {
+    
+    //MARK:-  Declaration of AgentVillageVo
     
     var ListResult: [AgentVillageResultVo]?
     var IsSuccess: Bool?
@@ -38,7 +21,8 @@ class AgentVillageVo: Mappable {
     var ValidationErrors: Any?
     var Exception: Any?
     
-    
+    //MARK:-  initialization of AgentVillageVo
+
     
     init(ListResult:[AgentVillageResultVo]?, IsSuccess:Bool?,AffectedRecords:Int?, EndUserMessage:String?,ValidationErrors:Any?, Exception:Any?) {
         self.ListResult = ListResult

@@ -10,6 +10,8 @@ import Foundation
 
 class MyTranListResultVo: Mappable {
     
+    //MARK:-  Declaration of MyTranListResultVo
+
     
     var Id: Int?
     var WalletId: String?
@@ -22,6 +24,8 @@ class MyTranListResultVo: Mappable {
     var Created: String?
     var Modified: String?
     
+    //MARK:-  initialization of MyTranListResultVo
+
     init(Id:Int?,WalletId:String?,Amount:Int?,TransactionTypeId:Int?,TransactionType:String?,ReasonTypeId:Int?,ReasonType:String?,IsActive:Bool?,Created:String?,Modified:String?) {
         
 

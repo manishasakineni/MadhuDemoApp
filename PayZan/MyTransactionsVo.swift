@@ -11,6 +11,8 @@ import Foundation
 
 class MyTransactionsVo: Mappable {
     
+    //MARK:-  Declaration of MyTransactionsVo
+
     var ListResult: [MyTranListResultVo]?
     var IsSuccess: Bool?
     var AffectedRecords: Int?
@@ -18,7 +20,8 @@ class MyTransactionsVo: Mappable {
     var ValidationErrors: Any?
     var Exception: Any?
     
-    
+    //MARK:-  initialization of MyTransactionsVo
+
     
     init(ListResult:[MyTranListResultVo]?, IsSuccess:Bool?,AffectedRecords:Int?, EndUserMessage:String?,ValidationErrors:Any?, Exception:Any?) {
         self.ListResult = ListResult

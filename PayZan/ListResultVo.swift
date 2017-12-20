@@ -10,6 +10,8 @@ import Foundation
 
 class ListResultVo: Mappable {
     
+    //MARK:-  Declaration of ListResultVo
+
     var Name: String?
     var Remarks: String?
     var FileName: String?
@@ -22,6 +24,8 @@ class ListResultVo: Mappable {
     var Created: String?
     var Modified: String?
     
+    //MARK:-  initialization of ListResultVo
+
     
     init(Name:String?, Remarks:String?, FileName:String?, FileLocation:String?,FileExtension:String,Id:Int?,IsActive:Bool?,CreatedBy:String?,ModifiedBy:String?,Created:String?,Modified:String?) {
         

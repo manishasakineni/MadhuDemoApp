@@ -10,10 +10,14 @@ import Foundation
 
 class SignupVo: Mappable {
     
+    //MARK:-  Declaration of SignupVo
+
     var Result: SignUpResultVo?
     var IsSuccess: Bool?
     var AffectedRecords: Int?
     
+    //MARK:-  initialization of SignupVo
+
     init(Result:SignUpResultVo?,IsSuccess:Bool?,AffectedRecords:Int?) {
         self.Result = Result
         self.IsSuccess = IsSuccess

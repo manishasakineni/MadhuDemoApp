@@ -10,18 +10,8 @@ import Foundation
 
 class AgentVillageResultVo: Mappable {
     
-//    {
-//    "Code": "AMR",
-//    "Name": "Ampara",
-//    "MandalId": 4,
-//    "PostCode": 30125,
-//    "Id": 6,
-//    "IsActive": true,
-//    "CreatedBy": "05e3b552-21f3-486f-9b6c-41cdf738f2b8",
-//    "ModifiedBy": null,
-//    "Created": "2017-11-03T12:23:55.79936+00:00",
-//    "Modified": "2017-11-03T12:23:13.301+00:00"
-//    }
+    //MARK:-  Declaration of AgentVillageResultVo
+
     
     var Code: String?
     var Name: String?
@@ -30,6 +20,8 @@ class AgentVillageResultVo: Mappable {
     var Id: Int?
     var IsActive: Bool?
     
+    //MARK:-  initialization of AgentVillageResultVo
+
     
     init(PostCode:Int?, MandalId:Int?,Code:String?,Name:String?,Id:Int?,IsActive:Bool?) {
         

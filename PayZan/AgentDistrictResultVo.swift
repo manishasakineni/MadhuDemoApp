@@ -11,23 +11,7 @@ import Foundation
 
 class AgentDistrictResultVo: Mappable {
     
-//    "ListResult": [
-//    {
-//    "ProvinceName": "Western",
-//    "ProvinceId": 10,
-//    "CountryName": "Sri Lanka",
-//    "CountryId": 1,
-//    "StateName": "Default State",
-//    "Code": "AMP",
-//    "Name": "Amparara",
-//    "StateId": 1,
-//    "Id": 1,
-//    "IsActive": false,
-//    "CreatedBy": null,
-//    "ModifiedBy": null,
-//    "Created": "0001-01-01T00:00:00+00:00",
-//    "Modified": "0001-01-01T00:00:00+00:00"
-//    }
+    //MARK:-  Declaration of AgentDistrictResultVo
     
     var ProvinceName: String?
     var ProvinceId: Int?
@@ -40,6 +24,8 @@ class AgentDistrictResultVo: Mappable {
     var Id: Int?
     var IsActive: Bool?
     
+    //MARK:-  initialization of AgentDistrictResultVo
+
     
     init(ProvinceName:String?, ProvinceId:Int?, CountryName:String?, CountryId:Int?,StateName:String?,Code:String?,Name:String?,StateId:Int?,Id:Int?,IsActive:Bool?) {
         

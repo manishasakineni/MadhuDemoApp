@@ -8,29 +8,11 @@
 
 import Foundation
 
-//{
-//    "ListResult": [
-//    {
-//    "CountryName": "Sri Lanka",
-//    "Name": "Western",
-//    "Code": "WSTRN",
-//    "CountryId": 1,
-//    "Id": 10,
-//    "IsActive": true,
-//    "CreatedBy": "05e3b552-21f3-486f-9b6c-41cdf738f2b8",
-//    "ModifiedBy": "05e3b552-21f3-486f-9b6c-41cdf738f2b8",
-//    "Created": "2017-11-06T05:49:58.857472+00:00",
-//    "Modified": "2017-11-06T05:49:58.857469+00:00"
-//    }
-//    ],
-//    "IsSuccess": true,
-//    "AffectedRecords": 4,
-//    "EndUserMessage": "Get All Successful",
-//    "ValidationErrors": [],
-//    "Exception": null
-//}
 
 class AgentReqVo: Mappable {
+    
+    //MARK:-  Declaration of AgentReqVo
+
     
     var ListResult: [AgentReqResultVo]?
     var IsSuccess: Bool?
@@ -39,7 +21,8 @@ class AgentReqVo: Mappable {
     var ValidationErrors: Any?
     var Exception: Any?
     
-    
+    //MARK:-  initialization of AgentReqVo
+
     
     init(ListResult:[AgentReqResultVo]?, IsSuccess:Bool?,AffectedRecords:Int?, EndUserMessage:String?,ValidationErrors:Any?, Exception:Any?) {
         self.ListResult = ListResult

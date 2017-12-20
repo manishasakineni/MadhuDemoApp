@@ -388,7 +388,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add / Withdraw" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6X-wP-gaL">
-                                        <rect key="frame" x="133" y="42" width="110" height="13"/>
+                                        <rect key="frame" x="133" y="45" width="110" height="13"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -414,7 +414,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay / Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6u-UC-18i">
-                                        <rect key="frame" x="15" y="42" width="110" height="13"/>
+                                        <rect key="frame" x="15" y="45" width="110" height="13"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -426,7 +426,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Transactions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWU-9o-BGE">
-                                        <rect key="frame" x="250" y="42" width="110" height="13"/>
+                                        <rect key="frame" x="250" y="45" width="110" height="13"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -448,9 +448,9 @@
                                     <constraint firstItem="wad-GR-qDE" firstAttribute="top" secondItem="4sL-vJ-yut" secondAttribute="top" constant="5" id="DgT-7I-CB1"/>
                                     <constraint firstItem="VWU-9o-BGE" firstAttribute="leading" secondItem="Pap-CS-b8K" secondAttribute="leading" id="Gd0-pE-GOq"/>
                                     <constraint firstItem="wad-GR-qDE" firstAttribute="centerY" secondItem="fPN-zU-XKD" secondAttribute="centerY" id="KtS-K2-o4a"/>
-                                    <constraint firstItem="b6u-UC-18i" firstAttribute="bottom" secondItem="fPN-zU-XKD" secondAttribute="bottom" constant="-10" id="MXV-ce-PIf"/>
+                                    <constraint firstItem="b6u-UC-18i" firstAttribute="bottom" secondItem="fPN-zU-XKD" secondAttribute="bottom" constant="-7" id="MXV-ce-PIf"/>
                                     <constraint firstItem="VWU-9o-BGE" firstAttribute="trailing" secondItem="Pap-CS-b8K" secondAttribute="trailing" id="Mla-5r-g68"/>
-                                    <constraint firstItem="VWU-9o-BGE" firstAttribute="bottom" secondItem="Pap-CS-b8K" secondAttribute="bottom" constant="-10" id="PbX-Uf-pIQ"/>
+                                    <constraint firstItem="VWU-9o-BGE" firstAttribute="bottom" secondItem="Pap-CS-b8K" secondAttribute="bottom" constant="-7" id="PbX-Uf-pIQ"/>
                                     <constraint firstAttribute="bottom" secondItem="wad-GR-qDE" secondAttribute="bottom" constant="5" id="Q9v-Zo-gUz"/>
                                     <constraint firstItem="wad-GR-qDE" firstAttribute="centerY" secondItem="Pap-CS-b8K" secondAttribute="centerY" id="SGh-zj-FvW"/>
                                     <constraint firstItem="Pap-CS-b8K" firstAttribute="leading" secondItem="wad-GR-qDE" secondAttribute="trailing" constant="7" id="Vlm-MO-iRh"/>
@@ -459,7 +459,7 @@
                                     <constraint firstItem="fPN-zU-XKD" firstAttribute="width" secondItem="wad-GR-qDE" secondAttribute="width" id="gt9-8R-2ig"/>
                                     <constraint firstItem="b6u-UC-18i" firstAttribute="trailing" secondItem="fPN-zU-XKD" secondAttribute="trailing" id="mgn-Ly-I4b"/>
                                     <constraint firstAttribute="height" constant="70" id="obV-Ms-PfI"/>
-                                    <constraint firstItem="t6X-wP-gaL" firstAttribute="bottom" secondItem="wad-GR-qDE" secondAttribute="bottom" constant="-10" id="raO-IR-YIt"/>
+                                    <constraint firstItem="t6X-wP-gaL" firstAttribute="bottom" secondItem="wad-GR-qDE" secondAttribute="bottom" constant="-7" id="raO-IR-YIt"/>
                                     <constraint firstItem="t6X-wP-gaL" firstAttribute="leading" secondItem="wad-GR-qDE" secondAttribute="leading" id="rhb-kI-zJM"/>
                                     <constraint firstItem="Pap-CS-b8K" firstAttribute="top" secondItem="4sL-vJ-yut" secondAttribute="top" constant="5" id="sAH-lJ-Y9j"/>
                                     <constraint firstAttribute="bottom" secondItem="fPN-zU-XKD" secondAttribute="bottom" constant="5" id="sSh-di-TYh"/>
