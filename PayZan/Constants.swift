@@ -9,7 +9,7 @@
 import Foundation
 
 
-let baseUrl:String = "http://192.168.1.160/PayZanAPI/api/"
+let baseUrl:String = "http://192.168.1.34/PayZanAPI/api/"
 
 //let baseUrl:String = "http://payzandev1.azurewebsites.net/api/"
 

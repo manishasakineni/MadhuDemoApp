@@ -199,7 +199,9 @@
         
         "ChooseProfileImage" : "Choose Profile Image",
         "FromCamera" : "From Camera",
-        "From Gallery" : "From Gallery"
+        "FromGallery" : "From Gallery",
+        
+        "PERSONALINFORMATION" : "PERSONAL INFORMATION"
         
         
         

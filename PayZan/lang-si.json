@@ -197,9 +197,11 @@
         "Enteryourcomments" : "ඔබේ අදහස් ඇතුළත් කරන්න",
         "DateOfBirth" : "උපන්දිනය",
         
-        "ChooseProfileImage" : "Choose Profile Image",
-        "FromCamera" : "From Camera",
-        "From Gallery" : "From Gallery"
+        "ChooseProfileImage" : "පැතිකඩ පින්තූර තෝරන්න",
+        "FromCamera" : "කැමරාව වෙතින්",
+        "FromGallery" : "ගැලරිය වෙතින්",
+        
+        "PERSONALINFORMATION" : "පුද්ගලික තොරතුරු"
         
     
         

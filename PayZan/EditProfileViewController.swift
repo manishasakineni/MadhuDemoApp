@@ -27,7 +27,7 @@ class EditProfileViewController: BaseViewController,UITableViewDelegate,UITableV
     //MARK:- Constants
 
     
-    let headerTitle = "PERSONAL INFORMATION"
+    let headerTitle = "app.PERSONALINFORMATION".localize()
     let picker = UIImagePickerController()
     let datePicker = UIDatePicker()
     

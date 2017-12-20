@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="17A365" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="seY-KT-opP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="seY-KT-opP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1038,7 +1038,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sf2-Ze-vte">
-                                <rect key="frame" x="315" y="281" width="14" height="12"/>
+                                <rect key="frame" x="315" y="275" width="14" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="14" id="PNC-0t-bqw"/>
                                     <constraint firstAttribute="height" constant="12" id="bwx-ke-ZBW"/>
@@ -1078,7 +1078,7 @@
                             <constraint firstItem="kTc-iE-xVt" firstAttribute="top" secondItem="Eq4-Sz-kCM" secondAttribute="bottom" constant="13" id="Lim-x8-cnJ"/>
                             <constraint firstItem="StX-4k-4t7" firstAttribute="top" secondItem="0We-k0-evc" secondAttribute="top" id="Lq4-2L-Hah"/>
                             <constraint firstItem="H67-vk-lRV" firstAttribute="centerY" secondItem="lSf-cX-7eM" secondAttribute="centerY" id="LtD-Ag-H4o"/>
-                            <constraint firstItem="Sf2-Ze-vte" firstAttribute="centerY" secondItem="Eq4-Sz-kCM" secondAttribute="centerY" constant="6" id="ORK-28-sSb"/>
+                            <constraint firstItem="Sf2-Ze-vte" firstAttribute="centerY" secondItem="Eq4-Sz-kCM" secondAttribute="centerY" id="ORK-28-sSb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SDZ-Dh-cHF" secondAttribute="trailing" constant="10" id="QVB-GX-bNp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fg5-I1-WH3" secondAttribute="trailing" constant="10" id="RW5-gq-3Ey"/>
                             <constraint firstItem="SDZ-Dh-cHF" firstAttribute="top" secondItem="kTc-iE-xVt" secondAttribute="bottom" constant="-10" id="RoP-aT-lI7"/>
@@ -1611,7 +1611,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wSF-Zb-qo8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wSF-Zb-qo8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1631,7 +1631,7 @@
                     <tabBarItem key="tabBarItem" title="My Profile" image="myProfilePng" selectedImage="myProfilePng" id="zJf-Ao-MRt"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mt6-f4-R4S">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mt6-f4-R4S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1655,7 +1655,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HiU-Ff-lBp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HiU-Ff-lBp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1679,7 +1679,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yIj-u9-loA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yIj-u9-loA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -5617,7 +5617,7 @@
                 <navigationController storyboardIdentifier="LoginNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="3ZU-Ct-hC3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oWr-Ht-Jv6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oWr-Ht-Jv6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
